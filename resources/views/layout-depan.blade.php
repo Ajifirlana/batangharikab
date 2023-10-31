@@ -48,7 +48,7 @@
 
 
         <!-- Preloader -->
-        <div id="loading">
+        <!-- <div id="loading">
             <div id="loading-center">
                 <div id="loading-center-absolute">
                     <div class="object" id="object_one"></div>
@@ -57,7 +57,8 @@
                     <div class="object" id="object_four"></div>
                 </div>
             </div>
-        </div><!--End off Preloader -->
+        </div> -->
+        <!--End off Preloader -->
 
 
         <div class="culmn">
@@ -203,16 +204,19 @@
                                 <div class="features_item sm-m-top-30">
                                     <div class="f_item_text">
                                         <h3>Profil SKPD</h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque eleifend
-                                            in sit amet mattis volutpat rhoncus.</p>
+                                        <p>
+        <ul>
+            <li>Sekretariat
+             <ul><li><a target="_blank" href="https://setda.batangharikab.go.id/">SEKRETARIAT DAERAH</a></li><li><a target="_blank" href="http://dprd.batangharikab.go.id/">SEKRETARIAT DPRD</a></li></ul></li><li class='category'>Dinas
+             <ul><li><a target="_blank" href="http://dpdk.batangharikab.go.id/">DINAS PERPUSTAKAAN DAN KEARSIPAN</a></li><li><a target="_blank" href="http://bkbpp.batangharikab.go.id/">DINAS PENGENDALIAN PENDUDUK, KELUARGA BERENCANA, PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK</a></li><li><a target="_blank" href="https://disnakertrans.batangharikab.go.id/">DINAS TENAGA KERJA DAN TRANSMIGRASI</a></li><li><a target="_blank" href="http://diskominfo.batangharikab.go.id/">DINAS KOMUNIKASI DAN INFORMATIKA</a></li><li><a target="_blank" href="http://disbunnak.batangharikab.go.id/">DINAS PERKEBUNAN DAN PETERNAKAN</a></li><li><a target="_blank" href="http://dishub.batangharikab.go.id/">DINAS PERHUBUNGAN</a></li><li><a target="_blank" href="http://dinsos.batangharikab.go.id/">DINAS SOSIAL</a></li><li><a target="_blank" href="http://dpmd.batangharikab.go.id/">DINAS PEMBERDAYAAN MASYARAKAT DAN DESA</a></li><li><a target="_blank" href="http://disdukcapil.batangharikab.go.id/">DINAS KEPENDUDUKAN DAN PENCATATAN SIPIL</a></li><li><a target="_blank" href="http://damkar.batangharikab.go.id/">DINAS PEMADAM KEBAKARAN DAN PENYELAMATAN</a></li><li><a target="_blank" href="https://pdk.batangharikab.go.id/">DINAS PENDIDIKAN DAN KEBUDAYAAN</a></li><li><a target="_blank" href="http://perkim.batangharikab.go.id/">DINAS PERUMAHAN DAN KAWASAN PEMUKIMAN</a></li><li><a target="_blank" href="http://dinkes.batangharikab.go.id/">DINAS KESEHATAN</a></li><li><a target="_blank" href="http://pupr.batangharikab.go.id/">DINAS  PEKERJAAN UMUM DAN PENATAAN RUANG</a></li><li><a target="_blank" href="http://dpmptsp.batangharikab.go.id/">DINAS PENANAMAN MODAL DAN PELAYANAN TERPADU SATU PINTU</a></li><li><a target="_blank" href="http://dispora.batangharikab.go.id/">DINAS PEMUDA DAN OLAHRAGA</a></li><li><a target="_blank" href="http://dinaslh.batangharikab.go.id/">DINAS LINGKUNGAN HIDUP</a></li><li><a target="_blank" href="http://diskankp.batangharikab.go.id/">DINAS PERIKANAN DAN KETAHANAN PANGAN</a></li><li><a target="_blank" href="http://dtph.batangharikab.go.id/">DINAS TANAMAN PANGAN DAN HORTIKULTURA</a></li><li><a target="_blank" href="http://diskoperindag.batangharikab.go.id/">DINAS KOPERASI PERINDUSTRIAN DAN PERDAGANGAN</a></li></ul></li><li class='category'>Badan
+             <ul><li><a target="_blank" href="http://satpolpp.batangharikab.go.id/">SATUAN POLISI PAMONG PRAJA</a></li><li><a target="_blank" href="http://bpbd.batangharikab.go.id/">BADAN PENANGGULANGAN BENCANA DAERAH</a></li><li><a target="_blank" href="http://bkpsdmd.batangharikab.go.id/">BADAN KEPEGAWAIAN DAN PENGEMBANGAN SUMBER DAYA MANUSIA DAERAH</a></li><li><a target="_blank" href="http://bappeda.batangharikab.go.id/">BADAN PERENCANAAN PEMBANGUNAN DAERAH</a></li><li><a target="_blank" href="http://bakeuda.batangharikab.go.id/">BADAN KEUANGAN DAERAH</a></li><li><a target="_blank" href="http://balitbangda.batangharikab.go.id/">BADAN PENELITIAN DAN PENGEMBANGAN DAERAH</a></li><li><a target="_blank" href="http://inspektorat.batangharikab.go.id/">INSPEKTORAT DAERAH</a></li></ul></li><li class='category'>Kantor
+             <ul><li><a target="_blank" href="http://kesbangpol.batangharikab.go.id/">KESATUAN BANGSA DAN POLITIK KABUPATEN BATANG HARI</a></li><li><a target="_blank" href="http://rsudhamba.batangharikab.go.id/">RUMAH SAKIT UMUM DAERAH HAMBA</a></li></ul></li></ul></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="features_item sm-m-top-30">
-                                    <div class="f_item_icon">
-                                        <i class="fa fa-tablet"></i>
-                                    </div>
+                                   
                                     <div class="f_item_text">
                                         <h3>BERITA DAERAH</h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque eleifend
@@ -222,9 +226,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="features_item sm-m-top-30">
-                                    <div class="f_item_icon">
-                                        <i class="fa fa-sliders"></i>
-                                    </div>
+                                   
                                     <div class="f_item_text">
                                         <h3>Easy to Customize</h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque eleifend
