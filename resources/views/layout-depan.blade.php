@@ -39,9 +39,9 @@
         <!--<link rel="stylesheet" href="{{asset('frontend/assets/css/colors/maron.css')}}">-->
 
         <!--Theme Responsive css-->
-        <link rel="stylesheet" href="{{asset('frontend/assets/css/responsive.css" />
+        <link rel="stylesheet" href="{{asset('frontend/assets/css/responsive.css')}}" />
 
-        <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="{{ asset('frontend/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
     </head>
 
     <body data-spy="scroll" data-target=".navbar-collapse">
@@ -118,8 +118,8 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <a class="navbar-brand" href="#brand">
-                            <img src="assets/images/logo.png" class="logo" alt="">
-                            <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
+                            <img src="frontend/assets/images/logo.png')}}" class="logo" alt="">
+                            <!--<img src="frontend/assets/images/footer-logo.png')}}" class="logo logo-scrolled" alt="">-->
                         </a>
 
                     </div>
@@ -255,19 +255,19 @@
                                     <div class="business_items text-center">
                                         <div class="business_item">
                                             <div class="business_img">
-                                                <img src="assets/images/about-img1.jpg" alt="" />
+                                                <img src="frontend/assets/images/about-img1.jpg" alt="" />
                                             </div>
                                         </div>
 
                                         <div class="business_item">
                                             <div class="business_img">
-                                                <img src="assets/images/about-img1.jpg" alt="" />
+                                                <img src="frontend/assets/images/about-img1.jpg" alt="" />
                                             </div>
                                         </div>
 
                                         <div class="business_item">
                                             <div class="business_img">
-                                                <img src="assets/images/about-img1.jpg" alt="" />
+                                                <img src="frontend/assets/images/about-img1.jpg" alt="" />
                                             </div>
                                         </div>
                                     </div>
@@ -325,7 +325,7 @@
                                             <div class="col-sm-3">
                                                 <div class="port_item xs-m-top-30">
                                                     <div class="port_img">
-                                                        <img src="assets/images/work-img1.jpg" alt="" />
+                                                        <img src="frontend/assets/images/work-img1.jpg" alt="" />
                                                         <div class="port_overlay text-center">
                                                             <a href="assets/images/work-img1.jpg" class="popup-img">+</a>
                                                         </div>
@@ -339,7 +339,7 @@
                                             <div class="col-sm-3">
                                                 <div class="port_item xs-m-top-30">
                                                     <div class="port_img">
-                                                        <img src="assets/images/work-img2.jpg" alt="" />
+                                                        <img src="frontend/assets/images/work-img2.jpg" alt="" />
                                                         <div class="port_overlay text-center">
                                                             <a href="assets/images/work-img2.jpg" class="popup-img">+</a>
                                                         </div>
@@ -353,7 +353,7 @@
                                             <div class="col-sm-3">
                                                 <div class="port_item xs-m-top-30">
                                                     <div class="port_img">
-                                                        <img src="assets/images/work-img3.jpg" alt="" />
+                                                        <img src="frontend/assets/images/work-img3.jpg" alt="" />
                                                         <div class="port_overlay text-center">
                                                             <a href="assets/images/work-img3.jpg" class="popup-img">+</a>
                                                         </div>
@@ -367,7 +367,7 @@
                                             <div class="col-sm-3">
                                                 <div class="port_item xs-m-top-30">
                                                     <div class="port_img">
-                                                        <img src="assets/images/work-img4.jpg" alt="" />
+                                                        <img src="frontend/assets/images/work-img4.jpg" alt="" />
                                                         <div class="port_overlay text-center">
                                                             <a href="assets/images/work-img4.jpg" class="popup-img">+</a>
                                                         </div>
@@ -388,7 +388,7 @@
                                             <div class="col-sm-3">
                                                 <div class="port_item xs-m-top-30">
                                                     <div class="port_img">
-                                                        <img src="assets/images/work-img1.jpg" alt="" />
+                                                        <img src="frontend/assets/images/work-img1.jpg" alt="" />
                                                         <div class="port_overlay text-center">
                                                             <a href="assets/images/work-img1.jpg" class="popup-img">+</a>
                                                         </div>
@@ -402,7 +402,7 @@
                                             <div class="col-sm-3">
                                                 <div class="port_item xs-m-top-30">
                                                     <div class="port_img">
-                                                        <img src="assets/images/work-img2.jpg" alt="" />
+                                                        <img src="frontend/assets/images/work-img2.jpg" alt="" />
                                                         <div class="port_overlay text-center">
                                                             <a href="assets/images/work-img2.jpg" class="popup-img">+</a>
                                                         </div>
@@ -416,7 +416,7 @@
                                             <div class="col-sm-3">
                                                 <div class="port_item xs-m-top-30">
                                                     <div class="port_img">
-                                                        <img src="assets/images/work-img3.jpg" alt="" />
+                                                        <img src="frontend/assets/images/work-img3.jpg" alt="" />
                                                         <div class="port_overlay text-center">
                                                             <a href="assets/images/work-img3.jpg" class="popup-img">+</a>
                                                         </div>
@@ -430,7 +430,7 @@
                                             <div class="col-sm-3">
                                                 <div class="port_item xs-m-top-30">
                                                     <div class="port_img">
-                                                        <img src="assets/images/work-img4.jpg" alt="" />
+                                                        <img src="frontend/assets/images/work-img4.jpg" alt="" />
                                                         <div class="port_overlay text-center">
                                                             <a href="assets/images/work-img4.jpg" class="popup-img">+</a>
                                                         </div>
@@ -451,7 +451,7 @@
                                             <div class="col-sm-3">
                                                 <div class="port_item xs-m-top-30">
                                                     <div class="port_img">
-                                                        <img src="assets/images/work-img1.jpg" alt="" />
+                                                        <img src="frontend/assets/images/work-img1.jpg" alt="" />
                                                         <div class="port_overlay text-center">
                                                             <a href="assets/images/work-img1.jpg" class="popup-img">+</a>
                                                         </div>
@@ -465,7 +465,7 @@
                                             <div class="col-sm-3">
                                                 <div class="port_item xs-m-top-30">
                                                     <div class="port_img">
-                                                        <img src="assets/images/work-img2.jpg" alt="" />
+                                                        <img src="frontend/assets/images/work-img2.jpg" alt="" />
                                                         <div class="port_overlay text-center">
                                                             <a href="assets/images/work-img2.jpg" class="popup-img">+</a>
                                                         </div>
@@ -479,7 +479,7 @@
                                             <div class="col-sm-3">
                                                 <div class="port_item xs-m-top-30">
                                                     <div class="port_img">
-                                                        <img src="assets/images/work-img3.jpg" alt="" />
+                                                        <img src="frontend/assets/images/work-img3.jpg" alt="" />
                                                         <div class="port_overlay text-center">
                                                             <a href="assets/images/work-img3.jpg" class="popup-img">+</a>
                                                         </div>
@@ -493,7 +493,7 @@
                                             <div class="col-sm-3">
                                                 <div class="port_item xs-m-top-30">
                                                     <div class="port_img">
-                                                        <img src="assets/images/work-img4.jpg" alt="" />
+                                                        <img src="frontend/assets/images/work-img4.jpg" alt="" />
                                                         <div class="port_overlay text-center">
                                                             <a href="assets/images/work-img4.jpg" class="popup-img">+</a>
                                                         </div>
@@ -588,32 +588,32 @@
                         <div class="main_brand text-center">
                             <div class="col-md-2 col-sm-4 col-xs-6">
                                 <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img1.png" alt="" />
+                                    <img src="frontend/assets/images/cbrand-img1.png" alt="" />
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4 col-xs-6">
                                 <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img2.png" alt="" />
+                                    <img src="frontend/assets/images/cbrand-img2.png" alt="" />
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4 col-xs-6">
                                 <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img3.png" alt="" />
+                                    <img src="frontend/assets/images/cbrand-img3.png" alt="" />
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4 col-xs-6">
                                 <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img4.png" alt="" />
+                                    <img src="frontend/assets/images/cbrand-img4.png" alt="" />
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4 col-xs-6">
                                 <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img5.png" alt="" />
+                                    <img src="frontend/assets/images/cbrand-img5.png" alt="" />
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4 col-xs-6">
                                 <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img6.png" alt="" />
+                                    <img src="frontend/assets/images/cbrand-img6.png" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -687,21 +687,21 @@
                                 <div class="widget_item widget_latest sm-m-top-50">
                                     <h5 class="text-white">Latest News</h5>
                                     <div class="widget_latst_item m-top-30">
-                                        <div class="item_icon"><img src="assets/images/ltst-img-1.jpg" alt="" /></div>
+                                        <div class="item_icon"><img src="frontend/assets/images/ltst-img-1.jpg" alt="" /></div>
                                         <div class="widget_latst_item_text">
                                             <p>Lorem ipsum dolor sit amet, consectetur</p>
                                             <a href="">21<sup>th</sup> July 2016</a>
                                         </div>
                                     </div>
                                     <div class="widget_latst_item m-top-30">
-                                        <div class="item_icon"><img src="assets/images/ltst-img-2.jpg" alt="" /></div>
+                                        <div class="item_icon"><img src="frontend/assets/images/ltst-img-2.jpg" alt="" /></div>
                                         <div class="widget_latst_item_text">
                                             <p>Lorem ipsum dolor sit amet, consectetur</p>
                                             <a href="">21<sup>th</sup> July 2016</a>
                                         </div>
                                     </div>
                                     <div class="widget_latst_item m-top-30">
-                                        <div class="item_icon"><img src="assets/images/ltst-img-3.jpg" alt="" /></div>
+                                        <div class="item_icon"><img src="frontend/assets/images/ltst-img-3.jpg" alt="" /></div>
                                         <div class="widget_latst_item_text">
                                             <p>Lorem ipsum dolor sit amet, consectetur</p>
                                             <a href="">21<sup>th</sup> July 2016</a>
@@ -785,21 +785,21 @@
 
         <!-- JS includes -->
 
-        <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
-        <script src="assets/js/vendor/bootstrap.min.js"></script>
+        <script src="{{ asset('frontend/assets/js/vendor/jquery-1.11.2.min.js')}}"></script>
+        <script src="{{ asset('frontend/assets/js/vendor/bootstrap.min.js')}}"></script>
 
-        <script src="assets/js/owl.carousel.min.js"></script>
-        <script src="assets/js/jquery.magnific-popup.js"></script>
-        <script src="assets/js/jquery.easing.1.3.js"></script>
-        <script src="assets/css/slick/slick.js"></script>
-        <script src="assets/css/slick/slick.min.js"></script>
-        <script src="assets/js/jquery.collapse.js"></script>
-        <script src="assets/js/bootsnav.js"></script>
+        <script src="{{ asset('frontend/assets/js/owl.carousel.min.js')}}"></script>
+        <script src="{{ asset('frontend/assets/js/jquery.magnific-popup.js')}}"></script>
+        <script src="{{ asset('frontend/assets/js/jquery.easing.1.3.js')}}"></script>
+        <script src="{{ asset('frontend/assets/css/slick/slick.js')}}"></script>
+        <script src="{{ asset('frontend/assets/css/slick/slick.min.js')}}"></script>
+        <script src="{{ asset('frontend/assets/js/jquery.collapse.js')}}"></script>
+        <script src="{{ asset('frontend/assets/js/bootsnav.js')}}"></script>
 
 
 
-        <script src="assets/js/plugins.js"></script>
-        <script src="assets/js/main.js"></script>
+        <script src="{{ asset('frontend/assets/js/plugins.js')}}"></script>
+        <script src="{{ asset('frontend/assets/js/main.js')}}"></script>
 
     </body>
 </html>
