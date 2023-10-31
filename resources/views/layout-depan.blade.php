@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>Website Pemerintah Kabupaten Batang Hari</title>
+        <title>.:: Situs Pemerintah Kabupaten Batanghari | Bumi Serentak Bak Regam ::.</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="favicon.ico">
@@ -103,26 +103,82 @@
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-          data-mdb-toggle="dropdown" aria-expanded="false">
-          Profil
-        </a>
-        <ul class="dropdown-menu">
-          <li>
-            <a class="dropdown-item" href="1">Visi dan Misi</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="2">Struktur Organisasi</a>
-          </li>
-         
-        </ul>
-      </li>
-                            <li><a href="#home">Home</a></li>                    
-                            <li><a href="#features">About</a></li>
-                            <li><a href="#business">Service</a></li>
-                            <li><a href="#work">Portfolio</a></li>
-                            <li><a href="#test">Blog</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false">
+                            Profil
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="1">Visi dan Misi</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="2">Struktur Organisasi</a>
+                            </li>
+                            
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false">
+                            Peluang Investasi
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="1">Peta Potensi Investasi</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="2">Profil Peluang Investasi</a>
+                            </li>
+                            
+                            </ul>
+                        </li>         
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false">
+                            Pembangunan Daerah
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="1">Bidang PNPM</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="2">Bidang Peternakan</a>
+                            </li>
+                            
+                            </ul>
+                        </li>    
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false">
+                            Galeri
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="1">Galeri Foto</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="2">Galeri Video</a>
+                            </li>
+                            
+                            </ul>
+                        </li>    
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false">
+                           Arsip
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="1">Berita Daerah</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="2">Berita Pemerintahan</a>
+                            </li>
+                            
+                            </ul>
+                        </li>    
+                            <li><a href="#test">Forum Pembangunan</a></li>
+                            <li><a href="https://www.youtube.com/channel/UCVYfAtl5KGKH8EPwQENU_0g">Youtube</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div> 
@@ -131,57 +187,9 @@
 
             <!--Home Sections-->
 
-            <section id="home" class="home bg-black fix">
-                <div class="overlay"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="main_home text-center">
-                            <div class="col-md-12">
-                                <div class="hello_slid">
-                                    <div class="slid_item">
-                                        <div class="home_text ">
-                                            <h2 class="text-white">Welcome to <strong>Made</strong></h2>
-                                            <h1 class="text-white">We Do Business All Of Time</h1>
-                                            <h3 class="text-white">- We Create a <strong>Concept</strong> into The Market -</h3>
-                                        </div>
-
-                                        <div class="home_btns m-top-40">
-                                            <a href="" class="btn btn-primary m-top-20">Buy Now</a>
-                                            <a href="" class="btn btn-default m-top-20">Take a Tour</a>
-                                        </div>
-                                    </div><!-- End off slid item -->
-                                    <div class="slid_item">
-                                        <div class="home_text ">
-                                            <h2 class="text-white">Welcome to <strong>Made</strong></h2>
-                                            <h1 class="text-white">We Do Business All Of Time</h1>
-                                            <h3 class="text-white">- We Create a <strong>Concept</strong> into The Market -</h3>
-                                        </div>
-
-                                        <div class="home_btns m-top-40">
-                                            <a href="" class="btn btn-primary m-top-20">Buy Now</a>
-                                            <a href="" class="btn btn-default m-top-20">Take a Tour</a>
-                                        </div>
-                                    </div><!-- End off slid item -->
-                                    <div class="slid_item">
-                                        <div class="home_text ">
-                                            <h2 class="text-white">Welcome to <strong>Made</strong></h2>
-                                            <h1 class="text-white">We Do Business All Of Time</h1>
-                                            <h3 class="text-white">- We Create a <strong>Concept</strong> into The Market -</h3>
-                                        </div>
-
-                                        <div class="home_btns m-top-40">
-                                            <a href="" class="btn btn-primary m-top-20">Buy Now</a>
-                                            <a href="" class="btn btn-default m-top-20">Take a Tour</a>
-                                        </div>
-                                    </div><!-- End off slid item -->
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                    </div><!--End off row-->
-                </div><!--End off container -->
+            <section id="home" class="home">
+            <div class="overlay"></div>
+                
             </section> <!--End off Home Sections-->
 
 
@@ -193,11 +201,8 @@
                         <div class="main_features fix roomy-70">
                             <div class="col-md-4">
                                 <div class="features_item sm-m-top-30">
-                                    <div class="f_item_icon">
-                                        <i class="fa fa-thumbs-o-up"></i>
-                                    </div>
                                     <div class="f_item_text">
-                                        <h3>Best Quality Design</h3>
+                                        <h3>Profil SKPD</h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque eleifend
                                             in sit amet mattis volutpat rhoncus.</p>
                                     </div>
@@ -209,7 +214,7 @@
                                         <i class="fa fa-tablet"></i>
                                     </div>
                                     <div class="f_item_text">
-                                        <h3>Responsive Design</h3>
+                                        <h3>BERITA DAERAH</h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque eleifend
                                             in sit amet mattis volutpat rhoncus.</p>
                                     </div>
