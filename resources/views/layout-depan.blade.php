@@ -65,32 +65,6 @@
 
 
             <nav class="navbar navbar-default bootsnav navbar-fixed">
-                <div class="navbar-top bg-grey fix">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="navbar-callus text-left sm-text-center">
-                                    <ul class="list-inline">
-                                        <li><a href=""><i class="fa fa-phone"></i> Call us: 1234 5678 90</a></li>
-                                        <li><a href=""><i class="fa fa-envelope-o"></i> Contact us: your@email.com</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="navbar-socail text-right sm-text-center">
-                                    <ul class="list-inline">
-                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href=""><i class="fa fa-behance"></i></a></li>
-                                        <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Start Top Search -->
                 <div class="top-search">
@@ -118,7 +92,7 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <a class="navbar-brand" href="#brand">
-                            <img src="frontend/assets/images/logo.png')}}" class="logo" alt="">
+                            <img src="frontend/assets/images/logo.png" class="logo" height="50px" alt="">
                             <!--<img src="frontend/assets/images/footer-logo.png')}}" class="logo logo-scrolled" alt="">-->
                         </a>
 
@@ -128,6 +102,21 @@
                     <!-- navbar menu -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+          data-mdb-toggle="dropdown" aria-expanded="false">
+          Profil
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="1">Visi dan Misi</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="2">Struktur Organisasi</a>
+          </li>
+         
+        </ul>
+      </li>
                             <li><a href="#home">Home</a></li>                    
                             <li><a href="#features">About</a></li>
                             <li><a href="#business">Service</a></li>
