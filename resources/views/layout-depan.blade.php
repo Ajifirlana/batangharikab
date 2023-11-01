@@ -13,7 +13,7 @@
         <!--Google Font link-->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-
+        <link rel="stylesheet" href="{{asset('frontend/assets/css/custom.css')}}"> 
         <link rel="stylesheet" href="{{asset('frontend/assets/css/slick/slick.css')}}"> 
         <link rel="stylesheet" href="{{asset('frontend/assets/css/slick/slick-theme.css')}}">
         <link rel="stylesheet" href="{{asset('frontend/assets/css/animate.css')}}">
@@ -246,46 +246,6 @@
 </li>
         </ul>
             </p>
-           <style>
-        /* Style for the dropdown button */
-        /* Style for the dropdown content (hidden by default) */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
-            z-index: 1;
-            max-height: 200px; /* Set a maximum height for scrolling */
-            overflow-y: auto; /* Enable vertical scrolling */
-            z-index: 1;
-        }
-        .dropdown h6 {
-        
-            margin: 0;
-        }
-
-        /* Style for the dropdown links */
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        /* Change link color on hover */
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-
-        /* Show the dropdown content when hovering over the dropdown button */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .logo-portal{
-            border-radius: 20px;
-        }
-    </style>
            <p> <img class="logo-portal" src="logo/lakip.png" alt="Avatar" style="width:100%"></p>
            <p><img class="logo-portal"  src="logo/lakip-skpd.jpg" alt="Avatar" style="width:100%"></p>
            <p><img class="logo-portal" src="logo/portal-app.png" alt="Avatar" style="width:100%"></p>
@@ -302,8 +262,7 @@
                                         <h3><i class="fa fa-arrow-circle-right"></i>BERITA DAERAH</h3>
                                         <div class="card">
 <div class="profil-skpd">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque eleifend
-                                            in sit amet mattis volutpat rhoncus.</p>
+                                        <p>Dalam Pengembangan</p>
 </div></div>
                                         </div>
                                 </div>
@@ -312,11 +271,11 @@
                                 <div class="features_item sm-m-top-30">
                                    
                                     <div class="f_item_text">
-                                        <h3><i class="fa fa-arrow-circle-right"></i>Easy to Customize</h3>
-                                        <div class="card">
+                                    <h3><i class="fa fa-arrow-circle-right"></i>Website SKPD</h3> 
+                                    <div class="card">
 <div class="profil-skpd">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque eleifend
-                                            in sit amet mattis volutpat rhoncus.</p>
+<p><img class="logo-portal" src="logo/ppid.jpg" alt="Avatar" style="width:100%"></p>
+           
 </div></div>
                                     </div>
                                 </div>
