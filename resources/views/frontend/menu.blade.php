@@ -27,8 +27,8 @@
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <a class="navbar-brand" href="#brand">
-                            <img src="frontend/assets/images/logo.png" class="logo" height="50px" alt="">
+                        <a class="navbar-brand" href="{{url('/')}}">
+                            <img src="{{asset('frontend/assets/images/logo.png')}}" class="logo" height="50px" alt="">
                             <!--<img src="frontend/assets/images/footer-logo.png')}}" class="logo logo-scrolled" alt="">-->
                         </a>
 

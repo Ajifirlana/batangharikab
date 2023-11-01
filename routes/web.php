@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Frontend\PageController;
+use App\Http\Controllers\Frontend\BeritaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,4 +21,8 @@ use App\Http\Controllers\Frontend\PageController;
 
 Route::controller(PageController::class)->group(function() {
     Route::get('/', 'home')->name('home');
+});
+//BERITA
+Route::controller(BeritaController::class)->group(function() {
+        Route::get('baca/{id}/{title}/{tanggal}', 'baca')->name('baca');
 });

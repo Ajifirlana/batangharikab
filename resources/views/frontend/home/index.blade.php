@@ -31,7 +31,7 @@
                                         <h3><i class="fa fa-arrow-circle-right"></i>Profil SKPD</h3>
                                    
 <div class="card">
-<div class="profil-skpd">
+    <div class="profil-skpd">
     <p>
         <ul>
             <li class="dropdown"><h6><i class="fa fa-quote-left"></i>
@@ -88,9 +88,12 @@
                                         <div class="card">
                                         <div class="profil-skpd">
                                         @foreach($berita_terbaru as $berita)
-                                        <p><i class="bi bi-camera-reels"></i>{{$berita->judul}}</p>
-                         
-              @endforeach
+                                        <?php
+              $url = URL::to("baca/".$berita->id."/".str_replace(' ','-',$berita->judul)."/".$berita->tanggal);
+            ?>
+                                        <a href="{{$url}}"><h6>{{$berita->judul}}</h6></a>  
+                                        <hr>   
+                                        @endforeach
                                         </div>
                                         </div>
                                         </div>
