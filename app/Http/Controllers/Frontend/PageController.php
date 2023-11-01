@@ -4,11 +4,14 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use DB;
 class PageController extends Controller
 {
     function home(){
-        return view('home');
+      $berita_terbaru =  DB::table('berita')->orderBy('tanggal','desc')->offset(0)->limit(8)->get();
+      
+        return view('frontend.home.index', array(
+        "berita_terbaru"=>$berita_terbaru));
      }
      function slider(){
         $gallery = DB::table('gallery_photo')->orderby('id_gallery','desc')->paginate(10);
