@@ -207,17 +207,88 @@
                                    
 <div class="card">
 <div class="profil-skpd">
-    <!-- <p>
+    <p>
         <ul>
-            <li class="dropdown">Sekretariat
-             <ul><li><a target="_blank" href="https://setda.batangharikab.go.id/">SEKRETARIAT DAERAH</a></li><li><a target="_blank" href="http://dprd.batangharikab.go.id/">SEKRETARIAT DPRD</a></li></ul></li><li class='category'>Dinas
-             <ul><li><a target="_blank" href="http://dpdk.batangharikab.go.id/">DINAS PERPUSTAKAAN DAN KEARSIPAN</a></li><li><a target="_blank" href="http://bkbpp.batangharikab.go.id/">DINAS PENGENDALIAN PENDUDUK, KELUARGA BERENCANA, PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK</a></li><li><a target="_blank" href="https://disnakertrans.batangharikab.go.id/">DINAS TENAGA KERJA DAN TRANSMIGRASI</a></li><li><a target="_blank" href="http://diskominfo.batangharikab.go.id/">DINAS KOMUNIKASI DAN INFORMATIKA</a></li><li><a target="_blank" href="http://disbunnak.batangharikab.go.id/">DINAS PERKEBUNAN DAN PETERNAKAN</a></li><li><a target="_blank" href="http://dishub.batangharikab.go.id/">DINAS PERHUBUNGAN</a></li><li><a target="_blank" href="http://dinsos.batangharikab.go.id/">DINAS SOSIAL</a></li><li><a target="_blank" href="http://dpmd.batangharikab.go.id/">DINAS PEMBERDAYAAN MASYARAKAT DAN DESA</a></li><li><a target="_blank" href="http://disdukcapil.batangharikab.go.id/">DINAS KEPENDUDUKAN DAN PENCATATAN SIPIL</a></li><li><a target="_blank" href="http://damkar.batangharikab.go.id/">DINAS PEMADAM KEBAKARAN DAN PENYELAMATAN</a></li><li><a target="_blank" href="https://pdk.batangharikab.go.id/">DINAS PENDIDIKAN DAN KEBUDAYAAN</a></li><li><a target="_blank" href="http://perkim.batangharikab.go.id/">DINAS PERUMAHAN DAN KAWASAN PEMUKIMAN</a></li><li><a target="_blank" href="http://dinkes.batangharikab.go.id/">DINAS KESEHATAN</a></li><li><a target="_blank" href="http://pupr.batangharikab.go.id/">DINAS  PEKERJAAN UMUM DAN PENATAAN RUANG</a></li><li><a target="_blank" href="http://dpmptsp.batangharikab.go.id/">DINAS PENANAMAN MODAL DAN PELAYANAN TERPADU SATU PINTU</a></li><li><a target="_blank" href="http://dispora.batangharikab.go.id/">DINAS PEMUDA DAN OLAHRAGA</a></li><li><a target="_blank" href="http://dinaslh.batangharikab.go.id/">DINAS LINGKUNGAN HIDUP</a></li><li><a target="_blank" href="http://diskankp.batangharikab.go.id/">DINAS PERIKANAN DAN KETAHANAN PANGAN</a></li><li><a target="_blank" href="http://dtph.batangharikab.go.id/">DINAS TANAMAN PANGAN DAN HORTIKULTURA</a></li><li><a target="_blank" href="http://diskoperindag.batangharikab.go.id/">DINAS KOPERASI PERINDUSTRIAN DAN PERDAGANGAN</a></li></ul></li><li class='category'>Badan
-             <ul><li><a target="_blank" href="http://satpolpp.batangharikab.go.id/">SATUAN POLISI PAMONG PRAJA</a></li><li><a target="_blank" href="http://bpbd.batangharikab.go.id/">BADAN PENANGGULANGAN BENCANA DAERAH</a></li><li><a target="_blank" href="http://bkpsdmd.batangharikab.go.id/">BADAN KEPEGAWAIAN DAN PENGEMBANGAN SUMBER DAYA MANUSIA DAERAH</a></li><li><a target="_blank" href="http://bappeda.batangharikab.go.id/">BADAN PERENCANAAN PEMBANGUNAN DAERAH</a></li><li><a target="_blank" href="http://bakeuda.batangharikab.go.id/">BADAN KEUANGAN DAERAH</a></li><li><a target="_blank" href="http://balitbangda.batangharikab.go.id/">BADAN PENELITIAN DAN PENGEMBANGAN DAERAH</a></li><li><a target="_blank" href="http://inspektorat.batangharikab.go.id/">INSPEKTORAT DAERAH</a></li></ul></li><li class='category'>Kantor
-             <ul><li><a target="_blank" href="http://kesbangpol.batangharikab.go.id/">KESATUAN BANGSA DAN POLITIK KABUPATEN BATANG HARI</a></li><li><a target="_blank" href="http://rsudhamba.batangharikab.go.id/">RUMAH SAKIT UMUM DAERAH HAMBA</a></li></ul></li></ul>
-            </p> -->
-           <p> <img src="logo/lakip.png" alt="Avatar" style="width:100%"></p>
-           <p><img src="logo/lakip-skpd.jpg" alt="Avatar" style="width:100%"></p>
-           <p><img src="logo/portal-app.png" alt="Avatar" style="width:100%"></p>
+            <li class="dropdown"><h6><i class="fa fa-quote-left"></i>
+                                   Sekretariat</h6>
+            <div class="dropdown-content">
+                 <ul>
+                    <li><a target="_blank" href="https://setda.batangharikab.go.id/">SEKRETARIAT DAERAH</a>
+                </li><li><a target="_blank" href="http://dprd.batangharikab.go.id/">SEKRETARIAT DPRD</a></li>
+            </ul>
+            </div> 
+            </li>
+            <li class='dropdown'><h6><i class="fa fa-quote-left"></i>
+                                   Dinas</h6>
+            <div class="dropdown-content">
+            <ul>
+                <li><a target="_blank" href="http://dpdk.batangharikab.go.id/">DINAS PERPUSTAKAAN DAN KEARSIPAN</a></li>
+                <li><a target="_blank" href="http://bkbpp.batangharikab.go.id/">DINAS PENGENDALIAN PENDUDUK, KELUARGA BERENCANA, PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK</a></li><li><a target="_blank" href="https://disnakertrans.batangharikab.go.id/">DINAS TENAGA KERJA DAN TRANSMIGRASI</a></li><li><a target="_blank" href="http://diskominfo.batangharikab.go.id/">DINAS KOMUNIKASI DAN INFORMATIKA</a></li><li><a target="_blank" href="http://disbunnak.batangharikab.go.id/">DINAS PERKEBUNAN DAN PETERNAKAN</a></li><li><a target="_blank" href="http://dishub.batangharikab.go.id/">DINAS PERHUBUNGAN</a></li><li><a target="_blank" href="http://dinsos.batangharikab.go.id/">DINAS SOSIAL</a></li><li><a target="_blank" href="http://dpmd.batangharikab.go.id/">DINAS PEMBERDAYAAN MASYARAKAT DAN DESA</a></li><li><a target="_blank" href="http://disdukcapil.batangharikab.go.id/">DINAS KEPENDUDUKAN DAN PENCATATAN SIPIL</a></li><li><a target="_blank" href="http://damkar.batangharikab.go.id/">DINAS PEMADAM KEBAKARAN DAN PENYELAMATAN</a></li><li><a target="_blank" href="https://pdk.batangharikab.go.id/">DINAS PENDIDIKAN DAN KEBUDAYAAN</a></li><li><a target="_blank" href="http://perkim.batangharikab.go.id/">DINAS PERUMAHAN DAN KAWASAN PEMUKIMAN</a></li><li><a target="_blank" href="http://dinkes.batangharikab.go.id/">DINAS KESEHATAN</a></li><li><a target="_blank" href="http://pupr.batangharikab.go.id/">DINAS  PEKERJAAN UMUM DAN PENATAAN RUANG</a></li><li><a target="_blank" href="http://dpmptsp.batangharikab.go.id/">DINAS PENANAMAN MODAL DAN PELAYANAN TERPADU SATU PINTU</a></li><li><a target="_blank" href="http://dispora.batangharikab.go.id/">DINAS PEMUDA DAN OLAHRAGA</a></li><li><a target="_blank" href="http://dinaslh.batangharikab.go.id/">DINAS LINGKUNGAN HIDUP</a></li><li><a target="_blank" href="http://diskankp.batangharikab.go.id/">DINAS PERIKANAN DAN KETAHANAN PANGAN</a></li><li><a target="_blank" href="http://dtph.batangharikab.go.id/">DINAS TANAMAN PANGAN DAN HORTIKULTURA</a></li><li><a target="_blank" href="http://diskoperindag.batangharikab.go.id/">DINAS KOPERASI PERINDUSTRIAN DAN PERDAGANGAN</a></li>
+            </ul>
+            </div> 
+            </li>
+            <li class='dropdown'><h6><i class="fa fa-quote-left"></i>
+                                   Badan</h6>
+            <div class="dropdown-content">
+             <ul>
+                <li><a target="_blank" href="http://satpolpp.batangharikab.go.id/">SATUAN POLISI PAMONG PRAJA</a></li><li><a target="_blank" href="http://bpbd.batangharikab.go.id/">BADAN PENANGGULANGAN BENCANA DAERAH</a></li><li><a target="_blank" href="http://bkpsdmd.batangharikab.go.id/">BADAN KEPEGAWAIAN DAN PENGEMBANGAN SUMBER DAYA MANUSIA DAERAH</a></li><li><a target="_blank" href="http://bappeda.batangharikab.go.id/">BADAN PERENCANAAN PEMBANGUNAN DAERAH</a></li><li><a target="_blank" href="http://bakeuda.batangharikab.go.id/">BADAN KEUANGAN DAERAH</a></li><li><a target="_blank" href="http://balitbangda.batangharikab.go.id/">BADAN PENELITIAN DAN PENGEMBANGAN DAERAH</a></li><li><a target="_blank" href="http://inspektorat.batangharikab.go.id/">INSPEKTORAT DAERAH</a></li></ul>
+                </div> 
+           </li>
+            
+            <li class='dropdown'><h6><i class="fa fa-quote-left"></i>
+                                   Kantor</h6>
+            <div class="dropdown-content">
+           <ul><li><a target="_blank" href="http://kesbangpol.batangharikab.go.id/">KESATUAN BANGSA DAN POLITIK KABUPATEN BATANG HARI</a></li><li><a target="_blank" href="http://rsudhamba.batangharikab.go.id/">RUMAH SAKIT UMUM DAERAH HAMBA</a>
+           </div> 
+           </li>
+    </ul>
+             
+</li>
+        </ul>
+            </p>
+           <style>
+        /* Style for the dropdown button */
+        /* Style for the dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+            max-height: 200px; /* Set a maximum height for scrolling */
+            overflow-y: auto; /* Enable vertical scrolling */
+            z-index: 1;
+        }
+        .dropdown h6 {
+        
+            margin: 0;
+        }
+
+        /* Style for the dropdown links */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change link color on hover */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Show the dropdown content when hovering over the dropdown button */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .logo-portal{
+            border-radius: 20px;
+        }
+    </style>
+           <p> <img class="logo-portal" src="logo/lakip.png" alt="Avatar" style="width:100%"></p>
+           <p><img class="logo-portal"  src="logo/lakip-skpd.jpg" alt="Avatar" style="width:100%"></p>
+           <p><img class="logo-portal" src="logo/portal-app.png" alt="Avatar" style="width:100%"></p>
                   
 </div>
 </div>
@@ -255,346 +326,29 @@
                 </div><!-- End off container -->
             </section><!-- End off Featured Section-->
 
-
-            <!--Business Section-->
-            <!-- End off Business section -->
-
-
-            <!--product section-->
-            <section id="product" class="product">
-                <div class="container">
-                    <div class="main_product roomy-80">
-                        <div class="head_title text-center fix">
-                            <h2 class="text-uppercase">What Client Say</h2>
-                            <h5>Clean and Modern design is our best specialist</h5>
-                        </div>
-
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                            <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            </ol>
-
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner" role="listbox">
-                                <div class="item active">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="frontend/assets/images/work-img1.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img1.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="frontend/assets/images/work-img2.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img2.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="frontend/assets/images/work-img3.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img3.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="frontend/assets/images/work-img4.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img4.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="frontend/assets/images/work-img1.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img1.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="frontend/assets/images/work-img2.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img2.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="frontend/assets/images/work-img3.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img3.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="frontend/assets/images/work-img4.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img4.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="frontend/assets/images/work-img1.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img1.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="frontend/assets/images/work-img2.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img2.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="frontend/assets/images/work-img3.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img3.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="frontend/assets/images/work-img4.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img4.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <!-- Controls -->
-                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                                <i class="fa fa-angle-left" aria-hidden="true"></i>
-                                <span class="sr-only">Previous</span>
-                            </a>
-
-                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div><!-- End off row -->
-                </div><!-- End off container -->
-            </section><!-- End off Product section -->
-
-
-
-            <!--Test section-->
-            <section id="test" class="test bg-grey roomy-60 fix">
-                <div class="container">
-                    <div class="row">                        
-                        <div class="main_test fix">
-
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="head_title text-center fix">
-                                    <h2 class="text-uppercase">What Client Say</h2>
-                                    <h5>Clean and Modern design is our best specialist</h5>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="test_item fix">
-                                    <div class="item_img">
-                                        <img class="img-circle" src="assets/images/test-img1.jpg" alt="" />
-                                        <i class="fa fa-quote-left"></i>
-                                    </div>
-
-                                    <div class="item_text">
-                                        <h5>Sarah Smith</h5>
-                                        <h6>envato.com</h6>
-
-                                        <p>Natus voluptatum enim quod necessitatibus quis
-                                            expedita harum provident eos obcaecati id culpa
-                                            corporis molestias.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="test_item fix sm-m-top-30">
-                                    <div class="item_img">
-                                        <img class="img-circle" src="assets/images/test-img2.jpg" alt="" />
-                                        <i class="fa fa-quote-left"></i>
-                                    </div>
-
-                                    <div class="item_text">
-                                        <h5>Sarah Smith</h5>
-                                        <h6>envato.com</h6>
-
-                                        <p>Natus voluptatum enim quod necessitatibus quis
-                                            expedita harum provident eos obcaecati id culpa
-                                            corporis molestias.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section><!-- End off test section -->
-
-
-            <!--Brand Section-->
-            <section id="brand" class="brand fix roomy-80">
-                <div class="container">
-                    <div class="row">
-                        <div class="main_brand text-center">
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="frontend/assets/images/cbrand-img1.png" alt="" />
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="frontend/assets/images/cbrand-img2.png" alt="" />
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="frontend/assets/images/cbrand-img3.png" alt="" />
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="frontend/assets/images/cbrand-img4.png" alt="" />
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="frontend/assets/images/cbrand-img5.png" alt="" />
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="frontend/assets/images/cbrand-img6.png" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section><!-- End off Brand section -->
-
-
             <!--Call to  action section-->
             <section id="action" class="action bg-primary roomy-40">
                 <div class="container">
                     <div class="row">
                         <div class="maine_action">
-                            <div class="col-md-8">
-                                <div class="action_item text-center">
-                                    <h2 class="text-white text-uppercase">Your Promotion Text Will Be Here</h2>
-                                </div>
-                            </div>
+                            <div class="col-md-6">
+                                <h3 class="text-white text-uppercase">Video Kegiatan Pemerintah Kab. Batang Hari</h3>
+                               </div>
                             <div class="col-md-4">
+                                <div class="card-video">
                                 <div class="action_btn text-left sm-text-center">
-                                    <a href="" class="btn btn-default">Purchase Now</a>
+                                    
+                                    <h6><i class="fa fa-quote-left"></i>
+                                    <a href="">OK</a></h6>
+                                </div>
+                                </div>
+
+                                <div class="card-video">
+                                <div class="action_btn text-left sm-text-center">
+                                    
+                                    <h6><i class="fa fa-quote-left"></i>
+                                    <a href="">OK</a></h6>
+                                </div>
                                 </div>
                             </div>
                         </div>
