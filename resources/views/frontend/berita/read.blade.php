@@ -59,26 +59,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="maine_action">
-                            <div class="col-md-6">
-                                <h3 class="text-white text-uppercase">Video Kegiatan Pemerintah Kab. Batang Hari</h3>
-                               </div>
-                            <div class="col-md-4">
-                                <div class="card-video">
-                                <div class="action_btn text-left sm-text-center">
-                                    
-                                    <h6><i class="fa fa-quote-left"></i>
-                                    <a href="">OK</a></h6>
-                                </div>
-                                </div>
-
-                                <div class="card-video">
-                                <div class="action_btn text-left sm-text-center">
-                                    
-                                    <h6><i class="fa fa-quote-left"></i>
-                                    <a href="">OK</a></h6>
-                                </div>
-                                </div>
-                            </div>
+                            
+            @include("frontend.video_kegiatan")
+                            
+            @include("frontend.jadwal_event")
+                            
                         </div>
                     </div>
                 </div>
