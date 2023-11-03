@@ -13,10 +13,279 @@
             @include("frontend.menu")
             <!--Home Sections-->
 
-            <section id="home" class="home">
-            <div class="overlay"></div>
-                
-            </section> <!--End off Home Sections-->
+            <section id="product" class="product">
+                <div class="container">
+                    <div class="main_product roomy-80">
+               
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                        <img src="{{ asset('frontend/assets/images/work-img1.jpg')}}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="assets/images/work-img1.jpg" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                    <img src="{{ asset('frontend/assets/images/work-img1.jpg')}}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="assets/images/work-img2.jpg" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                    <img src="{{ asset('frontend/assets/images/work-img1.jpg')}}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="assets/images/work-img3.jpg" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                    <img src="{{ asset('frontend/assets/images/work-img1.jpg')}}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="assets/images/work-img4.jpg" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                    <img src="{{ asset('frontend/assets/images/work-img1.jpg')}}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="assets/images/work-img1.jpg" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                    <img src="{{ asset('frontend/assets/images/work-img1.jpg')}}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="assets/images/work-img2.jpg" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                    <img src="{{ asset('frontend/assets/images/work-img1.jpg')}}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="assets/images/work-img3.jpg" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                    <img src="{{ asset('frontend/assets/images/work-img1.jpg')}}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="assets/images/work-img4.jpg" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                    <img src="{{ asset('frontend/assets/images/work-img1.jpg')}}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="assets/images/work-img1.jpg" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                <span class="sr-only">Previous</span>
+                            </a>
+
+                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div><!-- End off row -->
+                </div><!-- End off container -->
+            </section><!-- End off Product section -->
+
+
+
+            <!--Test section-->
+            <section id="test" class="test bg-grey roomy-60 fix">
+                <div class="container">
+                    <div class="row">                        
+                        <div class="main_test fix">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="head_title text-center fix">
+                                    <h2 class="text-uppercase">Selamat Datang di Kab. Batanghari</h2>
+                                    <h5>
+Bumi Serentak Bak Regam</h5>
+                                </div>
+                            </div>
+                              
+                            <div class="col-md-6">
+                                <div class="test_item fix">
+                                    <div class="item_img">
+                                    <img class="img-circle" src="{{ asset('frontend/assets/images/test-img1.jpg')}}" alt="" />
+                                    </div>
+
+                                    <div class="item_text">
+                                        <h5>Sarah Smith</h5>
+                                        <h6>envato.com</h6>
+
+                                        <p>Natus voluptatum enim quod necessitatibus quis
+                                            expedita harum provident eos obcaecati id culpa
+                                            corporis molestias.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="test_item fix sm-m-top-30">
+                                    <div class="item_img">
+                                    <img class="img-circle" src="{{ asset('frontend/assets/images/test-img1.jpg')}}" alt="" />
+                                   </div>
+
+                                    <div class="item_text">
+                                        <h5>Sarah Smith</h5>
+                                        <h6>envato.com</h6>
+
+                                        <p>Natus voluptatum enim quod necessitatibus quis
+                                            expedita harum provident eos obcaecati id culpa
+                                            corporis molestias.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section><!-- End off test section -->
+
+            <!--Brand Section-->
+            <section id="brand" class="brand fix roomy-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_brand text-center">
+                            <div class="col-md-2 col-sm-4 col-xs-6">
+                                <div class="brand_item sm-m-top-20">
+                                    <img src="assets/images/cbrand-img1.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-xs-6">
+                                <div class="brand_item sm-m-top-20">
+                                    <img src="assets/images/cbrand-img2.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-xs-6">
+                                <div class="brand_item sm-m-top-20">
+                                    <img src="assets/images/cbrand-img3.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-xs-6">
+                                <div class="brand_item sm-m-top-20">
+                                    <img src="assets/images/cbrand-img4.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-xs-6">
+                                <div class="brand_item sm-m-top-20">
+                                    <img src="assets/images/cbrand-img5.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-xs-6">
+                                <div class="brand_item sm-m-top-20">
+                                    <img src="assets/images/cbrand-img6.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!-- End off Brand section -->
 
 
 
