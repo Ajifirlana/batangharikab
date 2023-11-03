@@ -19,10 +19,13 @@
     width: 100%;
 
     border-radius: 10px;
-            background-color: #f3f8f7;
             padding: 10px;  margin: 10px;
            
   }
+  .card-video:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
   .profil-skpd {
     padding: 2px 16px;
   }

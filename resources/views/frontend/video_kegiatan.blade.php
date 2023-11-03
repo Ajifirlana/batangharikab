@@ -6,13 +6,16 @@
                                 </div><!-- End off widget item -->
                                 </div>
 <div class="col-md-4">
-                                  
+@foreach($video_kegiatan as $row)                                  
                                   <div class="widget_latst_item m-top-30">
-                                        <div class="item_icon"><img src="frontend/assets/images/ltst-img-1.jpg" alt="" /></div>
+                                        <div class="item_icon">
+                        <img src="{{ asset('frontend/assets/images/ltst-img-1.jpg')}}" alt="" /></div>
                                         <div class="widget_latst_item_text">
-                                            <p>VIDEO: BUPATI BATANGHARI HADIRI HUT PGRI TINGKAT KAB. BATANG HARI</p>
+                                        
+                                        <div class="f_item_text">    
+                                        <a href="{{$row->link}}"><p>{{$row->judul}}</p></a>
                                             <a href="">21<sup>th</sup> July 2016</a>
-                                        </div>
+                                        </div></div>
                                     </div>
-                                   
+                                   @endforeach
                                 </div><!-- End off widget item -->

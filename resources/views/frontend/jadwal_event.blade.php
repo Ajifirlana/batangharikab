@@ -1,5 +1,6 @@
 <div class="col-md-4">
-                                
+
+                                <div class="card-video">
                                     <div class="features_item sm-m-top-30">
                                        
                                         </div>
@@ -10,4 +11,5 @@
                                         </div>
                                     </div>
                                     
+                            </div>  
                             </div>
