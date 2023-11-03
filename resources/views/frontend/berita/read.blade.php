@@ -62,8 +62,6 @@
                             
             @include("frontend.video_kegiatan")
                             
-            @include("frontend.jadwal_event")
-                            
                         </div>
                     </div>
                 </div>

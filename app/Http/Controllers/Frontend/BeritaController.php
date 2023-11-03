@@ -6,12 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Berita;
 use URL;
-
+use DB;
 
 class BeritaController extends Controller
 {
     public function baca($id, $title, $tanggal){
-   $berita = Berita::find($id);
+      $video_kegiatan =  DB::table('video_kegiatan')->orderBy('id','desc')->offset(0)->limit(5)->get();
+      $berita = Berita::find($id);
    if (!$berita ){
        throw new HttpException(404);
    }
@@ -27,7 +28,8 @@ class BeritaController extends Controller
   
    $berita->dibaca = $berita->dibaca + 1;
    $berita->save();
-        return view('frontend.berita.read',array("route"=>"berita", "berita"=>$berita));
+        return view('frontend.berita.read',array("route"=>"berita", "berita"=>$berita,
+        "video_kegiatan"=>$video_kegiatan));
     }
  
 }
