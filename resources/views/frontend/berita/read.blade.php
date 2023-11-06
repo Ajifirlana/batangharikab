@@ -8,12 +8,8 @@
 
             @include("frontend.menu")
             <!--Home Sections-->
-
-            <section id="home" class="home">
-            <div class="overlay"></div>
-                
-            </section> <!--End off Home Sections-->
-
+            @include("frontend.slider_image")
+            
  <!--Featured Section-->
  <section id="features" class="features">
                 <div class="container">

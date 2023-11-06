@@ -662,11 +662,6 @@ textarea::-ms-input-placeholder{
     -webkit-transform: scale(1.1) rotate(4deg); 
     transform: scale(1.1) rotate(4deg); 
 }
-
-.culmn{
-    width:100%;
-    overflow: hidden;
-}
 .fix{
     overflow: hidden;
 }
