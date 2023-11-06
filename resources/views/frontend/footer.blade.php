@@ -5,12 +5,9 @@
                         <div class="widget_area">
                             <div class="col-md-3">
                                 <div class="widget_item widget_about">
-                                    <h5 class="text-white">About Us</h5>
-                                    <p class="m-top-20">Lorem ipsum dolor sit amet consec tetur adipiscing elit 
-                                        nulla aliquet pretium nisi in cursus 
-                                        maecenas nec eleifen.</p>
+                                <h5 class="text-white">Kontak Kami</h5>
                                     <div class="widget_ab_item m-top-30">
-                                        <div class="item_icon"><i class="fa fa-location-arrow"></i></div>
+                                                                          <div class="item_icon"><i class="fa fa-location-arrow"></i></div>
                                         <div class="widget_ab_item_text">
                                             <h6 class="text-white">Location</h6>
                                             <p>
@@ -36,26 +33,24 @@
 
                             <div class="col-md-3">
                                 <div class="widget_item widget_latest sm-m-top-50">
-                                    <h5 class="text-white">Latest News</h5>
+                                    <h5 class="text-white">Peta Kabupaten</h5>
                                     <div class="widget_latst_item m-top-30">
-                                        <div class="item_icon"><img src="frontend/assets/images/ltst-img-1.jpg" alt="" /></div>
+                                    <img src="{{ asset('logo/peta-jambi.gif')}}" alt="" />
+                                        
                                         <div class="widget_latst_item_text">
-                                            <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                            <a href="">21<sup>th</sup> July 2016</a>
+                                            <p>Download Peta Batanghari</p>
                                         </div>
                                     </div>
                                     <div class="widget_latst_item m-top-30">
-                                        <div class="item_icon"><img src="frontend/assets/images/ltst-img-2.jpg" alt="" /></div>
+                                       
                                         <div class="widget_latst_item_text">
-                                            <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                            <a href="">21<sup>th</sup> July 2016</a>
+                                            <p>Download Peta Prov. Jambi</p>
                                         </div>
                                     </div>
                                     <div class="widget_latst_item m-top-30">
-                                        <div class="item_icon"><img src="frontend/assets/images/ltst-img-3.jpg" alt="" /></div>
+                                     
                                         <div class="widget_latst_item_text">
-                                            <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                            <a href="">21<sup>th</sup> July 2016</a>
+                                            <p>Lihat Peta Batanghari</p>
                                         </div>
                                     </div>
                                 </div><!-- End off widget item -->
@@ -63,32 +58,25 @@
 
                             <div class="col-md-3">
                                 <div class="widget_item widget_service sm-m-top-50">
-                                    <h5 class="text-white">Latest News</h5>
+                                    <h5 class="text-white">SITUS TERKAIT</h5>
                                     <ul class="m-top-20">
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> Web Design</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> User Interface Design</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> E- Commerce</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> Web Hosting</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> Themes</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> Support Forums</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i>Badan Kepegawaian Negara</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i>Kementerian Kominfo</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i>Kementerian Dalam Negeri</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i>Kementerian PAN & RB</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i>Kementerian Ristek</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i>Website Balai Pengkajian Teknologi Pertanian (BPTP) Jambi</a></li>
                                     </ul>
                                 </div><!-- End off widget item -->
                             </div><!-- End off col-md-3 -->
 
                             <div class="col-md-3">
                                 <div class="widget_item widget_newsletter sm-m-top-50">
-                                    <h5 class="text-white">Newsletter</h5>
-                                    <form class="form-inline m-top-30">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Enter you Email">
-                                            <button type="submit" class="btn text-center"><i class="fa fa-arrow-right"></i></button>
-                                        </div>
-
-                                    </form>
-                                    <div class="widget_brand m-top-40">
-                                        <a href="" class="text-uppercase">Your Logo</a>
-                                        <p>Lorem ipsum dolor sit amet consec tetur 
-                                            adipiscing elit nulla aliquet pretium nisi in</p>
+                                <h5 class="text-white">Sosial Media</h5>
+                                   <div class="widget_brand m-top-40">
+                                        <a href="" class="text-uppercase"> <img src="{{ asset('logo/icon.gif')}}" alt="" />
+                                        </a>
+                                      
                                     </div>
                                     <ul class="list-inline m-top-20">
                                         <li>-  <a href=""><i class="fa fa-facebook"></i></a></li>
@@ -105,16 +93,7 @@
                     </div>
                 </div>
                 <div class="main_footer fix bg-mega text-center p-top-40 p-bottom-30 m-top-80">
-                    <div class="col-md-12">
-                        <p class="wow fadeInRight" data-wow-duration="1s">
-                            Made with 
-                            <i class="fa fa-heart"></i>
-                            by 
-                            <a target="_blank" href="https://bootstrapthemes.co">Bootstrap Themes</a> 
-                            2016. All Rights Reserved
-                        </p>
-                    </div>
-
+                  
                     <div class="col-md-12 p-top-20">
                         <p class="wow fadeInRight" data-wow-duration="1s">
                         Copyright 2017
