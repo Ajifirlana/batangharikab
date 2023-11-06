@@ -1,7 +1,3 @@
-<?php
-  $setting = DB::table('setting')->first();
-  ?>
-  
 @include("frontend.head")
 <div class="culmn">
             <!--Home page style-->

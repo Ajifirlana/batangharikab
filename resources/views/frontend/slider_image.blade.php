@@ -8,21 +8,14 @@
                             <div class="col-md-12">
                                 <div class="business_slid">
                                     <div class="business_items text-center">
-                                      <div class="business_img">
-                                                <img src="{{ asset('frontend/assets/images/home-bg.jpg')}}" alt="" />
-                                            </div>
                                       
-                                        <div class="business_item">
-                                            <div class="business_img">
+                                    @foreach($image_slider as $row)
+                                    <div class="business_img">
                                                 <img src="{{ asset('frontend/assets/images/home-bg.jpg')}}" alt="" />
-                                            </div>
-                                        </div>
-
-                                        <div class="business_item">
-                                            <div class="business_img">
-                                                <img src="{{ asset('frontend/assets/images/cbrand-img2.png')}}" alt="" />
-                                            </div>
-                                        </div>
+                                      </div>
+                                      
+                                      @endforeach
+                                
                                     </div>
                                 </div>
                             </div>

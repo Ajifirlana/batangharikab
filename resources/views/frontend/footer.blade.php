@@ -96,8 +96,7 @@
                   
                     <div class="col-md-12 p-top-20">
                         <p class="wow fadeInRight" data-wow-duration="1s">
-                        Copyright 2017
-                            <i class="fa fa-heart"></i>
+                        Copyright 2023
                             by 
                             <a target="_blank" href="https://themewagon.com/">Dinas Komunikasi dan Informatika Kab. Batang Hari
                 </a> 

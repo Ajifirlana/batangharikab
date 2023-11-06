@@ -1,7 +1,3 @@
-<?php
-  $setting = DB::table('setting')->first();
-  ?>
-  
 @include("frontend.head")
     
 @section("pagetitle",".:: Situs Pemerintah Kabupaten Batanghari | Bumi Serentak Bak Regam ::.")
