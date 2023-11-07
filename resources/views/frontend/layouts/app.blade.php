@@ -8,7 +8,7 @@
         <title>@yield("pagetitle") .:: Situs Pemerintah Kabupaten Batanghari | Bumi Serentak Bak Regam ::.</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/png" href="favicon.ico">
+        <link rel="icon" type="image/png" href="{{asset('favicon.ico')}}">
 
         <!--Google Font link-->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -22,22 +22,7 @@
         <link rel="stylesheet" href="{{asset('frontend/assets/css/bootstrap.css')}}">
         <link rel="stylesheet" href="{{asset('frontend/assets/css/magnific-popup.css')}}">
         <link rel="stylesheet" href="{{asset('frontend/assets/css/bootsnav.css')}}">
-
-        <!-- xsslider slider css -->
-
-
-        <!--<link rel="stylesheet" href="{{asset('frontend/assets/css/xsslider.css')}}">-->
-
-
-
-
-        <!--For Plugins external css-->
-        <!--<link rel="stylesheet" href="{{asset('frontend/assets/css/plugins.css')}}" />-->
-
-        <!--Theme custom css -->
         <link rel="stylesheet" href="{{asset('frontend/assets/css/style.css')}}">
-        <!--<link rel="stylesheet" href="{{asset('frontend/assets/css/colors/maron.css')}}">-->
-
         <!--Theme Responsive css-->
         <link rel="stylesheet" href="{{asset('frontend/assets/css/responsive.css')}}" />
 
@@ -69,10 +54,6 @@
                   
             
 	  			@yield('content')
-            <!--Brand Section-->
-          
-            <!--Featured Section-->
-            <!--Call to  action section-->
 
     <footer id="contact" class="footer action-lage bg-black p-top-80">
                 <!--<div class="action-lage"></div>-->

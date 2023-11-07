@@ -38,4 +38,16 @@
             </section><!-- End off Featured Section-->
 
 
+            <section id="action" class="action bg-primary roomy-40">
+                <div class="container">
+                    <div class="row">
+                        <div class="maine_action">
+                            
+            @include("frontend.layouts.video_kegiatan")
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             @endsection
