@@ -29,7 +29,6 @@
                         </button>
                         <a class="navbar-brand" href="{{url('/')}}">
                             <img src="{{asset('frontend/assets/images/logo.png')}}" class="logo" height="50px" alt="">
-                            <!--<img src="frontend/assets/images/footer-logo.png')}}" class="logo logo-scrolled" alt="">-->
                         </a>
 
                     </div>

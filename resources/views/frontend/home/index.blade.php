@@ -1,16 +1,5 @@
-@include("frontend.head")
-    
-@section("pagetitle",".:: Situs Pemerintah Kabupaten Batanghari | Bumi Serentak Bak Regam ::.")
-
-
-<div class="culmn">
-            <!--Home page style-->
-
-            @include("frontend.menu")
-            <!--Home Sections-->
-            @include("frontend.slider_image")
-            
-
+@extends('frontend.layouts.app')
+@section('content')
 
             <!--Test section-->
             <section id="test" class="test bg-grey roomy-60 fix">
@@ -55,49 +44,7 @@ Bumi Serentak Bak Regam</h5>
                 </div>
             </section><!-- End off test section -->
 
-            <!--Brand Section-->
-            <section id="brand" class="brand fix roomy-10">
-                <div class="container">
-                    <div class="row">
-                        <div class="main_brand text-center">
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img1.png" alt="" />
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img2.png" alt="" />
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img3.png" alt="" />
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img4.png" alt="" />
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img5.png" alt="" />
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img6.png" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section><!-- End off Brand section -->
-
-
-
-            <!--Featured Section-->
+     
             <section id="features" class="features">
                 <div class="container">
                     <div class="row">
@@ -194,17 +141,16 @@ Bumi Serentak Bak Regam</h5>
                 </div><!-- End off container -->
             </section><!-- End off Featured Section-->
 
-            <!--Call to  action section-->
             <section id="action" class="action bg-primary roomy-40">
                 <div class="container">
                     <div class="row">
                         <div class="maine_action">
                             
-            @include("frontend.video_kegiatan")
+            @include("frontend.layouts.video_kegiatan")
                             
                         </div>
                     </div>
                 </div>
             </section>
 
-            @include("frontend.footer")
+@endsection

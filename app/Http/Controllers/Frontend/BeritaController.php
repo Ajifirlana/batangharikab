@@ -24,12 +24,7 @@ class BeritaController extends Controller
    }else{
      $gambar = URL::to('images/ppid-share.png');
    }
-   
-
-   $title = array('judul'=>$berita->judul,'isi'=>$berita->isi,'url'=>$url,'gambar'=>$gambar);
-  
-   $berita->dibaca = $berita->dibaca + 1;
-   $berita->save();
+    
         return view('frontend.berita.read',array("route"=>"berita", 
         
       'setting'=>$setting,

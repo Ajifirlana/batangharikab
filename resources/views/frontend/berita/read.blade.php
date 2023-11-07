@@ -1,11 +1,6 @@
-@include("frontend.head")
-<div class="culmn">
-            <!--Home page style-->
+@extends('frontend.layouts.app')
+@section('content')
 
-            @include("frontend.menu")
-            <!--Home Sections-->
-            @include("frontend.slider_image")
-            
  <!--Featured Section-->
  <section id="features" class="features">
                 <div class="container">
@@ -16,7 +11,7 @@
                                     <div class="f_item_text">
                                         <h3><i class="fa fa-arrow-circle-right"></i>Profil SKPD</h3>
 
-                                        @include("frontend.profilskpd")
+                                        @include("frontend.layouts.profilskpd")
                                     </div>
                                 </div>
                             </div>
@@ -42,21 +37,5 @@
                 </div><!-- End off container -->
             </section><!-- End off Featured Section-->
 
-           
 
-
-
-   <!--Call to  action section-->
-            <section id="action" class="action bg-primary roomy-40">
-                <div class="container">
-                    <div class="row">
-                        <div class="maine_action">
-                            
-            @include("frontend.video_kegiatan")
-                            
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            @include("frontend.footer")
+            @endsection
