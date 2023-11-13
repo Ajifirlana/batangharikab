@@ -10,7 +10,7 @@
                                       
                                     @foreach($image_slider as $row)
                                     <div class="business_img">
-                                                <img src="{{ $row->foto }}" alt="" />
+                                                <img src="{{ url('frontend/assets/images/'.$row->foto) }}" alt="" />
                                       </div>
                                       
                                       @endforeach
