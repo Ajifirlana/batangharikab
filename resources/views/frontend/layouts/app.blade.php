@@ -130,10 +130,7 @@
                             <div class="col-md-3">
                                 <div class="widget_item widget_newsletter sm-m-top-50">
                                 <h5 class="text-white">Sosial Media</h5>
-                                   <div align="center">
-                                            <img src="{{ asset('logo/icon.gif')}}" width="50px" height="100px"  alt="" />
-                                        
-                                    </div>
+                                 
                                     <ul class="list-inline m-top-20">
                                         <li>-  <a href=""><i class="fa fa-facebook"></i></a></li>
                                         <li><a href="{{$setting->twitter}}"><i class="fa fa-twitter"></i></a></li>
