@@ -3,8 +3,8 @@
 <div class="profil-skpd">
     <p>
         <ul>
-            <li class="dropdown"><h6><i class="fa fa-quote-left"></i>
-                                   Sekretariat</h6>
+            <li class="dropdown"><h5><i class="fa fa-arrow-circle-right"></i>
+                                   Sekretariat</h5>
             <div class="dropdown-content">
                  <ul>
                     <li><a target="_blank" href="https://setda.batangharikab.go.id/">SEKRETARIAT DAERAH</a>
@@ -12,8 +12,8 @@
             </ul>
             </div> 
             </li>
-            <li class='dropdown'><h6><i class="fa fa-quote-left"></i>
-                                   Dinas</h6>
+            <li class='dropdown'><h5><i class="fa fa-arrow-circle-right"></i>
+                                   Dinas</h5>
             <div class="dropdown-content">
             <ul>
                 <li><a target="_blank" href="http://dpdk.batangharikab.go.id/">DINAS PERPUSTAKAAN DAN KEARSIPAN</a></li>
@@ -21,16 +21,16 @@
             </ul>
             </div> 
             </li>
-            <li class='dropdown'><h6><i class="fa fa-quote-left"></i>
-                                   Badan</h6>
+            <li class='dropdown'><h5><i class="fa fa-arrow-circle-right"></i>
+                                   Badan</h5>
             <div class="dropdown-content">
              <ul>
                 <li><a target="_blank" href="http://satpolpp.batangharikab.go.id/">SATUAN POLISI PAMONG PRAJA</a></li><li><a target="_blank" href="http://bpbd.batangharikab.go.id/">BADAN PENANGGULANGAN BENCANA DAERAH</a></li><li><a target="_blank" href="http://bkpsdmd.batangharikab.go.id/">BADAN KEPEGAWAIAN DAN PENGEMBANGAN SUMBER DAYA MANUSIA DAERAH</a></li><li><a target="_blank" href="http://bappeda.batangharikab.go.id/">BADAN PERENCANAAN PEMBANGUNAN DAERAH</a></li><li><a target="_blank" href="http://bakeuda.batangharikab.go.id/">BADAN KEUANGAN DAERAH</a></li><li><a target="_blank" href="http://balitbangda.batangharikab.go.id/">BADAN PENELITIAN DAN PENGEMBANGAN DAERAH</a></li><li><a target="_blank" href="http://inspektorat.batangharikab.go.id/">INSPEKTORAT DAERAH</a></li></ul>
                 </div> 
            </li>
             
-            <li class='dropdown'><h6><i class="fa fa-quote-left"></i>
-                                   Kantor</h6>
+            <li class='dropdown'><h5><i class="fa fa-arrow-circle-right"></i>
+                                   Kantor</h5>
             <div class="dropdown-content">
            <ul><li><a target="_blank" href="http://kesbangpol.batangharikab.go.id/">KESATUAN BANGSA DAN POLITIK KABUPATEN BATANG HARI</a></li><li><a target="_blank" href="http://rsudhamba.batangharikab.go.id/">RUMAH SAKIT UMUM DAERAH HAMBA</a>
            </div> 

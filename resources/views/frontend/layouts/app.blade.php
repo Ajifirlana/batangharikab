@@ -52,7 +52,48 @@
             <!--Home Sections-->
             @include("frontend.layouts.slider_image")
                   
-            
+               <section id="test" class="test bg-grey roomy-60 fix">
+                <div class="container">
+                    <div class="row">                        
+                        <div class="main_test fix">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="head_title text-center fix">
+                                    <h2 class="text-uppercase">Selamat Datang di Kab. Batanghari</h2>
+                                    <h5>
+Bumi Serentak Bak Regam</h5>
+                                </div>
+                            </div>
+                              
+                            <div class="col-md-6">
+                                <div class="test_item fix">
+
+                                    <div align="center">
+                                    <img src="{{ asset('logo/20210227-1BUPATI.jpeg')}}" alt="" />
+                                        <h5>MUHAMMAD FADHIL ARIEF</h5>
+                                        <h6>Bupati</h6>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="test_item fix sm-m-top-30">
+                
+                                   <div align="center">
+                                    <img  src="{{ asset('logo/wakil-bupati.jpeg')}}" alt="" />
+                                        <h5>H. BAKHTIAR</h5>
+                                        <h6>Wakil Bupati</h6>
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section><!-- End off test section -->
+
 	  			@yield('content')
 
     <footer id="contact" class="footer action-lage bg-black p-top-80">

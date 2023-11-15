@@ -7,14 +7,10 @@
                     <div class="row">
                         <div class="main_features fix roomy-70">
                             <div class="col-md-4">
-                                <div class="features_item sm-m-top-30">
-                                    <div class="f_item_text">
-                                        <h3><i class="fa fa-arrow-circle-right"></i>Profil SKPD</h3>
-
-                                        @include("frontend.layouts.profilskpd")
-                                    </div>
+                                  <h3><i class="fa fa-arrow-circle-right"></i>Profil SKPD</h3>
+    
+                                        @include("frontend.layouts.profilskpd")                                   
                                 </div>
-                            </div>
                            
                             <div class="col-md-8">
                                 <div class="features_item sm-m-top-30">

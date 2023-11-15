@@ -30,7 +30,7 @@ html,
 
 body {
     font-size: 14px;
-    color: #797979;
+    color: #00a885;
     width: 100%;
     padding: 0;
     margin-left: 0;
@@ -392,7 +392,7 @@ Button
 
 .btn-default{
     color: #fff;
-    background-color: transparent;
+    background-color: #00a885;
     border:1px solid;
     border-color: #b6b6b6;
 }
