@@ -44,8 +44,10 @@
                                   <h3><i class="fa fa-arrow-circle-right"></i>Website SKPD</h3> 
                                     <div class="card">
             <div class="profil-skpd">
-            <p><img class="logo-portal" src="logo/ppid.jpg" alt="Avatar" style="width:100%"></p>
-                    
+            <p><img class="logo-portal" src="{{asset('logo/ppid.jpg')}}" alt="Avatar" style="width:100%"></p>
+            <p><img class="logo-portal" src="{{asset('logo/dukcapil.jpg')}}" alt="Avatar" style="width:100%"></p>
+            <p><img class="logo-portal" src="{{asset('logo/bkd.jpg')}}" alt="Avatar" style="width:100%">
+          </p>
             </div></div>
                                     </div>
                                                         </div>
