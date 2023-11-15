@@ -17,13 +17,20 @@
                                         <div class="card"> 
                                         <div class="profil-skpd">
  
+
   @foreach($berita_terbaru as $berita)
                                         <?php
                                         $url = URL::to("baca/".$berita->id."/".str_replace(' ','-',$berita->judul)."/".$berita->tanggal);
                                         ?>
+
+                                        <div class="details media-body align-self-center">
+    <div class="date" itemprop="datePublished"><i class="fa fa-calendar"></i> {{ $berita->tanggal}}
+    </div>
+</div>
                                         <a href="{{$url}}">
-<strong>
-                                            <i class="fa fa-arrow-circle-right"></i></strong><h5>{{$berita->judul}}</h5></a>
+                                            <h5>{{$berita->judul}}</h5>
+                                            
+                                        </a>
 
                                         @endforeach
                                         <div align="center">
