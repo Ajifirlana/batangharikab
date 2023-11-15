@@ -55,6 +55,8 @@
                 </div><!-- End off container -->
             </section><!-- End off Featured Section-->
 
+ @include("frontend.layouts.galeri")
+
             <section id="action" class="action bg-primary roomy-40">
                 <div class="container">
                     <div class="row">
@@ -65,6 +67,6 @@
                         </div>
                     </div>
                 </div>
-            </section>
-
+            </section>                            
+           
 @endsection

@@ -11,7 +11,7 @@
  Target Server Version : 80030 (8.0.30)
  File Encoding         : 65001
 
- Date: 07/11/2023 10:18:30
+ Date: 15/11/2023 16:47:42
 */
 
 SET NAMES utf8mb4;
@@ -36,8 +36,26 @@ CREATE TABLE `berita`  (
 -- ----------------------------
 -- Records of berita
 -- ----------------------------
-INSERT INTO `berita` VALUES (1, 'Bupati Sampaikan LKPJ dan LKPD TA 2016 Pada Paripurna DPRD', '<p>MUARABULIAN,DISKOMINFO<br />\r\nRapat Paripurna DPRD Kabupaten Batanghari dalam rangka pembahasan Laporan Keterangan Pertanggung Jawaban Bupati dan Laporan Keuangan Pemerintah Daerah Kabupaten Batanghari Tahun 2016 berlangsung Sukses. Rapat Paripurna yang dihadiri langsung oleh Bupati Batanghari,Ir.H.Syahirsyah,Sy beserta Wakil Bupati Batanghari Hj.Sofia Joesoef berlangsung di ruang Rapat Gedung DPRD Kabupaten Batanghari. Acara yang dilaksanakan pada Selasa (11/04) pagi tadi juga dihadiri Plt.Sekda Batanghari,Seluruh Kepala OPD, Forkompinda dan seluruh anggota Dewan dan para tamu undangan lainnya.(omy/kim)</p>\r\n', '2017-04-11', '1493040115.jpg', 1005, 'Bupati dan Wakil Bupati Bersama Pimpinan DPRD Kabupaten Batang Hari', '2023-11-06 22:34:57', '2023-11-06 15:34:57');
-INSERT INTO `berita` VALUES (2, 'Plt Sekretaris Daerah Buka Forum OPD Kabupaten Batang Hari Tahun 2017', '<p><span dir=\"rtl\">DISKOMINFO, Plt.Sekda Batanghari,H.Bakhtiar,SP pada Tanggal 09 Maret 2017 secara resmi membuka acara Forum Organisasi Perangkat Daerah Kabupaten Batanghari Tahun 2017. Acara yang dilaksanakan di Ruang Aula Bappeda Batanghari ini dihadiri Para Asisten Setda, Kepala OPD,seluruh Kepala SKPD se-Kabupaten Batanghari,seluruh Camat se-Kabupaten Batanghari, Delegasi Kecamatan, Tenaga Ahli Pemberdayaan Masyarakat dan&nbsp;Para tamu undangan.</span></p>\r\n\r\n<p><span dir=\"rtl\">&nbsp; &nbsp; &nbsp; &nbsp; Acara Forum Organisasi Perangkat Daerah ini bertemakan &quot;Dengan Forum Organisasi Perangkat Daerah Kabupaten Batanghari Tahun 2017 kita Mewujudkan Konsistensi dan Sinkronisasi Perencanaan Pembangunan Kabupaten Batanghari dalam Rangka Mewujudkan Bangun Sumber Daya Manusia untuk menggerakkan Ekonomi Kerakyatan yang ditinjau dengan Infrastruktur.&quot;</span></p>\r\n\r\n<p><span dir=\"rtl\">&nbsp; &nbsp; &nbsp; &nbsp; Bupati Batanghari yang diwakili Plt.Sekda Batanghari,dalam sambutannya menyampaikan Kepada seluruh Kepala OPD Kabupaten Batanghari untuk memperhatikan kegiatan prioritas Hasil Musrenbang Kecamatan yang diselaraskan dengan Renstra dan Rancangan Renja OPD dengan menggunakan data dan informasi yang lengkap dan akurat serta rencana tata ruang wilayah kabupaten Batanghari,sehingga tercapai sasaran yang ditetapkan sebagaimana tertuang dalam Visi dan Misi RPJMD Kabupaten Batanghari Tahun 2016-2021.</span></p>\r\n', '2017-03-13', '1493040346.jpg', 843, 'PLT. Sekreatis Daerah Membuka Forum OPD Tahun 2017', '2023-11-06 22:21:51', '2023-11-06 15:21:51');
+INSERT INTO `berita` VALUES (1, 'Bupati Sampaikan LKPJ dan LKPD TA 2016 Pada Paripurna DPRD', '<p>MUARABULIAN,DISKOMINFO<br />\r\nRapat Paripurna DPRD Kabupaten Batanghari dalam rangka pembahasan Laporan Keterangan Pertanggung Jawaban Bupati dan Laporan Keuangan Pemerintah Daerah Kabupaten Batanghari Tahun 2016 berlangsung Sukses. Rapat Paripurna yang dihadiri langsung oleh Bupati Batanghari,Ir.H.Syahirsyah,Sy beserta Wakil Bupati Batanghari Hj.Sofia Joesoef berlangsung di ruang Rapat Gedung DPRD Kabupaten Batanghari. Acara yang dilaksanakan pada Selasa (11/04) pagi tadi juga dihadiri Plt.Sekda Batanghari,Seluruh Kepala OPD, Forkompinda dan seluruh anggota Dewan dan para tamu undangan lainnya.(omy/kim)</p>\r\n', '2017-04-11', '1493040115.jpg', 1032, 'Bupati dan Wakil Bupati Bersama Pimpinan DPRD Kabupaten Batang Hari', '2023-11-07 11:15:50', '2023-11-07 04:15:50');
+INSERT INTO `berita` VALUES (2, 'Plt Sekretaris Daerah Buka Forum OPD Kabupaten Batang Hari Tahun 2017', '<p><span dir=\"rtl\">DISKOMINFO, Plt.Sekda Batanghari,H.Bakhtiar,SP pada Tanggal 09 Maret 2017 secara resmi membuka acara Forum Organisasi Perangkat Daerah Kabupaten Batanghari Tahun 2017. Acara yang dilaksanakan di Ruang Aula Bappeda Batanghari ini dihadiri Para Asisten Setda, Kepala OPD,seluruh Kepala SKPD se-Kabupaten Batanghari,seluruh Camat se-Kabupaten Batanghari, Delegasi Kecamatan, Tenaga Ahli Pemberdayaan Masyarakat dan&nbsp;Para tamu undangan.</span></p>\r\n\r\n<p><span dir=\"rtl\">&nbsp; &nbsp; &nbsp; &nbsp; Acara Forum Organisasi Perangkat Daerah ini bertemakan &quot;Dengan Forum Organisasi Perangkat Daerah Kabupaten Batanghari Tahun 2017 kita Mewujudkan Konsistensi dan Sinkronisasi Perencanaan Pembangunan Kabupaten Batanghari dalam Rangka Mewujudkan Bangun Sumber Daya Manusia untuk menggerakkan Ekonomi Kerakyatan yang ditinjau dengan Infrastruktur.&quot;</span></p>\r\n\r\n<p>Bupati Batanghari yang diwakili Plt.Sekda Batanghari,dalam sambutannya menyampaikan Kepada seluruh Kepala OPD Kabupaten Batanghari untuk memperhatikan kegiatan prioritas Hasil Musrenbang Kecamatan yang diselaraskan dengan Renstra dan Rancangan Renja OPD dengan menggunakan data dan informasi yang lengkap dan akurat serta rencana tata ruang wilayah kabupaten Batanghari,sehingga tercapai sasaran yang ditetapkan sebagaimana tertuang dalam Visi dan Misi RPJMD Kabupaten Batanghari Tahun 2016-2021.</p>', '2017-03-13', '1493040346.jpg', 843, 'PLT. Sekreatis Daerah Membuka Forum OPD Tahun 2017', '2023-11-15 15:32:30', '2023-11-15 15:32:30');
+INSERT INTO `berita` VALUES (3, 'Tabligh Akbar', 'Pemerintah Kabupaten Batang Hari bersama Badan Kontak Majelis Taklim (BKMT) Kabupaten Batang Hari Dalam Rangka HUT Kabupaten Batang Hari Ke-75 Tahun 2023.\n\nBupati Batang Hari Mhd Fadhil Arief memberikan sambutan pada acara Tabligh Akbar Dalam Rangka HUT Kabupaten Batang Hari ke-75 Tahun 2023. Pada sambutannya Bupati menyampaikan dan berharap bahwa kegiatan Tabligh Akbar ini dapat mempererat tali silaturahmi sekaligus mengoptimalkan peran aktif para ulama dan organisasi keagamaan yang ada di Kabupaten Batang Hari. \n\n\"Bahwa untuk meningkatkan kualitas Sumber Daya Manusia di Kabupaten Batang Hari tidak hanya dilakukan melalui bidang Akademik saja tetapi juga pada kualitas spiritual. Karena kita tahu SDM yang baik itu yang otaknya baik, badannya sehat dan imannya kuat\". \n\nDalam kesempatan tersebut, Pemerintah Kabupaten Batang Hari mengundang Ustadz H. Irfan Yusuf atau lebih dikenal Ustadz Rahul untuk mengisi tausiyah pada kegiatan Tabligh Akbar Peringatan HUT Kabupaten Batang Hari Ke-75 Tahun 2023.\n\nBupati menjelaskan bahwa saat ini, setelah dijalan program Guru Ngaji Tangguh di Desa dan sekolah. Terjadi peningkatan anak-anak yang mampu membaca Al-Quran di Kabupaten Batang Hari.\n\"Dari 7.412 tinggal 700 orang yang belum belajar baca tulis Al-Quran. Dengan program Guru Ngaji Tangguh yang masuk ke dalam sekolah kita harapkan anak-anak kita semua bisa membaca Al-Quran,\" jelasnya.\n\nDalam kesempatan tersebut, Bupati juga memohon Doa kepada Masyarakat Kabupaten Batang Hari untuk dapat istiqomah memimpin Kabupaten Batang Hari. Ia berharap, dengan bertambahnya usia Kabupaten Batang Hari. Peningkatan kesejahteraan dan kualitas Sumber Daya Manusia di Kabupaten Batang Hari juga dapat meningkat.\n\n\"Kami mohon Doanya kepada ibu-ibu, saya dan Wakil Bupati Batang Hari H. Bakhtiar tolong di Doakan agar tetap Istiqomah memimpin Kabupaten Batang Hari,\"\n\nTurut Hadir Kapolres Batang Hari, Kepala Pengadilan Agama Muara Bulian, Ketua TP.PKK Kab. Batang Hari, Ketua BKMT Kab. Batang Hari, Kepala OPD Pemkab Bantang Hari, Para Ulama, Da\'i, dan Ibuk-ibuk BKMT Se-Kabupaten Batang Hari.', '2023-11-15', '.jpg', 0, 'Tabliq Akbar', '2023-11-15 15:29:44', '2023-11-15 15:29:50');
+
+-- ----------------------------
+-- Table structure for galeri
+-- ----------------------------
+DROP TABLE IF EXISTS `galeri`;
+CREATE TABLE `galeri`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `judul` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `foto` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of galeri
+-- ----------------------------
+INSERT INTO `galeri` VALUES (1, 'tablig akbar 4', 'tablig_akbar4.jpg');
+INSERT INTO `galeri` VALUES (2, 'tablig akbar', 'tablig_akbar1.jpg');
 
 -- ----------------------------
 -- Table structure for setting
@@ -73,8 +91,8 @@ CREATE TABLE `slider`  (
 -- ----------------------------
 -- Records of slider
 -- ----------------------------
-INSERT INTO `slider` VALUES (1, 'foto', 'url');
-INSERT INTO `slider` VALUES (2, 'foto', 'url');
+INSERT INTO `slider` VALUES (1, 'foto', 'home-bg.jpg');
+INSERT INTO `slider` VALUES (2, 'foto', 'home-bg.jpg');
 
 -- ----------------------------
 -- Table structure for users
