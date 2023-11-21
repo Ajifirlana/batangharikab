@@ -57,7 +57,7 @@
 
  @include("frontend.layouts.galeri")
 
-            <section id="action" class="action bg-primary roomy-40">
+            <section id="action" class="business bg-grey roomy-70">
                 <div class="container">
                     <div class="row">
                         <div class="maine_action">
