@@ -1,5 +1,3 @@
-
-
             <nav class="navbar navbar-default bootsnav navbar-fixed">
 
                 <!-- Start Top Search -->
@@ -27,9 +25,15 @@
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <a class="navbar-brand" href="{{url('/')}}">
-                            <img src="{{asset('frontend/assets/images/logo.png')}}" class="logo" height="50px" alt="">
-                        </a>
+                        <ul>
+                        <li>
+                        <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('logo/logo-menu.png')}}" class="logo" height="50px" alt="">
+                    </a>
+                        </li>
+                        
+                        </ul>
+                      
+          
 
                     </div>
                     <!-- End Header Navigation -->
