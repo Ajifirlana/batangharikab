@@ -7,7 +7,7 @@
 
 <div class="col-md-4">
 <div class="widget_latst_item m-top-30">
-                                <h2 class="text-uppercase"><strong>YOUTUBE</strong> KEGIATAN PEMERINTAH KAB. BATANG HARI</h2>    
+                                <h2 class="text-uppercase"><strong>YOUTUBE</strong> PEMERINTAH KAB. BATANG HARI</h2>    
                             </div><!-- End off widget item -->
                                 </div>
             <div class="col-md-6">
