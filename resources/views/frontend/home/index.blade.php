@@ -57,16 +57,9 @@
 
  @include("frontend.layouts.galeri")
 
-            <section id="action" class="business bg-grey roomy-70">
-                <div class="container">
-                    <div class="row">
-                        <div class="maine_action">
-                            
             @include("frontend.layouts.video_kegiatan")
                             
-                        </div>
-                    </div>
-                </div>
-            </section>                            
+            @include("frontend.layouts.youtube")
+                            
            
 @endsection
