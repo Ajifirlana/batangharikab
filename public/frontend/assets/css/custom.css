@@ -2,19 +2,21 @@
     width: 100%;
     overflow: hidden;
   }
+
   .card {
-    border-radius: 50px;
-   background-color:  #E7E9EB;
+    background-color: #E7E9EB;
   }
 
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(3, 192, 29, 0.2);
   }
+
   .title {
     font-size: 1.5rem;
     color: var(--c-void);
     line-height: 1.25;
-    & + * {
+
+    &+* {
       margin-top: 1rem;
     }
   }
@@ -35,11 +37,8 @@
   }
 
   .profil-skpd {
-      padding: 20px;
-    padding-top: 40px;
-    background-color: var(--c-fair-pink);
-    border-radius: 12px;
-  position: relative;
+    padding: 20px;
+    position: relative;
     overflow: hidden;
   }
 
@@ -83,9 +82,9 @@
   }
 
   .logo-portal {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 150px;
-  background-color: #00a885;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    background-color: #00a885;
   }

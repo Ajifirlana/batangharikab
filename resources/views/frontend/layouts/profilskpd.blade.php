@@ -43,6 +43,6 @@
            <p> <img class="logo-portal" src="{{asset('logo/lakip.png')}}" alt="Avatar" style="width:100%"></p>
            <p><img class="logo-portal" src="{{asset('logo/lakip-skpd.jpg')}}" alt="Avatar" style="width:100%"></p>
            <p><img class="logo-portal" src="{{asset('logo/portal-app.png')}}" alt="Avatar" style="width:100%"></p>
-                  
+ 
 </div>
 </div>

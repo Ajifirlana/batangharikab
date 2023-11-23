@@ -42,6 +42,9 @@ Bumi Serentak Bak Regam</h5>
                     </div>
                 </div>
             </section>
+            <!-- / A set of walkthrough screens in HTML/CSS/JS. A personal experiment with layering images, CSS3 transitions, & flexbox. -->
+
+
             <section id="features" class="features">
                 <div class="container">
 
@@ -57,7 +60,6 @@ Bumi Serentak Bak Regam</h5>
                                         <h3><i class="fa fa-arrow-circle-right"></i>BERITA DAERAH</h3>
                                         <div class="card"> 
                                         <div class="profil-skpd">
- 
 
   @foreach($berita_terbaru as $berita)
                                         <?php
@@ -83,13 +85,53 @@ Bumi Serentak Bak Regam</h5>
                                 </div>
                             <div class="col-md-4">
                                   <h3><i class="fa fa-arrow-circle-right"></i>Website SKPD</h3> 
+      
                                     <div class="card">
             <div class="profil-skpd">
-            <p><img class="logo-portal" src="{{asset('logo/ppid.jpg')}}" alt="Avatar" style="width:100%"></p>
-            <p><img class="logo-portal" src="{{asset('logo/dukcapil.jpg')}}" alt="Avatar" style="width:100%"></p>
-            <p><img class="logo-portal" src="{{asset('logo/bkd.jpg')}}" alt="Avatar" style="width:100%">
-          </p>
-            </div></div>
+
+            <div class="business_slid">
+                                    <div class="slid_shap bg-grey"></div>
+                                    <div class="business_items text-center">
+
+                                    <div class="business_item">
+                                            <div class="business_img">
+                                                <img src="{{asset('logo/lakip.png')}}" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="business_item">
+                                            <div class="business_img">
+                                                <img src="{{asset('logo/lakip-skpd.jpg')}}" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="business_item">
+                                            <div class="business_img">
+                                                <img src="{{asset('logo/portal-app.png')}}" alt="" />
+                                            </div>
+                                        </div>
+
+
+                                    <div class="business_item">
+                                            <div class="business_img">
+                                                <img src="{{asset('logo/ppid.jpg')}}" alt="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="business_item">
+                                            <div class="business_img">
+                                                <img src="{{asset('logo/dukcapil.jpg')}}" alt="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="business_item">
+                                            <div class="business_img">
+                                                <img src="{{asset('logo/bkd.jpg')}}" alt="" style="width:100%"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+            </div>
+        </div>
                                     </div>
                                                         </div>
                     </div><!-- End off row -->

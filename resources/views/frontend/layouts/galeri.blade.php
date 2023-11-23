@@ -21,7 +21,7 @@
                                         <div class="row">
 
 
-  @foreach($galeri as $g)
+                                    @foreach($galeri as $g)
                                             <div class="col-sm-3">
                                                 <div class="port_item xs-m-top-30">
                                                     <div class="port_img">
