@@ -33,9 +33,6 @@
                     </div><!-- End off row -->
                 </div><!-- End off container -->
             </section><!-- End off Featured Section-->
-
-                
-            @include("frontend.layouts.video_kegiatan")
-                            
+            
                   
             @endsection
