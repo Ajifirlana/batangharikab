@@ -10,7 +10,7 @@ class GaleriController extends Controller
 {
     
     public function galeri_foto(){
-        $galeri_foto =  DB::table('galeri')->orderBy('id','desc')->paginate(2);
+        $galeri_foto =  DB::table('galeri')->orderBy('id','desc')->paginate(8);
  
         return view('frontend.galeri.galeri_foto',array(
         "galeri_foto"=>$galeri_foto));
