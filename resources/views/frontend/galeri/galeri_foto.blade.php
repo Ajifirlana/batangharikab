@@ -7,7 +7,7 @@
                 <div class="container">
                     
                 <div class="head_title text-center fix">
-                    <h2 class="text-uppercase"><strong>VIDEO</strong> KEGIATAN PEMERINTAH KAB. BATANG HARI</h2>    
+                    <h2 class="text-uppercase"><strong>GALERI FOTO</strong> KEGIATAN PEMERINTAH KAB. BATANG HARI</h2>    
                             
                         </div>
                         <div class="row">
@@ -20,9 +20,13 @@
                                                          <!-- <h5><a href="">{{$row->judul}}</a></h5> -->
                                                     
                     </div>@endforeach  
-                        
-
+                    
                                    </div>
+                          
+                    </div>         
+                    <div align="center">
+                    {{ $galeri_foto->links() }}
+
                     </div>
                 </div>
             </section>                            
