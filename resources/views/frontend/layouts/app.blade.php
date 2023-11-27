@@ -1,3 +1,6 @@
+<?php 
+      $setting = DB::table('setting')->first();
+      ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -50,8 +53,7 @@
 
             @include("frontend.layouts.menu")
             <!--Home Sections-->
-            @include("frontend.layouts.slider_image")
-                  
+           
 	  			@yield('content')
 
     <footer id="contact" class="footer action-lage bg-black p-top-80">

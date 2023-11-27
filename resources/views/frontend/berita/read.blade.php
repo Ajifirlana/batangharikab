@@ -1,6 +1,8 @@
 @extends('frontend.layouts.app')
 @section('content')
 
+<section id="action" class="business bg-grey roomy-40">
+</section>
  <!--Featured Section-->
  <section id="features" class="features">
                 <div class="container">

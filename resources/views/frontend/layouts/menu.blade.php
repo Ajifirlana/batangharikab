@@ -93,7 +93,7 @@
                             </a>
                             <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="{{ URL('galeri_foto')}}">Galeri Foto</a>
+                                <a class="dropdown-item" href="{{ URL('/galeri-foto')}}">Galeri Foto</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="2">Galeri Video</a>

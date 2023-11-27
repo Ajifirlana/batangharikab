@@ -11,7 +11,6 @@ use DB;
 class BeritaController extends Controller
 {
     public function baca($id, $title, $tanggal){
-      $setting = DB::table('setting')->first();
       $video_kegiatan =  DB::table('video_kegiatan')->orderBy('id','desc')->offset(0)->limit(5)->get();
   $image_slider =  DB::table('slider')->orderBy('id','desc')->offset(0)->limit(5)->get();
       $berita = Berita::find($id);
@@ -27,7 +26,6 @@ class BeritaController extends Controller
     
         return view('frontend.berita.read',array("route"=>"berita", 
         
-      'setting'=>$setting,
         "berita"=>$berita,
         "video_kegiatan"=>$video_kegiatan,
         'image_slider'=>$image_slider));

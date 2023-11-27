@@ -1,6 +1,7 @@
 @extends('frontend.layouts.app')
 @section('content')
-
+@include("frontend.layouts.slider_image")
+                  
 <section id="test" class="test bg-grey roomy-60 fix">
                 <div class="container">
                     <div class="row">                        
