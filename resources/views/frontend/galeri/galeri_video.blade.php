@@ -7,25 +7,27 @@
                 <div class="container">
                     
                 <div class="head_title text-center fix">
-                    <h2 class="text-uppercase"><strong>GALERI FOTO</strong></h2>    
+                    <h2 class="text-uppercase"><strong>GALERI VIDEO</strong></h2>    
                             
                         </div>
                         <div class="row">
                         
                         <div class="maine_action">
 
-                        @foreach($galeri_foto as $row)  
+                        @foreach($galeri_video as $row)  
                                                 <div class="col-md-3">
-                                                <img src="{{asset('frontend/galeri/'.$row->foto)}}" alt="" />
-                                                         <!-- <h5><a href="">{{$row->judul}}</a></h5> -->
                                                     
+                                                <div class="card-video">
+                                                <h5><a href="{{$row->link}}" target="_blank">{{ substr($row->judul,0,30) }} ...!</a></h5>
+                                                 
+                                   </div>   
                     </div>@endforeach  
                     
                                    </div>
                           
                     </div>         
                     <div align="center">
-                    {{ $galeri_foto->links() }}
+                    {{ $galeri_video->links() }}
 
                     </div>
                 </div>

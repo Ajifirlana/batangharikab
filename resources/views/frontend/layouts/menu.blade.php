@@ -96,7 +96,7 @@
                                 <a class="dropdown-item" href="{{ URL('/galeri-foto')}}">Galeri Foto</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="2">Galeri Video</a>
+                                <a class="dropdown-item" href="{{ URL('/galeri-video')}}">Galeri Video</a>
                             </li>
                             
                             </ul>

@@ -15,4 +15,10 @@ class GaleriController extends Controller
         return view('frontend.galeri.galeri_foto',array(
         "galeri_foto"=>$galeri_foto));
     }
+    public function galeri_video(){
+        $galeri_video =  DB::table('video_kegiatan')->orderBy('id','desc')->paginate(8);
+ 
+        return view('frontend.galeri.galeri_video',array(
+        "galeri_video"=>$galeri_video));
+    }
 }
