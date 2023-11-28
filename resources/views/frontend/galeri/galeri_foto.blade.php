@@ -16,9 +16,12 @@
 
                         @foreach($galeri_foto as $row)  
                                                 <div class="col-md-3">
+                                        
+                                                <div class="card-video">
                                                 <img src="{{asset('frontend/galeri/'.$row->foto)}}" alt="" />
                                                          <!-- <h5><a href="">{{$row->judul}}</a></h5> -->
                                                     
+                                   </div>
                     </div>@endforeach  
                     
                                    </div>
