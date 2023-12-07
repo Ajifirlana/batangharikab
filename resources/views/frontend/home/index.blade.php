@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 @section('content')
 @include("frontend.layouts.slider_image")
-                  
+<!--                   
 <section id="test" class="test bg-grey roomy-60 fix">
                 <div class="container">
                     <div class="row">                        
@@ -42,7 +42,7 @@ Bumi Serentak Bak Regam</h5>
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <!-- / A set of walkthrough screens in HTML/CSS/JS. A personal experiment with layering images, CSS3 transitions, & flexbox. -->
 
 
@@ -51,12 +51,8 @@ Bumi Serentak Bak Regam</h5>
 
                     <div class="row">
                         <div class="main_features fix roomy-70">
-                            <div class="col-md-4">
-                                  <h3><i class="fa fa-arrow-circle-right"></i>Profil SKPD</h3>
-    
-                                        @include("frontend.layouts.profilskpd")                                   
-                                </div>
-                            <div class="col-md-4">
+                           
+                            <div class="col-md-6">
                                    
                                         <h3><i class="fa fa-arrow-circle-right"></i>BERITA DAERAH</h3>
                                         <div class="card"> 
@@ -84,7 +80,7 @@ Bumi Serentak Bak Regam</h5>
                                     
                                         </div>
                                 </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                   <h3><i class="fa fa-arrow-circle-right"></i>Website SKPD</h3> 
       
                                     <div class="card">
@@ -96,7 +92,7 @@ Bumi Serentak Bak Regam</h5>
 
                                     <div class="business_item">
                                             <div class="business_img">
-                                                <img src="{{asset('logo/lakip.png')}}" alt="" />
+                                                <a href="#"><img src="{{asset('logo/lakip.png')}}" alt="" /></a>
                                             </div>
                                         </div>
                                         <div class="business_item">
@@ -126,6 +122,24 @@ Bumi Serentak Bak Regam</h5>
                                         <div class="business_item">
                                             <div class="business_img">
                                                 <img src="{{asset('logo/bkd.jpg')}}" alt="" style="width:100%"/>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="business_item">
+                                            <div class="business_img">
+                                                <img src="{{asset('logo/lakip.png')}}" alt="" style="width:100%"/>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="business_item">
+                                            <div class="business_img">
+                                                <img src="{{asset('logo/lakip-skpd.jpg')}}" alt="" style="width:100%"/>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="business_item">
+                                            <div class="business_img">
+                                                <img src="{{asset('logo/portal-app.png')}}" alt="" style="width:100%"/>
                                             </div>
                                         </div>
                                     </div>
