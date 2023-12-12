@@ -13,8 +13,8 @@ class BeritaController extends Controller
     public function baca($id, $title, $tanggal){
       $berita_terbaru =  DB::table('berita')->orderBy('tanggal','desc')->offset(0)->limit(10)->get();
      
-      $video_kegiatan =  DB::table('video_kegiatan')->orderBy('id','desc')->offset(0)->limit(5)->get();
-  $image_slider =  DB::table('slider')->orderBy('id','desc')->offset(0)->limit(5)->get();
+      $video_kegiatan =  DB::table('video_kegiatans')->orderBy('id','desc')->offset(0)->limit(5)->get();
+  $image_slider =  DB::table('sliders')->orderBy('id','desc')->offset(0)->limit(5)->get();
       $berita = Berita::find($id);
    if (!$berita ){
        throw new HttpException(404);
