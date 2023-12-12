@@ -10,13 +10,13 @@ class GaleriController extends Controller
 {
     
     public function galeri_foto(){
-        $galeri_foto =  DB::table('galeri')->orderBy('id','desc')->paginate(8);
+        $galeri_foto =  DB::table('galeris')->orderBy('id','desc')->paginate(8);
  
         return view('frontend.galeri.galeri_foto',array(
         "galeri_foto"=>$galeri_foto));
     }
     public function galeri_video(){
-        $galeri_video =  DB::table('video_kegiatan')->orderBy('id','desc')->paginate(8);
+        $galeri_video =  DB::table('video_kegiatans')->orderBy('id','desc')->paginate(8);
  
         return view('frontend.galeri.galeri_video',array(
         "galeri_video"=>$galeri_video));
