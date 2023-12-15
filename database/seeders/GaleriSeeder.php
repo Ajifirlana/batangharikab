@@ -13,7 +13,18 @@ class GaleriSeeder extends Seeder
      */
     public function run(): void
     {
-        Galeri::create(['judul' => 'tablig akbar 4',
-        'foto' => 'tablig_akbar4.jpg']);
+        $data= [
+            [
+                'judul' => 'Tabligh Akbar 4',
+                'foto' => 'tablig_akbar4.jpg',
+            ],[
+                
+                'judul' => 'tablig akbar',
+                'foto' => 'tablig_akbar1.jpg',
+            ]
+            ];
+        foreach($data as $row){
+            Galeri::create($row);
+        }
     }
 }

@@ -17,9 +17,11 @@ class GaleriFactory extends Factory
     public function definition(): array
     {
         return [
+          
             
-            'judul' => 'tablig akbar 4',
-            'foto' => 'tablig_akbar4.jpg',
+                'judul' => 'tablig akbar 4',
+                'foto' => 'tablig_akbar4.jpg',
+          
         ];
     }
 }
