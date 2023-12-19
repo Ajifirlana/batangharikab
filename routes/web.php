@@ -22,6 +22,7 @@ Route::controller(PageController::class)->group(function() {
 //BERITA
 Route::controller(BeritaController::class)->group(function() {
         Route::get('baca/{id}/{title}/{tanggal}', 'baca')->name('baca');
+        Route::get('berita', 'index')->name('index');
 });
 //Galeri
 Route::controller(GaleriController::class)->group(function() {

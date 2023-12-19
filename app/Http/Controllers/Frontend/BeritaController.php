@@ -10,6 +10,10 @@ use DB;
 
 class BeritaController extends Controller
 {
+  public function index(){
+    $berita =  DB::table('berita')->orderBy('id','desc')->paginate(8);
+    return view('frontend.berita.index',array("berita"=>$berita));
+  }
     public function baca($id, $title, $tanggal){
       $berita_terbaru =  DB::table('berita')->orderBy('tanggal','desc')->offset(0)->limit(10)->get();
      

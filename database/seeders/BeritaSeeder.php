@@ -32,6 +32,29 @@ class BeritaSeeder extends Seeder
                 'dibaca' => 843,
                 'tittle_gambar' => 'PLT. Sekreatis Daerah Membuka Forum OPD Tahun 2017',
                 ],
+                [
+                    'judul' => 'Tabligh Akbar',
+                    'isi' => 'Pemerintah Kabupaten Batang Hari bersama Badan Kontak Majelis Taklim (BKMT) Kabupaten Batang Hari Dalam Rangka HUT Kabupaten Batang Hari Ke-75 Tahun 2023.
+
+                    Bupati Batang Hari Mhd Fadhil Arief memberikan sambutan pada acara Tabligh Akbar Dalam Rangka HUT Kabupaten Batang Hari ke-75 Tahun 2023. Pada sambutannya Bupati menyampaikan dan berharap bahwa kegiatan Tabligh Akbar ini dapat mempererat tali silaturahmi sekaligus mengoptimalkan peran aktif para ulama dan organisasi keagamaan yang ada di Kabupaten Batang Hari.
+                    
+                    "Bahwa untuk meningkatkan kualitas Sumber Daya Manusia di Kabupaten Batang Hari tidak hanya dilakukan melalui bidang Akademik saja tetapi juga pada kualitas spiritual. Karena kita tahu SDM yang baik itu yang otaknya baik, badannya sehat dan imannya kuat".
+                    
+                    Dalam kesempatan tersebut, Pemerintah Kabupaten Batang Hari mengundang Ustadz H. Irfan Yusuf atau lebih dikenal Ustadz Rahul untuk mengisi tausiyah pada kegiatan Tabligh Akbar Peringatan HUT Kabupaten Batang Hari Ke-75 Tahun 2023.
+                    
+                    Bupati menjelaskan bahwa saat ini, setelah dijalan program Guru Ngaji Tangguh di Desa dan sekolah. Terjadi peningkatan anak-anak yang mampu membaca Al-Quran di Kabupaten Batang Hari.
+                    "Dari 7.412 tinggal 700 orang yang belum belajar baca tulis Al-Quran. Dengan program Guru Ngaji Tangguh yang masuk ke dalam sekolah kita harapkan anak-anak kita semua bisa membaca Al-Quran," jelasnya.
+                    
+                    Dalam kesempatan tersebut, Bupati juga memohon Doa kepada Masyarakat Kabupaten Batang Hari untuk dapat istiqomah memimpin Kabupaten Batang Hari. Ia berharap, dengan bertambahnya usia Kabupaten Batang Hari. Peningkatan kesejahteraan dan kualitas Sumber Daya Manusia di Kabupaten Batang Hari juga dapat meningkat.
+                    
+                    "Kami mohon Doanya kepada ibu-ibu, saya dan Wakil Bupati Batang Hari H. Bakhtiar tolong di Doakan agar tetap Istiqomah memimpin Kabupaten Batang Hari,"
+                    
+                    Turut Hadir Kapolres Batang Hari, Kepala Pengadilan Agama Muara Bulian, Ketua TP.PKK Kab. Batang Hari, Ketua BKMT Kab. Batang Hari, Kepala OPD Pemkab Bantang Hari, Para Ulama, Dai, dan Ibuk-ibuk BKMT Se-Kabupaten Batang Hari.',
+                    'tanggal' => '2023-12-13',
+                    'gambar' => 'tablig_akbar4.jpg',
+                    'dibaca' => 843,
+                    'tittle_gambar' => 'Tabligh Akbar',
+                    ],
         ];
         foreach($data as $berita){
             Berita::create($berita);
