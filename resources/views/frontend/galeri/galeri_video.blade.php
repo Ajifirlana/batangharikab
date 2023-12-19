@@ -3,7 +3,7 @@
 
 <section id="action" class="business bg-grey roomy-40">
 </section>
-<section id="action" class="action bg-primary roomy-40">
+<section id="action" class="business bg-grey roomy-40">
                 <div class="container">
                     
                 <div class="head_title text-center fix">

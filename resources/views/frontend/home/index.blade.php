@@ -74,7 +74,7 @@ Bumi Serentak Bak Regam</h5>
 
                                         @endforeach
                                         <div align="center">
-                                        <a href="https://bootstrapthemes.co" class="btn btn-default m-top-10">Selengkapnya</a>
+                                        <a href="{{url('berita')}}" class="btn btn-default m-top-10">Selengkapnya</a>
                                     </div>
                                         </div>     
                                     

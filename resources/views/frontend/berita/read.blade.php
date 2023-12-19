@@ -4,7 +4,7 @@
 <section id="action" class="business bg-grey roomy-40">
 </section>
  <!--Featured Section-->
- <section id="features"  class="action bg-primary roomy-40">
+ <section id="features"  class="business bg-grey roomy-40">
                 <div class="container">
                     <div class="row">
                            

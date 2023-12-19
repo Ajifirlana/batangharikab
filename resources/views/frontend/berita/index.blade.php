@@ -3,11 +3,11 @@
 
 <section id="action" class="business bg-grey roomy-40">
 </section>
-<section id="action" class="action bg-primary roomy-40">
+<section id="action" class="business bg-grey roomy-40">
                 <div class="container">
                     
                 <div class="head_title text-center fix">
-                    <h2 class="text-uppercase"><strong>GALERI FOTO</strong></h2>    
+                    <h2 class="text-uppercase"><strong>Berita</strong></h2>    
                             
                         </div>
                         <div class="row">
