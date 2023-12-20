@@ -48,7 +48,7 @@
                             </a>
                             <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="1">Visi dan Misi</a>
+                                <a class="dropdown-item" href="{{url('page/1')}}">Visi dan Misi</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="2">Struktur Organisasi</a>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Page;
 use Illuminate\Http\Request;
 use DB;
 class PageController extends Controller
@@ -19,5 +20,11 @@ class PageController extends Controller
         'image_slider'=>$image_slider,
         'galeri'=>$galeri,));
      }
-
+     public function page($id){
+      $page = Page::findOrfail($id);
+      return view('frontend.home.page', array(
+        'judul'=>$page->judul,
+        'isi'=>$page->isi,
+      'created_at'=>$page->created_at));
+     }
 }

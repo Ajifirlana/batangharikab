@@ -83,9 +83,9 @@ Bumi Serentak Bak Regam</h5>
                                   <h3><i class="fa fa-arrow-circle-right"></i>Website SKPD</h3> 
       
                                     <div class="card">
-            <div class="profil-skpd">
+                                 <div class="profil-skpd">
 
-            <div class="business_slid">
+                                    <div class="business_slid">
                                     <div class="slid_shap bg-grey"></div>
                                     <div class="business_items text-center">
 
