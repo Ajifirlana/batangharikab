@@ -19,12 +19,12 @@ class DatabaseSeeder extends Seeder
             PermissionSeeder::class,
             RoleSeeder::class,
             UserSeeder::class,
-            SettingSeeder::class,
             MenuSeeder::class,
-            BeritaSeeder::class,
             VideoKegiatanSeeder::class,
             SliderSeeder::class,
             GaleriSeeder::class,
+            SettingSeeder::class,
+            BeritaSeeder::class,
         ]);
     }
 }

@@ -16,9 +16,11 @@ return new class extends Migration
             $table->string('id_menu_induk');
             $table->string('type');
             $table->string('title');
-            $table->string('url');
-            $table->string('icon');
+            $table->string('url')->nullable();
+            $table->string('icon')->nullable();
             $table->string('active');
+            $table->string('permission')->nullable();
+            $table->string('id_permission')->nullable();
             $table->timestamps();
         });
     }

@@ -9,7 +9,7 @@ use DB;
 class PageController extends Controller
 {
     function home(){
-      $berita_terbaru =  DB::table('berita')->orderBy('tanggal','desc')->offset(0)->limit(8)->get();
+      $berita_terbaru =  DB::table('beritas')->orderBy('tanggal','desc')->offset(0)->limit(8)->get();
       $video_kegiatan =  DB::table('video_kegiatans')->orderBy('id','desc')->offset(0)->limit(5)->get();
       $image_slider =  DB::table('sliders')->orderBy('id','desc')->offset(0)->limit(5)->get();
       $galeri =  DB::table('galeris')->orderBy('id','desc')->offset(0)->limit(5)->get();
