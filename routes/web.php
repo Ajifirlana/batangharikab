@@ -14,6 +14,7 @@ use App\Http\Controllers\SliderController;
 
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Frontend\BeritaController;
 use App\Http\Controllers\Frontend\GaleriController;
 use App\Http\Controllers\Frontend\PageController;
 use Illuminate\Support\Facades\Auth;
@@ -29,6 +30,12 @@ Route::controller(PageController::class)->group(function() {
 Route::controller(GaleriController::class)->group(function() {
     Route::get('galeri-foto', 'galeri_foto')->name('galeri_foto');
     Route::get('galeri-video', 'galeri_video')->name('galeri_video');
+});
+
+//BERITA
+Route::controller(BeritaController::class)->group(function() {
+    Route::get('baca/{id}/{title}/{tanggal}', 'baca')->name('baca');
+    Route::get('berita', 'index')->name('index');
 });
 Route::get('/login', function () {
    return redirect()->route('login');
