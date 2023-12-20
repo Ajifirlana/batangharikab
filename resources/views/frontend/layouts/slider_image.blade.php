@@ -1,4 +1,4 @@
-<section id="product" class="product">
+<section id="product" class="business bg-grey roomy-40">
                 <div class="container">
                     <div class="main_product roomy-80">
                

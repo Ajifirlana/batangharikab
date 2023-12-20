@@ -1,6 +1,5 @@
 @extends('frontend.layouts.app')
 @section('content')
-@include("frontend.layouts.slider_image")
 <!--                   
 <section id="test" class="test bg-grey roomy-60 fix">
                 <div class="container">
@@ -46,7 +45,7 @@ Bumi Serentak Bak Regam</h5>
             <!-- / A set of walkthrough screens in HTML/CSS/JS. A personal experiment with layering images, CSS3 transitions, & flexbox. -->
 
 
-            <section id="features" class="features">
+            <section id="features" class="business bg-grey roomy-40">
                 <div class="container">
 
                     <div class="row">
