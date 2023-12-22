@@ -266,7 +266,7 @@
                                             <span class="icon-email"></span>
                                         </div>
                                         <div class="text">
-                                            <p><a href="needhelp@company.com">needhelp@company.com</a></p>
+                                            <p><a href="needhelp@company.com">{{$setting->email}}</a></p>
                                         </div>
                                     </li>
                                     <li>

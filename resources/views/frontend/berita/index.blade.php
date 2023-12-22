@@ -1,38 +1,54 @@
 @extends('frontend.layouts.app')
 @section('content')
 
-<section id="action" class="business bg-grey roomy-40">
-</section>
-<section id="action" class="business bg-grey roomy-40">
-                <div class="container">
+        <!--News One Start-->
+        <section class="news-one">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h2 class="section-title__title">Berita</h2>
+                </div>
+                <div class="row">
+                    <!--News One Single Start-->
                     
-                <div class="head_title text-center fix">
-                    <h2 class="text-uppercase"><strong>Berita</strong></h2>    
-                            
-                        </div>
-                        <div class="row">
-                        
-                        <div class="maine_action">
-
-                        @foreach($berita as $row)  
-                                                <div class="col-md-3">
-                                                <?php
+                    @foreach($berita as $row)  
+                    <?php
                                         $url = URL::to("baca/".$row->id."/".str_replace(' ','-',$row->judul)."/".$row->tanggal);
                                         ?>
-                                                <div class="card-video">
-                                                <h5><a href="<?= $url ?>">{{$row->judul}}</a></h5>
-                                                    
-                                   </div>
-                    </div>@endforeach  
-                    
-                                   </div>
-                          
-                    </div>         
-                    <div align="center">
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="news-one__single">
+                            <div class="news-one__img-box">
+                                <div class="news-one__img">
+                                    <img src="{{asset('frontend/assets/images/blog/news-1-1.jpg')}}" alt="">
+                                </div>
+                                <div class="news-one__date">
+                                    <p>20 Aug</p>
+                                </div>
+                                <ul class="news-one__meta list-unstyled">
+                                    <li>
+                                        <a href="news-details.html"><i class="fas fa-user-circle"></i>by Christine</a>
+                                    </li>
+                                    <li>
+                                        <a href="news-details.html"><i class="fas fa-comments"></i>2 Comments</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="news-one__content">
+                                <h3 class="news-one__title"><a href="<?= $url ?>">{{$row->judul}}</a></h3>
+                                <div class="news-one__bottom">
+                                    <a href="news-details.html" class="news-one__read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
                     {{ $berita->links() }}
 
-                    </div>
+                    <!--News One Single End-->
+                    
+                 
+                    <!--News One Single End-->
                 </div>
-            </section>                            
-           
+            </div>
+        </section>
+       
             @endsection
