@@ -67,7 +67,7 @@
                 <div class="main-header__top-wrapper">
                     <div class="main-header__top-inner">
                         <div class="main-header__top-left">
-                            <p class="main-header__top-text">80 Broklyn Golden Street, New York. USA</p>
+                            <p class="main-header__top-text">{{$setting->alamat}}</p>
                             <div class="main-header__social">
                                 <a href="#"><i class="fab fa-twitter"></i></a>
                                 <a href="#"><i class="fab fa-facebook"></i></a>
@@ -82,7 +82,7 @@
                                         <i class="icon-email"></i>
                                     </div>
                                     <div class="text">
-                                        <p><a href="needhelp@company.com">needhelp@company.com</a></p>
+                                        <p><a href="{{$setting->email}}">{{$setting->email}}</a></p>
                                     </div>
                                 </li>
                                 <li>
@@ -266,7 +266,7 @@
                                             <span class="icon-email"></span>
                                         </div>
                                         <div class="text">
-                                            <p><a href="needhelp@company.com">{{$setting->email}}</a></p>
+                                            <p><a href="{{$setting->email}}">{{$setting->email}}</a></p>
                                         </div>
                                     </li>
                                     <li>
@@ -337,7 +337,7 @@
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="fa fa-envelope"></i>
-                    <a href="mailto:needhelp@packageName__.com">needhelp@austry.com</a>
+                    <a href="mailto:{{$setting->email}}">{{$setting->email}}</a>
                 </li>
                 <li>
                     <i class="fa fa-phone-alt"></i>
