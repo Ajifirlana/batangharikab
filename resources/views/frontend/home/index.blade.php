@@ -1730,7 +1730,7 @@
                                 </div>
                                 <ul class="news-one__meta list-unstyled">
                                     <li>
-                                        <a href="news-details.html"><i class="fas fa-user-circle"></i>by Christine</a>
+                                        <a href="news-details.html"><i class="fas fa-user-circle"></i>{{$row->tanggal}}</a>
                                     </li>
                                     <li>
                                         <a href="news-details.html"><i class="fas fa-comments"></i>2 Comments</a>
