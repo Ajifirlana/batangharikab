@@ -125,7 +125,7 @@
                                     <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                     <ul class="main-menu__list">
                                         <li class="dropdown">
-                                            <a href="index.html">Home </a>
+                                            <a href="{{url('/')}}">Home </a>
                                             <ul>
                                                 <li><a href="{{url('page/1')}}">Visi & Misi</a></li>
                                                 <li><a href="index2.html">Home Two</a></li>
@@ -195,14 +195,14 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="main-menu__search-cart-box">
+                                <!-- <div class="main-menu__search-cart-box">
                                     <div class="main-menu__search-box">
                                         <a href="#" class="main-menu__search search-toggler icon-magnifying-glass"></a>
                                     </div>
                                     <div class="main-menu__cart-box">
                                         <a href="#" class="main-menu__cart icon-shopping-cart"></a>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -306,7 +306,7 @@
                     </div>
                 </div>
                 <div class="site-footer__bottom">
-                    <p class="site-footer__bottom-text">© Copyright 2023 by <a href="#">Austry.com</a></p>
+                    <p class="site-footer__bottom-text">© Copyright 2023 by <a href="#">Diskominfo Batanghari</a></p>
                     <ul class="list-unstyled site-footer__bottom-menu">
                         <li><a href="about.html">Help</a></li>
                         <li><a href="about.html">Privacy Policy</a></li>

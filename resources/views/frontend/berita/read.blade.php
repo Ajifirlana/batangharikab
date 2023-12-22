@@ -143,36 +143,13 @@
                                         <div class="sidebar__post-content">
                                             <h3>
                                                 <span class="sidebar__post-content-meta"><i
-                                                        class="fas fa-user-circle"></i>by Christine</span>
+                                                        class="fas fa-user-circle"></i>by Admin</span>
                                                 <a href="news-details.html">{{$berita->judul}}</a>
                                             </h3>
                                         </div>
                                     </li>
                                     @endforeach
-                                    <li>
-                                        <div class="sidebar__post-image">
-                                            <img src="{{asset('assets/images/blog/lp-1-2.jpg')}}" alt="">
-                                        </div>
-                                        <div class="sidebar__post-content">
-                                            <h3>
-                                                <span class="sidebar__post-content-meta"><i
-                                                        class="fas fa-user-circle"></i>by Christine</span>
-                                                <a href="news-details.html">There are many variations of</a>
-                                            </h3>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="sidebar__post-image">
-                                            <img src="{{asset('assets/images/blog/lp-1-3.jpg')}}" alt="">
-                                        </div>
-                                        <div class="sidebar__post-content">
-                                            <h3>
-                                                <span class="sidebar__post-content-meta"><i
-                                                        class="fas fa-user-circle"></i>by Christine</span>
-                                                <a href="news-details.html">Bring to the table win-win survival</a>
-                                            </h3>
-                                        </div>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                             <div class="sidebar__single sidebar__category">

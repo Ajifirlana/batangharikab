@@ -15,7 +15,7 @@ class BeritaController extends Controller
     return view('frontend.berita.index',array("berita"=>$berita));
   }
     public function baca($id, $title, $tanggal){
-      $berita_terbaru =  DB::table('beritas')->orderBy('tanggal','desc')->offset(0)->limit(10)->get();
+      $berita_terbaru =  DB::table('beritas')->orderBy('id','desc')->offset(0)->limit(5)->get();
      
       $video_kegiatan =  DB::table('video_kegiatans')->orderBy('id','desc')->offset(0)->limit(5)->get();
   $image_slider =  DB::table('sliders')->orderBy('id','desc')->offset(0)->limit(5)->get();
@@ -33,9 +33,7 @@ class BeritaController extends Controller
         return view('frontend.berita.read',array("route"=>"berita", 
         
       'berita_terbaru'=>$berita_terbaru,
-        "berita"=>$berita,
-        "video_kegiatan"=>$video_kegiatan,
-        'image_slider'=>$image_slider));
+        "berita"=>$berita));
     }
  
 }
