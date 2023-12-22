@@ -27,7 +27,7 @@
                         </button>
                         <ul>
                         <li>
-                        <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('logo/logo-menu.png')}}" class="logo" height="50px" alt="">
+                        <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('frontend/logo/logo-menu.png')}}" class="logo" height="50px" alt="">
                     </a>
                         </li>
                         

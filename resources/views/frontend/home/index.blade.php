@@ -18,7 +18,7 @@ Bumi Serentak Bak Regam</h5>
                                 <div class="test_item fix">
 
                                     <div align="center">
-                                    <img src="{{ asset('logo/20210227-1BUPATI.jpeg')}}" alt="" />
+                                    <img src="{{ asset('frontend/logo/20210227-1BUPATI.jpeg')}}" alt="" />
                                         <h5>MUHAMMAD FADHIL ARIEF</h5>
                                         <h6>Bupati</h6>
 
@@ -30,7 +30,7 @@ Bumi Serentak Bak Regam</h5>
                                 <div class="test_item fix sm-m-top-30">
                 
                                    <div align="center">
-                                    <img  src="{{ asset('logo/wakil-bupati.jpeg')}}" alt="" />
+                                    <img  src="{{ asset('frontend/logo/wakil-bupati.jpeg')}}" alt="" />
                                         <h5>H. BAKHTIAR</h5>
                                         <h6>Wakil Bupati</h6>
 
@@ -91,54 +91,54 @@ Bumi Serentak Bak Regam</h5>
 
                                     <div class="business_item">
                                             <div class="business_img">
-                                                <a href="#"><img src="{{asset('logo/lakip.png')}}" alt="" /></a>
+                                                <a href="#"><img src="{{asset('frontend/logo/lakip.png')}}" alt="" /></a>
                                             </div>
                                         </div>
                                         <div class="business_item">
                                             <div class="business_img">
-                                                <img src="{{asset('logo/lakip-skpd.jpg')}}" alt="" />
+                                                <img src="{{asset('frontend/logo/lakip-skpd.jpg')}}" alt="" />
                                             </div>
                                         </div>
                                         <div class="business_item">
                                             <div class="business_img">
-                                                <img src="{{asset('logo/portal-app.png')}}" alt="" />
+                                                <img src="{{asset('frontend/logo/portal-app.png')}}" alt="" />
                                             </div>
                                         </div>
 
 
                                     <div class="business_item">
                                             <div class="business_img">
-                                                <img src="{{asset('logo/ppid.jpg')}}" alt="" />
+                                                <img src="{{asset('frontend/logo/ppid.jpg')}}" alt="" />
                                             </div>
                                         </div>
 
                                         <div class="business_item">
                                             <div class="business_img">
-                                                <img src="{{asset('logo/dukcapil.jpg')}}" alt="" />
+                                                <img src="{{asset('frontend/logo/dukcapil.jpg')}}" alt="" />
                                             </div>
                                         </div>
 
                                         <div class="business_item">
                                             <div class="business_img">
-                                                <img src="{{asset('logo/bkd.jpg')}}" alt="" style="width:100%"/>
+                                                <img src="{{asset('frontend/logo/bkd.jpg')}}" alt="" style="width:100%"/>
                                             </div>
                                         </div>
                                         
                                         <div class="business_item">
                                             <div class="business_img">
-                                                <img src="{{asset('logo/lakip.png')}}" alt="" style="width:100%"/>
+                                                <img src="{{asset('frontend/logo/lakip.png')}}" alt="" style="width:100%"/>
                                             </div>
                                         </div>
                                         
                                         <div class="business_item">
                                             <div class="business_img">
-                                                <img src="{{asset('logo/lakip-skpd.jpg')}}" alt="" style="width:100%"/>
+                                                <img src="{{asset('frontend/logo/lakip-skpd.jpg')}}" alt="" style="width:100%"/>
                                             </div>
                                         </div>
                                         
                                         <div class="business_item">
                                             <div class="business_img">
-                                                <img src="{{asset('logo/portal-app.png')}}" alt="" style="width:100%"/>
+                                                <img src="{{asset('frontend/logo/portal-app.png')}}" alt="" style="width:100%"/>
                                             </div>
                                         </div>
                                     </div>
