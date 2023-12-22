@@ -1714,7 +1714,11 @@
                         <br> from the posts</h2>
                 </div>
                 <div class="row">
-                    <!--News One Single Start-->
+                    
+                    @foreach($berita as $row)  
+                    <?php
+                                        $url = URL::to("baca/".$row->id."/".str_replace(' ','-',$row->judul)."/".$row->tanggal);
+                                        ?>
                     <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                         <div class="news-one__single">
                             <div class="news-one__img-box">
@@ -1734,15 +1738,15 @@
                                 </ul>
                             </div>
                             <div class="news-one__content">
-                                <h3 class="news-one__title"><a href="news-details.html">We Believe in Building Long
-                                        Lasting our Business Relationships</a></h3>
+                                <h3 class="news-one__title"><a href="<?= $url ?>">{{$row->judul}}</a></h3>
                                 <div class="news-one__bottom">
                                     <a href="news-details.html" class="news-one__read-more">Read More</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--News One Single End-->
+                    @endforeach
+                    {{ $berita->links() }}
                     <!--News One Single Start-->
                     <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
                         <div class="news-one__single">

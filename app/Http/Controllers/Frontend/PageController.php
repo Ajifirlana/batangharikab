@@ -9,13 +9,13 @@ use DB;
 class PageController extends Controller
 {
     function home(){
-      $berita_terbaru =  DB::table('beritas')->orderBy('tanggal','desc')->offset(0)->limit(8)->get();
+      $berita_terbaru =  DB::table('beritas')->orderBy('id','desc')->paginate(8);
       $video_kegiatan =  DB::table('video_kegiatans')->orderBy('id','desc')->offset(0)->limit(5)->get();
       $image_slider =  DB::table('sliders')->orderBy('id','desc')->offset(0)->limit(5)->get();
       $galeri =  DB::table('galeris')->orderBy('id','desc')->offset(0)->limit(5)->get();
      
        return view('frontend.home.index', array(
-      'berita_terbaru'=>$berita_terbaru,
+      'berita'=>$berita_terbaru,
         'video_kegiatan'=>$video_kegiatan,
         'image_slider'=>$image_slider,
         'galeri'=>$galeri,));
