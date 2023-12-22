@@ -21,7 +21,7 @@
 
                     <div class="swiper-slide">
                         <div class="image-layer"
-                            style="background-image: url(assets/images/backgrounds/main-slider-1-1.jpg);"></div>
+                            style="background-image: url(frontend/assets/images/backgrounds/main-slider-1-1.jpg);"></div>
                         <!-- /.image-layer -->
 
                         <div class="container">
@@ -42,7 +42,7 @@
 
                     <div class="swiper-slide">
                         <div class="image-layer"
-                            style="background-image: url(assets/images/backgrounds/main-slider-1-2.jpg);"></div>
+                            style="background-image: url(frontend/assets/images/backgrounds/main-slider-1-2.jpg);"></div>
                         <!-- /.image-layer -->
 
                         <div class="container">
@@ -63,7 +63,7 @@
 
                     <div class="swiper-slide">
                         <div class="image-layer"
-                            style="background-image: url(assets/images/backgrounds/main-slider-1-3.jpg);"></div>
+                            style="background-image: url(frontend/assets/images/backgrounds/main-slider-1-3.jpg);"></div>
                         <!-- /.image-layer -->
 
                         <div class="container">
@@ -1726,7 +1726,7 @@
                                     <img src="{{asset('frontend/assets/images/blog/news-1-1.jpg')}}" alt="">
                                 </div>
                                 <div class="news-one__date">
-                                    <p>20 Aug</p>
+                                    <p>{{$row->tanggal}}</p>
                                 </div>
                                 <ul class="news-one__meta list-unstyled">
                                     <li>
