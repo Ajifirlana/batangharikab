@@ -35,7 +35,7 @@ $tbh_menu = json_decode(json_encode(
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                @can('create pegawai')
+                                @can('create user')
                                     <a href="#" class="btn btn-sm btn-primary" id="btn_tambah"><i
                                             class="fas fa-plus"></i> Tambah User</a>
                                 @endcan            

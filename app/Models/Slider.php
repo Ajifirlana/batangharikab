@@ -9,7 +9,7 @@ class slider extends Model
 {
     use HasFactory;
     //  use AutoUUID;
-     protected $table = 'slider';
+     protected $table = 'sliders';
      protected $guarded = [];
  
      protected $casts = [
