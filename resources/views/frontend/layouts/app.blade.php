@@ -85,14 +85,6 @@
                                         <p><a href="{{$setting->email}}">{{$setting->email}}</a></p>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="icon-clock"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Mon - Sat 8:00 - 6:30, Sunday - CLOSED</p>
-                                    </div>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -110,7 +102,7 @@
                         </div>
                         <div class="main-menu__call-content">
                             <p class="main-menu__call-sub-title">Call Anytime</p>
-                            <h5 class="main-menu__call-number"><a href="tel:922460088">+ 92 (246) 0088</a></h5>
+                            <h5 class="main-menu__call-number"><a href="tel:{{$setting->telepon}}">{{$setting->telepon}}</a></h5>
                         </div>
                     </div>
                     <div class="main-menu__wrapper-inner">
