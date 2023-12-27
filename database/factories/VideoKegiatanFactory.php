@@ -19,7 +19,8 @@ class VideoKegiatanFactory extends Factory
         return [
             
             'judul' => 'tablig akbar 4',
-            'link' => 'tablig_akbar4.jpg',
+            'link' => 'url',
+            'foto' => 'tablig_akbar4.jpg',
         ];
     }
 }
