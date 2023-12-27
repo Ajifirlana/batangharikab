@@ -17,9 +17,9 @@ class SliderFactory extends Factory
     public function definition(): array
     {
         return [
-       
-            'judul' => 1,
-            'foto' => 1,
+            
+            'judul' => fake()->name(),
+            'foto' => fake()->name(),
         ];
     }
 }

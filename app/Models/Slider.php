@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class slider extends Model
+class Slider extends Model
 {
     use HasFactory;
+<<<<<<< HEAD
     //  use AutoUUID;
      protected $table = 'sliders';
      protected $guarded = [];
@@ -19,4 +20,6 @@ class slider extends Model
 
 
 
+=======
+>>>>>>> 2d93084e9b1fa7e08efb0849ae9fb02bb74847af
 }

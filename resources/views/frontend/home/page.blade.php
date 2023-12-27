@@ -1,96 +1,45 @@
 @extends('frontend.layouts.app')
 @section('content')
 
-<section id="action" class="business bg-grey roomy-40">
-</section>
- <!--Featured Section-->
- <section id="features"  class="business bg-grey roomy-40">
-                <div class="container">
-                    <div class="row">
-                           
-                            <div class="col-md-8">
-                           
-                            <div class="features_item sm-m-top-30">
-                                   
-                                    <div class="f_item_text">
-                                    <h3></i>{{$judul}}</h3> 
-                                    <h6><i class="fa fa-calendar"></i> Posted On: {{$created_at}}</h6>
-                                   
-                                    <h5><?php echo $isi?></h5>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            
-                            <div class="col-md-4">
-                            <h3><i class="fa fa-arrow-circle-right"></i>Website SKPD</h3> 
-                            
+        <!--Page Header Start-->
+        <section class="page-header">
+            <div class="page-header-bg" style="background-image: url({{ asset('frontend/assets/images/backgrounds/page-header-bg.jpg')}})">
+            </div>
 
-                                    <div class="business_slid">
-                                    <div class="slid_shap bg-grey"></div>
-                                    <div class="business_items text-center">
-
-                                    <div class="business_item">
-                                            <div class="business_img">
-                                                <a href="#"><img src="{{asset('logo/lakip.png')}}" alt="" /></a>
-                                            </div>
-                                        </div>
-                                        <div class="business_item">
-                                            <div class="business_img">
-                                                <img src="{{asset('logo/lakip-skpd.jpg')}}" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="business_item">
-                                            <div class="business_img">
-                                                <img src="{{asset('logo/portal-app.png')}}" alt="" />
-                                            </div>
-                                        </div>
-
-
-                                    <div class="business_item">
-                                            <div class="business_img">
-                                                <img src="{{asset('logo/ppid.jpg')}}" alt="" />
-                                            </div>
-                                        </div>
-
-                                        <div class="business_item">
-                                            <div class="business_img">
-                                                <img src="{{asset('logo/dukcapil.jpg')}}" alt="" />
-                                            </div>
-                                        </div>
-
-                                        <div class="business_item">
-                                            <div class="business_img">
-                                                <img src="{{asset('logo/bkd.jpg')}}" alt="" style="width:100%"/>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="business_item">
-                                            <div class="business_img">
-                                                <img src="{{asset('logo/lakip.png')}}" alt="" style="width:100%"/>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="business_item">
-                                            <div class="business_img">
-                                                <img src="{{asset('logo/lakip-skpd.jpg')}}" alt="" style="width:100%"/>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="business_item">
-                                            <div class="business_img">
-                                                <img src="{{asset('logo/portal-app.png')}}" alt="" style="width:100%"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h2>{{$judul}}</h2>
+                    <div class="thm-breadcrumb__box">
+                        <ul class="thm-breadcrumb list-unstyled">
+                            <li><a href="index.html">Home</a></li>
+                            <li><span>/</span></li>
+                            <li>{{$judul}}</li>
+                        </ul>
                     </div>
-            
-                    <!-- End off row -->
-                </div><!-- End off container -->
-            </section><!-- End off Featured Section-->
-            
-                  
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+        <!--News Details Start-->
+        <section class="news-details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="news-details__left">
+                           
+                            <div class="news-details__content">
+        
+                                <h3 class="news-details__title">{{$judul}}</h3>
+                                <p class="news-details__text-1">
+                                <?php echo $isi;?>
+                                </p>
+                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--News Details End-->
+
             @endsection

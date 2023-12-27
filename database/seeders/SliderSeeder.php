@@ -13,8 +13,8 @@ class SliderSeeder extends Seeder
      */
     public function run(): void
     {
-        
-        Slider::create(['judul' => 'tablig akbar 4',
-        'foto' => 'tablig_akbar4.jpg']);
+        Slider::create([
+            'judul'       => 'tabligh akbar',
+            'foto'     => 'tablig_akbar1.jpg']);
     }
 }
