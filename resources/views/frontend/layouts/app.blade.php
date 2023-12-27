@@ -1,5 +1,5 @@
 <?php 
-      $setting = DB::table('settings')->get();
+      $setting = DB::table('settings')->first();
       ?>
       <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +67,7 @@
                 <div class="main-header__top-wrapper">
                     <div class="main-header__top-inner">
                         <div class="main-header__top-left">
-                            <p class="main-header__top-text"></p>
+                            <p class="main-header__top-text">{{$setting->alamat}}</p>
                             <div class="main-header__social">
                                 <a href="#"><i class="fab fa-twitter"></i></a>
                                 <a href="#"><i class="fab fa-facebook"></i></a>
@@ -82,7 +82,7 @@
                                         <i class="icon-email"></i>
                                     </div>
                                     <div class="text">
-                                        <p><a ></a></a></p>
+                                        <p><a href="{{$setting->email}}">{{$setting->email}}</a></p>
                                     </div>
                                 </li>
                             </ul>
@@ -225,14 +225,14 @@
                                 <div class="footer-widget__title-box">
                                     <h4 class="footer-widget__title">Contact</h4>
                                 </div>
-                                <p class="footer-widget__contact-text"></p>
+                                <p class="footer-widget__contact-text">{{$setting->alamat}}</p>
                                 <ul class="footer-widget__Contact-list list-unstyled">
                                     <li>
                                         <div class="icon">
                                             <span class="icon-email"></span>
                                         </div>
                                         <div class="text">
-                                            <p><a ></a></a></p>
+                                            <p><a href="{{$setting->email}}">{{$setting->email}}</a></p>
                                         </div>
                                     </li>
                                     <li>
@@ -303,7 +303,7 @@
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="fa fa-envelope"></i>
-                    <a ></a></a>
+                    <a href="mailto:{{$setting->email}}">{{$setting->email}}</a>
                 </li>
                 <li>
                     <i class="fa fa-phone-alt"></i>
