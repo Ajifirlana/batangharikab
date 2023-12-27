@@ -13,8 +13,16 @@ class SliderSeeder extends Seeder
      */
     public function run(): void
     {
-        Slider::create([
+        $data =[ [
             'judul'       => 'tabligh akbar',
-            'foto'     => 'tablig_akbar1.jpg']);
+            'foto'     => 'main-slider-1-3.jpg'],
+            [
+                'judul'       => 'kantor bupati',
+                'foto'     => 'kantor_bupati.jpg'
+                ]
+            ];
+            foreach($data as $row){
+                Slider::create($row);
+            }
     }
 }

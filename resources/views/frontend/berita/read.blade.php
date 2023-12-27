@@ -36,8 +36,6 @@
                                 <ul class="list-unstyled news-details__meta">
                                     <li><a href="news-details.html"><i class="fas fa-user-circle"></i> by Admin</a>
                                     </li>
-                                    <li><a href="news-details.html"><i class="fas fa-comments"></i> 2 Comments</a>
-                                    </li>
                                 </ul>
                                 <h3 class="news-details__title">{{$berita->judul}}</h3>
                                 <p class="news-details__text-1">
