@@ -102,7 +102,7 @@
             <nav class="main-menu">
                 <div class="main-menu__wrapper">
                     <div class="main-menu__btn">
-                        <a href="contact.html">Get a free quote</a>
+                        <a href="contact">Get a free quote</a>
                     </div>
                     <div class="main-menu__call">
                         <div class="main-menu__call-icon">
@@ -117,7 +117,7 @@
                         <div class="main-menu__wrapper-inner-content">
                             <div class="main-menu__left">
                                 <div class="main-menu__logo">
-                                    <a href="index.html"><img src="{{asset('frontend/assets/images/resources/logo-1.png')}}" alt=""></a>
+                                    <a href="{{url('/')}}"><img src="{{asset('frontend/assets/images/resources/logo-1.png')}}" alt=""></a>
                                 </div>
                             </div>
                             <div class="main-menu__right">
@@ -125,74 +125,47 @@
                                     <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                     <ul class="main-menu__list">
                                         <li class="dropdown">
-                                            <a href="{{url('/')}}">Home </a>
+                                            <a href="{{url('/')}}">Tentang Batanghari</a>
                                             <ul>
-                                                <li><a href="{{url('page/1')}}">Visi & Misi</a></li>
-                                                <li><a href="index2.html">Home Two</a></li>
-                                                <li><a href="index3.html">Home Three</a></li>
-                                                <li><a href="index4.html">Home Four</a></li>
-                                                <li><a href="index5.html">Home Five</a></li>
-                                                <li><a href="index6.html">Home Six</a></li>
-                                                <li class="dropdown">
-                                                    <a href="#">Header Styles</a>
+                                            <li class="dropdown">
+                                                <a href="2">Profil Batanghari</a>
+                                            <ul>
+                                            <li><a href="3">Sejarah Batanghari</a></li>
+                                            <li><a href="#">Arti Lambang</a></li>
+                                            <li><a href="#">Kondisi Demografi</a></li>
+                                            <li><a href="#">Peta Batanghari</a></li>
+                                
+                                            </ul>
+                                            </li>
+                                                <li><a href="3">Pemerintahan Batanghari</a></li>
+                                                <li><a href="4">Akuntabiltas Pemerintahan</a></li>
+                                                <li><a href="5">Akuntabiltas Pelaporan</a></li>
+                                                <li><a href="6">APBD Batanghari</a></li>
+                                                
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                                    <a href="#">Layanan Publik</a>
                                                     <ul>
-                                                        <li><a href="index.html">Header One</a></li>
-                                                        <li><a href="index2.html">Header Two</a></li>
-                                                        <li><a href="index3.html">Header Three</a></li>
-                                                        <li><a href="index4.html">Home Four</a></li>
-                                                        <li><a href="index5.html">Home Five</a></li>
-                                                        <li><a href="index6.html">Home Six</a></li>
+                                                        <li><a href="2">Header Two</a></li>
+                                                        <li><a href="3">Header Three</a></li>
+                                                        <li><a href="4">Home Four</a></li>
+                                                        <li><a href="5">Home Five</a></li>
+                                                        <li><a href="6">Home Six</a></li>
                                                     </ul>
                                                 </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="about.html">About</a>
-                                        </li>
                                         <li class="dropdown">
-                                            <a href="#">Pages</a>
+                                            <a href="#">Informasi Publik</a>
                                             <ul>
-                                                <li><a href="team.html">Our Team</a></li>
-                                                <li><a href="our-clients.html">Our Clients</a></li>
-                                                <li><a href="faq.html">FAQs</a></li>
+                                                <li><a href="{{url('galeri-foto')}}">Galeri Foto</a></li>
+                                                <li><a href="{{url('galeri-video')}}">Galeri Video</a></li>
+                                                <li><a href="{{url('page/1')}}">Visi & Misi</a></li>
+                                                    
                                             </ul>
                                         </li>
-                                        <li class="dropdown">
-                                            <a href="#">Services</a>
-                                            <ul>
-                                                <li><a href="services-1.html">Services 01</a></li>
-                                                <li><a href="services-2.html">Services 02</a></li>
-                                                <li><a href="services-3.html">Services 03</a></li>
-                                                <li><a href="services-4.html">Services 04</a></li>
-                                                <li><a href="services-5.html">Services 05</a></li>
-                                                <li><a href="services-6.html">Services 06</a></li>
-                                                <li><a href="mechanical-expert.html">Mechanical Expert</a></li>
-                                                <li><a href="repair-welding.html">Repair & Welding</a></li>
-                                                <li><a href="appartment-design.html">Appartment Design</a></li>
-                                                <li><a href="design-build.html">Design & Build</a></li>
-                                                <li><a href="house-renovation.html">House Renovation</a></li>
-                                                <li><a href="building-material.html">Building Material</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Projects</a>
-                                            <ul>
-                                                <li><a href="projects-1.html">Projects 01</a></li>
-                                                <li><a href="projects-2.html">Projects 02</a></li>
-                                                <li><a href="projects-3.html">Projects 03</a></li>
-                                                <li><a href="project-details.html">Project Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">News</a>
-                                            <ul>
-                                                <li><a href="news.html">News</a></li>
-                                                <li><a href="news-details.html">News Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="contact.html">Contact</a>
-                                        </li>
+                                        
+                                        <li><a href="https://ppid.batangharikab.go.id">PPID</a></li>
+                                             
                                     </ul>
                                 </div>
                                 <!-- <div class="main-menu__search-cart-box">
@@ -229,14 +202,14 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                             <div class="footer-widget__column footer-widget__about">
                                 <div class="footer-widget__logo">
-                                    <a href="index.html"><img src="{{asset('frontend/assets/images/resources/footer-logo.png')}}" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/assets/images/resources/footer-logo.png')}}" alt=""></a>
                                 </div>
                                 <div class="footer-widget__about-text-box">
                                     <p class="footer-widget__about-text">There are many of simple lorem available for
                                         not, but the majority alteration.</p>
                                 </div>
                                 <div class="footer-widget__about-btn-box">
-                                    <a href="contact.html" class="footer-widget__about-btn thm-btn">Contact</a>
+                                    <a href="contact" class="footer-widget__about-btn thm-btn">Contact</a>
                                 </div>
                             </div>
                         </div>
@@ -246,11 +219,11 @@
                                     <h4 class="footer-widget__title">Links</h4>
                                 </div>
                                 <ul class="footer-widget__links-list list-unstyled">
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="team.html">Meet Our Team</a></li>
-                                    <li><a href="news.html">News & Media</a></li>
-                                    <li><a href="projects-1.html">Our Projects</a></li>
-                                    <li><a href="contact.html">Contacts</a></li>
+                                    <li><a href="about">About</a></li>
+                                    <li><a href="team">Meet Our Team</a></li>
+                                    <li><a href="news">News & Media</a></li>
+                                    <li><a href="projects-1">Our Projects</a></li>
+                                    <li><a href="contact">Contacts</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -308,8 +281,8 @@
                 <div class="site-footer__bottom">
                     <p class="site-footer__bottom-text">© Copyright 2023 by <a href="#">Diskominfo Batanghari</a></p>
                     <ul class="list-unstyled site-footer__bottom-menu">
-                        <li><a href="about.html">Help</a></li>
-                        <li><a href="about.html">Privacy Policy</a></li>
+                        <li><a href="about">Help</a></li>
+                        <li><a href="about">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -327,7 +300,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="{{asset('frontend/assets/images/resources/logo-1.png')}}" width="130"
+                <a href="" aria-label="logo image"><img src="{{asset('frontend/assets/images/resources/logo-1.png')}}" width="130"
                         alt="" /></a>
             </div>
             <!-- /.logo-box -->
