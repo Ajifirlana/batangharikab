@@ -247,7 +247,7 @@
                                             <span class="icon-telephone"></span>
                                         </div>
                                         <div class="text">
-                                            <p><a href="tel:9288008960">+92 ( 8800 ) - 8960</a></p>
+                                            <p><a href="tel:{{$setting->telepon}}">{{$setting->telepon}}</a></p>
                                         </div>
                                     </li>
                                 </ul>
@@ -263,7 +263,7 @@
                                         <div class="footer-widget__newsletter-form-input-box">
                                             <input type="email" placeholder="Email Address" name="EMAIL">
                                             <button type="submit" class="footer-widget__newsletter-btn"><img
-                                                    src="assets/images/icon/paper-plan-icon.png')}}" alt=""></button>
+                                                    src="{{ asset('frontend/assets/images/icon/paper-plan-icon.png')}}" alt=""></button>
                                         </div>
                                     </form>
                                     <div class="mc-form__response"></div>
