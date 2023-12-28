@@ -10,8 +10,8 @@
     <title> .:: Situs Pemerintah Kabupaten Batanghari | Bumi Serentak Bak Regam ::. </title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png')}}" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png')}}" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png')}}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('frontend/logo/icon.gif')}}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('frontend/logo/icon.gif')}}" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
     <meta name="description" content="austry HTML 5 Template " />
 
@@ -191,7 +191,7 @@
         <!--Site Footer Start-->
         <footer class="site-footer">
             <div class="site-footer__img">
-                <img src="{{asset('frontend/assets/images/resources/site-footer-img-1.jpg')}}" alt="">
+                <img src="{{asset('frontend/logo/logo-menu.png')}}" alt="">
             </div>
             <div class="container">
                 <div class="site-footer__top">
@@ -199,7 +199,7 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                             <div class="footer-widget__column footer-widget__about">
                                 <div class="footer-widget__logo">
-                                    <a href=""><img src="{{asset('frontend/assets/images/resources/footer-logo.png')}}" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/logo/logo-menu.png')}}" height="50px" alt=""></a>
                                 </div>
                                 <div class="footer-widget__about-text-box">
                                     <p class="footer-widget__about-text">Batanghari adalah kabupaten yang terletak di bagian tengah provinsi Jambi, Indonesia.</p>
