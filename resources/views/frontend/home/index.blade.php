@@ -87,9 +87,9 @@
                     <div class="col-xl-5 col-lg-5">
                         <div class="testimonial-one__left">
                             <div class="section-title text-left">
+                            <span class="section-title__tagline">Temukan foto terbaru dan terkini terkait kegiatan dan program-program yang dilakukan oleh Pemerintah Batanghari.</span>
                             <h2 class="section-title__title">Galeri Batanghari</h2>
-                            <span >Temukan</span>
-                             </div>
+                           </div>
                         </div>
                     </div>
                     <div class="col-xl-7 col-lg-7">
