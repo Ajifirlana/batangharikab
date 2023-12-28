@@ -44,9 +44,22 @@
     <link rel="stylesheet" href="{{ asset('frontend/assets/vendors/jquery-ui/jquery-ui.css')}}" />
     <link rel="stylesheet" href="{{ asset('frontend/assets/vendors/timepicker/timePicker.css')}}" />
 
+
     <!-- template styles -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/austry.css')}}" />
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/austry-responsive.css')}}" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/color-2.css')}}" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BLDPNV2BE2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BLDPNV2BE2');
+</script>
+
 </head>
 
 <body>
@@ -209,7 +222,7 @@
                         <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                             <div class="footer-widget__column footer-widget__links">
                                 <div class="footer-widget__title-box">
-                                    <h4 class="footer-widget__title">Links</h4>
+                                    <h4 class="footer-widget__title">Statistik Pengunjung</h4>
                                 </div>
                                 <ul class="footer-widget__links-list list-unstyled">
                                     <li><a href="about">About</a></li>
