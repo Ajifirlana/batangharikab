@@ -62,34 +62,26 @@
 
 </head>
 
+
 <body>
 
 
 
     <div class="preloader">
         <div class="preloader__image"></div>
-    </div>
+    </div> 
     <!-- /.preloader -->
 
 
 
 
     <div class="page-wrapper">
-        <header class="main-header">
-            <div class="main-header__top">
-                <div class="main-header__top-wrapper">
-                    <div class="main-header__top-inner">
-                        <div class="main-header__top-left">
-                            <p class="main-header__top-text">{{$setting->alamat}}</p>
-                            <div class="main-header__social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="main-header__top-right">
-                            <ul class="list-unstyled main-header__contact-list">
+        <header class="main-header-two">
+            <div class="main-header-two__top">
+                <div class="main-header-two__top-wrapper">
+                    <div class="main-header-two__top-inner">
+                        <div class="main-header-two__top-left">
+                            <ul class="list-unstyled main-header-two__contact-list">
                                 <li>
                                     <div class="icon">
                                         <i class="icon-email"></i>
@@ -98,38 +90,39 @@
                                         <p><a href="{{$setting->email}}">{{$setting->email}}</a></p>
                                     </div>
                                 </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="icon-pin"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>{{$setting->alamat}}</p>
+                                    </div>
+                                </li>
                             </ul>
+                        </div>
+                        <div class="main-header-two__top-right">
+                            <div class="main-header-two__social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <nav class="main-menu">
-                <div class="main-menu__wrapper">
-                    <div class="main-menu__btn">
-                        <a href="contact">Get a free quote</a>
-                    </div>
-                    <div class="main-menu__call">
-                        <div class="main-menu__call-icon">
-                            <span class="icon-phone-ringing"></span>
-                        </div>
-                        <div class="main-menu__call-content">
-                            <p class="main-menu__call-sub-title">Call Anytime</p>
-                            <h5 class="main-menu__call-number"><a href="tel:{{$setting->telepon}}">{{$setting->telepon}}</a></h5>
-                        </div>
-                    </div>
-                    <div class="main-menu__wrapper-inner">
-                        <div class="main-menu__wrapper-inner-content">
-                            <div class="main-menu__left">
-                                <div class="main-menu__logo">
-                                    <a href="{{url('/')}}"><img src="{{asset('frontend/assets/images/resources/logo-1.png')}}" alt=""></a>
-                                </div>
+            <nav class="main-menu main-menu-two">
+                <div class="main-menu-two__wrapper">
+                    <div class="main-menu-two__wrapper-inner">
+                        <div class="main-menu-two__left">
+                            <div class="main-menu-two__logo">
+                                <a href="{{url('/')}}"><img src="{{ asset('frontend/assets/images/resources/logo-2.png')}}" alt=""></a>
                             </div>
-                            <div class="main-menu__right">
-                                <div class="main-menu__main-menu-box">
-                                    <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                                    <ul class="main-menu__list">
-                                        <li class="dropdown">
+                            <div class="main-menu-two__main-menu-box">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                <li class="dropdown">
                                             <a href="{{url('/')}}">Tentang Batanghari</a>
                                             <ul>
                                             <li class="dropdown">
@@ -149,6 +142,7 @@
                                                 
                                             </ul>
                                         </li>
+                                    
                                         
                                         <li class="dropdown">
                                             <a href="{{url('/')}}">Layanan Publik</a>
@@ -175,17 +169,16 @@
                                         </li>
                                         
                                         <li><a href="https://ppid.batangharikab.go.id">PPID</a></li>
-                                             
-                                    </ul>
+                                      
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="main-menu-two__right">
+                            <div class="main-menu-two__search-cart-btn-box">
+                                <div class="main-menu-two__search-box">
+                                    <a href="#" class="main-menu-two__search search-toggler icon-magnifying-glass"></a>
                                 </div>
-                                <!-- <div class="main-menu__search-cart-box">
-                                    <div class="main-menu__search-box">
-                                        <a href="#" class="main-menu__search search-toggler icon-magnifying-glass"></a>
-                                    </div>
-                                    <div class="main-menu__cart-box">
-                                        <a href="#" class="main-menu__cart icon-shopping-cart"></a>
-                                    </div>
-                                </div> -->
+                              
                             </div>
                         </div>
                     </div>
@@ -193,19 +186,15 @@
             </nav>
         </header>
 
-        <div class="stricky-header stricked-menu main-menu">
+        <div class="stricky-header stricked-menu main-menu main-menu-two">
             <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
         </div><!-- /.stricky-header -->
 
 
-        <!--Main Slider End-->
         @yield('content')
         
         <!--Site Footer Start-->
         <footer class="site-footer">
-            <div class="site-footer__img">
-                <img src="{{asset('frontend/logo/logo-menu.png')}}" alt="">
-            </div>
             <div class="container">
                 <div class="site-footer__top">
                     <div class="row">
@@ -233,7 +222,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="col-xl-3 col-lg-8 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                             <div class="footer-widget__contact">
                                 <div class="footer-widget__title-box">
                                     <h4 class="footer-widget__title">Contact</h4>
@@ -264,16 +253,6 @@
                                 <div class="footer-widget__title-box">
                                     <h4 class="footer-widget__title">Newsletter</h4>
                                 </div>
-                                <div class="footer-widget__newsletter-form-box">
-                                    <form class="footer-widget__newsletter-form mc-form" data-url="MC_FORM_URL">
-                                        <div class="footer-widget__newsletter-form-input-box">
-                                            <input type="email" placeholder="Email Address" name="EMAIL">
-                                            <button type="submit" class="footer-widget__newsletter-btn"><img
-                                                    src="{{ asset('frontend/assets/images/icon/paper-plan-icon.png')}}" alt=""></button>
-                                        </div>
-                                    </form>
-                                    <div class="mc-form__response"></div>
-                                </div>
                                 <div class="site-footer__social">
                                     <a href="#"><i class="fab fa-twitter"></i></a>
                                     <a href="#"><i class="fab fa-facebook"></i></a>
@@ -285,7 +264,7 @@
                     </div>
                 </div>
                 <div class="site-footer__bottom">
-                    <p class="site-footer__bottom-text">© Copyright 2023 by <a href="#">Diskominfo Batanghari</a></p>
+                    <p class="site-footer__bottom-text">©2023 <a href="#">Pemerintah Kabupaten Batang Hari</a></p>
                     <ul class="list-unstyled site-footer__bottom-menu">
                         <li><a href="about">Help</a></li>
                         <li><a href="about">Privacy Policy</a></li>
@@ -293,8 +272,6 @@
                 </div>
             </div>
         </footer>
-        <!--Site Footer End-->
-
 
     </div><!-- /.page-wrapper -->
 
@@ -306,7 +283,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="" aria-label="logo image"><img src="{{asset('frontend/assets/images/resources/logo-1.png')}}" width="130"
+                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo-1.png" width="130"
                         alt="" /></a>
             </div>
             <!-- /.logo-box -->
@@ -316,7 +293,7 @@
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="fa fa-envelope"></i>
-                    <a href="mailto:{{$setting->email}}">{{$setting->email}}</a>
+                    <a href="mailto:needhelp@packageName__.com">needhelp@austry.com</a>
                 </li>
                 <li>
                     <i class="fa fa-phone-alt"></i>
@@ -358,6 +335,7 @@
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
 
+
     <script src="{{ asset('frontend/assets/vendors/jquery/jquery-3.6.0.min.js')}}"></script>
     <script src="{{ asset('frontend/assets/vendors/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{ asset('frontend/assets/vendors/jarallax/jarallax.min.js')}}"></script>
@@ -390,5 +368,6 @@
     <!-- template js -->
     <script src="{{ asset('frontend/assets/js/austry.js')}}"></script>
 </body>
+
 
 </html>

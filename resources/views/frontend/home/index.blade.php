@@ -55,7 +55,48 @@
 
             </div>
         </section>
-<!--Testimonial One Start-->
+
+        <!--News One Start-->
+        <section class="news-one">
+            <div class="container">
+                <div class="section-title text-center">
+                <a href="{{url('berita')}}">
+                <span class="section-title__tagline">Index Berita</span></a> 
+                <h2 class="section-title__title">Berita Batanghari</h2>
+                    
+                </div>
+                <div class="row">
+                    
+                    @foreach($berita as $row)  
+                    <?php
+                                        $url = URL::to("baca/".$row->id."/".str_replace(' ','-',$row->judul)."/".$row->tanggal);
+                                        ?>
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="news-one__single">
+                            <div class="news-one__img-box">
+                                <div class="news-one__img">
+                                    <img src="{{asset('frontend/assets/images/blog/news-1-1.jpg')}}" alt="">
+                                </div>
+                                <div class="news-one__date">
+                                    <p>{{$row->tanggal}}</p>
+                                </div>
+                               
+                            </div>
+                            <div class="news-one__content">
+                                <h3 class="news-one__title"><a href="<?= $url ?>">{{$row->judul}}</a></h3>
+                              
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    {{ $berita->links() }}
+                  
+                    <!--News One Single End-->
+                </div>
+            </div>
+        </section>
+        <!--News One End-->
+        <!--Testimonial One Start-->
         <section class="testimonial-one">
             <div class="testimonial-one__bg"
                 style="background-image: url(assets/images/backgrounds/testimonial-one-bg.png);"></div>
@@ -66,8 +107,8 @@
                     <div class="col-xl-5 col-lg-5">
                         <div class="testimonial-one__left">
                             <div class="section-title text-left">
-                            <span class="section-title__tagline">Temukan foto terbaru dan terkini terkait kegiatan dan program-program yang dilakukan oleh Pemerintah Batanghari.</span>
-                            <h2 class="section-title__title">Galeri Batanghari</h2>
+                            <span class="section-title__tagline">Portal Aplikasi.</span>
+                            <h2 class="section-title__title">Portal Aplikasi</h2>
                            </div>
                         </div>
                     </div>
@@ -107,9 +148,6 @@
                                             <div class="testimonial-one__client-info">
                                                 <div class="testimonial-one__client-img">
                                                     <img src="{{asset('frontend/galeri/'.$row->foto)}}" alt="">
-                                                    <div class="testimonial-one__quote">
-                                                        <i class="fas fa-quote-left"></i>
-                                                    </div>
                                                 </div>
                                                 <div class="testimonial-one__content">
                                                     
@@ -129,48 +167,49 @@
             </div>
         </section>
         <!--Testimonial One End-->
-
-        <!--News One Start-->
-        <section class="news-one">
+        <!--Services Two Start-->
+        <section class="services-two">
+            <div class="services-two__shape-1 float-bob-x">
+                <img src="assets/images/shapes/services-two-shape-1.png" alt="">
+            </div>
+            <div class="services-two__shape-2 float-bob-y">
+                <img src="assets/images/shapes/services-two-shape-2.png" alt="">
+            </div>
             <div class="container">
-                <div class="section-title text-center">
-                    <h2 class="section-title__title">Berita Batanghari</h2>
+                <div class="services-two__top">
+                
+                <div class="row">
+                        <div class="col-xl-7 col-lg-6">
+                            <div class="services-two__left">
+                                <div class="section-title text-left">
+                                    <span class="section-title__tagline">Foto terbaru dan terkini terkait kegiatan dan program-program yang dilakukan oleh Pemerintah Batanghari</span>
+                                    <h2 class="section-title__title">Galeri Batanghari</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
-                    
-                    @foreach($berita as $row)  
-                    <?php
-                                        $url = URL::to("baca/".$row->id."/".str_replace(' ','-',$row->judul)."/".$row->tanggal);
-                                        ?>
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="news-one__single">
-                            <div class="news-one__img-box">
-                                <div class="news-one__img">
-                                    <img src="{{asset('frontend/assets/images/blog/news-1-1.jpg')}}" alt="">
+                    @foreach($galeri as $row)     
+                    <!--Services Two Single Start-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="services-two__single">
+                            <div class="services-two__img-box">
+                                <div class="services-two__img">
+                                    <img src="{{asset('frontend/galeri/'.$row->foto)}}" alt="">
                                 </div>
-                                <div class="news-one__date">
-                                    <p>{{$row->tanggal}}</p>
-                                </div>
-                                <ul class="news-one__meta list-unstyled">
-                                    <li>
-                                        <a href="news-details.html">{{$row->tanggal}}</a>
-                                    </li>
-                                   
-                                </ul>
                             </div>
-                            <div class="news-one__content">
-                                <h3 class="news-one__title"><a href="<?= $url ?>">{{$row->judul}}</a></h3>
+                            <div class="services-two__content">
+                                <h3 class="services-two__title">{{$row->judul}}</h3>
                               
                             </div>
                         </div>
                     </div>
                     @endforeach
-                    {{ $berita->links() }}
-                  
-                    <!--News One Single End-->
                 </div>
             </div>
         </section>
-        <!--News One End-->
+        <!--Services Two End-->
+
 
 @endsection
