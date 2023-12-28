@@ -136,16 +136,20 @@
                                                 
                                             </ul>
                                         </li>
+                                        
                                         <li class="dropdown">
-                                                    <a href="#">Layanan Publik</a>
-                                                    <ul>
-                                                        <li><a href="2">Header Two</a></li>
-                                                        <li><a href="3">Header Three</a></li>
-                                                        <li><a href="4">Home Four</a></li>
-                                                        <li><a href="5">Home Five</a></li>
-                                                        <li><a href="6">Home Six</a></li>
-                                                    </ul>
-                                                </li>
+                                            <a href="{{url('/')}}">Layanan Publik</a>
+                                            <ul>
+                                            <li class="dropdown">
+                                                <a>Pendidikan</a>
+                                            <ul>
+                                            <li><a href="https://ppdb.batangharikab.go.id/">PPDB</a></li>
+                                
+                                            </ul>
+                                            </li>
+                                                
+                                            </ul>
+                                        </li>
                                         <li class="dropdown">
                                             <a href="#">Informasi Publik</a>
                                             <ul>
