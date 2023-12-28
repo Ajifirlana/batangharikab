@@ -202,11 +202,7 @@
                                     <a href=""><img src="{{asset('frontend/assets/images/resources/footer-logo.png')}}" alt=""></a>
                                 </div>
                                 <div class="footer-widget__about-text-box">
-                                    <p class="footer-widget__about-text">There are many of simple lorem available for
-                                        not, but the majority alteration.</p>
-                                </div>
-                                <div class="footer-widget__about-btn-box">
-                                    <a href="contact" class="footer-widget__about-btn thm-btn">Contact</a>
+                                    <p class="footer-widget__about-text">Batanghari adalah kabupaten yang terletak di bagian tengah provinsi Jambi, Indonesia.</p>
                                 </div>
                             </div>
                         </div>
