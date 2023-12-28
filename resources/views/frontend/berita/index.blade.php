@@ -25,18 +25,14 @@
                                 </div>
                                 <ul class="news-one__meta list-unstyled">
                                     <li>
-                                        <a href="news-details.html"><i class="fas fa-user-circle"></i>by Christine</a>
+                                        <a href="news-details.html"><i class="fas fa-user-circle"></i>by Admin</a>
                                     </li>
-                                    <li>
-                                        <a href="news-details.html"><i class="fas fa-comments"></i>2 Comments</a>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                             <div class="news-one__content">
                                 <h3 class="news-one__title"><a href="<?= $url ?>">{{$row->judul}}</a></h3>
-                                <div class="news-one__bottom">
-                                    <a href="news-details.html" class="news-one__read-more">Read More</a>
-                                </div>
+                               
                             </div>
                         </div>
                     </div>

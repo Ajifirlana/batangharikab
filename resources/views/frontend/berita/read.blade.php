@@ -8,7 +8,7 @@
 
             <div class="container">
                 <div class="page-header__inner">
-                    <h2>News Details</h2>
+                    <h2>{{$berita->judul}}</h2>
                     <div class="thm-breadcrumb__box">
                         <ul class="thm-breadcrumb list-unstyled">
                             <li><a href="index.html">Home</a></li>
@@ -29,7 +29,7 @@
                             <div class="news-details__img">
                                 <img src="{{asset('assets/images/blog/news-details-img-1.jpg')}}" alt="">
                                 <div class="news-details__date">
-                                    <p>20 Aug</p>
+                                    <p>{{$berita->created_at}}</p>
                                 </div>
                             </div>
                             <div class="news-details__content">
