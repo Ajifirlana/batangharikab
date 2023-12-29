@@ -208,7 +208,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="col-xl-3 col-lg-8 col-md-8 wow fadeInUp" data-wow-delay="200ms">
                             <div class="footer-widget__column footer-widget__links">
                                 <div class="footer-widget__title-box">
                                     <h4 class="footer-widget__title">Statistik Pengunjung</h4>
@@ -248,10 +248,10 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="col-xl-2 col-lg-3 col-md-3 wow fadeInUp" data-wow-delay="400ms">
                             <div class="footer-widget__newsletter">
                                 <div class="footer-widget__title-box">
-                                    <h4 class="footer-widget__title">Newsletter</h4>
+                                    <h4 class="footer-widget__title">Media Sosial</h4>
                                 </div>
                                 <div class="site-footer__social">
                                     <a href="#"><i class="fab fa-twitter"></i></a>

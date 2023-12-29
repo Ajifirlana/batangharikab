@@ -176,9 +176,14 @@
                         <div class="col-xl-7 col-lg-6">
                             <div class="services-two__left">
                                 <div class="section-title text-left">
-                                    <span class="section-title__tagline">Foto terbaru dan terkini terkait kegiatan dan program-program yang dilakukan oleh Pemerintah Batanghari</span>
+                                <a href="{{url('galeri-foto')}}"><span class="section-title__tagline">Indeks Galeri </span></a>
                                     <h2 class="section-title__title">Galeri Batanghari</h2>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-6">
+                            <div class="services-two__right">
+                                <p class="services-two__text">Foto terbaru dan terkini terkait kegiatan dan program-program yang dilakukan oleh Pemerintah Batanghari</p>
                             </div>
                         </div>
                     </div>
