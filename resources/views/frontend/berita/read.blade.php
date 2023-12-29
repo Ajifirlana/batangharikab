@@ -3,7 +3,7 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url({{ asset('frontend/assets/images/backgrounds/page-header-bg.jpg')}})">
+            <div class="page-header-bg" style="background-image: url({{asset('frontend/gambar-berita/'.$berita->gambar)}})">
             </div>
 
             <div class="container">
@@ -27,7 +27,7 @@
                     <div class="col-xl-8 col-lg-7">
                         <div class="news-details__left">
                             <div class="news-details__img">
-                                <img src="{{asset('assets/images/blog/news-details-img-1.jpg')}}" alt="">
+                                <img src="{{asset('frontend/gambar-berita/'.$berita->gambar)}}" alt="">
                                 <div class="news-details__date">
                                     <p>{{$berita->created_at}}</p>
                                 </div>

@@ -75,7 +75,7 @@
                         <div class="news-one__single">
                             <div class="news-one__img-box">
                                 <div class="news-one__img">
-                                    <img src="{{asset('frontend/assets/images/blog/news-1-1.jpg')}}" alt="">
+                                    <img src="{{asset('frontend/gambar-berita/'.$row->gambar)}}" alt="">
                                 </div>
                                 <div class="news-one__date">
                                     <p>{{$row->tanggal}}</p>
