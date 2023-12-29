@@ -13,7 +13,15 @@ class WebsiteSkpdSeeder extends Seeder
      */
     public function run(): void
     {
-        WebsiteSkpd::create(['foto' => 'ppid.jpg',
-        'link' => 'https://ppid.batangharikab.go.id/']);
+        
+        $data= [
+            ['foto' => 'ppid.jpg',
+        'link' => 'https://ppid.batangharikab.go.id/'],
+        ['foto' => 'bkd.jpg',
+        'link' => 'https://bkd.batangharikab.go.id/']
+    ];
+        foreach($data as $skpd){
+            WebsiteSkpd::create($skpd);
+        }
     }
 }
