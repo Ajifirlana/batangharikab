@@ -61,7 +61,7 @@
             <div class="container">
                 <div class="section-title text-center">
                 <a href="{{url('berita')}}">
-                <span class="section-title__tagline">Index Berita</span></a> 
+                <span class="section-title__tagline">Indeks Berita</span></a> 
                 <h2 class="section-title__title">Berita Batanghari</h2>
                     
                 </div>
@@ -107,8 +107,8 @@
                     <div class="col-xl-5 col-lg-5">
                         <div class="testimonial-one__left">
                             <div class="section-title text-left">
-                            <span class="section-title__tagline">Portal Aplikasi.</span>
-                            <h2 class="section-title__title">Portal Aplikasi</h2>
+                            <span class="section-title__tagline">Website SKPD.</span>
+                            <h2 class="section-title__title">Website SKPD</h2>
                            </div>
                         </div>
                     </div>
@@ -141,19 +141,13 @@
 
                             }'>
                                 <!--Testimonial One Single Start-->
-                               @foreach($galeri as $row) 
+                               @foreach($website_skpd as $row) 
                                <div class="item">
                                     <div class="testimonial-one__single">
                                         <div class="testimonial-one__single-inner">
-                                            <div class="testimonial-one__client-info">
-                                                <div class="testimonial-one__client-img">
-                                                    <img src="{{asset('frontend/galeri/'.$row->foto)}}" alt="">
-                                                </div>
-                                                <div class="testimonial-one__content">
-                                                    
-                                                    <h3 class="testimonial-one__client-name">{{$row->judul}}</h3>
-                                                    </div>
-                                            </div>
+                                                   <a href="{{$row->link}}"><img src="{{asset('frontend/website-skpd/'.$row->foto)}}" alt="">
+                                                   </a> 
+                            
                                         </div>
                                     </div>
                                 </div>

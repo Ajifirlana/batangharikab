@@ -10,13 +10,13 @@ class PageController extends Controller
 {
     function home(){
       $berita_terbaru =  DB::table('beritas')->orderBy('id','desc')->paginate(8);
-      $video_kegiatan =  DB::table('video_kegiatans')->orderBy('id','desc')->offset(0)->limit(5)->get();
+      $website_skpds =  DB::table('website_skpds')->orderBy('id','desc')->offset(0)->limit(5)->get();
       $image_slider =  DB::table('sliders')->orderBy('id','desc')->offset(0)->limit(5)->get();
       $galeri =  DB::table('galeris')->orderBy('id','desc')->offset(0)->limit(5)->get();
      
        return view('frontend.home.index', array(
       'berita'=>$berita_terbaru,
-        'video_kegiatan'=>$video_kegiatan,
+      'website_skpd'=>$website_skpds,
         'image_slider'=>$image_slider,
         'galeri'=>$galeri,));
      }
