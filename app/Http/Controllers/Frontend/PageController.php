@@ -12,7 +12,7 @@ class PageController extends Controller
       $berita_terbaru =  DB::table('beritas')->orderBy('id','desc')->paginate(8);
       $website_skpds =  DB::table('website_skpds')->orderBy('id','desc')->offset(0)->limit(5)->get();
       $image_slider =  DB::table('sliders')->orderBy('id','desc')->offset(0)->limit(5)->get();
-      $galeri =  DB::table('galeris')->orderBy('id','desc')->offset(0)->limit(5)->get();
+      $galeri =  DB::table('galeris')->orderBy('id','desc')->offset(0)->limit(8)->get();
      
        return view('frontend.home.index', array(
       'berita'=>$berita_terbaru,
