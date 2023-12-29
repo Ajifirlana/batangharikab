@@ -194,7 +194,8 @@
                                 </div>
                             </div>
                             <div class="services-two__content">
-                                <h3 class="services-two__title">{{$row->judul}}</h3>
+                            <h3 class="services-two__title"><a href="#">{{$row->judul}}</a></h3>
+                             
                               
                             </div>
                         </div>
