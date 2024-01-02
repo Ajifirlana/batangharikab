@@ -8,6 +8,9 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\RoleController_old;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\admin\MasterUserController;
+use App\Http\Controllers\admin\GaleriBackandController;
+use App\Http\Controllers\admin\BeritaBackandController;
+use App\Http\Controllers\admin\NewsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\SliderController;
@@ -107,7 +110,10 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
    Route::resources([
       'roles' => RoleController_old::class,
-     
+      'galeri' => GaleriBackandController::class,
+   
+      'news' => NewsController::class, 
+      
       'form' => FormController::class,
       'pegawai' => PegawaiController::class,
       'slider' => SliderController::class,

@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Galeri extends Model
 {
     use HasFactory;
+    //  use AutoUUID;
+     protected $table = 'galeris';
+     protected $guarded = ['id', 'created_at', 'updated_at'];
+
+     protected $casts = [
+        'created_at'     => 'date:d-m-Y H:m:s',
+        'updated_at'     => 'date:d-m-Y H:m:s',
+       
+        
+    ];
+ 
 }
