@@ -117,11 +117,7 @@
                     <div class="main-menu-two__wrapper-inner">
                         <div class="main-menu-two__left">
                             <div class="main-menu-two__logo">
-<<<<<<< HEAD
                                 <a href="{{url('/')}}"><img src="{{ asset('frontend/assets/images/resources/logo-new.png')}}" alt=""></a>
-=======
-                                <a href="{{url('/')}}"><img src="{{asset('frontend/logo/logo.jpg')}}" alt="" height="50px" width="50px"></a>
->>>>>>> 622249a2c3e4cf569e2fe898e016afdf114b0d4d
                             </div>
                             <div class="main-menu-two__main-menu-box">
                                 <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
