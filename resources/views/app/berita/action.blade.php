@@ -9,7 +9,7 @@
         </button>
         <ul class="dropdown-menu">
      
-            <li><a data-url='{{ route('news.edit', $data->id) }}'  href="#" class="btn_edit dropdown-item" >Ubah Data</a> </li>
+            <li><a data-url='{{ route('news.show', $data->id) }}'  href="{{ route('news.edit', $data->id) }}" class="btn_edit dropdown-item" >Ubah Data</a> </li>
             <div class="dropdown-divider"></div>
              <li><a data-hapus="{{ $data->id }}"  data-url="{{ route('news.destroy', $data->id) }}" class="btn_hapus dropdown-item" href="#">Hapus
                <form hidden id="form-delete" action="{{ route('news.destroy', $data->id) }}" method="POST"> @csrf

@@ -279,11 +279,60 @@ $jns_kelamin = json_decode(json_encode(
                 $('.modal-title').text('Ubah Data')
                 $('.error').hide();
                 let url = $(this).attr('data-url');
-              //  const file_cover = FilePond.create(document.querySelector('#file'));
+               
+
+                
                 $.get(url, function(response) {
                     $('#id').val(response.data.id)
                     $('#keterangan').val(response.data.judul)
-                  
+                                        FilePond.registerPlugin(
+                            FilePondPluginFileMetadata,
+                       
+                            FilePondPluginImagePreview
+                        );
+
+                        // Get a reference to the file input element
+                        const inputElement = document.querySelector('input[type="file"]');
+
+                        // Create the FilePond instance
+                        const pond = FilePond.create(inputElement, {
+                            imageCropAspectRatio: "1:1",
+                            fileMetadataObject: {
+                            markup: [
+                                [
+                                "rect",
+                                {
+                                    left: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    height: "60px",
+                                    backgroundColor: "rgba(0,0,0,.5)",
+                                },
+                                ],
+                                [
+                                "image",
+                                {
+                                    right: "10px",
+                                    bottom: "10px",
+                                    width: "128px",
+                                    height: "34px",
+                                    src: "./filepond-logo.svg",
+                                    fit: "contain",
+                                },
+                                ],
+                            ],
+                            },
+                        });
+
+                        pond.addFile(response.data.foto);
+                                    
+
+                    // Set up FilePond
+                   
+
+    
+                            
+                    
                    
                 })
             });

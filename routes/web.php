@@ -9,6 +9,8 @@ use App\Http\Controllers\RoleController_old;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\admin\MasterUserController;
 use App\Http\Controllers\admin\GaleriBackandController;
+use App\Http\Controllers\admin\SkpdController;
+use App\Http\Controllers\admin\YoutubeController;
 use App\Http\Controllers\admin\BeritaBackandController;
 use App\Http\Controllers\admin\NewsController;
 use App\Http\Controllers\UserController;
@@ -111,9 +113,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
    Route::resources([
       'roles' => RoleController_old::class,
       'galeri' => GaleriBackandController::class,
-   
+      'skpd' => SkpdController::class,
       'news' => NewsController::class, 
-      
+      'youtube' => YoutubeController::class, 
       'form' => FormController::class,
       'pegawai' => PegawaiController::class,
       'slider' => SliderController::class,

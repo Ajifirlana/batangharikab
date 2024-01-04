@@ -19,6 +19,7 @@ class NewsController extends Controller
        $this->middleware('permission:create news', ['only' => ['create','store']]);
        $this->middleware('permission:edit news', ['only' => ['edit','update']]);
        $this->middleware('permission:delete news', ['only' => ['destroy']]);
+       
     }
 
     use ApiResponse;
@@ -45,11 +46,37 @@ class NewsController extends Controller
     public function store(Request $request)
     {
        try {
+ 
+       $content = $request->body;
+        $dom = new \DomDocument();
+        $dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $imageFile = $dom->getElementsByTagName('img');
+  
+        foreach($imageFile as $item => $image){
+            $data = $image->getAttribute('src');
+            list($type, $data) = explode(';', $data);
+            list(, $data)      = explode(',', $data);
+            $imgeData = base64_decode($data);
+            $image_name= "/uploads/" . time().$item.'.png';
+            $path = public_path() . $image_name;
+            file_put_contents($path, $imgeData);
+            
+            $image->removeAttribute('src');
+            $image->setAttribute('src', $image_name);
+         }
+  
+        $content = $dom->saveHTML();
+        
+       
+        
           if($request->file('file')==null){
-             Galeri::updateOrCreate(
+             Berita::updateOrCreate(
                 ['id'               => $request->id],
                 [
-                   'judul'           => $request->keterangan,
+                   'judul'           => $request->judul,
+                   'isi'            => $content,
+                   'tanggal'         => $request->tanggal,
+                   'tittle_gambar'   => $request->judul_foto,
  
                 ]
              );
@@ -58,7 +85,8 @@ class NewsController extends Controller
              else return $this->success('Berhasil Menginput Data');
  
           }
-
+ 
+        //  $image_path = $request->file('file')->getPathname();
           $image_path = $request->file('file')->getPathname();
           $nama_gambar = time() . '_' . $request->file('file')->getClientOriginalName();
           $image_mime = $request->file('file')->getmimeType();
@@ -81,12 +109,22 @@ class NewsController extends Controller
           $response=   $response->getBody();
           $responsdata = json_decode($response,true);
           $url=$responsdata['data']['url'];
-        Galeri::updateOrCreate(
+          // $fileModel = new Pegawai;
+          // if($request->file()) {
+          //    $image_path = $request->file->getClientOriginalName();
+          //    $name_uniqe =   now()->timestamp . '.' . $request->file('file')->getClientOriginalExtension();
+          //     //$fileName = time().'_'.$request->file();
+          //     $filePath = $request->file('file')->storeAs('uploads', $name_uniqe, 'public');
+          //    // $fileModel->nama = time().'_'.$request->file->getClientOriginalName();
+          //     $fileModel->nama = '/storage/' . $filePath;
+          
+          // }
+        slider::updateOrCreate(
              ['id'               => $request->id],
              [
-                'judul'      => $request->keterangan,
+                'keterangan'      => $request->keterangan,
                 'foto'            => $url,
-            
+                'teks'            => $content,
              ]
           );
  
@@ -102,8 +140,26 @@ class NewsController extends Controller
          $id=request('news');
          $record = Berita::find($id);
       
-       return $this->success('Data Foto', $record);
+         $x['title']    = 'Edit Berita';
+         return view('app.berita.edit-berita',$x, compact('record'));
     }
+
+    public function show($news)
+    {
+         $id=request('news');
+         $record = Berita::find($id);
+         return $record;
+    }
+
+
+    public function create()
+    {
+      $x['title']    = 'Data Berita';
+       return view('app.berita.tambah-berita',$x);
+    }
+
+
+ 
  
     public function destroy(Berita $galeri,$news)
     {

@@ -65,12 +65,12 @@
                         <div class="card">
                             <div class="card-header">
                             <form id="form_tambah">
-                                <x-input label="Judul Berita" id="judul" info="Info : Sample Data Description Info"
+                                <x-input label="Judul Berita" id="judul" required='true' info="Info : Sample Data Description Info"
                                     placeholder="Judul Berita" />
                                 <x-datepicker id='tanggal' label='Tanggal' required="true" />
                                 <x-filepond id="file" label='Foto Berita' info='( Format File JPG/PNG , Maks 5 MB)'
                                     accept="image/jpeg, image/png" />
-                                <x-input label="Judul Fott" id="judul_foto" info="Info : Sample Data Description Info"
+                                <x-input label="Judul Foto" id="judul_foto"  required='true' info="Info : Sample Data Description Info"
                                     placeholder="Judul Berita" />    
                                     <x-summernote id="summernote" name="body" label="Summenote Editor" />
                                <div class="modal-footer">
@@ -156,7 +156,7 @@
                 formData.append('pemilik_mobil_id', $("#pemilik_mobil_id").val());
                 $.ajax({
                     type: 'POST',
-                    url: @json(route('berita_back.store')),
+                    url: @json(route('news.store')),
                     data: formData,
                     cache: false,
                     contentType: false,
@@ -169,7 +169,9 @@
                         if (response) {
                             this.reset()
                             $('#modal_create').modal('hide')
+                            $('#summernote').summernote('code', '');
                             Swal.fire({
+                           
                                 icon: 'success',
                                 title: response.message,
                                 showCancelButton: true,
@@ -177,6 +179,8 @@
                                 showCancelButton: false,
                                 allowOutsideClick: false,
                             }).then((result) => {
+                                _clearInput()
+                              
                                 swal.hideLoading()
                                 datatable.ajax.reload(null, false)
                             })

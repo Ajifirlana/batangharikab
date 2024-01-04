@@ -161,6 +161,7 @@ $jns_kelamin = json_decode(json_encode(
             
             $('#summernote').summernote({
                 height: 200,
+                fontSizes: ['8', '9', '10', '11', '12', '14', '18', '24', '36', '48' , '64', '82', '150'],
                 imageTitle: {
                     specificAltField: true,
                 },
@@ -178,8 +179,17 @@ $jns_kelamin = json_decode(json_encode(
                         ['remove', ['removeMedia']],
                         ['custom', ['imageAttributes']],
                     ],
+                    toolbar: [
+                        ['style', ['bold', 'italic', 'underline', 'clear']],
+                        ['font', ['strikethrough', 'superscript', 'subscript']],
+                        ['fontsize', ['fontsize']],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['height', ['height']]
+                    ],
                 },
-            })
+                
+            });
 
         
 
@@ -315,16 +325,7 @@ $jns_kelamin = json_decode(json_encode(
 
             
             $('#datatable').on('click', '.btn_edit', function(e) {
-                $('#modal_create').modal('show')
-                $('.modal-title').text('Ubah Data')
-                $('.error').hide();
-                let url = $(this).attr('data-url');
-                $.get(url, function(response) {
-                    $('#id').val(response.data.id)
-                    $('#judul').val(response.data.judul)
-                    $('#keterangan').val(response.data.tittle_gambar)
-                    
-                })
+               
             });
 
           

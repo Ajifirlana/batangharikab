@@ -10,7 +10,7 @@ class Galeri extends Model
     use HasFactory;
     //  use AutoUUID;
      protected $table = 'galeris';
-     protected $guarded = ['id', 'created_at', 'updated_at'];
+     protected $guarded = ['id'];
 
      protected $casts = [
         'created_at'     => 'date:d-m-Y H:m:s',

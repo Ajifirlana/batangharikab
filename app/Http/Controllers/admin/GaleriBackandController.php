@@ -81,10 +81,10 @@ class GaleriBackandController extends Controller
           $responsdata = json_decode($response,true);
           $url=$responsdata['data']['url'];
         Galeri::updateOrCreate(
-             ['id'               => $request->id],
+             ['id'           => $request->id],
              [
-                'judul'      => $request->keterangan,
-                'foto'            => $url,
+               'judul'      => $request->keterangan,
+                'foto'       => $url,
             
              ]
           );
@@ -104,6 +104,7 @@ class GaleriBackandController extends Controller
     public function destroy(Galeri $galeri)
     {
        try {
+       
           $galeri->delete();
       
           return redirect()->back()->with('success', 'Berhasil Hapus Data', 200);
