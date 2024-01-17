@@ -22,11 +22,14 @@ class PageController extends Controller
      }
      public function page($slug){
       
+     
       $page = Page::where('slug', $slug)->firstOrFail();
+      $berita_terbaru =  DB::table('beritas')->orderBy('id','desc')->offset(0)->limit(5)->get();
       
       return view('frontend.home.page', array(
         'judul'=>$page->judul,
         'isi'=>$page->isi,
-      'created_at'=>$page->created_at));
+      'created_at'=>$page->created_at,
+      'berita_terbaru'=>$berita_terbaru,));
      }
 }

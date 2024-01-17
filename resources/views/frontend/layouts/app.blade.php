@@ -128,7 +128,7 @@
                                             <li class="dropdown">
                                                 <a href="2">Profil Batanghari</a>
                                             <ul>
-                                            <li><a href="3">Sejarah Batanghari</a></li>
+                                            <li><a href="{{url('page/sejarah')}}">Sejarah Batanghari</a></li>
                                             <li><a href="#">Arti Lambang</a></li>
                                             <li><a href="#">Kondisi Demografi</a></li>
                                             <li><a href="#">Peta Batanghari</a></li>
