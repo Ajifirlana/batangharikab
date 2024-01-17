@@ -20,8 +20,10 @@ class PageController extends Controller
         'image_slider'=>$image_slider,
         'galeri'=>$galeri,));
      }
-     public function page($id){
-      $page = Page::findOrfail($id);
+     public function page($slug){
+      
+      $page = Page::where('slug', $slug)->firstOrFail();
+      
       return view('frontend.home.page', array(
         'judul'=>$page->judul,
         'isi'=>$page->isi,

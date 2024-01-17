@@ -27,7 +27,7 @@ use Spatie\Permission\Models\Permission;
 //Home
 Route::controller(PageController::class)->group(function() {
     Route::get('/', 'home')->name('home');
-    Route::get('/page/{id}', 'page')->name('page');
+    Route::get('/page/{slug}', 'page')->name('page');
 });
 //Galeri
 Route::controller(GaleriController::class)->group(function() {

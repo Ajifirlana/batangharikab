@@ -163,7 +163,7 @@
                                             <li><a href="{{url('berita')}}">Berita</a></li>
                                                 <li><a href="{{url('galeri-foto')}}">Galeri Foto</a></li>
                                                 <li><a href="{{url('galeri-video')}}">Galeri Video</a></li>
-                                                <li><a href="{{url('page/1')}}">Visi & Misi</a></li>
+                                                <li><a href="{{url('page/visi-dan-misi')}}">Visi & Misi</a></li>
                                                     
                                             </ul>
                                         </li>
