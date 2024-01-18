@@ -16,7 +16,7 @@ class RoleController_old extends Controller
     {
         $x['title']         = 'Role';
         $x['data']          = Role::with('permissions')->get();
-        $x['permission']    = Permission::orderBy('id', 'desc')->get();
+        $x['permission']    = Permission::orderBy('name', 'ASC')->get();
         return view('admin.role', $x);
     }
 

@@ -1,6 +1,25 @@
 @extends('frontend.layouts.app')
 @section('content')
 
+
+<style>
+   .cropped1 {
+    width: 210px; /* width of container */
+    height: 203px; /* height of container */
+    object-fit: cover;
+    border: 0px solid black;
+}
+.cropped2 {
+    width: 210px; /* width of container */
+    height: 203px; /* height of container */
+    object-fit: cover;
+    object-position: 20% 10%; /* try 20px 10px */ 
+    border: 0px solid black;
+}  
+     
+     
+</style>
+
         <!--News One Start-->
         <section class="news-one">
             <div class="container">
@@ -18,7 +37,7 @@
                         <div class="news-one__single">
                             <div class="news-one__img-box">
                                 <div class="news-one__img">
-                                    <img src="{{asset('frontend/assets/images/blog/news-1-1.jpg')}}" alt="">
+                                <img class="cropped1"    src="{{asset('frontend/gambar-berita/'.$row->gambar)}}"alt="">
                                 </div>
                                 <div class="news-one__date">
                                     <p>20 Aug</p>

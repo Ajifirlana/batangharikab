@@ -18,11 +18,22 @@ use Spatie\ResponseCache\Facades\ResponseCache;
 class MasterUserController extends Controller
 {
    use ApiResponse;
-   protected $userServices;
+   // protected $userServices;
+
+   // public function __construct(UserServices $userServices)
+   // {
+   //    $this->userServices = $userServices;
+   // }
 
    public function __construct(UserServices $userServices)
    {
+      $this->middleware('auth');
+      $this->middleware('permission:read user|update user|delete user', ['only' => ['index','show']]);
+      $this->middleware('permission:create user', ['only' => ['create','store']]);
+      $this->middleware('permission:update user', ['only' => ['edit','update']]);
+      $this->middleware('permission:delete user', ['only' => ['destroy']]);
       $this->userServices = $userServices;
+   
    }
 
    public function index()
@@ -135,6 +146,12 @@ class MasterUserController extends Controller
    //    }
    //    return view('admin.master-user.show', compact('user', 'permissions'));
    // }
+
+   public function profile(Request $request){
+     
+      $user = User::find(auth()->user()->id);
+      return view('admin.profile.index', compact('user'));
+   }
 
    public function show(Request $request){
      

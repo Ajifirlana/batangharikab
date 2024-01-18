@@ -116,51 +116,55 @@
                 -->
 
                   
-         @foreach ($menu as $item)
-                    @if ($item['type'] == 'header')
+             @foreach ($menu as $item)
+                 @if ($item['type'] == 'header')
                   
-                    @role($item['role'])
-                  
-                        <li class="nav-header ml-2">{{ $item['title'] }}</li>
-                    @endcan   
-                    @elseif ($item['type'] == 'menu')
+                 @role(json_decode($item['permission']))
+                                <li class="nav-header ml-2">{{ $item['title'] }}</li>
+                        @endcan   
+                 @elseif ($item['type'] == 'menu')
                 
-                    @role($item['role'])
+                 @role(json_decode($item['permission']))
                         <li class="nav-item">
-                            <a href="{{ $item['url'] }}"
-                                class="nav-link {{ request()->is($item['active']) ? 'active' : '' }}">
+                            <a href="{{ route( $item['url'])}}"
+                                class="nav-link {{ request()->routeIs($item['active']) ? 'active' : '' }}">
                                 <i class="nav-icon {{ $item['icon'] }}"></i>
                                 <p>{{ $item['title'] }}</p>
                             </a>
                         </li>
                     @endcan      
-                    @elseif ($item['type'] == 'tree')
+                 @elseif ($item['type'] == 'tree')
                    
                     
-                    @role($item['role'])
+                    @role(json_decode($item['permission']))
                         <li
-                            class="nav-item menu-is-opening  {{ request()->is($item['active']) ? 'menu-open' : '' }}">
-                            <a href="" class="nav-link {{  request()->is($item['active']) ? 'active' : '' }}">
+                            class="nav-item menu-is-opening  {{ request()->routeIs(json_decode($item['aktif'])) ? 'menu-open' : '' }}">
+                            <a href="" class="nav-link  {{ request()->routeIs(json_decode($item['aktif'])) ? 'active' : '' }}">
                                 <i class="{{ $item['icon'] }} nav-icon"></i>
                                 <p>{{ $item['title'] }}</p>
                                 <i class="right fas fa-angle-left"></i>
                             </a>
+                      
                             <ul class="nav nav-treeview">
                                 @foreach ( $item['items'] as $menu)
-                                    
+                                @role(json_decode($menu['permission']))  
+                               
                                     <li class="nav-item">
-                                        <a href="{{ $menu['url'] }}"
-                                            class="nav-link {{  request()->is(json_decode($menu['active'])) ? 'active' : '' }}">
+                                        <a href="{{ route( $menu['url'])}}"
+                                            class="nav-link  {{ request()->routeIs(($menu['active'])) ? 'active' : '' }}">
                                             <i class="nav-icon {{ $menu['icon'] }}"></i>
                                             <p>{{ $menu['title'] }}</p>
                                         </a>
                                     </li>
+                           
+                                @endcan       
                                 @endforeach
                             </ul>
+                       
                         </li>
                       @endcan   
                     @endif
-                @endforeach
+              @endforeach
          
               
         

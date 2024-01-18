@@ -114,6 +114,7 @@ $jns_kelamin = json_decode(json_encode(
     <script src="{{ asset('plugins/filepond/filepond-plugin-file-validate-type.js') }}"></script>
     <script src="{{ asset('plugins/filepond/filepond-plugin-file-validate-size.js') }} "></script>
     <script src="{{ asset('plugins/filepond/filepond-plugin-image-preview.js') }}"></script>
+    <script src="{{ asset('plugins/filepond-plugin-file-rename.js') }}"></script>
 
     <script src="{{ asset('plugins/filepond/filepond-get-files.js') }}"></script>
     <script src="{{ asset('plugins/magnific/jquery.magnific-popup.min.js') }}"></script>
@@ -285,53 +286,8 @@ $jns_kelamin = json_decode(json_encode(
                 $.get(url, function(response) {
                     $('#id').val(response.data.id)
                     $('#keterangan').val(response.data.judul)
-                                        FilePond.registerPlugin(
-                            FilePondPluginFileMetadata,
-                       
-                            FilePondPluginImagePreview
-                        );
+                                     
 
-                        // Get a reference to the file input element
-                        const inputElement = document.querySelector('input[type="file"]');
-
-                        // Create the FilePond instance
-                        const pond = FilePond.create(inputElement, {
-                            imageCropAspectRatio: "1:1",
-                            fileMetadataObject: {
-                            markup: [
-                                [
-                                "rect",
-                                {
-                                    left: 0,
-                                    right: 0,
-                                    bottom: 0,
-                                    height: "60px",
-                                    backgroundColor: "rgba(0,0,0,.5)",
-                                },
-                                ],
-                                [
-                                "image",
-                                {
-                                    right: "10px",
-                                    bottom: "10px",
-                                    width: "128px",
-                                    height: "34px",
-                                    src: "./filepond-logo.svg",
-                                    fit: "contain",
-                                },
-                                ],
-                            ],
-                            },
-                        });
-
-                        pond.addFile(response.data.foto);
-                                    
-
-                    // Set up FilePond
-                   
-
-    
-                            
                     
                    
                 })
@@ -360,7 +316,7 @@ $jns_kelamin = json_decode(json_encode(
                 FilePondPluginFileEncode,
                 FilePondPluginImagePreview,
                 FilePondPluginFilePoster,
-                
+             
           
                 FilePondPluginFileValidateType,
                 FilePondPluginFileValidateSize)
@@ -375,6 +331,7 @@ $jns_kelamin = json_decode(json_encode(
 
                     maxFileSize: 5000000, //10 mbs max size
                     allowFileSizeValidation: true,
+                 
                 });
 
             pond.setOptions({

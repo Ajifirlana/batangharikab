@@ -1,4 +1,4 @@
-@canany(['ubah user', 'hapus user'])                            
+@canany(['update user', 'delete user'])                       
 <style>
    .dropdown-menu>li>a:hover {
        background-color: rgba(127, 75, 223, 0.189);

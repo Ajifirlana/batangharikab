@@ -17,7 +17,7 @@ class GaleriBackandController extends Controller
        $this->middleware('auth');
        $this->middleware('permission:read galeri|edit galeri|delete galeri', ['only' => ['index','show']]);
        $this->middleware('permission:create galeri', ['only' => ['create','store']]);
-       $this->middleware('permission:edit galeri', ['only' => ['edit','update']]);
+       $this->middleware('permission:update galeri', ['only' => ['edit','update']]);
        $this->middleware('permission:delete galeri', ['only' => ['destroy']]);
     }
 
@@ -44,11 +44,21 @@ class GaleriBackandController extends Controller
     public function store(Request $request)
     {
        try {
+        //simpan foto ke lokal
+         $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+    
+        $imageName = time().'.'.$request->image->extension();  
+        $request->image->move(public_path('frontend\galeri'), $imageName);
+
+
           if($request->file('file')==null){
              Galeri::updateOrCreate(
-                ['id'               => $request->id],
+                ['id'           => $request->id],
                 [
-                   'judul'           => $request->keterangan,
+                   'judul'      => $request->keterangan,
+                   'foto'       => $imageName,
  
                 ]
              );
@@ -57,7 +67,7 @@ class GaleriBackandController extends Controller
              else return $this->success('Berhasil Menginput Data');
  
           }
-
+          //simpan foto ke firebase api
           $image_path = $request->file('file')->getPathname();
           $nama_gambar = time() . '_' . $request->file('file')->getClientOriginalName();
           $image_mime = $request->file('file')->getmimeType();

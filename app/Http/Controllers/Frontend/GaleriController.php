@@ -21,4 +21,15 @@ class GaleriController extends Controller
         return view('frontend.galeri.galeri_video',array(
         "galeri_video"=>$galeri_video));
     }
+
+    public function website_skpd(){
+        $website_skpds =  DB::table('website_skpds')->orderBy('id','desc')->paginate(8);
+ 
+        return view('frontend.skpd.website-skpd',array(
+        "website_skpds"=>$website_skpds));
+    }
+
+    
+
+    
 }

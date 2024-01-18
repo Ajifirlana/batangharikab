@@ -20,30 +20,16 @@
                             <option value="{{ $item->type }}">{{ $item->type }}</option>
                      @endforeach
                 </x-select2>
-                <div id="jenis">
-                <x-select2 id="jns" label="Jenis Menu"  placeholder="Jenis Menu">
-                      @foreach ($tbh_menu as $item)
-                            <option value="{{ $item->text }}">{{ $item->text }}</option>
-                     @endforeach
-                </x-select2>
-                </div>
-                <div id="grup">
-
-                <x-select2 id="tree" label="Grup Menu" placeholder="Grup Menu">
-                     @foreach($tree as $category)
-                        <option value="{{ $category->id }}">{{ $category->title }}</option>
-                    @endforeach
-                </x-select2>
-                
-                </div>
-             
-             
                     <x-select2 id="role" name="role[]" label="Hak Akses"
                         placeholder="Select Category" multiple>
-                        @foreach($role as $role)
-                        <option value="{{ $role->id }}">{{ $role->name }}</option>
-                    @endforeach
+                        @foreach($role as $category)
+                        <option value="{{ $category->name }}">{{ $category->name }}</option>
+                        @endforeach
+                        <!-- <option value="superadmin">superadmin</option>
+                        <option value="admin">admin</option>
+                        <option value="operator">operator</option> -->
                     </x-select2>
+                   
                 
                     <x-input id='judul' label='judul' required=true  />
                     <x-input  class="form-control input"  id='url' label='Url' required=true />

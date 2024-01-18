@@ -50,8 +50,8 @@ $tbh_menu = json_decode(json_encode(
                                                     <th>No</th>
                                                     <th>Type</th> 
                                                     <th>Judul</th> 
-                                                    <th>Url</th> 
-                                                    <th>Icon</th> 
+                                                    <th>Sub Menu</th> 
+                                                    <th>Hak Akses</th> 
                                                     
                                                     <th>#Aksi</th>
                                                 </tr>
@@ -124,10 +124,10 @@ $tbh_menu = json_decode(json_encode(
                         data: 'title',
                     },
                     {
-                        data: 'url',
+                        data: 'total_menu',
                     },
                     {
-                        data: 'icon',
+                        data: 'hak_akses',
                     },
                   
                    
@@ -197,19 +197,16 @@ $tbh_menu = json_decode(json_encode(
                 $.get(url, function(response) {
                   $('#id').val(response.data.id)
                   $('#type').val(response.data.type).trigger('change');
-                
-                  $('#jns').val("Sudah Ada").trigger('change');
-                  if(response.data.type==='tree'){
-                    $('#tree').prop("disabled", true);
-                    $('#tree').val(response.data.id).trigger('change');   
-                   
-                  }else{
-                    $('#tree').prop("disabled", false);
-                    $('#tree').val(response.data.id_menu_induk).trigger('change');
-                   
-                  }
+                //   $("#role").val(('["superadmin","admin","operator"]')).trigger('change');
+                  $("#role").val(response.data.hakakses).change()
+                  $('#judul').val(response.data.title)
+                  $('#url').val(response.data.url)
+                  $('#icon').val(response.data.icon)
+           
+
+              
                
-                  $("#role").val(response.data.permission).change()
+                
                 })
             });
 
@@ -231,57 +228,57 @@ $tbh_menu = json_decode(json_encode(
                 })
             });
 
-     $(document).ready(function () {
-        // Initial setup: hide the target select
-        $('#jenis').hide();
-        $('#grup').hide();
-      //  $('#targetSelectLabel').hide();
+    //  $(document).ready(function () {
+    //     // Initial setup: hide the target select
+    //     $('#jenis').hide();
+    //     $('#grup').hide();
+    //   //  $('#targetSelectLabel').hide();
 
-        // Event listener for the change event on the trigger select
-        $('#type').change(function () {
-            // Check the selected value
-            var selectedValue = $(this).val();
+    //     // Event listener for the change event on the trigger select
+    //     $('#type').change(function () {
+    //         // Check the selected value
+    //         var selectedValue = $(this).val();
 
-            // Show or hide the target select based on the selected value
-            if (selectedValue === 'tree') {
-                $('#jenis').show();
+    //         // Show or hide the target select based on the selected value
+    //         if (selectedValue === 'tree') {
+    //             $('#jenis').show();
                 
-               /// document.getElementById("jns").required = true;
+    //            /// document.getElementById("jns").required = true;
              
-                // $('#targetSelectLabel').show();
-            } else {
-                $('#jenis').hide();
-                $('#grup').hide();
+    //             // $('#targetSelectLabel').show();
+    //         } else {
+    //             $('#jenis').hide();
+    //             $('#grup').hide();
               
-                // $('#targetSelectLabel').hide();
-            }
-        });
-    });
+    //             // $('#targetSelectLabel').hide();
+    //         }
+    //     });
+    // });
 
-    $(document).ready(function () {
-        // Initial setup: hide the target select
-       // $('#jenis').hide();
-       $('#jenis').hide();
-        $('#grup').hide();
-      //  $('#targetSelectLabel').hide();
+    // $(document).ready(function () {
+    //     // Initial setup: hide the target select
+    //    // $('#jenis').hide();
+    //    $('#jenis').hide();
+    //     $('#grup').hide();
+    //   //  $('#targetSelectLabel').hide();
 
-        // Event listener for the change event on the trigger select
-        $('#jns').change(function () {
-            // Check the selected value
-            var selectedValue = $(this).val();
+    //     // Event listener for the change event on the trigger select
+    //     $('#jns').change(function () {
+    //         // Check the selected value
+    //         var selectedValue = $(this).val();
 
-            // Show or hide the target select based on the selected value
-            if (selectedValue === 'Sudah Ada') {
-                $('#grup').show();
+    //         // Show or hide the target select based on the selected value
+    //         if (selectedValue === 'Sudah Ada') {
+    //             $('#grup').show();
              
-                // $('#targetSelectLabel').show();
-            } else {
-                $('#grup').hide();
+    //             // $('#targetSelectLabel').show();
+    //         } else {
+    //             $('#grup').hide();
               
-                // $('#targetSelectLabel').hide();
-            }
-        });
-    });
+    //             // $('#targetSelectLabel').hide();
+    //         }
+    //     });
+    // });
 
 
 

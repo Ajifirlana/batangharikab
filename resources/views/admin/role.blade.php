@@ -62,7 +62,7 @@
                                                     @endif
                                                 </td>
                                                 <td>{{ $i->updated_at }}</td>
-                                                @canany(['update role', 'hapus role'])
+                                                @canany(['update role', 'delete role'])
                                                     <td>
                                                         <div class="btn-group">
                                                             @can('update role')
@@ -70,7 +70,7 @@
                                                                     <button class="btn btn-sm btn-primary btn-edit" data-id="{{ $i->id }}"><i class="fas fa-pencil-alt"></i></button>
                                                                 @endif
                                                             @endcan
-                                                            @can('hapus role')
+                                                            @can('delete role')
                                                                 @if ($i->name != 'superadmin')
                                                                     <button class="btn btn-sm btn-danger btn-delete" data-id="{{ $i->id }}" data-name="{{ $i->name }}"><i class="fas fa-trash"></i></button>
                                                                 @endif

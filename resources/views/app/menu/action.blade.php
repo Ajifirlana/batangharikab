@@ -11,6 +11,11 @@
      
             <li><a data-url='{{ route('menu.edit', $data->id) }}'  href="#" class="btn_edit dropdown-item" >Ubah Data</a> </li>
             <div class="dropdown-divider"></div>
+            <li><a data-url='{{ route('menu.show', $data->id) }}' data-name="{{ $data->id }}"
+              data-id="{{ $data->id }}" href="{{ route('menu.show', $data->id) }}"
+              class="dropdown-item">
+              Detail </a> 
+            <div class="dropdown-divider"></div>
              <li><a data-hapus="{{ $data->id }}"  data-url="{{ route('menu.destroy', $data->id) }}" class="btn_hapus dropdown-item" href="#">Hapus
                <form hidden id="form-delete" action="{{ route('menu.destroy', $data->id) }}" method="POST"> @csrf
                   @method('DELETE')

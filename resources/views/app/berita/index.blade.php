@@ -158,38 +158,17 @@ $jns_kelamin = json_decode(json_encode(
                 locale: "id",
             });
 
-            
             $('#summernote').summernote({
-                height: 200,
-                fontSizes: ['8', '9', '10', '11', '12', '14', '18', '24', '36', '48' , '64', '82', '150'],
-                imageTitle: {
-                    specificAltField: true,
-                },
-                imageAttributes: {
-                    icon: '<i class="note-icon-pencil"/>',
-                    figureClass: 'figureClass',
-                    figcaptionClass: 'captionClass',
-                    captionText: 'Caption Goes Here.',
-                    manageAspectRatio: true // true = Lock the Image Width/Height, Default to true
-                },
-                popover: {
-                    image: [
-                        ['imagesize', ['imageSize100', 'imageSize50', 'imageSize25']],
-                        ['float', ['floatLeft', 'floatRight', 'floatNone']],
-                        ['remove', ['removeMedia']],
-                        ['custom', ['imageAttributes']],
-                    ],
-                    toolbar: [
-                        ['style', ['bold', 'italic', 'underline', 'clear']],
-                        ['font', ['strikethrough', 'superscript', 'subscript']],
-                        ['fontsize', ['fontsize']],
-                        ['color', ['color']],
-                        ['para', ['ul', 'ol', 'paragraph']],
-                        ['height', ['height']]
-                    ],
-                },
-                
-            });
+  toolbar: [
+    // [groupName, [list of button]]
+    ['style', ['bold', 'italic', 'underline', 'clear']],
+    ['font', ['strikethrough', 'superscript', 'subscript']],
+    ['fontsize', ['fontsize']],
+    ['color', ['color']],
+    ['para', ['ul', 'ol', 'paragraph']],
+    ['height', ['height']]
+  ]
+});
 
         
 

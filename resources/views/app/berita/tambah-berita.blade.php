@@ -201,31 +201,29 @@
           
                 FilePondPluginFileValidateType,
                 FilePondPluginFileValidateSize)
+               
+               
+                $(document).ready(function() {
+                    var customButtons = [
+                        ['style', ['style']],
+                        ['fontname', ['fontname']],
+                        ['font', ['bold', 'italic', 'underline', 'clear']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['insert', ['link', 'picture', 'video']],
+                        ['fontsize', ['fontsize']],
+                        ['table', ['table']],
+                        ['view', ['fullscreen', 'codeview']]
+                    ];
 
-            $('#summernote').summernote({
-                height: 200,
-                imageTitle: {
-                    specificAltField: true,
-                },
-                imageAttributes: {
-                    icon: '<i class="note-icon-pencil"/>',
-                    figureClass: 'figureClass',
-                    figcaptionClass: 'captionClass',
-                    captionText: 'Caption Goes Here.',
-                    manageAspectRatio: true // true = Lock the Image Width/Height, Default to true
-                },
-                popover: {
-                    image: [
-                        ['imagesize', ['imageSize100', 'imageSize50', 'imageSize25']],
-                        ['float', ['floatLeft', 'floatRight', 'floatNone']],
-                        ['remove', ['removeMedia']],
-                        ['custom', ['imageAttributes']],
-                    ],
-                },
-            })
+                    $('#summernote').summernote({
+                        toolbar: customButtons,
+                        height: 300,
+                        
+                    });
+                });
 
 
-            const file_pdf = FilePond.create(document.querySelector('#file_pdf'));
+            const file_pdf = FilePond.create(document.querySelector('#file'));
             file_pdf.setOptions({
                 allowMultiple: true,
                 allowReorder: true,

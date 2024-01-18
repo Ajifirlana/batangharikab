@@ -11,6 +11,7 @@ use App\Http\Controllers\admin\MasterUserController;
 use App\Http\Controllers\admin\GaleriBackandController;
 use App\Http\Controllers\admin\SkpdController;
 use App\Http\Controllers\admin\YoutubeController;
+use App\Http\Controllers\admin\InfografisController;
 use App\Http\Controllers\admin\BeritaBackandController;
 use App\Http\Controllers\admin\NewsController;
 use App\Http\Controllers\UserController;
@@ -30,11 +31,15 @@ use Spatie\Permission\Models\Permission;
 Route::controller(PageController::class)->group(function() {
     Route::get('/', 'home')->name('home');
     Route::get('/page/{id}', 'page')->name('page');
+    Route::get('/downloadFile/{file}', 'downloadFile')->name('downloadFile');
+    Route::get('/show/{file}', 'show')->name('show');
 });
 //Galeri
 Route::controller(GaleriController::class)->group(function() {
     Route::get('galeri-foto', 'galeri_foto')->name('galeri_foto');
+ 
     Route::get('galeri-video', 'galeri_video')->name('galeri_video');
+    Route::get('website-skpd', 'website_skpd')->name('website_skpd');
 });
 
 //BERITA
@@ -72,7 +77,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
    Route::resource('user', MasterUserController::class);
    Route::controller(MasterUserController::class)->group(function () {
       // Route::get('user', 'index')->middleware(['permission:read user'])->name('user.index');
-      Route::get('user/profile', 'profile')->name('profile.index');
+      Route::get('profile', 'profile')->name('profile.index');
       Route::put('user/profile/foto', 'ubah_foto')->name('profile.foto.ubah');
       // Route::post('user', 'store')->middleware(['permission:create user'])->name('user.store');
       // Route::get('user/show', 'show')->middleware(['permission:read user'])->name('user.show');
@@ -110,12 +115,18 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
       Route::put('password-ubah', 'ubahPassword')->name('password.ubah');
    });
 
+   // Route::controller(MenuController::class)->group(function () {
+   //    Route::get('menu/{submenu}', 'submenu')->name('menu.submenu');
+    
+   // });
+
    Route::resources([
       'roles' => RoleController_old::class,
       'galeri' => GaleriBackandController::class,
       'skpd' => SkpdController::class,
       'news' => NewsController::class, 
       'youtube' => YoutubeController::class, 
+      'infografis' => InfografisController::class,  
       'form' => FormController::class,
       'pegawai' => PegawaiController::class,
       'slider' => SliderController::class,

@@ -10,8 +10,8 @@
     <title> .:: Situs Pemerintah Kabupaten Batanghari | Bumi Serentak Bak Regam ::. </title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png')}}" />
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('frontend/logo/logo.jpg')}}" />
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('frontend/logo/logo.jpg')}}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('frontend/logo/logo.gif')}}" />
+   
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
     <meta name="description" content="austry HTML 5 Template " />
 
@@ -115,9 +115,9 @@
             <nav class="main-menu main-menu-two">
                 <div class="main-menu-two__wrapper">
                     <div class="main-menu-two__wrapper-inner">
-                        <div class="main-menu-two__left">
+                        <div class="main-menu-four__right">
                             <div class="main-menu-two__logo">
-                                <a href="{{url('/')}}"><img src="{{ asset('frontend/assets/images/resources/logo-new.png')}}" alt=""></a>
+                                <a href="{{url('/')}}"><img src="{{ asset('frontend/assets/images/resources/logo-bth.png')}}" alt=""></a>
                             </div>
                             <div class="main-menu-two__main-menu-box">
                                 <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>

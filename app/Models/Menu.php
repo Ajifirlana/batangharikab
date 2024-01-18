@@ -20,10 +20,10 @@ class Menu extends Model
      protected $table = 'menu';
      protected $guarded = [];
 
-     protected $appends = ['items','role'];
+     protected $appends = ['hakakses','aktif','items','submenu'];
      protected $casts = [
-        'active' => 'array',
-        'permission' => 'array',
+       
+       
         'created_at'     => 'date:d-m-Y H:m:s',
         'updated_at'     => 'date:d-m-Y H:m:s',
        
@@ -45,6 +45,14 @@ class Menu extends Model
     
     }
 
+    public function getSubMenuAttribute(){
+        return DB::table('menu')
+                    ->where('id_menu_induk',$this->attributes['id'])
+                    ->count();
+    
+    }
+
+
     public function getRoleAttribute(){
         // // $items = DB::table('menu')
         // //             ->whereIn('permission',$this->attributes['permission'])
@@ -56,6 +64,27 @@ class Menu extends Model
          $results = Role::whereIn('id', $desiredValues)->pluck('name');
          return  json_decode($results,true);
     
+    }
+    public function getAktifAttribute(){
+        // // $items = DB::table('menu')
+        // //             ->whereIn('permission',$this->attributes['permission'])
+        // //             ->get();
+        //            // $explode_id = json_decode($items,true);
+        //              return $this->attributes['permission'];
+        $desiredValues = json_decode($this->attributes['id_permission']);
+        $items = DB::table('menu')
+        ->where('type', 'menu')
+        ->where('id_menu_induk', $this->attributes['id'])
+        ->pluck('active');
+        
+
+        // $results = Role::whereIn('id', $desiredValues)->pluck('name');
+         return  $items;   
+    }
+
+    public function getHakAksesAttribute(){
+       
+         return json_decode($this->attributes['permission'],true);
     }
 
   
