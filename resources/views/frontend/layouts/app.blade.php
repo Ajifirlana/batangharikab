@@ -128,7 +128,7 @@
                                             <li class="dropdown">
                                                 <a href="2">Profil Batanghari</a>
                                             <ul>
-                                            <li><a href="3">Sejarah Batanghari</a></li>
+                                            <li><a href="{{url('page/sejarah')}}">Sejarah Batanghari</a></li>
                                             <li><a href="#">Arti Lambang</a></li>
                                             <li><a href="#">Kondisi Demografi</a></li>
                                             <li><a href="#">Peta Batanghari</a></li>
@@ -163,7 +163,7 @@
                                             <li><a href="{{url('berita')}}">Berita</a></li>
                                                 <li><a href="{{url('galeri-foto')}}">Galeri Foto</a></li>
                                                 <li><a href="{{url('galeri-video')}}">Galeri Video</a></li>
-                                                <li><a href="{{url('page/1')}}">Visi & Misi</a></li>
+                                                <li><a href="{{url('page/visi-dan-misi')}}">Visi & Misi</a></li>
                                                     
                                             </ul>
                                         </li>

@@ -30,7 +30,7 @@ use Spatie\Permission\Models\Permission;
 //Home
 Route::controller(PageController::class)->group(function() {
     Route::get('/', 'home')->name('home');
-    Route::get('/page/{id}', 'page')->name('page');
+    Route::get('/page/{slug}', 'page')->name('page');
     Route::get('/downloadFile/{file}', 'downloadFile')->name('downloadFile');
     Route::get('/show/{file}', 'show')->name('show');
 });

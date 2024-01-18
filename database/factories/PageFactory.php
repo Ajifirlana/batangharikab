@@ -19,6 +19,7 @@ class PageFactory extends Factory
         return [
             
             'judul' => 'Visi dan Misi',
+            'slug' => 'visi-dan-misi',
             'isi' => '<p>VISI PEMBANGUNAN KABUPATEN BATANG HARI
 
             TAHUN 2021 -2026</p>
