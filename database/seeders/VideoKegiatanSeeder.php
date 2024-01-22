@@ -14,8 +14,26 @@ class VideoKegiatanSeeder extends Seeder
     public function run(): void
     {
         
-        VideoKegiatan::create(['judul' => 'tablig akbar 4',
-        'link' => 'url',
-        'foto'=>'tablig_akbar4.jpg']);
+        $data= [
+            [
+                'judul' => 'Contoh 1',
+                'link' => 'link',
+                'foto'=>'02.jpg'
+            ],[
+                
+                'judul' => 'Contoh 2',
+                'link' => 'link',
+                'foto'=>'01.jpg'
+            ],[
+                
+                'judul' => 'Contoh 3',
+                'link' => 'link',
+                'foto'=>'contoh.jpg'
+                
+            ]
+            ];
+        foreach($data as $row){
+            VideoKegiatan::create($row);
+        }
     }
 }
