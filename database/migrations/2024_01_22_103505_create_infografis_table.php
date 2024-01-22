@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('website_skpds', function (Blueprint $table) {
+        Schema::create('infografis', function (Blueprint $table) {
             $table->id();
             $table->string('judul')->nullable();
-            $table->string('opd')->nullable();
-            $table->string('keterangan')->nullable();
-            $table->string('foto')->nullable();
-            $table->string('link')->nullable();
+            $table->string('gambar')->nullable();
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('website_skpds');
+        Schema::dropIfExists('infografis');
     }
 };

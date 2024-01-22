@@ -15,9 +15,15 @@ class WebsiteSkpdSeeder extends Seeder
     {
         
         $data= [
-            ['foto' => 'ppid.jpg',
+            ['judul' => 'judul1',
+            'opd' => 'opd1',
+            'keterangan' => 'keterangan1',
+            'foto' => 'ppid.jpg',
         'link' => 'https://ppid.batangharikab.go.id/'],
-        ['foto' => 'bkd.jpg',
+        ['judul' => 'judul1',
+        'opd' => 'opd2',
+        'keterangan' => 'keterangan2',
+        'foto' => 'bkd.jpg',
         'link' => 'https://bkd.batangharikab.go.id/']
     ];
         foreach($data as $skpd){
