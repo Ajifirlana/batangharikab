@@ -193,6 +193,7 @@
 
         @yield('content')
         
+        
         <!--Site Footer Start-->
         <footer class="site-footer">
             <div class="container">
@@ -264,7 +265,7 @@
                     </div>
                 </div>
                 <div class="site-footer__bottom">
-                    <p class="site-footer__bottom-text">©2023 <a href="#">Pemerintah Kabupaten Batang Hari</a></p>
+                    <p class="site-footer__bottom-text">©<?= date('Y')?> <a href="#">Pemerintah Kabupaten Batang Hari</a></p>
                     <ul class="list-unstyled site-footer__bottom-menu">
                         <li><a href="about">Help</a></li>
                         <li><a href="about">Privacy Policy</a></li>
