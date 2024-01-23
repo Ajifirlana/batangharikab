@@ -1,25 +1,6 @@
 @extends('frontend.layouts.app')
 @section('content')
 
-        <!--Page Header Start-->
-        <section class="page-header">
-            <div class="page-header-bg" style="background-image: url({{asset('frontend/gambar-berita/'.$berita->gambar)}})">
-            </div>
-
-            <div class="container">
-                <div class="page-header__inner">
-                    <h2>{{$berita->judul}}</h2>
-                    <div class="thm-breadcrumb__box">
-                        <ul class="thm-breadcrumb list-unstyled">
-                            <li><a href="index.html">Home</a></li>
-                            <li><span>/</span></li>
-                            <li>News</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Page Header End-->
         <!--News Details Start-->
         <section class="news-details">
             <div class="container">
