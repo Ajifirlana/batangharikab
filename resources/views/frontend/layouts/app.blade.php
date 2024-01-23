@@ -126,19 +126,19 @@
                                             <a href="{{url('/')}}">Tentang Batanghari</a>
                                             <ul>
                                             <li class="dropdown">
-                                                <a href="2">Profil Batanghari</a>
+                                                <a href="{{url('page/profil-batanghari')}}">Profil Batanghari</a>
                                             <ul>
                                             <li><a href="{{url('page/sejarah')}}">Sejarah Batanghari</a></li>
-                                            <li><a href="#">Arti Lambang</a></li>
-                                            <li><a href="#">Kondisi Demografi</a></li>
-                                            <li><a href="#">Peta Batanghari</a></li>
+                                            <li><a href="{{url('page/arti-lambang')}}">Arti Lambang</a></li>
+                                            <li><a href="{{url('page/kondisi-demografi')}}">Kondisi Demografi</a></li>
+                                            <li><a href="{{url('page/peta-batanghari')}}">Peta Batanghari</a></li>
                                 
                                             </ul>
                                             </li>
-                                                <li><a href="3">Pemerintahan Batanghari</a></li>
-                                                <li><a href="4">Akuntabiltas Pemerintahan</a></li>
-                                                <li><a href="5">Akuntabiltas Pelaporan</a></li>
-                                                <li><a href="6">APBD Batanghari</a></li>
+                                                <li><a href="{{url('page/pemerintah-batanghari')}}">Pemerintahan Batanghari</a></li>
+                                                <li><a href="{{url('page/akuntabiltas-pemerintahan')}}">Akuntabiltas Pemerintahan</a></li>
+                                                <li><a href="{{url('page/akuntabiltas-pelaporan')}}">Akuntabiltas Pelaporan</a></li>
+                                                <li><a href="{{url('page/apbd-batanghari')}}">APBD Batanghari</a></li>
                                                 
                                             </ul>
                                         </li>
