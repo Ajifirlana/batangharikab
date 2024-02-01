@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
+use Vinkla\Hashids\Facades\Hashids;
 
 return [
 

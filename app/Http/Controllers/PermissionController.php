@@ -15,6 +15,11 @@ class PermissionController extends Controller
     {
         $x['title']     = 'Permission';
         $x['data']      = Permission::get();
+        // $role = ["read","create","delete","update"];
+        // dd(count ($role));
+
+        
+
         return view('admin.permission', $x);
     }
 
@@ -24,19 +29,35 @@ class PermissionController extends Controller
             'name'          => ['required'],
             'guard_name'    => ['required'],
         ]);
+
+        $role = ["read","create","delete","update"];
+      //  dd(count ($role));
+
+
         if ($validator->fails()) {
             return back()->withErrors($validator)
                 ->withInput();
         }
-        try {
-            $permission = Permission::create([
-                'name'          => $request->name,
-                'guard_name'    => $request->guard_name,
-            ]);
-            Alert::success('Pemberitahuan', 'Data <b></b> berhasil dibuat')->toToast()->toHtml();
-        } catch (\Throwable $th) {
-            Alert::error('Pemberitahuan', 'Data <b> </b> gagal dibuat : ' . $th->getMessage())->toToast()->toHtml();
+
+
+        
+        foreach ($role as $permission) {
+                $name=$permission." ".$request->name;
+                try {
+                    $permission = Permission::create([
+                        'name'          => $name,
+                        'guard_name'    => $request->guard_name,
+                    ]);
+                    Alert::success('Pemberitahuan', 'Data <b></b> berhasil dibuat')->toToast()->toHtml();
+                } catch (\Throwable $th) {
+                    Alert::error('Pemberitahuan', 'Data <b> </b> gagal dibuat : ' . $th->getMessage())->toToast()->toHtml();
+                }
+       
+    
         }
+
+
+
         return back();
     }
 

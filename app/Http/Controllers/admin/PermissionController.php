@@ -16,7 +16,20 @@ class PermissionController extends Controller
 
    use ApiResponse;
 
+   public function __construct()
+   {
+      $this->middleware('auth');
+      $this->middleware('permission:read permission|update permission|delete permission', ['only' => ['index','show']]);
+      $this->middleware('permission:create permission', ['only' => ['create','store']]);
+      $this->middleware('permission:update permission', ['only' => ['edit','update']]);
+      $this->middleware('permission:delete permission', ['only' => ['destroy']]);
+      
+   }
+
+
    public function index(){
+
+      
       $x['title']     = 'Permission';
       $data    = Permission::get();
     
@@ -44,33 +57,6 @@ class PermissionController extends Controller
       return view('admin.permissions.index', $x);
    }
 
-   public function edit($permission_group_id)
-   {
-
-      $group = PermissionGroup::findOrFail($permission_group_id);
-      $data = Permission::where('permission_group_id', $permission_group_id);
-      if (request()->ajax()) {
-         return datatables()->of($data)
-            ->addIndexColumn()
-            ->addColumn('action', function ($data) {
-               return view('admin.permissions.action', compact('data'));
-            })
-            ->editColumn('created_at', function ($data) {
-               return Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->format('d/m/Y h:i:s');
-            })
-            ->editColumn('guard_name', function ($data) {
-               if ($data->guard_name == 'web') {
-                  return   '<span class="badge badge-primary">' . $data->guard_name . '</span>';;
-               } elseif ($data->guard_name == 'api') {
-                  return   '<span class="badge badge-warning">' . $data->guard_name . '</span>';;
-               }
-            })
-            ->rawColumns(['action', 'guard_name'])
-            ->make(true);
-      }
-
-      return view('admin.permissions.edit', compact('group', 'data'));
-   }
 
    public function show(Permission $permission)
    {
@@ -79,63 +65,67 @@ class PermissionController extends Controller
 
    public function store(Request $request)
    {
+      
       DB::beginTransaction();
+      $role = ["read","create","delete","update"];
       try {
-         if ($request->has('multi')) {
-            $array = explode(",", $request->name);
-            foreach ($array as $key => $value) {
 
-               Permission::create([
-                  'name'                => trim($value),
-                  'permission_group_id' => $request->permission_group_id,
-                  'guard_name'          => $request->guard_name,
-               ]);
-            }
+            $type =$request->type;
+         if ($type=="multiple") {
+            
+               foreach ($role as $permission) {
+                  $name=$permission." ".$request->name;
+                  Permission::updateOrCreate(
+                     ['id' => $request->id_per],
+                     [
+                        'name'                => $name,
+                  
+                        'guard_name'          => $request->guard_name,
+                     ]
+                  );
+                        
+                  }
+
+
          } else {
             Permission::updateOrCreate(
-               ['id' => $request->permission_id],
+               ['id' => $request->id_per],
                [
                   'name'                => $request->name,
-                  'desc'                => $request->desc,
-                  'permission_group_id' => $request->permission_group_id,
+              
                   'guard_name'          => $request->guard_name,
                ]
             );
-         }
+        }
          DB::commit();
-         return $this->success(config('language.alert-success.store'));
+         if ($request->id_per)  return $this->success('Berhasil Mengubah Data');
+         else return $this->success('Berhasil Menginput Data');
       } catch (\Throwable $th) {
          DB::rollBack();
          return $this->error(config('language.alert-error.store') . $th, 400);
       }
    }
 
-   public function update(Permission $permission, Request $request)
+  
+   public function edit($id)
    {
-      DB::beginTransaction();
-      try {
-         $permission->update([
-            'name'                => $request->name,
-            'desc'                => $request->desc,
-            'permission_group_id' => $request->permission_group_id,
-            'guard_name'          => $request->guard_name,
-         ]);
-         DB::commit();
-         return $this->success(config('language.alert-success.store'));
-      } catch (\Throwable $th) {
-         DB::rollback();
-         return $this->error(config('language.alert-error.store') . $th, 400);
-      }
+
+   //  dd($id);
+      $Permission = Permission::where('id', $id)->first();
+      return $this->success('Data Permission', $Permission);
    }
 
 
-   public function destroy(Permission $permission)
+   public function destroy(Permission $permission,Request $request)
    {
       try {
-         $permission->delete();
-         return redirect()->back()->with('success', config('language.alert-success.destroy'), 200);
+         $id=$request->id;
+         $record = Permission::find($id);
+         $record->delete();
+     
+         return redirect()->back()->with('success', 'Berhasil Hapus Data', 200);
       } catch (\Throwable $th) {
-         return redirect()->back()->with('error', config('language.alert-error.destroy'), 400);
+         return redirect()->back()->with('error', 'Gagal Hapus Data', 400);
       }
    }
 }

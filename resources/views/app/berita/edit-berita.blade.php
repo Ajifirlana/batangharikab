@@ -65,7 +65,8 @@
                         <div class="card">
                             <div class="card-header">
                             <form id="form_tambah">
-                               <input hidden  id="id" name="id" value='{{$record->id}}'/>
+                               <input hidden   id="id" name="id" value='{{$record}}'/>
+                               <input hidden   id="jenis" name="jenis" value='edit'/>
                                 <x-input label="Judul Berita" id="judul"  info="Info : Sample Data Description Info"
                                     placeholder="Judul Berita" />
                                 <x-datepicker id='tanggal' label='Tanggal' required="true" />
@@ -187,6 +188,7 @@
                         if (response) {
                             this.reset()
                             $('#modal_create').modal('hide')
+                            $('#summernote').summernote('code', '');
                             Swal.fire({
                                 icon: 'success',
                                 title: response.message,
@@ -255,7 +257,7 @@
 
 
 
-            const file_pdf = FilePond.create(document.querySelector('#file_pdf'));
+            const file_pdf = FilePond.create(document.querySelector('#file'));
             file_pdf.setOptions({
                 allowMultiple: true,
                 allowReorder: true,

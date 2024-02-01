@@ -113,9 +113,10 @@ $jns_kelamin = json_decode(json_encode(
     <script src="{{ asset('plugins/filepond/filepond-plugin-file-encode.js') }}"></script>
     <script src="{{ asset('plugins/filepond/filepond-plugin-file-validate-type.js') }}"></script>
     <script src="{{ asset('plugins/filepond/filepond-plugin-file-validate-size.js') }} "></script>
+    <script src="{{ asset('plugins/filepond/filepond-plugin-image-validate-size.js')}}"></script>
     <script src="{{ asset('plugins/filepond/filepond-plugin-image-preview.js') }}"></script>
-    <script src="{{ asset('plugins/filepond-plugin-file-rename.js') }}"></script>
-
+    <script src="{{ asset('plugins/filepond/filepond-plugin-file-rename.js') }}"></script>
+    <script src="{{ asset('plugins/filepond/filepond-plugin-image-crop.js') }}"></script>
     <script src="{{ asset('plugins/filepond/filepond-get-files.js') }}"></script>
     <script src="{{ asset('plugins/magnific/jquery.magnific-popup.min.js') }}"></script>
 
@@ -286,6 +287,26 @@ $jns_kelamin = json_decode(json_encode(
                 $.get(url, function(response) {
                     $('#id').val(response.data.id)
                     $('#keterangan').val(response.data.judul)
+
+                    const inputElement = document.getElementById('file');
+
+                    // Initialize FilePond
+                    const pond = FilePond.create(inputElement);
+
+                    // Set the external image URL
+                    const externalImageUrl = "https://storage.googleapis.com/storage-batangharikab.appspot.com/www.batangharikab.go.id/1701317409_01-WAKIL-7119.jpg";
+
+                    // Add the external image to FilePond
+                    pond.addFile(externalImageUrl).then((file) => {
+                        // File added successfully
+                        console.log('File added:', file);
+                    }).catch((error) => {
+                        // Error adding file
+                        console.error('Error adding file:', error);
+                    });
+
+                                    
+                
                                      
 
                     
@@ -316,6 +337,8 @@ $jns_kelamin = json_decode(json_encode(
                 FilePondPluginFileEncode,
                 FilePondPluginImagePreview,
                 FilePondPluginFilePoster,
+                FilePondPluginImageValidateSize,
+                FilePondPluginImageCrop,
              
           
                 FilePondPluginFileValidateType,
@@ -326,9 +349,10 @@ $jns_kelamin = json_decode(json_encode(
                     storeAsFile: true,
                     acceptedFileTypes: ['image/*'],
                     fileValidateTypeDetectType: true,
-                    imageResizeTargetHeight: 2160,
-                    imageResizeTargetWidth: 3840,
-
+                    imageValidateSizeMinWidth: 270,
+                    imageValidateSizeMinHeight: 370,
+                    imageCropAspectRatio: '1.307',
+                    allowImageCrop:true,
                     maxFileSize: 5000000, //10 mbs max size
                     allowFileSizeValidation: true,
                  
@@ -336,8 +360,12 @@ $jns_kelamin = json_decode(json_encode(
 
             pond.setOptions({
                 allowImagePreview: true,
+                allowFileMetadata: true
                
             })
+
+           
+        
 
 
         })

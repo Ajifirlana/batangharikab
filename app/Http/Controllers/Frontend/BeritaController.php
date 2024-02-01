@@ -7,19 +7,20 @@ use Illuminate\Http\Request;
 use App\Models\Berita;
 use URL;
 use DB;
-
+use Vinkla\Hashids\Facades\Hashids;
 class BeritaController extends Controller
 {
   public function index(){
-    $berita =  DB::table('beritas')->orderBy('id','desc')->paginate(8);
+    $berita =  Berita::orderBy('created_at','desc')->paginate(8);
     return view('frontend.berita.index',array("berita"=>$berita));
   }
     public function baca($id, $title, $tanggal){
-      $berita_terbaru =  DB::table('beritas')->orderBy('id','desc')->offset(0)->limit(5)->get();
+      $berita_terbaru =  Berita::orderBy('created_at','desc')->offset(0)->limit(5)->get();
      
       $video_kegiatan =  DB::table('video_kegiatans')->orderBy('id','desc')->offset(0)->limit(5)->get();
   $image_slider =  DB::table('sliders')->orderBy('id','desc')->offset(0)->limit(5)->get();
-      $berita = Berita::find($id);
+  $berita = Berita::where('id',Hashids::decode($id))->first();
+     // dd($berita->id);
    if (!$berita ){
        throw new HttpException(404);
    }

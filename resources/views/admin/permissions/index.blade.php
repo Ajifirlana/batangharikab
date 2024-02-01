@@ -1,21 +1,37 @@
+<?php
+
+$tbh_menu = json_decode(json_encode(
+    array(
+            ['value'=>'Buat Baru','text'=>'Buat Baru'],
+            ['value'=>'Sudah Ada','text'=>'Sudah Ada']
+        )
+));
+?>
 @extends('admin.layouts.master')
 @push('css')
-    <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }} ">
-    <link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }} ">
+    <link rel="stylesheet" href="{{ asset('plugins/flatpicker/flatpickr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 @endpush
-@section('header')
-    <x-header title="Permission List"></x-header>
-@endsection
 @section('content')
-<div class="content-wrapper">
+    <style>
+
+    </style>
+    <div class="content-wrapper">
         <div class="content-header">
-            <div class="container-fluid">
+        <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">{{$title}}</h1>
-                    </div>
-                </div>
+                        <h1 class="m-0">{{ $title }}</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Master Aplikasi</a></li>
+                            <li class="breadcrumb-item active">{{ $title }}</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
             </div>
         </div>
         <section class="content">
@@ -25,61 +41,83 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                @can('create pegawai')
+                                @can('create permission')
                                     <a href="#" class="btn btn-sm btn-primary" id="btn_tambah"><i
-                                            class="fas fa-plus"></i> Tambah User</a>
-                                @endcan            
+                                            class="fas fa-plus"></i> Tambah Permission</a>
+                                @endcan   
+                                
+                           
                                 </h3>
                             </div>
                             <div class="card-body">
-                <table id="datatable" class="table table-hover table-bordered">
-                            <thead>
-                            <tr>
-                                            <th>#</th>
-                                            <th>Name</th>
-                                            <th>Guard</th>
-                                            <th>Updated</th>
-                                            @canany(['update permission', 'delete permission'])
-                                                <th>Action</th>
-                                            @endcanany
-                             </tr>
-                            </thead>
-                </table>
-                         
-                             </div>
+                                <div class="tab-content">
+                                    <div class="card-body table-responsive">
+                                        <table id="datatable" class="table table-bordered" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Name</th>
+                                                    <th>Guard</th>
+                                                    <th>Updated</th>
+                                                    @canany(['update permission', 'delete permission'])
+                                                        <th>Action</th>
+                                                    @endcanany
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
-    @include('admin.permissions.modal-create-edit')
-@include('admin.permissions.modal-create-multi')
-@endsection
+    @include('admin.permissions.modal-create')
+    @include('admin.permissions.modal-create-multy')
 
+@endsection
 @push('js')
     <script src="{{ asset('template/admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('plugins/sweetalert2/sweetalert2-min.js') }}"></script>
     <script src="{{ asset('template/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('plugins/flatpicker/flatpickr.min.js') }}"></script>
+    <script src="{{ asset('plugins/flatpicker/id.min.js') }}"></script>
+    <script src="{{ asset('plugins/sweetalert2/sweetalert2-min.js') }}"></script>
     <script>
-        $(function() {
+        $(document).ready(function() {
+
+
+            
+
             $('.select2bs4').select2({
                 theme: 'bootstrap4',
             })
 
+            const flatpicker = flatpickr("#tanggal_lahir", {
+                allowInput: true,
+                dateFormat: "d-m-Y",
+                locale: "id",
+            });
+
+        
+
+
             let datatable = $("#datatable").DataTable({
                 serverSide: true,
                 processing: true,
-                scrollX: true,
-                paginate: false,
-                aaSorting: [],
+                searching: true,
+                lengthChange: true,
+                responsive: true,
+                paging: true,
+                info: true,
+                ordering: true,
                 order: [
-                    [1, 'asc']
+                    [2, 'desc']
                 ],
-                bAutoWidth: false,
-                fixedColumns: true,
-             
                 ajax: @json(route('permission.index')),
                 columns: [{
                         data: "DT_RowIndex",
@@ -106,147 +144,99 @@
                         width: '10%',
                     },
                 ]
-            })
+            });
 
             $("#btn_tambah").click(function() {
-                datatable.ajax.reload()
+                clearInput()
+                $('#hilang').show()
+                $('#modal_create').modal('show')
+                $('.modal-title').text('Tambah Data')
+            });
+
+
+       
+
+            
+              
+            $("#form_tambah").submit(function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                formData.append('method', 'PUT');
+                $.ajax({
+                    type: 'POST',
+                    url: @json(route('permission.store')),
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    dataType: 'json',
+                    beforeSend: function() {
+                        showLoading()
+                    },
+                    success: (response) => {
+                        if (response) {
+                            this.reset()
+                            $('#modal_create').modal('hide')
+                         
+                            Swal.fire({
+                                icon: 'success',
+                                title: response.message,
+                                showCancelButton: true,
+                                allowEscapeKey: false,
+                                showCancelButton: false,
+                                allowOutsideClick: false,
+                            }).then((result) => {
+                                swal.hideLoading()
+                                datatable.ajax.reload()
+                            })
+                            swal.hideLoading()
+                        }
+                    },
+                    error: function(response) {
+                        showError(response)
+                    }
+                });
+            });
+     
+              
+            $('#datatable').on('click', '.btn_edit', function(e) {
+                $('#hilang').hide()
+                $('#modal_create').modal('show')
+                $('.modal-title').text('Ubah Data')
+                $('.error').hide();
+                let id = $(this).attr("data-id");
+                let url = $(this).attr('data-url');
+              
+                $.get(url, function(response) {
+                    $('#id_per').val(response.data.id)
+                    $('#name').val(response.data.name)    
+                })
+            });
+
+
+            $('#datatable').on('click', '.btn_hapus', function(e) {
+                let data = $(this).attr('data-hapus');
+                Swal.fire({
+                    title: 'Apakah anda yakin ingin menghapus data permission?',
+                    text: data,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya, Hapus',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $(this).find('#form-delete').submit();
+                    }
+                })
             });
 
 
 
 
-            $("#form_edit_group").submit(function(e) {
-                e.preventDefault()
-                const formData = new FormData(this)
-                $.ajax({
-                    type: 'POST',
-                    url: route('permission-group.store'),
-                    data: formData,
-                    contentType: false,
-                    processData: false,
-                    beforeSend: function() {
-                        _showLoading()
-                    },
-                    success: (response) => {
-                        if (response) {
-                            $('#modal_create_edit').modal('hide')
-                            datatable.ajax.reload()
-                            _alertSuccess(response.message)
-                        }
-                    },
-                    error: function(response) {
-                        _showError(response)
-                    }
-                })
-            })
-            $("#form_create_edit_permission").submit(function(e) {
-                e.preventDefault()
-                const formData = new FormData(this)
-                $.ajax({
-                    type: 'POST',
-                    url: route('permission.store'),
-                    data: formData,
-                    contentType: false,
-                    processData: false,
-                    beforeSend: function() {
-                        _showLoading()
-                    },
-                    success: (response) => {
-                        if (response) {
-                            $('#modal_create_edit').modal('hide')
-                            datatable.ajax.reload()
-                            _alertSuccess(response.message)
-                        }
-                    },
-                    error: function(response) {
-                        _showError(response)
-                    }
-                })
-            })
-            $("#form_create_multi_permission").submit(function(e) {
-                e.preventDefault()
-                const formData = new FormData(this)
-                $.ajax({
-                    type: 'POST',
-                    url: route('permission.store'),
-                    data: formData,
-                    contentType: false,
-                    processData: false,
-                    beforeSend: function() {
-                        _showLoading()
-                    },
-                    success: (response) => {
-                        if (response) {
-                            $('#modal_create_multi').modal('hide')
-                            datatable.ajax.reload()
-                            _alertSuccess(response.message)
-                        }
-                    },
-                    error: function(response) {
-                        _showError(response)
-                    }
-                })
-            })
-            $('#btn_add_permission').click(function(e) {
-                e.preventDefault()
-                _clearInput()
-                $('#modal_create_edit').modal('show')
-                $('#modal_create_edit .modal-title').text('Create New Permission')
-            })
-            $('#btn_add_multi_permission').click(function(e) {
-                e.preventDefault()
-                _clearInput()
-                $('#modal_create_multi').modal('show')
-                $('#modal_create_edit .modal-title').text('Create New Permission')
-            })
-            $('#datatable').on('click', '.btn_edit', function(e) {
-                e.preventDefault()
-                _clearInput()
-                $('#modal_create_edit').modal('show')
-                $('#modal_create_edit .modal-title').text('Edit Permission')
-                $('.error').hide();
-                $.get($(this).attr('data-url'), function(response) {
-                    $("input[name='name']").val(response.data.name)
-                    $("input[name='desc']").val(response.data.desc)
-                    $("input[name='permission_id']").val(response.data.id)
-                    //   $("input[name='permission_group_id']").val(response.data.permission_group_id)
-                    $("input[name='guard_name']").val(response.data.guard_name).change()
-                    $("#permission_group_id").val(response.data.permission_group_id).change()
-                })
-            })
-            $('#datatable').on('click', '.btn_delete', function(e) {
-                e.preventDefault()
-                Swal.fire({
-                    title: 'Are you sure, you want to delete this data Permission ?',
-                    text: $(this).attr('data-action'),
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#d33',
-                    cancelButtonColor: '#3085d6 ',
-                    confirmButtonText: 'Yes, Delete'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        $.ajax({
-                            type: 'POST',
-                            dataType: 'json',
-                            data: {
-                                _method: 'DELETE'
-                            },
-                            url: $(this).attr('data-url'),
-                            beforeSend: function() {
-                                _showLoading()
-                            },
-                            success: (response) => {
-                                datatable.ajax.reload()
-                                _alertSuccess(response.message)
-                            },
-                            error: function(response) {
-                                _showError(response)
-                            }
-                        })
-                    }
-                })
-            })
+
+
         })
     </script>
 @endpush

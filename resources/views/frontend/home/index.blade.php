@@ -103,7 +103,7 @@
                                         <a href="<?= $url ?>"><i class="fas fa-comments"></i>{{$latestRecord->tanggal}}</a>
                                         </li>
                                     </ul>
-                                    <h3 class="news-two__left-title"><a href="<?= $url ?>">{{$latestRecord->judul}}</a></h3>
+                                    <h3 class="news-two__left-title"><a href="<?= $url ?>">{{ substr($latestRecord->judul,0,50) }} ...!</a></h3>
                                 </div>
                             </div>
                            
@@ -132,7 +132,7 @@
                                                     <a href="<?= $url ?>"><i class="fas fa-comments"></i>{{$row->tanggal}}</a>
                                                 </li>
                                             </ul>
-                                            <h3 class="news-two__title">  <a href="<?= $url ?>">{{$row->judul}}</a></h3>
+                                            <h3 class="news-two__title">  <a href="<?= $url ?>">{{ substr($row->judul,0,50) }} ...</a></h3>
                                         </div>
                                     </div>
                                 </li>

@@ -9,15 +9,17 @@ use App\Utils\ApiResponse;
 use App\Models\Berita;
 use Illuminate\Http\Request;
 use Spatie\ResponseCache\Facades\ResponseCache;
-
+use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Auth;
+use Vinkla\Hashids\Facades\Hashids;
 class NewsController extends Controller
 {
     public function __construct()
     {
        $this->middleware('auth');
-       $this->middleware('permission:read news|edit news|delete news', ['only' => ['index','show']]);
+       $this->middleware('permission:read news|update news|delete news', ['only' => ['index','show']]);
        $this->middleware('permission:create news', ['only' => ['create','store']]);
-       $this->middleware('permission:edit news', ['only' => ['edit','update']]);
+       $this->middleware('permission:update news', ['only' => ['edit','update']]);
        $this->middleware('permission:delete news', ['only' => ['destroy']]);
        
     }
@@ -29,12 +31,39 @@ class NewsController extends Controller
        // abort_if(Gate::denies('kelola mobil'), 403);
        $x['title']    = 'Data Berita';
        $data = Berita::all();
- 
+      // return $data;
+     //  dd(Auth::user()->hasAnyPermission(['update news', 'delete news']));
+
+   //     if (Auth::user()->hasPermissionTo('update news')) {
+   //       // User has the necessary permission, perform the action
+   //       return "You have permission to update news!";
+   //   } else {
+   //       // User does not have the necessary permission
+   //       return "You do not have permission to update news.";
+   //   }
+      
+      
        if (request()->ajax()) {
           return  datatables()->of($data)
              ->addIndexColumn()
              ->addColumn('action', function ($data) {
-                return view('app.berita.action', compact('data'));
+               
+                
+               if(Auth::user()->hasRole('superadmin')){
+                  return view('app.berita.action', compact('data'));
+               }else{
+                     if (Auth::user()->hasAnyPermission(['update news', 'delete news'])) {
+                           // User has the necessary permission, perform the action
+                           return view('app.berita.action', compact('data'));
+                     } else {
+                     
+                           // User does not have the necessary permission
+                           return '  <button class="btn btn-sm btn-danger" data-id=""><i class="fas fa-solid fa-lock"></i></button>';
+                     }
+
+
+                 }  
+               
              })
              ->rawColumns(['action'])
              ->make(true);
@@ -66,12 +95,16 @@ class NewsController extends Controller
          }
   
         $content = $dom->saveHTML();
-        
+
+          if ($request->jenis=="edit")
+          $id_news=Hashids::decode($request->id);
+         else
+         $id_news=$request->id;
        
         
           if($request->file('file')==null){
              Berita::updateOrCreate(
-                ['id'               => $request->id],
+                ['id'               => $id_news],
                 [
                    'judul'           => $request->judul,
                    'isi'            => $content,
@@ -81,7 +114,7 @@ class NewsController extends Controller
                 ]
              );
     
-             if ($request->id)  return $this->success('Berhasil Mengubah Data');
+             if ($id_news)  return $this->success('Berhasil Mengubah Data');
              else return $this->success('Berhasil Menginput Data');
  
           }
@@ -137,17 +170,20 @@ class NewsController extends Controller
 
     public function edit(Berita $galeri,$news)
     {
+       
          $id=request('news');
-         $record = Berita::find($id);
-      
+         $record =$id;
+         
          $x['title']    = 'Edit Berita';
          return view('app.berita.edit-berita',$x, compact('record'));
     }
 
     public function show($news)
     {
-         $id=request('news');
-         $record = Berita::find($id);
+
+       
+       $id=request('news');
+       $record = Berita::where('id', Hashids::decode($id))->first();
          return $record;
     }
 

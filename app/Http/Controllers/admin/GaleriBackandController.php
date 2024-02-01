@@ -9,7 +9,7 @@ use App\Utils\ApiResponse;
 use App\Models\Galeri;
 use Illuminate\Http\Request;
 use Spatie\ResponseCache\Facades\ResponseCache;
-
+use Illuminate\Support\Facades\Auth;
 class GaleriBackandController extends Controller
 {
     public function __construct()
@@ -28,12 +28,30 @@ class GaleriBackandController extends Controller
        // abort_if(Gate::denies('kelola mobil'), 403);
        $x['title']    = 'Data Galeri';
        $data = Galeri::all();
+       //dd(Auth::user()->hasAnyPermission(['update galeri', 'delete galeri']));
  
        if (request()->ajax()) {
           return  datatables()->of($data)
              ->addIndexColumn()
              ->addColumn('action', function ($data) {
-                return view('app.galeri.action', compact('data'));
+               
+               
+              
+                 
+               if(Auth::user()->hasRole('superadmin')){
+                  return view('app.galeri.action', compact('data'));
+               }else{
+                     if (Auth::user()->hasAnyPermission(['update galeri', 'delete galeri'])) {
+                           // User has the necessary permission, perform the action
+                           return view('app.galeri.action', compact('data'));
+                     } else {
+                     
+                           // User does not have the necessary permission
+                           return '  <button class="btn btn-sm btn-danger" data-id=""><i class="fas fa-solid fa-lock"></i></button>';
+                     }
+
+
+                 }  
              })
              ->rawColumns(['action'])
              ->make(true);

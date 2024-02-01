@@ -76,7 +76,7 @@
 
 
     <div class="page-wrapper">
-        <header class="main-header-two">
+        <header    background-color: #000000; class="main-header-two">
             <div class="main-header-two__top">
                 <div class="main-header-two__top-wrapper">
                     <div class="main-header-two__top-inner">
@@ -112,7 +112,7 @@
                 </div>
             </div>
 
-            <nav class="main-menu main-menu-two">
+            <nav  class="main-menu main-menu-two">
                 <div class="main-menu-two__wrapper">
                     <div class="main-menu-two__wrapper-inner">
                         <div class="main-menu-four__right">

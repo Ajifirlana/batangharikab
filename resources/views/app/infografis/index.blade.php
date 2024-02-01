@@ -123,7 +123,8 @@ $jns_kelamin = json_decode(json_encode(
     <script src="{{ asset('template/admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
 
     <script src="https://unpkg.com/filepond-plugin-pdf-preview/dist/filepond-plugin-pdf-preview.min.js"></script>
-
+    <link href="https://unpkg.com/filepond@4.30.6/dist/filepond.css" rel="stylesheet">
+    <script src="https://unpkg.com/filepond@4.30.6/dist/filepond.js"></script>
     {{-- password toggle show/hide --}}
     <script src="{{ asset('plugins/toggle-password.js') }}"></script>
 

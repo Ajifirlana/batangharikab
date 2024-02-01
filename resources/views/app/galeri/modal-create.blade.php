@@ -19,7 +19,7 @@
                 <!-- <x-viewfoto name="foto" id="foto" src="" ></x-viewfoto> -->
                 <input hidden  id="id" name="id" value="" />
                 <x-input id='keterangan' label='Judul' required=true hint="keterangan" >     </x-textarea>
-                 
+           
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn_submit btn btn-primary">Simpan</button>

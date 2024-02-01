@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\DashboardController;
-//use App\Http\Controllers\admin\PermissionController;
-use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\admin\PermissionController;
+//use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\RoleController_old;
 use App\Http\Controllers\SettingController;
@@ -93,14 +93,14 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
       Route::delete('role', 'destroy')->middleware(['permission:delete role'])->name('role.destroy');
    });
 
-   Route::controller(PermissionController::class)->group(function () {
-      Route::get('permission', 'index')->middleware(['permission:read permission'])->name('permission.index');
-      Route::post('permission', 'store')->middleware(['permission:create permission'])->name('permission.store');
-      Route::post('permission/show', 'show')->middleware(['permission:read permission'])->name('permission.show');
-      Route::put('permission', 'update')->middleware(['permission:update permission'])->name('permission.update');
-      Route::delete('permission', 'destroy')->middleware(['permission:delete permission'])->name('permission.destroy');
-      Route::get('permission/reload', 'reloadPermission')->middleware(['permission:create permission'])->name('permission.reload');
-   });
+   // Route::controller(PermissionController::class)->group(function () {
+   //    Route::get('permission', 'index')->middleware(['permission:read permission'])->name('permission.index');
+   //    Route::post('permission', 'store')->middleware(['permission:create permission'])->name('permission.store');
+   //    Route::post('permission/show', 'show')->middleware(['permission:read permission'])->name('permission.show');
+   //    Route::put('permission', 'update')->middleware(['permission:update permission'])->name('permission.update');
+   //    Route::delete('permission', 'destroy')->middleware(['permission:delete permission'])->name('permission.destroy');
+   //    Route::get('permission/reload', 'reloadPermission')->middleware(['permission:create permission'])->name('permission.reload');
+   // });
 
 
    Route::controller(SettingController::class)->group(function () {
@@ -125,6 +125,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
       'galeri' => GaleriBackandController::class,
       'skpd' => SkpdController::class,
       'news' => NewsController::class, 
+      'permission' => PermissionController::class, 
+      
       'youtube' => YoutubeController::class, 
       'infografis' => InfografisController::class,  
       'form' => FormController::class,

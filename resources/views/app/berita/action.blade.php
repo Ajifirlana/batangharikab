@@ -3,6 +3,7 @@
        background-color: rgba(127, 75, 223, 0.189);
    }
 </style>
+@canany(['update news', 'delete news'])
 <div class="btn-group-vertical">
     <div class="btn-group">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -23,3 +24,5 @@
 </div>
 </td>
 </tr>
+@endcan
+

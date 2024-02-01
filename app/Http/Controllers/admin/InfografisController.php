@@ -57,7 +57,7 @@ class InfografisController extends Controller
             Infografis::updateOrCreate(
                 ['id'           => $request->id],
                 [
-                   'judul'      => $request->keterangan,
+                   'judul'      => $request->judul,
                    'tanggal'    =>  $request->tanggal,
                    'gambar'       => $request->tanggal,
                    'file'       => $request->tanggal,

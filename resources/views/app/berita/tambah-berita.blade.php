@@ -65,6 +65,7 @@
                         <div class="card">
                             <div class="card-header">
                             <form id="form_tambah">
+                                <input hidden   id="jenis" name="jenis" value='tambah'/>
                                 <x-input label="Judul Berita" id="judul" required='true' info="Info : Sample Data Description Info"
                                     placeholder="Judul Berita" />
                                 <x-datepicker id='tanggal' label='Tanggal' required="true" />
