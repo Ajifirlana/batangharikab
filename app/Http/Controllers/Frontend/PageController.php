@@ -13,7 +13,7 @@ class PageController extends Controller
       $berita_terbaru =  DB::table('beritas')->orderBy('id','desc')->paginate(8);
       $website_skpds =  DB::table('website_skpds')->orderBy('id','desc')->offset(0)->limit(5)->get();
       $image_slider =  DB::table('sliders')->orderBy('id','desc')->offset(0)->limit(5)->get();
-      $galeri =  DB::table('galeris')->orderBy('id','desc')->offset(0)->limit(8)->get();
+      $galeri =  DB::table('galeris')->orderBy('id','desc')->offset(0)->limit(4)->get();
       $video =  DB::table('video_kegiatans')->orderBy('id','desc')->offset(0)->limit(8)->get();
       $latestRecord = Berita::latest('created_at')->first();
       $berita_terbaru_new = Berita::latest()->skip(1)->take(2)->get();

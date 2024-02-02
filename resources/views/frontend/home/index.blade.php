@@ -14,6 +14,12 @@
     object-position: 20% 10%; /* try 20px 10px */ 
     border: 0px solid black;
 }  
+.galeri {
+    width: 270px; /* width of container */
+    height: 370px; /* height of container */
+    object-fit: cover;
+    border: 0px solid black;
+}
      
      
 </style>
@@ -306,12 +312,12 @@
                             <div class="services-two__img-box">
                                 
                                 <div class="services-two__img">
-                                    <img src="{{asset('frontend/galeri/'.$row->foto)}}" alt="">
+                                    <img class="galeri"  src="{{asset('frontend/galeri/'.$row->foto)}}" alt="">
                                 </div>
                                
                             </div>
                             <div class="services-two__content">
-                            <h3 class="services-two__title"><a href="#">{{$row->judul}}</a></h3>
+                            <h3 class="project-two__sub-title"><a href="#">{{$row->judul}}</a></h3>
                              
                               
                             </div>

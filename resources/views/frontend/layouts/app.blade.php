@@ -102,9 +102,8 @@
                         </div>
                         <div class="main-header-two__top-right">
                             <div class="main-header-two__social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                <a href="#"><i class="fab fa-brands fa-tiktok"></i></a>
+                                <a target="blank" href="https://www.facebook.com/profile.php?id=100075924655501"><i class="fab fa-facebook"></i></a>
                                 <a href="#"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
@@ -255,9 +254,9 @@
                                     <h4 class="footer-widget__title">Media Sosial</h4>
                                 </div>
                                 <div class="site-footer__social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-brands fa-tiktok"></i></a>
                                     <a href="#"><i class="fab fa-facebook"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                   
                                     <a href="#"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
