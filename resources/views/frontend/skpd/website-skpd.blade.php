@@ -2,10 +2,10 @@
 @section('content')
 
         <!--Team One Start-->
-        <section class="team-one">
+        <section style="background-color:#7eb441;" class="team-one">
             <div class="container">
                 <div class="section-title text-center">
-                    <h2 class="section-title__title">WEBSITE SKPD
+                    <h2  style="color:white;" class="section-title__title">WEBSITE SKPD
                         </h2>
                 </div>
                 <div class="row">

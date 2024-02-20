@@ -16,11 +16,11 @@ class BeritaController extends Controller
   }
     public function baca($id, $title, $tanggal){
       $berita_terbaru =  Berita::orderBy('created_at','desc')->offset(0)->limit(5)->get();
-     
+      //dd($berita_terbaru);
       $video_kegiatan =  DB::table('video_kegiatans')->orderBy('id','desc')->offset(0)->limit(5)->get();
-  $image_slider =  DB::table('sliders')->orderBy('id','desc')->offset(0)->limit(5)->get();
-  $berita = Berita::where('id',Hashids::decode($id))->first();
-     // dd($berita->id);
+      $image_slider =  DB::table('sliders')->orderBy('id','desc')->offset(0)->limit(5)->get();
+      $berita = Berita::where('id',Hashids::decode($id))->first();
+        // dd($berita->id);
    if (!$berita ){
        throw new HttpException(404);
    }
