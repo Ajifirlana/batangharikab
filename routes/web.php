@@ -33,6 +33,7 @@ Route::controller(PageController::class)->group(function() {
     Route::get('/page/{slug}', 'page')->name('page');
     Route::get('/downloadFile/{file}', 'downloadFile')->name('downloadFile');
     Route::get('/show/{file}', 'show')->name('show');
+    Route::get('infografis', 'index')->name('index');
 });
 //Galeri
 Route::controller(GaleriController::class)->group(function() {

@@ -156,7 +156,8 @@
             </div>
             <div class="container">
                 <div class="section-title text-center">
-                    <span class="section-title__tagline">Index Infografis</span>
+                <a href="{{url('infografis')}}">
+                    <span class="section-title__tagline">Index Infografis</span></a> 
                     <h2 class="section-title__title">Infografis Batanghari</h2>
                 </div>
                 <div class="row">

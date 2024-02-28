@@ -63,4 +63,11 @@ class PageController extends Controller
 
     }
 
+    public function index(){
+      //$berita =  Berita::orderBy('created_at','desc')->paginate(8);
+      $infografis =  DB::table('infografis')->orderBy('id','desc')->get();
+      return view('frontend.infografis.index',array("infografis"=>$infografis));
+    }
+
+
 }
