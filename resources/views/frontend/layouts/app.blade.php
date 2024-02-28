@@ -131,7 +131,8 @@
                                             <li><a href="{{url('page/arti-lambang')}}">Arti Lambang</a></li>
                                             <li><a href="{{url('page/kondisi-demografi')}}">Kondisi Demografi</a></li>
                                             <li><a href="{{url('page/peta-batanghari')}}">Peta Batanghari</a></li>
-                                
+                                            <li><a href="{{url('page/visi-dan-misi')}}">Visi & Misi</a></li>
+                                             
                                             </ul>
                                             </li>
                                                 <li><a href="{{url('page/pemerintah-batanghari')}}">Pemerintahan Batanghari</a></li>
@@ -162,7 +163,6 @@
                                             <li><a href="{{url('berita')}}">Berita</a></li>
                                                 <li><a href="{{url('galeri-foto')}}">Galeri Foto</a></li>
                                                 <li><a href="{{url('galeri-video')}}">Galeri Video</a></li>
-                                                <li><a href="{{url('page/visi-dan-misi')}}">Visi & Misi</a></li>
                                                     
                                             </ul>
                                         </li>
