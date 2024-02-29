@@ -65,7 +65,7 @@
                         <div class="card">
                             <div class="card-header">
                             <form id="form_tambah">
-                               <input hidden   id="id" name="id" value='{{$record}}'/>
+                               <input    id="id" name="id" value='{{$record}}'/>
                                <input hidden   id="jenis" name="jenis" value='edit'/>
                                 <x-input label="Judul Berita" id="judul"  info="Info : Sample Data Description Info"
                                     placeholder="Judul Berita" />
