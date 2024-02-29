@@ -178,12 +178,12 @@ class NewsController extends Controller
          return view('app.berita.edit-berita',$x, compact('record'));
     }
 
-    public function show($news)
+    public function show($id)
     {
 
        
        //$id=request('news');
-       $record = Berita::where('id', Hashids::decode($news))->first();
+       $record = Berita::where('id', Hashids::decode($id))->first();
        return $record;
     }
 
