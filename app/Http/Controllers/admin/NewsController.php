@@ -168,11 +168,11 @@ class NewsController extends Controller
        }
     }
 
-    public function edit(Berita $galeri,$news)
+    public function edit(Berita $galeri,$id)
     {
        
         // $id=request('news');
-         $record =$news;
+         $record =$id;
          
          $x['title']    = 'Edit Berita';
          return view('app.berita.edit-berita',$x, compact('record'));

@@ -65,7 +65,8 @@
                         <div class="card">
                             <div class="card-header">
                             <form id="form_tambah">
-                               <input    id="id" name="id" value='{{$record}}'/>
+                               <input hidden   id="id" name="id" value='{{$record}}'/>
+                               <input  hidden  id="url" name="url" value='{{ route('news.show', $record) }}'>
                                <input hidden   id="jenis" name="jenis" value='edit'/>
                                 <x-input label="Judul Berita" id="judul"  info="Info : Sample Data Description Info"
                                     placeholder="Judul Berita" />
@@ -144,7 +145,8 @@
                 let url = $(this).attr('data-url');
               
                 var id = $('#id').val();
-                $.get('http://batangharikab.test/admin/news/'+id, function(response) {
+                var link = $('#url').val();
+                $.get(link, function(response) {
                     $('#judul').val(response.judul)
                     $('#judul_foto').val(response.tittle_gambar)
                     $("#summernote").summernote('code', response.isi);
