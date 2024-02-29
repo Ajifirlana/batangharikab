@@ -171,8 +171,8 @@ class NewsController extends Controller
     public function edit(Berita $galeri,$news)
     {
        
-         $id=request('news');
-         $record =$id;
+        // $id=request('news');
+         $record =$news;
          
          $x['title']    = 'Edit Berita';
          return view('app.berita.edit-berita',$x, compact('record'));
@@ -182,9 +182,9 @@ class NewsController extends Controller
     {
 
        
-       $id=request('news');
-       $record = Berita::where('id', Hashids::decode($id))->first();
-         return $record;
+       //$id=request('news');
+       $record = Berita::where('id', Hashids::decode($news))->first();
+       return $record;
     }
 
 
