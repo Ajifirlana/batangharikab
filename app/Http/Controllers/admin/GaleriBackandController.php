@@ -68,7 +68,7 @@ class GaleriBackandController extends Controller
         ]);
     
         $imageName = time().'.'.$request->image->extension();  
-        $request->image->move(public_path('frontend\galeri'), $imageName);
+        $request->image->move(public_path('frontend/galeri'), $imageName);
 
 
           if($request->file('file')==null){

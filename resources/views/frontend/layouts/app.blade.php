@@ -111,10 +111,10 @@
                 </div>
             </div>
 
-            <nav  class="main-menu main-menu-two">
+            <nav class="main-menu main-menu-two">
                 <div class="main-menu-two__wrapper">
                     <div class="main-menu-two__wrapper-inner">
-                        <div class="main-menu-four__right">
+                        <div class="main-menu-two__left">
                             <div class="main-menu-two__logo">
                                 <a href="{{url('/')}}"><img src="{{ asset('frontend/assets/images/resources/logo-bth.png')}}" alt=""></a>
                             </div>
@@ -283,7 +283,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo-1.png" width="130"
+                <a href="index.html" aria-label="logo image"><img src="{{asset('frontend/logo/logo-menu.png')}}" width="130"
                         alt="" /></a>
             </div>
             <!-- /.logo-box -->
