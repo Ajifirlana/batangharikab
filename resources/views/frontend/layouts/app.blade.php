@@ -110,7 +110,7 @@
                     </div>
                 </div>
             </div>
-              <!-- ade -->
+
             <nav class="main-menu main-menu-two">
                 <div class="main-menu-two__wrapper">
                     <div class="main-menu-two__wrapper-inner">
@@ -302,10 +302,12 @@
             </ul><!-- /.mobile-nav__contact -->
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-facebook-square"></a>
-                    <a href="#" class="fab fa-pinterest-p"></a>
-                    <a href="#" class="fab fa-instagram"></a>
+               
+                                    <a href="#"><i class="fab fa-brands fa-tiktok"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                   
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                
                 </div><!-- /.mobile-nav__social -->
             </div><!-- /.mobile-nav__top -->
 
