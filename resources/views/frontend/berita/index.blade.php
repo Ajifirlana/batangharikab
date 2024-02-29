@@ -30,9 +30,7 @@
                     <!--News One Single Start-->
                     
                     @foreach($berita as $row)  
-                    <?php
-                                        $url = URL::to("baca/".$row->id."/".str_replace(' ','-',$row->judul)."/".$row->tanggal);
-                                        ?>
+           
                     <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                         <div class="news-one__single">
                             <div class="news-one__img-box">
@@ -50,7 +48,7 @@
                                 </ul>
                             </div>
                             <div class="news-one__content">
-                                <h3 class="news-one__title"><a href="<?= $url ?>">{{$row->judul}}</a></h3>
+                                <h3 class="news-one__title"><a href="{{route('read', ['id' =>$row->id])}}">{{$row->judul}}</a></h3>
                                
                             </div>
                         </div>

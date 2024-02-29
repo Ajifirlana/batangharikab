@@ -1,6 +1,27 @@
 @extends('frontend.layouts.app')
 @section('content')
 
+<style>
+   .cropped1 {
+    width: 70px; /* width of container */
+    height: 73px; /* height of container */
+    object-fit: cover;
+    border: 0px solid black;
+}
+.cropped2 {
+    width: 210px; /* width of container */
+    height: 203px; /* height of container */
+    object-fit: cover;
+    object-position: 20% 10%; /* try 20px 10px */ 
+    border: 0px solid black;
+}  
+.galeri {
+    width: 270px; /* width of container */
+    height: 370px; /* height of container */
+    object-fit: cover;
+    border: 0px solid black;
+}
+</style>
         <!--News Details Start-->
         <section class="news-details">
             <div class="container">
@@ -8,7 +29,7 @@
                     <div class="col-xl-8 col-lg-7">
                         <div class="news-details__left">
                             <div class="news-details__img">
-                                <img src="{{asset('frontend/gambar-berita/'.$berita->gambar)}}" alt="">
+                                <img  src="{{asset('frontend/gambar-berita/'.$berita->gambar)}}" alt="">
                                 <div class="news-details__date">
                                     <p>{{$berita->created_at}}</p>
                                 </div>
@@ -38,13 +59,13 @@
                                         ?>  
                                 <li>
                                         <div class="sidebar__post-image">
-                                            <img src="{{asset('frontend/assets/images/blog/lp-1-1.jpg')}}" alt="">
+                                            <img   class="cropped1" src="{{asset('frontend/gambar-berita/'.$berita->gambar)}}" alt="">
                                         </div>
                                         <div class="sidebar__post-content">
                                             <h3>
                                                 <span class="sidebar__post-content-meta"><i
                                                         class="fas fa-user-circle"></i>by Admin</span>
-                                                <a href="<?= $url?>">{{$berita->judul}}</a>
+                                                <a href="{{route('read', ['id' =>$berita->id])}}">{{$berita->judul}}</a>
                                             </h3>
                                         </div>
                                     </li>
