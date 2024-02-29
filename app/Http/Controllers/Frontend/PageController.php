@@ -19,7 +19,7 @@ class PageController extends Controller
       $berita_terbaru_new = Berita::latest()->skip(1)->take(2)->get();
       $infografis =  DB::table('infografis')->orderBy('id','desc')->offset(0)->limit(4)->get();
 
-     
+     // return $latestRecord;
      
        return view('frontend.home.index', array(
       'berita'=>$berita_terbaru,

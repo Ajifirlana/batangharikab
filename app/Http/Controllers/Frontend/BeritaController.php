@@ -20,6 +20,7 @@ class BeritaController extends Controller
       $video_kegiatan =  DB::table('video_kegiatans')->orderBy('id','desc')->offset(0)->limit(5)->get();
       $image_slider =  DB::table('sliders')->orderBy('id','desc')->offset(0)->limit(5)->get();
       $berita = Berita::where('id',Hashids::decode($id))->first();
+      return $berita;
         // dd($berita->id);
    if (!$berita ){
        throw new HttpException(404);
