@@ -46,6 +46,7 @@ Route::controller(GaleriController::class)->group(function() {
 //BERITA
 Route::controller(BeritaController::class)->group(function() {
     Route::get('baca/{id}/{title}/{tanggal}', 'baca')->name('baca');
+    Route::get('read/{id}', 'read')->name('read');
     Route::get('berita', 'index')->name('index');
 });
 Route::get('/login', function () {

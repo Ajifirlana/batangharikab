@@ -90,9 +90,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xl-6 wow fadeInUp" data-wow-delay="100ms">
-                              <?php
-                                        $url = URL::to("baca/".$latestRecord->id."/".str_replace(' ','-',$latestRecord->judul)."/".$latestRecord->tanggal);
-                                        ?>
+                             
                                
                         <div class="news-two__left">
    
@@ -103,13 +101,13 @@
                                 <div class="news-two__left-img-content">
                                     <ul class="news-two__left-meta list-unstyled">
                                         <li>
-                                        <a href="<?= $url ?>"><i class="fas fa-user-circle"></i>by Admin</a>
+                                        <a href="{{route('read', ['id' => $latestRecord->id])}}"><i class="fas fa-user-circle"></i>by Admin</a>
                                         </li>
                                         <li>
-                                        <a href="<?= $url ?>"><i class="fas fa-comments"></i>{{$latestRecord->tanggal}}</a>
+                                        <a href="{{route('read', ['id' => $latestRecord->id])}}"><i class="fas fa-comments"></i>{{$latestRecord->tanggal}}</a>
                                         </li>
                                     </ul>
-                                    <h3 class="news-two__left-title"><a href="<?= $url ?>">{{ substr($latestRecord->judul,0,50) }} ...!</a></h3>
+                                    <h3 class="news-two__left-title"><a href="{{route('read', ['id' => $latestRecord->id])}}">{{ substr($latestRecord->judul,0,50) }} ...!</a></h3>
                                 </div>
                             </div>
                            
@@ -120,9 +118,7 @@
                         <div class="news-two__right">
                             <ul class="list-unstyled news-two__list">
                             @foreach($berita_terbaru_new as $row)  
-                                        <?php
-                                        $url = URL::to("baca/".$row->id."/".str_replace(' ','-',$row->judul)."/".$row->tanggal);
-                                        ?>
+                                      
                                 <li>
                                     <div class="news-two__single">
                                         <div class="news-two__img">
@@ -131,14 +127,14 @@
                                         <div class="news-two__content">
                                             <ul class="news-two__meta list-unstyled">
                                                 <li>
-                                                    <a href="<?= $url ?>"><i class="fas fa-user-circle"></i>by
+                                                    <a href="{{route('read', ['id' => $row->id])}}"><i class="fas fa-user-circle"></i>by
                                                         Admin</a>
                                                 </li>
                                                 <li>
-                                                    <a href="<?= $url ?>"><i class="fas fa-comments"></i>{{$row->tanggal}}</a>
+                                                    <a href="{{route('read', ['id' => $row->id])}}"><i class="fas fa-comments"></i>{{$row->tanggal}}</a>
                                                 </li>
                                             </ul>
-                                            <h3 class="news-two__title">  <a href="<?= $url ?>">{{ substr($row->judul,0,50) }} ...</a></h3>
+                                            <h3 class="news-two__title">  <a href="{{route('read', ['id' => $row->id])}}">{{ substr($row->judul,0,50) }} ...</a></h3>
                                         </div>
                                     </div>
                                 </li>
