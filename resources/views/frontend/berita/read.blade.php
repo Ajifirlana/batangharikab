@@ -9,8 +9,8 @@
     border: 0px solid black;
 }
 .cropped2 {
-    width: 210px; /* width of container */
-    height: 203px; /* height of container */
+    width: 770px; /* width of container */
+    height: 428px; /* height of container */
     object-fit: cover;
     object-position: 20% 10%; /* try 20px 10px */ 
     border: 0px solid black;
@@ -29,7 +29,7 @@
                     <div class="col-xl-8 col-lg-7">
                         <div class="news-details__left">
                             <div class="news-details__img">
-                                <img  src="{{asset('frontend/gambar-berita/'.$berita->gambar)}}" alt="">
+                                <img class="cropped2" src="{{asset('frontend/gambar-berita/'.$berita->gambar)}}" alt="">
                                 <div class="news-details__date">
                                     <p>{{$berita->created_at}}</p>
                                 </div>
