@@ -37,8 +37,7 @@ class PageController extends Controller
       'infografis'=>$infografis,
         'image_slider'=>$image_slider,
         'galeri'=>$galeri,
-        'video'=>$video,
-      'dilihat'=>$statistik_pengunjung->dilihat));
+        'video'=>$video));
      }
      public function page($slug){
       

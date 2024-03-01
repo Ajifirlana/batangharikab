@@ -1,5 +1,6 @@
 <?php 
       $setting = DB::table('settings')->first();
+      $statistik = DB::table('statistik_pengunjungs')->first();
       ?>
       <!DOCTYPE html>
 <html lang="en">
@@ -214,7 +215,7 @@
                                     <h4 class="footer-widget__title">Statistik Pengunjung</h4>
                                 </div>
                                 <ul class="footer-widget__links-list list-unstyled">
-                                    <li>{{$dilihat}} x Dilihat</li>
+                                    <li>{{$statistik->dilihat}} x Dilihat</li>
                                 </ul>
                             </div>
                         </div>
