@@ -214,11 +214,7 @@
                                     <h4 class="footer-widget__title">Statistik Pengunjung</h4>
                                 </div>
                                 <ul class="footer-widget__links-list list-unstyled">
-                                    <li><a href="about">About</a></li>
-                                    <li><a href="team">Meet Our Team</a></li>
-                                    <li><a href="news">News & Media</a></li>
-                                    <li><a href="projects-1">Our Projects</a></li>
-                                    <li><a href="contact">Contacts</a></li>
+                                    <li>{{$dilihat}} x Dilihat</li>
                                 </ul>
                             </div>
                         </div>

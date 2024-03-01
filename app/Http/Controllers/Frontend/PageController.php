@@ -7,9 +7,17 @@ use App\Models\Page;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Berita;
+use App\Models\StatistikPengunjung;
+
 class PageController extends Controller
 {
     function home(){
+      $statistik_pengunjung = StatistikPengunjung::where('id','1')->first();
+      $tambah = $statistik_pengunjung->dilihat+1;
+    
+      $statistik_pengunjung->update([
+        'dilihat'   => $tambah
+      ]); 
       $berita_terbaru =  DB::table('beritas')->orderBy('id','desc')->paginate(8);
       $website_skpds =  DB::table('website_skpds')->orderBy('id','desc')->offset(0)->limit(5)->get();
       $image_slider =  DB::table('sliders')->orderBy('id','desc')->offset(0)->limit(5)->get();
@@ -29,7 +37,8 @@ class PageController extends Controller
       'infografis'=>$infografis,
         'image_slider'=>$image_slider,
         'galeri'=>$galeri,
-        'video'=>$video,));
+        'video'=>$video,
+      'dilihat'=>$statistik_pengunjung->dilihat));
      }
      public function page($slug){
       
