@@ -278,6 +278,7 @@ $jns_kelamin = json_decode(json_encode(
                 $('#modal_create').modal('show')
                 $('.modal-title').text('Ubah Data')
                 $('.error').hide();
+                pond.removeFile();
                 let id = $(this).attr("data-id");
                 let url = $(this).attr('data-url');
               //  const file_cover = FilePond.create(document.querySelector('#file'));

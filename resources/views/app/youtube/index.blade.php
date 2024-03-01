@@ -81,8 +81,7 @@ $jns_kelamin = json_decode(json_encode(
                                                     <th>Foto</th> 
                                                     <th>Judul</th> 
                                                     <th>Link</th> 
-                                                    <th>created_at</th>
-                                                    <th>updated_at</th>
+                                        
                                                     <th>#Aksi</th>
                                                 </tr>
                                             </thead>
@@ -212,12 +211,7 @@ $jns_kelamin = json_decode(json_encode(
                     {
                         data: 'link',
                     },
-                    {
-                        data: 'created_at',
-                    },
-                    {
-                        data: 'updated_at',
-                    },
+                  
                     {
                         data: "action",
                         orderable: false,
@@ -283,6 +277,7 @@ $jns_kelamin = json_decode(json_encode(
                 $('#modal_create').modal('show')
                 $('.modal-title').text('Ubah Data')
                 $('.error').hide();
+                pond.removeFile();
                 let id = $(this).attr("data-id");
                 let url = $(this).attr('data-url');
               //  const file_cover = FilePond.create(document.querySelector('#file'));

@@ -278,39 +278,13 @@ $jns_kelamin = json_decode(json_encode(
             
             $('#datatable').on('click', '.btn_edit', function(e) {
                 $('#modal_create').modal('show')
+                pond.removeFile();
                 $('.modal-title').text('Ubah Data')
                 $('.error').hide();
                 let url = $(this).attr('data-url');
-               
-
-                
                 $.get(url, function(response) {
                     $('#id').val(response.data.id)
-                    $('#keterangan').val(response.data.judul)
-
-                    const inputElement = document.getElementById('file');
-
-                    // Initialize FilePond
-                    const pond = FilePond.create(inputElement);
-
-                    // Set the external image URL
-                    const externalImageUrl = "https://storage.googleapis.com/storage-batangharikab.appspot.com/www.batangharikab.go.id/1701317409_01-WAKIL-7119.jpg";
-
-                    // Add the external image to FilePond
-                    pond.addFile(externalImageUrl).then((file) => {
-                        // File added successfully
-                        console.log('File added:', file);
-                    }).catch((error) => {
-                        // Error adding file
-                        console.error('Error adding file:', error);
-                    });
-
-                                    
-                
-                                     
-
-                    
-                   
+                    $('#keterangan').val(response.data.judul)      
                 })
             });
 

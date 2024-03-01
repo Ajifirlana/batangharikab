@@ -14,7 +14,7 @@
                 @csrf
                 <div class="modal-body">
                 <!-- <x-filepond id="file" label="uploud Foto"  onchange="preview()"  required="true" info="Format file (jpg dan png, Max 5 MB)" max="4mb"  />   -->
-                <x-filepond name="image" id="file" label='File ade' info='( Format File JPG/PNG , Maks 5 MB)'
+                <x-filepond name="file" id="file" label='File ade' info='( Format File JPG/PNG , Maks 5 MB)'
                         accept="image/jpeg, image/png" />
                 <!-- <x-viewfoto name="foto" id="foto" src="" ></x-viewfoto> -->
                 <input hidden  id="id" name="id" value="" />

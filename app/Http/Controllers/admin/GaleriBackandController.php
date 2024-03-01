@@ -64,11 +64,11 @@ class GaleriBackandController extends Controller
        try {
         //simpan foto ke lokal
          $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
     
-        $imageName = time().'.'.$request->image->extension();  
-        $request->image->move(public_path('frontend/galeri'), $imageName);
+        $imageName = time().'.'.$request->file->extension();  
+        $request->file->move(public_path('frontend/galeri'), $imageName);
 
 
           if($request->file('file')==null){
@@ -86,33 +86,33 @@ class GaleriBackandController extends Controller
  
           }
           //simpan foto ke firebase api
-          $image_path = $request->file('file')->getPathname();
-          $nama_gambar = time() . '_' . $request->file('file')->getClientOriginalName();
-          $image_mime = $request->file('file')->getmimeType();
-          $image_org  = $request->file('file')->getClientOriginalName();
-          $url ="https://api-storage.batangharikab.go.id/submit-upload";
-          $publicKey="eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTg5Njg1OTcsImlzcyI6IiouYmF0YW5naGFyaWthYi5nby5pZCIsImp0aSI6IjA4Y2YzMWNmLTdmZWUtNGE3ZS1hN2NjLWMxNDAyYWQ2NjNkOCIsInN1YiI6ImIwMTAwZGU3LTkwYmUtNGM2NC05ZmM3LWFjZjZlOTdiOTUxYyJ9.U7QiUQXHGqKnBG3aKRd1tmrhvKoTMJZO9-63KTMNEs8QDOMPVCiGNu7r4GCqHq-EJRo6vsvOtryisXI52HfckA";
-          $client = new \GuzzleHttp\Client();
-          $response = $client->request("POST",$url,[
-            "headers"   => ["Authorization" => "Bearer {$publicKey}"],
-            "multipart" => [
-                   [
-                   'name'     => 'file',
-                   'filename' => $nama_gambar,
-                   'Mime-Type'=> $image_mime,
-                   'contents' => fopen( $image_path, 'r' ),
-                   ],
-              ]
+         //  $image_path = $request->file('file')->getPathname();
+         //  $nama_gambar = time() . '_' . $request->file('file')->getClientOriginalName();
+         //  $image_mime = $request->file('file')->getmimeType();
+         //  $image_org  = $request->file('file')->getClientOriginalName();
+         //  $url ="https://api-storage.batangharikab.go.id/submit-upload";
+         //  $publicKey="eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTg5Njg1OTcsImlzcyI6IiouYmF0YW5naGFyaWthYi5nby5pZCIsImp0aSI6IjA4Y2YzMWNmLTdmZWUtNGE3ZS1hN2NjLWMxNDAyYWQ2NjNkOCIsInN1YiI6ImIwMTAwZGU3LTkwYmUtNGM2NC05ZmM3LWFjZjZlOTdiOTUxYyJ9.U7QiUQXHGqKnBG3aKRd1tmrhvKoTMJZO9-63KTMNEs8QDOMPVCiGNu7r4GCqHq-EJRo6vsvOtryisXI52HfckA";
+         //  $client = new \GuzzleHttp\Client();
+         //  $response = $client->request("POST",$url,[
+         //    "headers"   => ["Authorization" => "Bearer {$publicKey}"],
+         //    "multipart" => [
+         //           [
+         //           'name'     => 'file',
+         //           'filename' => $nama_gambar,
+         //           'Mime-Type'=> $image_mime,
+         //           'contents' => fopen( $image_path, 'r' ),
+         //           ],
+         //      ]
  
-          ]);
-          $response=   $response->getBody();
-          $responsdata = json_decode($response,true);
-          $url=$responsdata['data']['url'];
+         //  ]);
+         //  $response=   $response->getBody();
+         //  $responsdata = json_decode($response,true);
+         //  $url=$responsdata['data']['url'];
         Galeri::updateOrCreate(
              ['id'           => $request->id],
              [
                'judul'      => $request->keterangan,
-                'foto'       => $url,
+                'foto'       => $imageName,
             
              ]
           );

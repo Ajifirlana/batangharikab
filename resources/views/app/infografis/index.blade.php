@@ -283,6 +283,7 @@ columns: [{
                 $('#modal_create').modal('show')
                 $('.modal-title').text('Ubah Data')
                 $('.error').hide();
+                pond.removeFile();
                 let id = $(this).attr("data-id");
                 let url = $(this).attr('data-url');
                 const inputElement = document.querySelector('input[type="file_pdf"]');
