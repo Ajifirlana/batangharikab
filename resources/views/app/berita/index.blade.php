@@ -86,9 +86,7 @@ $jns_kelamin = json_decode(json_encode(
                                                  
                                                     <th>Tanggal</th> 
                                                     <th>Foto</th> 
-                                                    <th>Dibaca</th> 
-                                                    <th>created_at</th>
-                                                 
+                                                  
                                                    <th>Action</th>
                                                
                                                 </tr>
@@ -231,13 +229,6 @@ $jns_kelamin = json_decode(json_encode(
                     "render": function(data, type, row) {
                         return '<img src="' + data + '" alt="' + data + '"height="50" width="50"/>';
                     }
-                },
-               {
-                    data: 'dibaca',
-                },
-            
-                {
-                    data: 'created_at',
                 },
                
                 {
