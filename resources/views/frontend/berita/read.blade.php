@@ -9,8 +9,8 @@
     border: 0px solid black;
 }
 .cropped2 {
-    width: 770px; /* width of container */
-    height: 428px; /* height of container */
+    width: 570px; /* width of container */
+    height: 436px; /* height of container */
     object-fit: cover;
     object-position: 20% 10%; /* try 20px 10px */ 
     border: 0px solid black;
