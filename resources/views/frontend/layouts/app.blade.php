@@ -318,10 +318,10 @@ $currentMonth = Carbon::now();
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">
                
-                                    <a href="#"><i class="fab fa-brands fa-tiktok"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="{{ $setting->tiktok }}"><i class="fab fa-brands fa-tiktok"></i></a>
+                                    <a href="{{ $setting->facebook }}"><i class="fab fa-facebook"></i></a>
                                    
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="{{ $setting->instagram }}"><i class="fab fa-instagram"></i></a>
                                 
                 </div><!-- /.mobile-nav__social -->
             </div><!-- /.mobile-nav__top -->
