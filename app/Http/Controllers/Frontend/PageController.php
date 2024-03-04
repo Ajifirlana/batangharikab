@@ -5,18 +5,21 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Page;
 use Illuminate\Http\Request;
-use DB;
+use DB;use Carbon\Carbon;
+
 use App\Models\Berita;
 use App\Models\StatistikPengunjung;
 
 class PageController extends Controller
 {
     function home(){
+     
       $statistik_pengunjung = StatistikPengunjung::where('id','1')->first();
       $tambah = $statistik_pengunjung->dilihat+1;
     
       $statistik_pengunjung->update([
-        'dilihat'   => $tambah
+        'dilihat'   => $tambah,
+        'created_at' => Carbon::now()
       ]); 
       $berita_terbaru =  DB::table('beritas')->orderBy('id','desc')->paginate(8);
       $website_skpds =  DB::table('website_skpds')->orderBy('id','desc')->offset(0)->limit(5)->get();
@@ -26,7 +29,7 @@ class PageController extends Controller
       $latestRecord = Berita::latest('created_at')->first();
       $berita_terbaru_new = Berita::latest()->skip(1)->take(2)->get();
       $infografis =  DB::table('infografis')->orderBy('id','desc')->offset(0)->limit(4)->get();
-
+        
      // return $latestRecord;
      
        return view('frontend.home.index', array(
@@ -37,7 +40,8 @@ class PageController extends Controller
       'infografis'=>$infografis,
         'image_slider'=>$image_slider,
         'galeri'=>$galeri,
-        'video'=>$video));
+        'video'=>$video,
+      ));
      }
      public function page($slug){
       
