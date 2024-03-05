@@ -277,10 +277,10 @@
         <!--Services Two Start-->
         <section class="services-two">
             <div class="services-two__shape-1 float-bob-x">
-                <img src="assets/images/shapes/services-two-shape-1.png" alt="">
+                <img src="{{ asset('frontend/assets/images/shapes/services-two-shape-1.png')}}" alt="">
             </div>
             <div class="services-two__shape-2 float-bob-y">
-                <img src="assets/images/shapes/services-two-shape-2.png" alt="">
+                <img src="{{ asset('frontend/assets/images/shapes/services-two-shape-2.png')}}" alt="">
             </div>
             <div class="container">
                 <div class="services-two__top">

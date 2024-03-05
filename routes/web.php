@@ -13,6 +13,7 @@ use App\Http\Controllers\admin\SkpdController;
 use App\Http\Controllers\admin\YoutubeController;
 use App\Http\Controllers\admin\InfografisController;
 use App\Http\Controllers\admin\BeritaBackandController;
+use App\Http\Controllers\FirebaseController;
 use App\Http\Controllers\admin\NewsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FormController;
@@ -26,6 +27,12 @@ use App\Http\Controllers\Frontend\PageController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Models\Permission;
+
+
+
+
+
+//firbase
 
 //Home
 Route::controller(PageController::class)->group(function() {

@@ -48,7 +48,7 @@
                                 </ul>
                             </div>
                             <div class="news-one__content">
-                                <h3 class="news-one__title"><a href="{{route('read', ['id' =>$row->id])}}">{{$row->judul}}</a></h3>
+                            <h3 class="news-two__title"><a href="{{route('read', ['id' =>$row->id])}}">{{ substr($row->judul,0,50) }} ...</a></h3>
                                
                             </div>
                         </div>
