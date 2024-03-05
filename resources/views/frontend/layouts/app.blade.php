@@ -1,6 +1,20 @@
 <?php 
+use Carbon\Carbon;
+
+$today = Carbon::today()->toDateString();
+$currentMonth = Carbon::now();
       $setting = DB::table('settings')->first();
-      $statistik = DB::table('statistik_pengunjungs')->first();
+     $statistik = DB::table('statistik_pengunjungs')->first();
+      
+      $perbulan =DB::table('statistik_pengunjungs')
+      ->select(
+          DB::raw("SUM(dilihat) as total_dilihat")
+      )->whereMonth('created_at', $currentMonth)
+      ->whereDate('created_at', $today)->first();
+      $perhari =DB::table('statistik_pengunjungs')
+      ->select(
+          DB::raw("SUM(dilihat) as total_dilihat")
+      )->whereDate('created_at', $today)->first();
       ?>
       <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +74,8 @@
 
   gtag('config', 'G-BLDPNV2BE2');
 </script>
-
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   
 </head>
 
 
@@ -214,8 +229,11 @@
                                 <div class="footer-widget__title-box">
                                     <h4 class="footer-widget__title">Statistik Pengunjung</h4>
                                 </div>
-                                <ul class="footer-widget__links-list list-unstyled">
-                                    <li>{{$statistik->dilihat}} x Dilihat</li>
+                
+                               <ul class="footer-widget__links-list list-unstyled">
+                                <li>{{$perhari->total_dilihat}} x Hari ini</li>
+                                <li>{{$perbulan->total_dilihat}} x Bulan ini</li>
+                                 <li>{{$statistik->dilihat}}  x Semua</li>
                                 </ul>
                             </div>
                         </div>
