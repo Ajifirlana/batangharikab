@@ -55,8 +55,6 @@ $currentMonth = Carbon::now();
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/austry-responsive.css')}}" />
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/color-2.css')}}" />
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-   
 </head>
 
 
