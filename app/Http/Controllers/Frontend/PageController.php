@@ -13,14 +13,38 @@ use App\Models\StatistikPengunjung;
 class PageController extends Controller
 {
     function home(){
-     
-      $statistik_pengunjung = StatistikPengunjung::where('id','1')->first();
-      $tambah = $statistik_pengunjung->dilihat+1;
-    
-      $statistik_pengunjung->update([
-        'dilihat'   => $tambah,
-        'created_at' => Carbon::now()
-      ]); 
+      
+$today = Carbon::now()->format('d');
+$bulan_ini = Carbon::now()->format('m');
+
+$statistik_pengunjung = StatistikPengunjung::find(1);
+
+$tambah = $statistik_pengunjung->dilihat + 1;
+
+$tgl_db = $statistik_pengunjung->created_at->format('d');
+$bulan_db = $statistik_pengunjung->created_at->format('m');
+$hari_ini = $statistik_pengunjung->hari_ini;
+$bulan_ini_db = $statistik_pengunjung->bulan_ini;
+
+if ($today != $tgl_db) {
+    $hari_ini = 1;
+} else {
+    $hari_ini += 1;
+}
+
+if ($bulan_ini != $bulan_db) {
+    $bulan_ini_db = $bulan_ini;
+    $bulan_ini = 1;
+} else {
+    $bulan_ini = $bulan_ini_db + 1;
+}
+
+$statistik_pengunjung->update([
+    'dilihat' => $tambah,
+    'hari_ini' => $hari_ini,
+    'bulan_ini' => $bulan_ini,
+    'created_at' => Carbon::now()
+]);
       $berita_terbaru =  DB::table('beritas')->orderBy('id','desc')->paginate(8);
       $website_skpds =  DB::table('website_skpds')->orderBy('id','desc')->offset(0)->limit(5)->get();
       $image_slider =  DB::table('sliders')->orderBy('id','desc')->offset(0)->limit(5)->get();

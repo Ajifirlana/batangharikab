@@ -5,16 +5,6 @@ $today = Carbon::today()->toDateString();
 $currentMonth = Carbon::now();
       $setting = DB::table('settings')->first();
      $statistik = DB::table('statistik_pengunjungs')->first();
-      
-      $perbulan =DB::table('statistik_pengunjungs')
-      ->select(
-          DB::raw("SUM(dilihat) as total_dilihat")
-      )->whereMonth('created_at', $currentMonth)
-      ->whereDate('created_at', $today)->first();
-      $perhari =DB::table('statistik_pengunjungs')
-      ->select(
-          DB::raw("SUM(dilihat) as total_dilihat")
-      )->whereDate('created_at', $today)->first();
       ?>
       <!DOCTYPE html>
 <html lang="en">
@@ -231,8 +221,8 @@ $currentMonth = Carbon::now();
                                 </div>
                 
                                <ul class="footer-widget__links-list list-unstyled">
-                                <li>{{$perhari->total_dilihat}} x Hari ini</li>
-                                <li>{{$perbulan->total_dilihat}} x Bulan ini</li>
+                                <li>{{$statistik->hari_ini}} x Hari ini</li>
+                                <li>{{$statistik->bulan_ini}} x Bulan ini</li>
                                  <li>{{$statistik->dilihat}}  x Semua</li>
                                 </ul>
                             </div>

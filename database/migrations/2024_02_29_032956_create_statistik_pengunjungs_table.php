@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('statistik_pengunjungs', function (Blueprint $table) {
             $table->id();
             $table->string('dilihat')->nullable();
+            $table->string('hari_ini')->nullable();
+            $table->string('bulan_ini')->nullable();
             $table->timestamps();
         });
     }
