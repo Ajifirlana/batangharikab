@@ -98,7 +98,7 @@ $currentMonth = Carbon::now();
                         <div class="main-header-two__top-right">
                             <div class="main-header-two__social">
                                 <a href="{{ $setting->tiktok }}"><i class="fab fa-brands fa-tiktok"></i></a>
-                                <a target="blank" href="https://www.facebook.com/profile.php?id=100075924655501"><i class="fab fa-facebook"></i></a>
+                                <a target="blank" href="{{$setting->facebook}}"><i class="fab fa-facebook"></i></a>
                                 <a href="{{ $setting->instagram }}"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
