@@ -13,6 +13,6 @@ class StatistikPengunjungSeeder extends Seeder
      */
     public function run(): void
     {
-        StatistikPengunjung::create([ 'dilihat' => 0 ]);
+        StatistikPengunjung::create([ 'dilihat' => 0 ,'hari_ini' => 0,'bulan_ini' => 0  ]);
     }
 }

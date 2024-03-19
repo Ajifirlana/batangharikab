@@ -111,7 +111,7 @@ class PageSeeder extends Seeder
             ],[
                 'judul' => 'Peta Batanghari',
                 'slug' => 'peta-batanghari',
-                'isi'=>'isi konten'
+                'isi'=>'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d510429.6550669765!2d102.988379!3d-1.853121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e2fa576b077d70b%3A0x3039d80b220cbc0!2sKabupaten%20Batang%20Hari%2C%20Jambi!5e0!3m2!1sid!2sid!4v1709586191712!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
             ]
             ];
         foreach($data as $row){

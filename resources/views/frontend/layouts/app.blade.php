@@ -5,16 +5,6 @@ $today = Carbon::today()->toDateString();
 $currentMonth = Carbon::now();
       $setting = DB::table('settings')->first();
      $statistik = DB::table('statistik_pengunjungs')->first();
-      
-      $perbulan =DB::table('statistik_pengunjungs')
-      ->select(
-          DB::raw("SUM(dilihat) as total_dilihat")
-      )->whereMonth('created_at', $currentMonth)
-      ->whereDate('created_at', $today)->first();
-      $perhari =DB::table('statistik_pengunjungs')
-      ->select(
-          DB::raw("SUM(dilihat) as total_dilihat")
-      )->whereDate('created_at', $today)->first();
       ?>
       <!DOCTYPE html>
 <html lang="en">
@@ -65,15 +55,6 @@ $currentMonth = Carbon::now();
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/austry-responsive.css')}}" />
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/color-2.css')}}" />
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BLDPNV2BE2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BLDPNV2BE2');
-</script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
    
 </head>
@@ -118,9 +99,9 @@ $currentMonth = Carbon::now();
                         </div>
                         <div class="main-header-two__top-right">
                             <div class="main-header-two__social">
-                                <a href="#"><i class="fab fa-brands fa-tiktok"></i></a>
+                                <a href="{{ $setting->tiktok }}"><i class="fab fa-brands fa-tiktok"></i></a>
                                 <a target="blank" href="https://www.facebook.com/profile.php?id=100075924655501"><i class="fab fa-facebook"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="{{ $setting->instagram }}"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -231,8 +212,8 @@ $currentMonth = Carbon::now();
                                 </div>
                 
                                <ul class="footer-widget__links-list list-unstyled">
-                                <li>{{$perhari->total_dilihat}} x Hari ini</li>
-                                <li>{{$perbulan->total_dilihat}} x Bulan ini</li>
+                                <li>{{$statistik->hari_ini}} x Hari ini</li>
+                                <li>{{$statistik->bulan_ini}} x Bulan ini</li>
                                  <li>{{$statistik->dilihat}}  x Semua</li>
                                 </ul>
                             </div>
@@ -269,10 +250,10 @@ $currentMonth = Carbon::now();
                                     <h4 class="footer-widget__title">Media Sosial</h4>
                                 </div>
                                 <div class="site-footer__social">
-                                    <a href="#"><i class="fab fa-brands fa-tiktok"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="{{ $setting->tiktok }}"><i class="fab fa-brands fa-tiktok"></i></a>
+                                    <a href="{{ $setting->facebook }}"><i class="fab fa-facebook"></i></a>
                                    
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="{{ $setting->instagram }}"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -318,10 +299,10 @@ $currentMonth = Carbon::now();
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">
                
-                                    <a href="#"><i class="fab fa-brands fa-tiktok"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="{{ $setting->tiktok }}"><i class="fab fa-brands fa-tiktok"></i></a>
+                                    <a href="{{ $setting->facebook }}"><i class="fab fa-facebook"></i></a>
                                    
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="{{ $setting->instagram }}"><i class="fab fa-instagram"></i></a>
                                 
                 </div><!-- /.mobile-nav__social -->
             </div><!-- /.mobile-nav__top -->
