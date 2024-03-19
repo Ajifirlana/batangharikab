@@ -21,6 +21,7 @@ use App\Http\Controllers\SliderController;
 
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Frontend\AkuntabilitasBatanghariController;
 use App\Http\Controllers\Frontend\BeritaController;
 use App\Http\Controllers\Frontend\GaleriController;
 use App\Http\Controllers\Frontend\PageController;
@@ -61,6 +62,10 @@ Route::get('/login', function () {
 })->name('index');
 
 
+//Anggaran
+Route::controller(AkuntabilitasBatanghariController::class)->group(function() {
+   Route::get('akuntabilitas-batanghari', 'index')->name('index');
+});
 // Route::get('/', function () {
 //    return view('frontend.dashbord.home', ['name' => 'James']);
 // });

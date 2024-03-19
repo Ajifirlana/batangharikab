@@ -23,7 +23,7 @@ class SettingSeeder extends Seeder
             'category'  => 'information',
             'alamat'=>'Jln. Jenderal Sudirman No 1 Muara Bulian Perkantoran Kantor Bupati Kab. Batang Hari Kode Pos: 36613',
             'telepon'=>'0743 21282 Fax: 0743 21282 / 0821 7932 8999',
-            'email'=>'ppidbatangharikab@gmail.com/ ppid@batangarikab.go.id',
+            'email'=>'info@batangharikab.go.id',
             'twitter'=>'',
             'facebook'=>'diskominfo_bth@yahoo.com',
         ]);
