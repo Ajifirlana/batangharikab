@@ -76,30 +76,32 @@ class NewsController extends Controller
     {
        try {
  
-       $content = $request->body;
-        $dom = new \DomDocument();
-        $dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        $imageFile = $dom->getElementsByTagName('img');
-  
-        foreach($imageFile as $item => $image){
-            $data = $image->getAttribute('src');
-            list($type, $data) = explode(';', $data);
-            list(, $data)      = explode(',', $data);
-            $imgeData = base64_decode($data);
-            $image_name= "/uploads/" . time().$item.'.png';
-            $path = public_path() . $image_name;
-            file_put_contents($path, $imgeData);
-            
-            $image->removeAttribute('src');
-            $image->setAttribute('src', $image_name);
-         }
-  
-        $content = $dom->saveHTML();
+         $content = $request->body;
+         //   $content = $request->content;
+       $dom = new \DomDocument();
+       $dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+       $imageFile = $dom->getElementsByTagName('imageFile');
+ 
+       foreach($imageFile as $item => $image){
+           $data = $img->getAttribute('src');
+           list($type, $data) = explode(';', $data);
+           list(, $data)      = explode(',', $data);
+           $imgeData = base64_decode($data);
+           $image_name= "/upload/" . time().$item.'.png';
+           $path = public_path() . $image_name;
+           file_put_contents($path, $imgeData);
+           
+           $image->removeAttribute('src');
+           $image->setAttribute('src', $image_name);
+        }
+ 
+          $content = $dom->saveHTML();
+ 
 
           if ($request->jenis=="edit")
-          $id_news=Hashids::decode($request->id);
+           $id_news=Hashids::decode($request->id);
          else
-         $id_news=$request->id;
+            $id_news=$request->id;
        
         
           if($request->file('file')==null){
@@ -114,8 +116,10 @@ class NewsController extends Controller
                 ]
              );
     
-             if ($id_news)  return $this->success('Berhasil Mengubah Data');
-             else return $this->success('Berhasil Menginput Data');
+             if ($id_news)  
+             return $this->success('Berhasil Mengubah Data');
+             else
+              return $this->success('Berhasil Menginput Data');
  
           }
  
