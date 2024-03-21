@@ -13,6 +13,8 @@ use App\Http\Controllers\admin\SkpdController;
 use App\Http\Controllers\admin\YoutubeController;
 use App\Http\Controllers\admin\InfografisController;
 use App\Http\Controllers\admin\BeritaBackandController;
+use App\Http\Controllers\admin\TransparasiAnggaranController;
+
 use App\Http\Controllers\FirebaseController;
 use App\Http\Controllers\admin\NewsController;
 use App\Http\Controllers\UserController;
@@ -135,6 +137,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
       'skpd' => SkpdController::class,
       'news' => NewsController::class, 
       'permission' => PermissionController::class, 
+      'anggaran' => TransparasiAnggaranController::class, 
       
       'youtube' => YoutubeController::class, 
       'infografis' => InfografisController::class,  
