@@ -193,7 +193,7 @@ $json = json_decode(json_encode($years));
                         width: '1%'
                     },
                     {
-                        data: 'judul',
+                        data: 'nama',
                     },
                     {
                         data: 'tahun',
@@ -225,8 +225,9 @@ $json = json_decode(json_encode($years));
 
             $("#btn_tambah").click(function() {
                 clearInput()
-               
-              
+                foto.removeFiles()
+                cover.removeFile()
+                $("#summernote").summernote('code', '');
 
                 $('#modal_create').modal('show')
                 $('.modal-title').text('Tambah Data')
@@ -287,7 +288,7 @@ $json = json_decode(json_encode($years));
                 let url = $(this).attr('data-url');
                 $.get(url, function(response) {
                     $('#id').val(response.data.id)
-                    $('#nama').val(response.data.judul)
+                    $('#nama').val(response.data.nama)
                     $('#url').val(response.data.link_download)
                     $('#tahun').val(response.data.tahun).trigger("change")
                  

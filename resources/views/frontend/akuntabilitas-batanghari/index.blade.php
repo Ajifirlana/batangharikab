@@ -9,8 +9,8 @@
     border: 0px solid black;
 }
 .cropped2 {
-    width: 210px; /* width of container */
-    height: 203px; /* height of container */
+    width: 570px; /* width of container */
+    height: 436px; /* height of container */
     object-fit: cover;
     object-position: 20% 10%; /* try 20px 10px */ 
     border: 0px solid black;
@@ -22,34 +22,43 @@
     border: 0px solid black;
 }
 </style>
-<section class="news-details">
+        <!--News Details Start-->
+        <section class="news-details">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-8 col-lg-7">
-                    <div class="comment-one">
-                    @foreach($anggaran as $row)  
-                               
+                        <div class="news-details__left">
+                        <div class="news-details__content">
+                                
+                                <div class="comment-one">
+                                @foreach($anggaran as $row)
                                     <div class="comment-one__single">
-                                    <div class="comment-one__image">
+                                        <div class="comment-one__image">
+                                            <!-- <img src="{{asset('frontend/assets/images/blog/comment-1-1.jpg')}}" alt=""> -->
                                         </div>
                                         <div class="comment-one__content">
-                                        <h3>{{ Carbon\Carbon::parse($row->created_at)->format('d-m-Y') }}</h3><p>{{$row->judul}}</p>
-                                            <a href="{{$row->link_download}}" target="_blank" class="thm-btn comment-one__btn">Download</a>
+                                            <h3>{{$row->judul}}</h3>
+                                            <p>{{ Carbon\Carbon::parse($row->created_at)->format('d-M-Y') }}       </p>
+                                            <a  href="{{$row->link_download}}" class="thm-btn comment-one__btn">Download</a>
                                         </div>
                                     </div>
-                                    @endforeach
-                                 
+
+                                @endforeach   
+                                   
                                 </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-xl-4 col-lg-5">
                         <div class="sidebar">
-                            
                             <div class="sidebar__single sidebar__post">
                                 <h3 class="sidebar__title">Latest posts</h3>
                                 <ul class="sidebar__post-list list-unstyled">
                                 
                                 @foreach($berita_terbaru as $berita)  
-                               
+                                <?php
+                                        $url = URL::to("baca/".$berita->id."/".str_replace(' ','-',$berita->judul)."/".$berita->tanggal);
+                                        ?>  
                                 <li>
                                         <div class="sidebar__post-image">
                                             <img   class="cropped1" src="{{asset('frontend/gambar-berita/'.$berita->gambar)}}" alt="">
@@ -72,37 +81,5 @@
                 </div>
             </div>
         </section>
-       
-<!-- 
-<section class="news-details">
-            <div class="container">
-            <div class="section-title text-center">
-                    <h2 class="section-title__title">Akuntabilitas Batanghari</h2>
-                </div>
-                <div class="row">
-                    <div class="col-xl-8 col-lg-7">
-                        <div class="news-details__left">
-                            
-                            <div class="news-details__content">
-                                
-                                <div class="comment-one">
-                                @foreach($anggaran as $row)    
-                                <div class="comment-one__single">
-                                        <div class="comment-one__image">
-                                            <img src="{{ asset('assets/images/blog/comment-1-1.jpg')}}" alt="">
-                                        </div>
-                                        <div class="comment-one__content">
-                                            <h3>{{$row->judul}}</h3>
-                                            <p>{{$row->link_download}}</p>
-                                            <a href="#" class="thm-btn comment-one__btn">{{$row->judul}}</a>
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-            @endsection
+        <!--News Details End-->
+@endsection

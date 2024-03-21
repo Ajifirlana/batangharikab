@@ -1,26 +1,11 @@
 <?php
 
-// $jns_kelamin = json_decode(json_encode(
-//     array(
-//             ['value'=>'Laki-Laki','text'=>'Laki-Laki'],
-//             ['value'=>'Perempuan','text'=>'Perempuan']
-//         )
-// ));
-
-$years = [];
-
-// Define the start year and end year
-$startYear = 2013;
-$currentYear = date('Y'); // Get the current year
-
-// Loop through the years and add them to the array
-for ($year = $startYear; $year <= $currentYear; $year++) {
-    $years[] = ['value' => $year, 'text' => $year];
-}
-
-// Encode the array to JSON
-$json = json_decode(json_encode($years));
-
+$jns_kelamin = json_decode(json_encode(
+    array(
+            ['value'=>'Laki-Laki','text'=>'Laki-Laki'],
+            ['value'=>'Perempuan','text'=>'Perempuan']
+        )
+));
 ?>
 @extends('admin.layouts.master')
 @push('css')
@@ -83,7 +68,7 @@ $json = json_decode(json_encode($years));
                             <div class="card-header">
                                 <h3 class="card-title">
                                     <a href="#" class="btn btn-sm btn-primary" id="btn_tambah"><i
-                                            class="fas fa-plus"></i> Tambah {{$title}}</a>
+                                            class="fas fa-plus"></i> Tambah Kegiatan</a>
                                 </h3>
                             </div>
                             <div class="card-body">
@@ -94,10 +79,7 @@ $json = json_decode(json_encode($years));
                                             <tr>
                                                     <th>No</th>
                                                     <th>Nama</th> 
-                                                    <th>Tahun</th> 
-                                                    <th>Url</th> 
-                                                    
-                                                    <th>created_at</th>
+                                                    <th>Foto</th> 
                                                     <th>#Aksi</th>
                                                 </tr>
                                             </thead>
@@ -113,7 +95,7 @@ $json = json_decode(json_encode($years));
             </div>
         </section>
     </div>
-@include('app.anggaran.modal-create')
+@include('app.kegiatan.modal-create-foto')
 
 @endsection
 @push('js')
@@ -156,7 +138,31 @@ $json = json_decode(json_encode($years));
 
 
 
+            FilePond.registerPlugin(
+                //  FilePondPluginGetFile,
+                FilePondPluginFileEncode,
+                FilePondPluginImagePreview,
+                FilePondPluginFilePoster,
+                FilePondPluginPdfPreview,
+                FilePondPluginFileValidateType,
+                FilePondPluginFileValidateSize)
 
+
+
+                const foto = FilePond.create(document.querySelector('#foto'),{
+                    storeAsFile: true,
+                    fileValidateTypeDetectType: true,
+                    acceptedFileTypes: ['image/*'],
+                    maxFileSize: 2000000, //10 mbs max size
+                    allowFileSizeValidation: true,
+                });
+               
+                foto.setOptions({
+                allowImagePreview: true,
+                allowPdfPreview: true,
+                pdfPreviewHeight: 320,
+                pdfComponentExtraParams: 'toolbar=0&view=fit&page=1'  
+                 })
 
 
 
@@ -167,13 +173,37 @@ $json = json_decode(json_encode($years));
 
             const flatpicker = flatpickr("#tanggal", {
                 allowInput: true,
-                dateFormat: "d M Y",
+                dateFormat: "Y-d-m",
                 locale: "id",
             });
 
+            
+            $('#summernote').summernote({
+                height: 200,
+                imageTitle: {
+                    specificAltField: true,
+                },
+                imageAttributes: {
+                    icon: '<i class="note-icon-pencil"/>',
+                    figureClass: 'figureClass',
+                    figcaptionClass: 'captionClass',
+                    captionText: 'Caption Goes Here.',
+                    manageAspectRatio: true // true = Lock the Image Width/Height, Default to true
+                },
+                popover: {
+                    image: [
+                        ['imagesize', ['imageSize100', 'imageSize50', 'imageSize25']],
+                        ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                        ['remove', ['removeMedia']],
+                        ['custom', ['imageAttributes']],
+                    ],
+                },
+            })
+
+
 
             let datatable = $("#datatable").DataTable({
-                serverSide: true,
+                 serverSide: true,
                 processing: true,
                 searching: true,
                 lengthChange: true,
@@ -184,40 +214,39 @@ $json = json_decode(json_encode($years));
                 order: [
                     [2, 'desc']
                 ],
-                ajax: @json(route('anggaran.index')),
-
+                bAutoWidth: false,
+                fixedColumns: true,
+                ajax: @json(route('kegiatan.show',$kegiatan_id)),
                 columns: [{
-                        data: "DT_RowIndex",
-                        orderable: false,
-                        searchable: false,
-                        width: '1%'
-                    },
-                    {
-                        data: 'judul',
-                    },
-                    {
-                        data: 'tahun',
-                    },
-                    {
-                        data: 'link_download',
-
-                        
-                    },
-
-                    
-                  
-                    {
-                        data: 'created_at',
-                    },
+                data: "DT_RowIndex",
+                orderable: false,
+                searchable: false,
+                },
                 
-                    {
-                        data: "action",
-                        orderable: false,
-                        searchable: false,
-                    },
-                ]
-            });
+                {
+                data: 'nama',
+                },
 
+                { 
+                        "data": "foto",
+                        "render": function(data, type, row) {
+                            return '<img src="' + '{{ asset("frontend/kegiatan/") }}' + '/' + data + '" height="50" width="50"/>';
+                        }
+                 },
+                    
+        
+                {
+                    data: "action",
+                    orderable: false,
+                    searchable: false,
+                    width: '10%',
+                },
+                 ]
+               })
+          
+
+
+          
 
         
 
@@ -225,8 +254,7 @@ $json = json_decode(json_encode($years));
 
             $("#btn_tambah").click(function() {
                 clearInput()
-               
-              
+                foto.removeFile();
 
                 $('#modal_create').modal('show')
                 $('.modal-title').text('Tambah Data')
@@ -235,12 +263,11 @@ $json = json_decode(json_encode($years));
               
             $("#form_tambah").submit(function(e) {
                 e.preventDefault();
-            
                 const formData = new FormData(this);
                 formData.append('method', 'PUT');
                 $.ajax({
                     type: 'POST',
-                    url: @json(route('anggaran.store')),
+                    url: @json(route('kegiatan.store')),
                     data: formData,
                     cache: false,
                     contentType: false,
@@ -283,15 +310,28 @@ $json = json_decode(json_encode($years));
                 $('#modal_create').modal('show')
                 $('.modal-title').text('Ubah Data')
                 $('.error').hide();
+                foto.removeFile();
                 let id = $(this).attr("data-id");
                 let url = $(this).attr('data-url');
                 $.get(url, function(response) {
                     $('#id').val(response.data.id)
-                    $('#nama').val(response.data.judul)
-                    $('#url').val(response.data.link_download)
-                    $('#tahun').val(response.data.tahun).trigger("change")
-                 
-                   
+                    $('#nama').val(response.data.nama)
+              
+                    const externalImageUrl = "{{ asset('frontend/kegiatan/') }}"+"/"+response.data.foto;
+
+                    // Add the external image to FilePond
+                    foto.addFile(externalImageUrl).then((file) => {
+                        // File added successfully
+                        console.log('File added:', file);
+                    }).catch((error) => {
+                        // Error adding file
+                        console.error('Error adding file:', error);
+                    });
+
+                        
+
+           
+
 
                 })
             });

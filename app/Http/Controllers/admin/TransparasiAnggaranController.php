@@ -55,9 +55,9 @@ class TransparasiAnggaranController extends Controller
             Anggaran::updateOrCreate(
                    ['id'                =>$request->id],
                    [
-                      'nama'            => $request->nama,
+                      'judul'            => $request->nama,
                       'tahun'          => $request->tahun,
-                      'url'         => $request->url,            
+                      'link_download'         => $request->url,            
                    ]
                 );
  
