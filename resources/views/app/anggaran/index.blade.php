@@ -199,7 +199,7 @@ $json = json_decode(json_encode($years));
                         data: 'tahun',
                     },
                     {
-                        data: 'url',
+                        data: 'link_download',
 
                         
                     },
@@ -289,7 +289,7 @@ $json = json_decode(json_encode($years));
                 $.get(url, function(response) {
                     $('#id').val(response.data.id)
                     $('#nama').val(response.data.nama)
-                    $('#url').val(response.data.url)
+                    $('#url').val(response.data.link_download)
                     $('#tahun').val(response.data.tahun).trigger("change")
                  
                    

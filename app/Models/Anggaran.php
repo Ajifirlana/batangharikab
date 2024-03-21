@@ -7,9 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Anggaran extends Model
 {
-<<<<<<< HEAD
     use  HasFactory ;
-    protected $table = 'anggaran';
+    protected $table = 'anggarans';
     protected $guarded = [];
    
 
@@ -18,7 +17,4 @@ class Anggaran extends Model
         'updated_at'     => 'date:d-m-Y H:m:s',
        
     ];
-=======
-    use HasFactory;
->>>>>>> 16bc57bf61dc10c19790b8c1f10e44154a973c88
 }
