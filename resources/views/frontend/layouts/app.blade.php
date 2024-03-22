@@ -133,7 +133,7 @@ $currentMonth = Carbon::now();
                                                 <li><a href="{{url('page/pemerintah-batanghari')}}">Pemerintahan Batanghari</a></li>
                                                 <li><a href="{{url('page/akuntabiltas-pemerintahan')}}">Akuntabiltas Pemerintahan</a></li>
                                                 <li><a href="{{url('page/akuntabiltas-pelaporan')}}">Akuntabiltas Pelaporan</a></li>
-                                                <li><a href="{{url('akuntabilitas-batanghari')}}">Akuntabiltas Batanghari</a></li>
+                                                <li><a href="{{url('akuntabilitas-batanghari')}}">Transparansi Anggaran</a></li>
                                                 
                                             </ul>
                                         </li>
