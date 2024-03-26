@@ -38,7 +38,7 @@
                                         </div>
                                         <div class="comment-one__content">
                                             <h3>{{$row->judul}}</h3>
-                                            <p>{{ Carbon\Carbon::parse($row->created_at)->format('d-M-Y') }}       </p>
+                                            <p>{{ Carbon\Carbon::parse($row->created_at)->format('d-M-Y') }}</p>
                                             <a  href="{{$row->link_download}}" class="thm-btn comment-one__btn">Download</a>
                                         </div>
                                     </div>
