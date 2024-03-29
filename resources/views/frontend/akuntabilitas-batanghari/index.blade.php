@@ -30,6 +30,7 @@
                         <div class="news-details__left">
                         <div class="news-details__content">
                                 
+                        <input type="date" name="tahun">
                                 <div class="comment-one">
                                 @foreach($anggaran as $row)
                                     <div class="comment-one__single">
