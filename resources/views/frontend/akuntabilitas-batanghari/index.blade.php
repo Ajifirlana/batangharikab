@@ -27,25 +27,29 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xl-8 col-lg-7">
-                        <div class="news-details__left">
+                        
+                    <input type="date" name="tahun" class="form-control"><div class="news-details__left">
                         <div class="news-details__content">
                                 
-                        <input type="date" name="tahun">
                                 <div class="comment-one">
+                                    <table class="table">
+                                        <tr>
+                                            <td>No</td>
+                                            <td>Judul</td>
+                                            <td>Link Download</td>
+                                        </tr>
+                                        <tbody>
+                                            <?php $no= 1;?>
                                 @foreach($anggaran as $row)
-                                    <div class="comment-one__single">
-                                        <div class="comment-one__image">
-                                            <!-- <img src="{{asset('frontend/assets/images/blog/comment-1-1.jpg')}}" alt=""> -->
-                                        </div>
-                                        <div class="comment-one__content">
-                                            <h3>{{$row->judul}}</h3>
-                                            <p>{{ Carbon\Carbon::parse($row->created_at)->format('d-M-Y') }}</p>
-                                            <a  href="{{$row->link_download}}" class="thm-btn comment-one__btn">Download</a>
-                                        </div>
-                                    </div>
-
+                                            <tr>
+                                            <td><?php echo $no++?></td>    
+                                            <td>{{$row->judul}}</td>
+                                            <td><a href="{{$row->link_download}}">Download</a></td>
+                                            </tr>
                                 @endforeach   
                                    
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
