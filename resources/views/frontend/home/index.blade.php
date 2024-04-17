@@ -122,11 +122,7 @@
                                 <li>
                                     <div class="news-two__single">
                                         <div class="news-two__img">
-                                        @if(file_exists($row->gambar))
                                             <img class="cropped1"   src="{{asset('frontend/gambar-berita/'.$row->gambar)}}"alt="">
-                                           @else
-                                                <img class="cropped1"   src="{{asset('frontend/gambar-berita/no-image.png')}}"alt="">
-                                           @endif
                                         </div>
                                         <div class="news-two__content">
                                             <ul class="news-two__meta list-unstyled">
