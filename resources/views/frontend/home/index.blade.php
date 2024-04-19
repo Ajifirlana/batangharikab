@@ -20,6 +20,14 @@
     object-fit: cover;
     border: 0px solid black;
 }
+
+.vidio {
+    width: 370px; /* width of container */
+    height: 450px; /* height of container */
+    object-fit: cover;
+    border: 0px solid black;
+}
+    
      
      
 </style>
@@ -365,7 +373,7 @@
                     <div class="item">
                         <div class="project-two__single">
                             <div class="project-two__img">
-                                <img src="{{asset('frontend/video/'.$row->foto)}}" alt="">
+                                <img class="vidio" src="{{asset('frontend/video/'.$row->foto)}}" alt="">
                                 <div class="project-two__arrow">
                                 <a href="{{ $row->link }}" target="_blank"><br><span class="fa fa-solid fa-play"></span></a>
                                 </div>
@@ -383,45 +391,7 @@
             </div>
         </section>
 
-        <section class="brand-two">
-            <div class="container">
-                <h4 class="brand-two__title">Aplikasi Terkait</h4>
-                <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 5000 }, "breakpoints": {
-                    "0": {
-                        "spaceBetween": 30,
-                        "slidesPerView": 2
-                    },
-                    "375": {
-                        "spaceBetween": 30,
-                        "slidesPerView": 2
-                    },
-                    "575": {
-                        "spaceBetween": 30,
-                        "slidesPerView": 3
-                    },
-                    "767": {
-                        "spaceBetween": 50,
-                        "slidesPerView": 4
-                    },
-                    "991": {
-                        "spaceBetween": 50,
-                        "slidesPerView": 5
-                    },
-                    "1199": {
-                        "spaceBetween": 100,
-                        "slidesPerView": 5
-                    }
-                }}'>
-                    <div class="swiper-wrapper">
-                    @foreach($website_skpd as $row) 
-                        <div class="swiper-slide">
-                            <img src="{{ asset('frontend/assets/images/brand/brand-2-1.png')}}" alt="">
-                        </div><!-- /.swiper-slide -->
-                    @endforeach 
-                    </div>
-                </div>
-            </div>
-        </section>
+     
 
       
 

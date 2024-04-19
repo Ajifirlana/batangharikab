@@ -71,7 +71,7 @@
                                 <x-input label="Judul Berita" id="judul"  info="Info : Sample Data Description Info"
                                     placeholder="Judul Berita" />
                                 <x-datepicker id='tanggal' label='Tanggal' required="true" />
-                                <x-filepond id="file" label='Foto Berita' info='( Format File JPG/PNG , Maks 5 MB)'
+                                <x-filepond id="foto" name="foto" label='Foto Berita' info='( Format File JPG/PNG , Maks 5 MB)'
                                     accept="image/jpeg, image/png" />
                                 <x-input label="Judul Foto" id="judul_foto"  info="Info : Sample Data Description Info"
                                     placeholder="Judul Berita" />    
@@ -121,6 +121,8 @@
 <script src="{{ asset('plugins/magnific/jquery.magnific-popup.min.js') }}"></script>
 
 
+
+
 {{-- password toggle show/hide --}}
 <script src="{{ asset('plugins/toggle-password.js') }}"></script>
 
@@ -140,6 +142,32 @@
                 locale: "id",
             });
 
+            FilePond.registerPlugin(
+                //  FilePondPluginGetFile,
+                FilePondPluginFileEncode,
+                FilePondPluginImagePreview,
+                FilePondPluginFilePoster,
+                
+                FilePondPluginFileValidateType,
+                FilePondPluginFileValidateSize)
+
+
+
+                const foto = FilePond.create(document.querySelector('#foto'),{
+                    storeAsFile: true,
+                    fileValidateTypeDetectType: true,
+                    acceptedFileTypes: ['image/*'],
+                    maxFileSize: 2000000, //10 mbs max size
+                    allowFileSizeValidation: true,
+                });
+               
+                foto.setOptions({
+                allowImagePreview: true,
+               
+            
+                 })
+
+
 
              
                 let url = $(this).attr('data-url');
@@ -151,6 +179,17 @@
                     $('#judul_foto').val(response.tittle_gambar)
                     $("#summernote").summernote('code', response.isi);
                     flatpicker.setDate(response.tanggal)
+
+                    const externalImageUrl_cover = "{{ asset('frontend/gambar-berita/') }}"+"/"+response.gambar;
+
+
+                    foto.addFile(externalImageUrl_cover).then((file) => {
+                    // File added successfully
+                        console.log('File added:', file);
+                    }).catch((error) => {
+                        // Error adding file
+                        console.error('Error adding file:', error);
+                    });
                   
                   
                 })
@@ -211,14 +250,7 @@
                 });
             });
 
-            FilePond.registerPlugin(
-                //  FilePondPluginGetFile,
-                FilePondPluginFileEncode,
-                FilePondPluginImagePreview,
-                FilePondPluginFilePoster,
           
-                FilePondPluginFileValidateType,
-                FilePondPluginFileValidateSize)
 
                 $(document).ready(function() {
                     var customButtons = [
@@ -259,46 +291,8 @@
 
 
 
-            const file_pdf = FilePond.create(document.querySelector('#file'));
-            file_pdf.setOptions({
-                allowMultiple: true,
-                allowReorder: true,
-                server: {
-                    url: "{{ config('filepond.server.url') }}",
-                    headers: {
-                        'X-CSRF-TOKEN': "{{ @csrf_token() }}",
-                    }
-                },
-            });
 
-            const file_cover = FilePond.create(document.querySelector('#file_cover'));
-            file_cover.setOptions({
-                allowImagePreview: true,
-                server: {
-                    url: "{{ config('filepond.server.url') }}",
-                    headers: {
-                        'X-CSRF-TOKEN': "{{ @csrf_token() }}",
-                    }
-                },
-              
-            })
-
-            const file_cover_multi = FilePond.create(document.querySelector('#file_cover_multi'));
-            file_cover_multi.setOptions({
-                styleItemPanelAspectRatio: 1,
-                imageCropAspectRatio: '1:1',
-                allowImagePreview: true,
-                allowMultiple: true,
-                allowReorder: true,
-                imagePreviewHeight: 300,
-                imagePreviewWidth: 300,
-                server: {
-                    url: "{{ config('filepond.server.url') }}",
-                    headers: {
-                        'X-CSRF-TOKEN': "{{ @csrf_token() }}",
-                    }
-                }
-            });
+          
 
            
 

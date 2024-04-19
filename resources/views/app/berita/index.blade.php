@@ -225,11 +225,11 @@ $jns_kelamin = json_decode(json_encode(
                 },
 
                 { 
-                    "data": "gambar",
-                    "render": function(data, type, row) {
-                        return '<img src="' + data + '" alt="' + data + '"height="50" width="50"/>';
-                    }
-                },
+                        "data": "gambar",
+                        "render": function(data, type, row) {
+                            return '<img src="' + '{{ asset("frontend/gambar-berita/") }}' + '/' + data + '" height="50" width="50"/>';
+                        }
+                   },
                
                 {
                     data: "action",

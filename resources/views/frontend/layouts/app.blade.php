@@ -5,6 +5,8 @@ $today = Carbon::today()->toDateString();
 $currentMonth = Carbon::now();
       $setting = DB::table('settings')->first();
      $statistik = DB::table('statistik_pengunjungs')->first();
+
+     $website_skpds =  DB::table('website_skpds')->orderBy('id','desc')->offset(0)->limit(5)->get();
       ?>
       <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +50,9 @@ $currentMonth = Carbon::now();
     <link rel="stylesheet" href="{{ asset('frontend/assets/vendors/vegas/vegas.min.css')}}" />
     <link rel="stylesheet" href="{{ asset('frontend/assets/vendors/jquery-ui/jquery-ui.css')}}" />
     <link rel="stylesheet" href="{{ asset('frontend/assets/vendors/timepicker/timePicker.css')}}" />
-
+    <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
 
     <!-- template styles -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/austry.css')}}" />
@@ -186,6 +190,46 @@ $currentMonth = Carbon::now();
 
 
         @yield('content')
+
+        <section class="brand-two">
+            <div class="container">
+                <h4 class="brand-two__title">Aplikasi Terkait</h4>
+                <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 5000 }, "breakpoints": {
+                    "0": {
+                        "spaceBetween": 30,
+                        "slidesPerView": 2
+                    },
+                    "375": {
+                        "spaceBetween": 30,
+                        "slidesPerView": 2
+                    },
+                    "575": {
+                        "spaceBetween": 30,
+                        "slidesPerView": 3
+                    },
+                    "767": {
+                        "spaceBetween": 50,
+                        "slidesPerView": 4
+                    },
+                    "991": {
+                        "spaceBetween": 50,
+                        "slidesPerView": 5
+                    },
+                    "1199": {
+                        "spaceBetween": 100,
+                        "slidesPerView": 5
+                    }
+                }}'>
+                    <div class="swiper-wrapper">
+                    @foreach($website_skpds as $row) 
+                        <div class="swiper-slide">
+                            <img src="{{ asset('frontend/assets/images/brand/brand-2-1.png')}}" alt="">
+                        </div><!-- /.swiper-slide -->
+                    @endforeach 
+                    </div>
+                </div>
+            </div>
+        </section>
         
         
         <!--Site Footer Start-->
@@ -357,8 +401,10 @@ $currentMonth = Carbon::now();
     <script src="{{ asset('frontend/assets/vendors/circleType/jquery.circleType.js')}}"></script>
     <script src="{{ asset('frontend/assets/vendors/circleType/jquery.lettering.min.js')}}"></script>
     <script src="{{ asset('frontend/assets/vendors/sidebar-content/jquery-sidebar-content.js')}}"></script>
+    <script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"></script>
 
-
+    <script src="{{ asset('template/admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('template/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 
 
     <!-- template js -->

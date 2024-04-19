@@ -13,14 +13,14 @@
             <form id="form_tambah">
                 @csrf
                 <div class="modal-body">
-                <input hidden  id="id_skpd" name="id" value="" />
+                <input hidden   id="id_skpd" name="id_skpd" value="" />
                 <x-input id='judul' label='Judul' required=true  />
                 <x-input id='link' label='Link' required=true  />
                 <x-input id='opd' label='OPD' required=true  />
                 <x-textarea id='ket' label='Keterangan' required=true hint="Keterangan" />
             
                 <!-- <x-filepond id="file" label="uploud Foto"  onchange="preview()"  required="true" info="Format file (jpg dan png, Max 5 MB)" max="4mb"  />   -->
-                <x-filepond id="file" label='Foto' info='( Format File JPG/PNG , Maks 5 MB)'
+                <x-filepond id="file" name="file" label='Foto' info='( Format File JPG/PNG , Maks 5 MB)'
                         accept="image/jpeg, image/png" />
                 <!-- <x-viewfoto name="foto" id="foto" src="" ></x-viewfoto> -->
               

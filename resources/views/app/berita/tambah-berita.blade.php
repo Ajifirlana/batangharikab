@@ -69,11 +69,10 @@
                                 <x-input label="Judul Berita" id="judul" required='true' info="Info : Sample Data Description Info"
                                     placeholder="Judul Berita" />
                                 <x-datepicker id='tanggal' label='Tanggal' required="true" />
-                                <x-filepond id="file" label='Foto Berita' info='( Format File JPG/PNG , Maks 5 MB)'
-                                    accept="image/jpeg, image/png" />
+                                <x-filepond  name="foto" id="foto" label="uploud Foto"  required="true" info="Format file (jpg dan png, Max 5 MB)" max="4mb"  /> 
                                 <x-input label="Judul Foto" id="judul_foto"  required='true' info="Info : Sample Data Description Info"
                                     placeholder="Judul Berita" />    
-                                    <x-summernote id="summernote" name="body" label="Summenote Editor" />
+                                    <x-summernote id="summernote" name="body" required='true' label="Summenote Editor" />
                                <div class="modal-footer">
                                     <button type="submit" class="btn_submit btn btn-primary">Simpan</button>
                               </div>
@@ -117,7 +116,9 @@
 
 <script src="{{ asset('plugins/filepond/filepond-get-files.js') }}"></script>
 <script src="{{ asset('plugins/magnific/jquery.magnific-popup.min.js') }}"></script>
-
+<script src="https://unpkg.com/filepond-plugin-pdf-preview/dist/filepond-plugin-pdf-preview.min.js"></script>
+    <link href="https://unpkg.com/filepond@4.30.6/dist/filepond.css" rel="stylesheet">
+    <script src="https://unpkg.com/filepond@4.30.6/dist/filepond.js"></script>
 
 {{-- password toggle show/hide --}}
 <script src="{{ asset('plugins/toggle-password.js') }}"></script>
@@ -138,18 +139,38 @@
                 locale: "id",
             });
 
+
+            FilePond.registerPlugin(
+                //  FilePondPluginGetFile,
+                FilePondPluginFileEncode,
+                FilePondPluginImagePreview,
+                FilePondPluginFilePoster,
+        
+                FilePondPluginFileValidateType,
+                FilePondPluginFileValidateSize)
+
+
+
+                const foto = FilePond.create(document.querySelector('#foto'),{
+                    storeAsFile: true,
+                    fileValidateTypeDetectType: true,
+                    acceptedFileTypes: ['image/*'],
+                    maxFileSize: 2000000, //10 mbs max size
+                    allowFileSizeValidation: true,
+                });
+               
+                foto.setOptions({
+                allowImagePreview: true,
+                allowPdfPreview: true,
+                  
+                 })
+
+
+            
+
           
 
-            const format = AutoNumeric.multiple('.rupiah', {
-                //  currencySymbol: 'Rp ',
-                digitGroupSeparator: '.',
-                decimalPlaces: 0,
-                minimumValue: 0,
-                decimalCharacter: ',',
-                formatOnPageLoad: true,
-                allowDecimalPadding: false,
-                alwaysAllowDecimalCharacter: false
-            })
+         
 
             $("#form_tambah").submit(function(e) {
                 e.preventDefault();
@@ -194,15 +215,7 @@
                 });
             });
 
-            FilePond.registerPlugin(
-                //  FilePondPluginGetFile,
-                FilePondPluginFileEncode,
-                FilePondPluginImagePreview,
-                FilePondPluginFilePoster,
-          
-                FilePondPluginFileValidateType,
-                FilePondPluginFileValidateSize)
-               
+           
                
                 $(document).ready(function() {
                     var customButtons = [
@@ -222,49 +235,6 @@
                         
                     });
                 });
-
-
-            const file_pdf = FilePond.create(document.querySelector('#file'));
-            file_pdf.setOptions({
-                allowMultiple: true,
-                allowReorder: true,
-                server: {
-                    url: "{{ config('filepond.server.url') }}",
-                    headers: {
-                        'X-CSRF-TOKEN': "{{ @csrf_token() }}",
-                    }
-                },
-            });
-
-            const file_cover = FilePond.create(document.querySelector('#file_cover'));
-            file_cover.setOptions({
-                allowImagePreview: true,
-                server: {
-                    url: "{{ config('filepond.server.url') }}",
-                    headers: {
-                        'X-CSRF-TOKEN': "{{ @csrf_token() }}",
-                    }
-                },
-              
-            })
-
-            const file_cover_multi = FilePond.create(document.querySelector('#file_cover_multi'));
-            file_cover_multi.setOptions({
-                styleItemPanelAspectRatio: 1,
-                imageCropAspectRatio: '1:1',
-                allowImagePreview: true,
-                allowMultiple: true,
-                allowReorder: true,
-                imagePreviewHeight: 300,
-                imagePreviewWidth: 300,
-                server: {
-                    url: "{{ config('filepond.server.url') }}",
-                    headers: {
-                        'X-CSRF-TOKEN': "{{ @csrf_token() }}",
-                    }
-                }
-            });
-      
 
 
           

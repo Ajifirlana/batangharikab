@@ -15,9 +15,8 @@
                 <div class="modal-body">
                     <x-input id='judul' label='Judul' required=true  />
                     <x-datepicker id='tanggal' label='Tanggal' required="true" />
-                    <x-filepond id="foto" label="uploud Foto"  required="true" info="Format file (jpg dan png, Max 5 MB)" max="4mb"  /> 
-                    <x-filepond  data-filepond-allow-reorder="true" id="file_pdf"  label='File PDF' info='( Format File PDF, Maks 5 MB)'
-                        accept="application/pdf"  />
+                    <x-filepond  name="foto" id="foto" label="Cover"  required="true" info="Format file (jpg dan png, Max 5 MB)" max="4mb"  /> 
+                    <x-filepond  name="file" id="file" label="File"  required="true" info="Format file (jpg dan png, Max 5 MB)" max="4mb"  /> 
 
                     <input hidden  id="id" name="id" value="" />
                 </div>

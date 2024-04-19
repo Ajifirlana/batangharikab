@@ -198,11 +198,11 @@ $json = json_decode(json_encode($years));
                     {
                         data: 'tahun',
                     },
-                    {
-                        data: 'link_download',
-
-                        
-                    },
+                    {data: "link_download",className: 'dt-center',
+                    "render": function(data, type, row) {
+                            return '<a target="_blank" href="'+ data + '"><i class="fab far fa-eye"></i></i></a>';
+                      }
+                   },
 
                     
                   

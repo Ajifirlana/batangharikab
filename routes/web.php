@@ -63,11 +63,19 @@ Route::get('/login', function () {
    return redirect()->route('login');
 })->name('index');
 
+Route::get('/view/{file}', function ($file) {
+   $myFile = public_path("frontend/infografis/file/".$file);
+       
+        
+   return response()->file($myFile,['content-type'=>'application/pdf']);
+});
+
 
 //Anggaran
-Route::controller(AkuntabilitasBatanghariController::class)->group(function() {
-   Route::get('akuntabilitas-batanghari', 'index')->name('index');
-});
+// Route::controller(AkuntabilitasBatanghariController::class)->group(function() {
+//    Route::get('akuntabilitas-batanghari', 'index')->name('akuntabilitas.index');
+// });
+Route::get('akuntabilitas-batanghari', [AkuntabilitasBatanghariController::class, 'index'])->name('akuntabilitas.index');
 // Route::get('/', function () {
 //    return view('frontend.dashbord.home', ['name' => 'James']);
 // });

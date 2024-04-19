@@ -41,75 +41,110 @@ class InfografisController extends Controller
        return view('app.infografis.index', $x, compact(['data']));
     }
 
-    public function store(Request $request)
-    {
+    public function store(Request $request){
+
        try {
-        //simpan foto ke lokal
-      //    $request->validate([
-      //       'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-      //   ]);
-    
-      //   $imageName = time().'.'.$request->image->extension();  
-      //   $request->image->move(public_path('frontend\galeri'), $imageName);
+
+            $imageName = time().'.'.$request->foto->extension();  
+
+            $fileName = time().'.'.$request->file->extension();  
 
 
-          if($request->file('foto')==null){
-            Infografis::updateOrCreate(
-                ['id'           => $request->id],
-                [
-                   'judul'      => $request->judul,
-                   'tanggal'    =>  $request->tanggal,
-                   'gambar'       => $request->tanggal,
-                   'file'       => $request->tanggal,
- 
-                ]
-             );
-    
-             if ($request->id)  return $this->success('Berhasil Mengubah Data');
-             else return $this->success('Berhasil Menginput Data');
- 
-          }
-          //simpan foto ke firebase api
-          $image_path = $request->file('foto')->getPathname();
-          $file_pdf = $request->file('file_pdf')->getPathname();
-         //  $nama_gambar = time() . '_' . $request->file('foto')->getClientOriginalName();
-         //  $image_mime = $request->file('foto')->getmimeType();
-         //  $image_org  = $request->file('foto')->getClientOriginalName();
-         //  $url ="https://api-storage.batangharikab.go.id/submit-upload";
-         //  $publicKey="eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTg5Njg1OTcsImlzcyI6IiouYmF0YW5naGFyaWthYi5nby5pZCIsImp0aSI6IjA4Y2YzMWNmLTdmZWUtNGE3ZS1hN2NjLWMxNDAyYWQ2NjNkOCIsInN1YiI6ImIwMTAwZGU3LTkwYmUtNGM2NC05ZmM3LWFjZjZlOTdiOTUxYyJ9.U7QiUQXHGqKnBG3aKRd1tmrhvKoTMJZO9-63KTMNEs8QDOMPVCiGNu7r4GCqHq-EJRo6vsvOtryisXI52HfckA";
-         //  $client = new \GuzzleHttp\Client();
-         //  $response = $client->request("POST",$url,[
-         //    "headers"   => ["Authorization" => "Bearer {$publicKey}"],
-         //    "multipart" => [
-         //           [
-         //           'name'     => 'file',
-         //           'filename' => $nama_gambar,
-         //           'Mime-Type'=> $image_mime,
-         //           'contents' => fopen( $image_path, 'r' ),
-         //           ],
-         //      ]
- 
-         //  ]);
-         //  $response=   $response->getBody();
-         //  $responsdata = json_decode($response,true);
-         //  $url=$responsdata['data']['url'];
-          Infografis::updateOrCreate(
-            ['id'           => $request->id],
-            [
-               'judul'      => $request->keterangan,
-               'tanggal'    =>  $request->tanggal,
-               'gambar'       => $image_path,
-               'file'       => $file_pdf,
+                        Infografis::updateOrCreate(
+                           ['id'           => $request->id],
+                           [
+                              'judul'      => $request->judul,
+                              'tanggal'    =>  $request->tanggal,
+                              'gambar'       => $imageName,
+                              'file'       => $fileName,
+            
+                           ]
+                        );
 
-            ]
-         );
- 
-          if ($request->id)  return $this->success('Berhasil Mengubah Data');
-          else return $this->success('Berhasil Menginput Data');
-       } catch (\Throwable $th) {
-         return $this->error('Gagal, Terjadi Kesalahan' . $th->getMessage(), 400);
-       }
+                  $request->foto->move(public_path('frontend/infografis/foto'), $imageName);
+                  $request->file->move(public_path('frontend/infografis/file'), $fileName);
+         
+                  if ($request->id) 
+                  return $this->success('Berhasil Mengubah Data');
+                  else 
+                  return $this->success('Berhasil Menginput Data');
+
+      } catch (\Throwable $th) {
+                  return $this->error('Gagal, Terjadi Kesalahan' . $th->getMessage(), 400);
+      }      
+
+
     }
+
+   //  public function store(Request $request)
+   //  {
+   //     try {
+   //      //simpan foto ke lokal
+   //    //    $request->validate([
+   //    //       'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+   //    //   ]);
+    
+   //    //   $imageName = time().'.'.$request->image->extension();  
+   //    //   $request->image->move(public_path('frontend\galeri'), $imageName);
+
+
+   //        if($request->file('foto')==null){
+   //          Infografis::updateOrCreate(
+   //              ['id'           => $request->id],
+   //              [
+   //                 'judul'      => $request->judul,
+   //                 'tanggal'    =>  $request->tanggal,
+   //                 'gambar'       => $request->tanggal,
+   //                 'file'       => $request->tanggal,
+ 
+   //              ]
+   //           );
+    
+   //           if ($request->id)  return $this->success('Berhasil Mengubah Data');
+   //           else return $this->success('Berhasil Menginput Data');
+ 
+   //        }
+   //        //simpan foto ke firebase api
+   //        $image_path = $request->file('foto')->getPathname();
+   //        $file_pdf = $request->file('file_pdf')->getPathname();
+   //       //  $nama_gambar = time() . '_' . $request->file('foto')->getClientOriginalName();
+   //       //  $image_mime = $request->file('foto')->getmimeType();
+   //       //  $image_org  = $request->file('foto')->getClientOriginalName();
+   //       //  $url ="https://api-storage.batangharikab.go.id/submit-upload";
+   //       //  $publicKey="eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTg5Njg1OTcsImlzcyI6IiouYmF0YW5naGFyaWthYi5nby5pZCIsImp0aSI6IjA4Y2YzMWNmLTdmZWUtNGE3ZS1hN2NjLWMxNDAyYWQ2NjNkOCIsInN1YiI6ImIwMTAwZGU3LTkwYmUtNGM2NC05ZmM3LWFjZjZlOTdiOTUxYyJ9.U7QiUQXHGqKnBG3aKRd1tmrhvKoTMJZO9-63KTMNEs8QDOMPVCiGNu7r4GCqHq-EJRo6vsvOtryisXI52HfckA";
+   //       //  $client = new \GuzzleHttp\Client();
+   //       //  $response = $client->request("POST",$url,[
+   //       //    "headers"   => ["Authorization" => "Bearer {$publicKey}"],
+   //       //    "multipart" => [
+   //       //           [
+   //       //           'name'     => 'file',
+   //       //           'filename' => $nama_gambar,
+   //       //           'Mime-Type'=> $image_mime,
+   //       //           'contents' => fopen( $image_path, 'r' ),
+   //       //           ],
+   //       //      ]
+ 
+   //       //  ]);
+   //       //  $response=   $response->getBody();
+   //       //  $responsdata = json_decode($response,true);
+   //       //  $url=$responsdata['data']['url'];
+   //        Infografis::updateOrCreate(
+   //          ['id'           => $request->id],
+   //          [
+   //             'judul'      => $request->keterangan,
+   //             'tanggal'    =>  $request->tanggal,
+   //             'gambar'       => $image_path,
+   //             'file'       => $file_pdf,
+
+   //          ]
+   //       );
+ 
+   //        if ($request->id)  return $this->success('Berhasil Mengubah Data');
+   //        else return $this->success('Berhasil Menginput Data');
+   //     } catch (\Throwable $th) {
+   //       return $this->error('Gagal, Terjadi Kesalahan' . $th->getMessage(), 400);
+   //     }
+   //  }
 
     public function edit($id)
     {

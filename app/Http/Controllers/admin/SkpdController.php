@@ -40,66 +40,100 @@ class SkpdController extends Controller
     }
 
 
-    public function store(Request $request)
-    {
-       try {
-          if($request->file('file')==null){
-            WebsiteSkpd::updateOrCreate(
-                ['id'              => $request->id_skpd],
-                [
-                   'judul'         => $request->judul,
-                   'link'          => $request->link,
-                   'opd'           => $request->opd,
-                   'keterangan'    => $request->ket,
- 
-                ]
-             );
-    
-             if ($request->id_skpd)  return $this->success('Berhasil Mengubah Data');
-             else return $this->success('Berhasil Menginput Data');
- 
-          }
+public function store (Request $request){
 
-          $image_path = $request->file('file')->getPathname();
-          $nama_gambar = time() . '_' . $request->file('file')->getClientOriginalName();
-          $image_mime = $request->file('file')->getmimeType();
-          $image_org  = $request->file('file')->getClientOriginalName();
-          $url ="https://api-storage.batangharikab.go.id/submit-upload";
-          $publicKey="eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTg5Njg1OTcsImlzcyI6IiouYmF0YW5naGFyaWthYi5nby5pZCIsImp0aSI6IjA4Y2YzMWNmLTdmZWUtNGE3ZS1hN2NjLWMxNDAyYWQ2NjNkOCIsInN1YiI6ImIwMTAwZGU3LTkwYmUtNGM2NC05ZmM3LWFjZjZlOTdiOTUxYyJ9.U7QiUQXHGqKnBG3aKRd1tmrhvKoTMJZO9-63KTMNEs8QDOMPVCiGNu7r4GCqHq-EJRo6vsvOtryisXI52HfckA";
-          $client = new \GuzzleHttp\Client();
-          $response = $client->request("POST",$url,[
-            "headers"   => ["Authorization" => "Bearer {$publicKey}"],
-            "multipart" => [
-                   [
-                   'name'     => 'file',
-                   'filename' => $nama_gambar,
-                   'Mime-Type'=> $image_mime,
-                   'contents' => fopen( $image_path, 'r' ),
-                   ],
-              ]
+      try {
+
+         $imageName = time().'.'.$request->file->extension(); 
+         WebsiteSkpd::updateOrCreate(
+                         ['id'              => $request->id_skpd],
+                         [
+                            'judul'         => $request->judul,
+                            'link'          => $request->link,
+                            'opd'           => $request->opd,
+                            'keterangan'    => $request->ket,
+                            'foto'    => $imageName,
+          
+                         ]
+                      );
+            $request->file->move(public_path('frontend/website-skpd'), $imageName);
+
+            if ($request->id_skpd) 
+            return $this->success('Berhasil Mengubah Data');
+            else 
+            return $this->success('Berhasil Menginput Data');
+
+      
  
-          ]);
-          $response=   $response->getBody();
-          $responsdata = json_decode($response,true);
-          $url=$responsdata['data']['url'];
-          WebsiteSkpd::updateOrCreate(
-             ['id'               => $request->id_skpd],
-             [
-                'judul'      => $request->keterangan,
-                'foto'            => $url,
-                'opd'           => $request->opd,
-                'keterangan'    => $request->ket,
+
+    } catch (\Throwable $th) {
+      return $this->error('Gagal, Terjadi Kesalahan' . $th->getMessage(), 400);
+    }
+
+
+}
+
+
+   //  public function store(Request $request)
+   //  {
+   //     try {
+   //        if($request->file('file')==null){
+   //          WebsiteSkpd::updateOrCreate(
+   //              ['id'              => $request->id_skpd],
+   //              [
+   //                 'judul'         => $request->judul,
+   //                 'link'          => $request->link,
+   //                 'opd'           => $request->opd,
+   //                 'keterangan'    => $request->ket,
+ 
+   //              ]
+   //           );
+    
+   //           if ($request->id_skpd)  return $this->success('Berhasil Mengubah Data');
+   //           else return $this->success('Berhasil Menginput Data');
+ 
+   //        }
+
+   //        $image_path = $request->file('file')->getPathname();
+   //        $nama_gambar = time() . '_' . $request->file('file')->getClientOriginalName();
+   //        $image_mime = $request->file('file')->getmimeType();
+   //        $image_org  = $request->file('file')->getClientOriginalName();
+   //        $url ="https://api-storage.batangharikab.go.id/submit-upload";
+   //        $publicKey="eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTg5Njg1OTcsImlzcyI6IiouYmF0YW5naGFyaWthYi5nby5pZCIsImp0aSI6IjA4Y2YzMWNmLTdmZWUtNGE3ZS1hN2NjLWMxNDAyYWQ2NjNkOCIsInN1YiI6ImIwMTAwZGU3LTkwYmUtNGM2NC05ZmM3LWFjZjZlOTdiOTUxYyJ9.U7QiUQXHGqKnBG3aKRd1tmrhvKoTMJZO9-63KTMNEs8QDOMPVCiGNu7r4GCqHq-EJRo6vsvOtryisXI52HfckA";
+   //        $client = new \GuzzleHttp\Client();
+   //        $response = $client->request("POST",$url,[
+   //          "headers"   => ["Authorization" => "Bearer {$publicKey}"],
+   //          "multipart" => [
+   //                 [
+   //                 'name'     => 'file',
+   //                 'filename' => $nama_gambar,
+   //                 'Mime-Type'=> $image_mime,
+   //                 'contents' => fopen( $image_path, 'r' ),
+   //                 ],
+   //            ]
+ 
+   //        ]);
+   //        $response=   $response->getBody();
+   //        $responsdata = json_decode($response,true);
+   //        $url=$responsdata['data']['url'];
+   //        WebsiteSkpd::updateOrCreate(
+   //           ['id'               => $request->id_skpd],
+   //           [
+   //              'judul'      => $request->keterangan,
+   //              'foto'            => $url,
+   //              'opd'           => $request->opd,
+   //              'keterangan'    => $request->ket,
  
             
-             ]
-          );
+   //           ]
+   //        );
  
-          if ($request->id_skpd)  return $this->success('Berhasil Mengubah Data');
-          else return $this->success('Berhasil Menginput Data');
-       } catch (\Throwable $th) {
-         return $this->error('Gagal, Terjadi Kesalahan' . $th->getMessage(), 400);
-       }
-    }
+   //        if ($request->id_skpd)  return $this->success('Berhasil Mengubah Data');
+   //        else return $this->success('Berhasil Menginput Data');
+   //     } catch (\Throwable $th) {
+   //       return $this->error('Gagal, Terjadi Kesalahan' . $th->getMessage(), 400);
+   //     }
+   //  }
 
 
     public function edit($id)

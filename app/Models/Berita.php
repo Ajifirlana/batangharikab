@@ -16,7 +16,7 @@ class Berita extends Model
     use  HasFactory ;
     protected $table = 'beritas';
     protected $guarded = [];
-    protected $hidden = ['id'];
+   
 
     protected $casts = [
         'created_at'     => 'date:d-m-Y H:m:s',

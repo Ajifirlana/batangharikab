@@ -23,12 +23,12 @@
 @section('content')
 
         <!--Team One Start-->
-        <section class="services-two">
+           <section class="services-two">
             <div class="services-two__shape-1 float-bob-x">
-                <img src="assets/images/shapes/services-two-shape-1.png" alt="">
+                <img src="{{ asset('frontend/assets/images/shapes/services-two-shape-1.png')}}" alt="">
             </div>
             <div class="services-two__shape-2 float-bob-y">
-                <img src="assets/images/shapes/services-two-shape-2.png" alt="">
+                <img src="{{ asset('frontend/assets/images/shapes/services-two-shape-2.png')}}" alt="">
             </div>
             <div class="container">
                 <div class="services-two__top">
@@ -37,7 +37,7 @@
                         <div class="col-xl-7 col-lg-6">
                             <div class="services-two__left">
                                 <div class="section-title text-left">
-                          
+                                <a href="{{url('galeri-foto')}}"><span class="section-title__tagline">Indeks Galeri </span></a>
                                     <h2 class="section-title__title">Galeri Batanghari</h2>
                                 </div>
                             </div>
@@ -72,5 +72,7 @@
                 </div>
             </div>
         </section>
+
+        
         <!--Team One End-->
-            @endsection
+ @endsection

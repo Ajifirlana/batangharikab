@@ -21,7 +21,7 @@
                           <option value="{{ $item->value }}">{{ $item->text }}</option>
                         @endforeach
                     </x-select2>
-                    <input   id="id" name="id" value="" />
+                    <input    id="id" name="id" value="" />
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn_submit btn btn-primary">Simpan</button>

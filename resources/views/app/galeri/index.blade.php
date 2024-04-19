@@ -138,6 +138,38 @@ $jns_kelamin = json_decode(json_encode(
         }
         $(document).ready(function() {
 
+            FilePond.registerPlugin(
+                //  FilePondPluginGetFile,
+                FilePondPluginFileEncode,
+                FilePondPluginImagePreview,
+                FilePondPluginFilePoster,
+                FilePondPluginImageValidateSize,
+                FilePondPluginImageCrop,
+             
+          
+                FilePondPluginFileValidateType,
+                FilePondPluginFileValidateSize)
+
+                const inputElement = document.querySelector('input[type="file"]');
+                 const pond = FilePond.create(inputElement,{
+                    storeAsFile: true,
+                    acceptedFileTypes: ['image/*'],
+                    fileValidateTypeDetectType: true,
+                    imageValidateSizeMinWidth: 270,
+                    imageValidateSizeMinHeight: 370,
+                    imageCropAspectRatio: '1.307',
+                    allowImageCrop:true,
+                    maxFileSize: 5000000, //10 mbs max size
+                    allowFileSizeValidation: true,
+                 
+                });
+
+            pond.setOptions({
+                allowImagePreview: true,
+                allowFileMetadata: true
+               
+            })
+
 
 
 
@@ -203,7 +235,7 @@ $jns_kelamin = json_decode(json_encode(
                     { 
                         "data": "foto",
                         "render": function(data, type, row) {
-                            return '<img src="' + data + '" alt="' + data + '"height="50" width="50"/>';
+                            return '<img src="' + '{{ asset("frontend/galeri/") }}' + '/' + data + '" height="50" width="50"/>';
                         }
                    },
                     {
@@ -284,7 +316,19 @@ $jns_kelamin = json_decode(json_encode(
                 let url = $(this).attr('data-url');
                 $.get(url, function(response) {
                     $('#id').val(response.data.id)
-                    $('#keterangan').val(response.data.judul)      
+                    $('#keterangan').val(response.data.judul)    
+                    
+                    const externalImageUrl_cover = "{{ asset('frontend/galeri/') }}"+"/"+response.data.foto;
+
+
+                    pond.addFile(externalImageUrl_cover).then((file) => {
+                    // File added successfully
+                        console.log('File added:', file);
+                    }).catch((error) => {
+                        // Error adding file
+                        console.error('Error adding file:', error);
+                    });
+
                 })
             });
 
@@ -306,37 +350,7 @@ $jns_kelamin = json_decode(json_encode(
                 })
             });
 
-               FilePond.registerPlugin(
-                //  FilePondPluginGetFile,
-                FilePondPluginFileEncode,
-                FilePondPluginImagePreview,
-                FilePondPluginFilePoster,
-                FilePondPluginImageValidateSize,
-                FilePondPluginImageCrop,
-             
-          
-                FilePondPluginFileValidateType,
-                FilePondPluginFileValidateSize)
-
-                const inputElement = document.querySelector('input[type="file"]');
-                 const pond = FilePond.create(inputElement,{
-                    storeAsFile: true,
-                    acceptedFileTypes: ['image/*'],
-                    fileValidateTypeDetectType: true,
-                    imageValidateSizeMinWidth: 270,
-                    imageValidateSizeMinHeight: 370,
-                    imageCropAspectRatio: '1.307',
-                    allowImageCrop:true,
-                    maxFileSize: 5000000, //10 mbs max size
-                    allowFileSizeValidation: true,
-                 
-                });
-
-            pond.setOptions({
-                allowImagePreview: true,
-                allowFileMetadata: true
-               
-            })
+              
 
            
         

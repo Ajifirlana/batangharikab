@@ -141,6 +141,55 @@ $jns_kelamin = json_decode(json_encode(
 
 
 
+            FilePond.registerPlugin(
+                //  FilePondPluginGetFile,
+                FilePondPluginFileEncode,
+                FilePondPluginImagePreview,
+                FilePondPluginFilePoster,
+                FilePondPluginPdfPreview,
+                FilePondPluginFileValidateType,
+                FilePondPluginFileValidateSize)
+
+
+
+                const foto = FilePond.create(document.querySelector('#foto'),{
+                    storeAsFile: true,
+                    fileValidateTypeDetectType: true,
+                    acceptedFileTypes: ['image/*'],
+                    maxFileSize: 2000000, //10 mbs max size
+                    allowFileSizeValidation: true,
+                });
+               
+                foto.setOptions({
+                allowImagePreview: true,
+                allowPdfPreview: true,
+                pdfPreviewHeight: 320,
+                pdfComponentExtraParams: 'toolbar=0&view=fit&page=1'  
+                 })
+
+
+
+
+                // const inputElement_foto = document.querySelector('input[type="foto"]');
+                const file_pdf = FilePond.create(document.querySelector('#file'),{
+                    storeAsFile: true,
+                    fileValidateTypeDetectType: true,
+                    acceptedFileTypes:['application/pdf'],
+                    maxFileSize: 5000000, //10 mbs max size
+                    allowFileSizeValidation: true,
+                });
+               
+                file_pdf.setOptions({
+               
+                allowPdfPreview: true,
+                pdfPreviewHeight: 320,
+                pdfComponentExtraParams: 'toolbar=0&view=fit&page=1'  
+                 })
+
+    
+
+
+
 
 
             
@@ -207,14 +256,17 @@ columns: [{
         data: 'tanggal',
     },
     { 
-        "data": "foto",
-        "render": function(data, type, row) {
-            return '<img src="' + data + '" alt="' + data + '"height="50" width="50"/>';
-        }
+      "data": "gambar",
+             "render": function(data, type, row) {
+            return '<img src="' + '{{ asset("frontend/infografis/foto/") }}' + '/' + data + '" height="50" width="50"/>';
+            }
    },
-    {
-        data: 'file',
-    },
+   { 
+        "data": "file",
+                "render": function(data, type, row) {
+                 return '<a target="_blank" href="/view/' + data + '"><i class="fab far fa-eye"></i></a>';
+             }
+   },
    
    
     {
@@ -275,56 +327,51 @@ columns: [{
                     }
                 });
             });
-     
 
 
-            
+              
             $('#datatable').on('click', '.btn_edit', function(e) {
                 $('#modal_create').modal('show')
                 $('.modal-title').text('Ubah Data')
                 $('.error').hide();
-                pond.removeFile();
+                foto.removeFile();
+                file_pdf.removeFile();
                 let id = $(this).attr("data-id");
                 let url = $(this).attr('data-url');
-                const inputElement = document.querySelector('input[type="file_pdf"]');
-              //  const file_cover = FilePond.create(document.querySelector('#file'));
                 $.get(url, function(response) {
+                    $('#id').val(response.data.id)
                     $('#judul').val(response.data.judul)
-                    
-               FilePond.registerPlugin(
-                //  FilePondPluginGetFile,
-                FilePondPluginFileEncode,
-                FilePondPluginImagePreview,
-                FilePondPluginFilePoster,
-                FilePondPluginPdfPreview,
-                FilePondPluginFileValidateType,
-                FilePondPluginFileValidateSize)
-                  
+                    flatpicker.setDate(response.data.tanggal)
+              
+                    const externalImageUrl = "{{ asset('frontend/infografis/foto/') }}"+"/"+response.data.gambar;
 
-                    const file_pdf = FilePond.create(document.querySelector('#file_pdf'),{
-                  
-                   
-                    files: [
-                            {
-                                source: 'https://pslb3.menlhk.go.id/internal/uploads/pengumuman/1545111808_contoh-pdf.pdf',
-                                options: {
-                                    type: 'limbo'
-                                }
-                            }
-                        ]
-                });
-               
-                file_pdf.setOptions({
-               
-                allowPdfPreview: true,
-                pdfPreviewHeight: 320,
-                pdfComponentExtraParams: 'toolbar=0&view=fit&page=1'  
-                 })
+                    // Add the external image to FilePond
+                    foto.addFile(externalImageUrl).then((file) => {
+                        // File added successfully
+                        console.log('File added:', file);
+                    }).catch((error) => {
+                        // Error adding file
+                        console.error('Error adding file:', error);
+                    });
 
 
-                   
+
+                    const data_file = "{{ asset('frontend/infografis/file/') }}"+"/"+response.data.file;
+                    file_pdf.addFile(data_file).then((file) => {
+                        // File added successfully
+                        console.log('File added:', file);
+                    }).catch((error) => {
+                        // Error adding file
+                        console.error('Error adding file:', error);
+                    });
+
                 })
             });
+
+     
+
+
+           
 
             $('#datatable').on('click', '.btn_hapus', function(e) {
                 let data = $(this).attr('data-hapus');
@@ -343,54 +390,6 @@ columns: [{
                     }
                 })
             });
-
-               FilePond.registerPlugin(
-                //  FilePondPluginGetFile,
-                FilePondPluginFileEncode,
-                FilePondPluginImagePreview,
-                FilePondPluginFilePoster,
-                FilePondPluginPdfPreview,
-                FilePondPluginFileValidateType,
-                FilePondPluginFileValidateSize)
-
-
-
-                const foto = FilePond.create(document.querySelector('#foto'),{
-                    storeAsFile: true,
-                    fileValidateTypeDetectType: true,
-                    acceptedFileTypes: ['image/*'],
-                    maxFileSize: 5000000, //10 mbs max size
-                    allowFileSizeValidation: true,
-                });
-               
-                foto.setOptions({
-                allowImagePreview: true,
-                allowPdfPreview: true,
-                pdfPreviewHeight: 320,
-                pdfComponentExtraParams: 'toolbar=0&view=fit&page=1'  
-                 })
-
-
-         
-
-
-
-               // const inputElement_foto = document.querySelector('input[type="foto"]');
-                const file_pdf = FilePond.create(document.querySelector('#file_pdf'),{
-                    storeAsFile: true,
-                    fileValidateTypeDetectType: true,
-                    acceptedFileTypes: ['image/*'],
-                    maxFileSize: 5000000, //10 mbs max size
-                    allowFileSizeValidation: true,
-                });
-               
-                file_pdf.setOptions({
-               
-                allowPdfPreview: true,
-                pdfPreviewHeight: 320,
-                pdfComponentExtraParams: 'toolbar=0&view=fit&page=1'  
-                 })
-
 
           
 

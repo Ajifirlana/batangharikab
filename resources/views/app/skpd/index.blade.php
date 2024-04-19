@@ -122,6 +122,8 @@ $jns_kelamin = json_decode(json_encode(
     <script src="{{ asset('template/admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
 
 
+
+    
     {{-- password toggle show/hide --}}
     <script src="{{ asset('plugins/toggle-password.js') }}"></script>
 
@@ -135,7 +137,29 @@ $jns_kelamin = json_decode(json_encode(
             foto.src=URL.createObjectURL(event.target.files[0]);
         }
         $(document).ready(function() {
+            FilePond.registerPlugin(
+                //  FilePondPluginGetFile,
+                FilePondPluginFileEncode,
+                FilePondPluginImagePreview,
+                FilePondPluginFilePoster,
+          
+                FilePondPluginFileValidateType,
+                FilePondPluginFileValidateSize)
 
+                const inputElement = document.querySelector('input[type="file"]');
+                 const pond = FilePond.create(inputElement,{
+                    storeAsFile: true,
+                    acceptedFileTypes: ['image/*'],
+                    fileValidateTypeDetectType: true,
+
+                    maxFileSize: 200000, //10 mbs max size
+                    allowFileSizeValidation: true,
+                });
+
+            pond.setOptions({
+                allowImagePreview: true,
+               
+            })
 
 
 
@@ -152,31 +176,7 @@ $jns_kelamin = json_decode(json_encode(
                 locale: "id",
             });
 
-            
-            $('#summernote').summernote({
-                height: 200,
-                imageTitle: {
-                    specificAltField: true,
-                },
-                imageAttributes: {
-                    icon: '<i class="note-icon-pencil"/>',
-                    figureClass: 'figureClass',
-                    figcaptionClass: 'captionClass',
-                    captionText: 'Caption Goes Here.',
-                    manageAspectRatio: true // true = Lock the Image Width/Height, Default to true
-                },
-                popover: {
-                    image: [
-                        ['imagesize', ['imageSize100', 'imageSize50', 'imageSize25']],
-                        ['float', ['floatLeft', 'floatRight', 'floatNone']],
-                        ['remove', ['removeMedia']],
-                        ['custom', ['imageAttributes']],
-                    ],
-                },
-            })
-
         
-
 
             let datatable = $("#datatable").DataTable({
                 serverSide: true,
@@ -201,7 +201,7 @@ $jns_kelamin = json_decode(json_encode(
                     { 
                         "data": "foto",
                         "render": function(data, type, row) {
-                            return '<img src="' + data + '" alt="' + data + '"height="50" width="50"/>';
+                            return '<img src="' + '{{ asset("frontend/website-skpd/") }}' + '/' + data + '" height="50" width="50"/>';
                         }
                    },
                     {
@@ -289,6 +289,19 @@ $jns_kelamin = json_decode(json_encode(
                     $('#opd').val(response.data.opd)
                     $('#judul').val(response.data.judul)
 
+                    const externalImageUrl_cover = "{{ asset('frontend/website-skpd/') }}"+"/"+response.data.foto;
+
+
+                    pond.addFile(externalImageUrl_cover).then((file) => {
+                    // File added successfully
+                        console.log('File added:', file);
+                    }).catch((error) => {
+                        // Error adding file
+                        console.error('Error adding file:', error);
+                    });
+
+
+
                    
                 })
             });
@@ -311,30 +324,7 @@ $jns_kelamin = json_decode(json_encode(
                 })
             });
 
-               FilePond.registerPlugin(
-                //  FilePondPluginGetFile,
-                FilePondPluginFileEncode,
-                FilePondPluginImagePreview,
-                FilePondPluginFilePoster,
           
-                FilePondPluginFileValidateType,
-                FilePondPluginFileValidateSize)
-
-                const inputElement = document.querySelector('input[type="file"]');
-                 const pond = FilePond.create(inputElement,{
-                    storeAsFile: true,
-                    acceptedFileTypes: ['image/*'],
-                    fileValidateTypeDetectType: true,
-
-                    maxFileSize: 5000000, //10 mbs max size
-                    allowFileSizeValidation: true,
-                });
-
-            pond.setOptions({
-                allowImagePreview: true,
-               
-            })
-
 
         })
     </script>
