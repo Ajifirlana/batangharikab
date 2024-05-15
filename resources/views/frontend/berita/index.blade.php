@@ -38,7 +38,7 @@
                                 <img class="cropped1"    src="{{asset('frontend/gambar-berita/'.$row->gambar)}}"alt="">
                                 </div>
                                 <div class="news-one__date">
-                                    <p>20 Aug</p>
+                                    <p>{{$row->tanggal}}</p>
                                 </div>
                                 <ul class="news-one__meta list-unstyled">
                                     <li>
@@ -61,6 +61,7 @@
                  
                     <!--News One Single End-->
                 </div>
+                
             </div>
         </section>
        

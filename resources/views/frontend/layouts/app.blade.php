@@ -1,3 +1,17 @@
+<style>
+.main-menu__list a.active {
+    color: red; /* Change this to whatever styling you need */
+    font-weight: bold;
+}
+
+.main-menu__list .dropdown.active > a {
+    color: red; /* Styling for the parent dropdown */
+    font-weight: bold;
+}
+
+     
+</style>
+
 <?php 
 use Carbon\Carbon;
 
@@ -120,27 +134,26 @@ $currentMonth = Carbon::now();
                             <div class="main-menu-two__main-menu-box">
                                 <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                 <ul class="main-menu__list">
-                                <li class="dropdown">
-                                            <a href="{{url('/')}}">Tentang Batanghari</a>
+                                <li class="dropdown {{ request()->is('/') ? 'dropdown current' : '' }}">
+                                    <a href="{{ url('/') }}">Tentang Batanghari</a>
+                                    <ul>
+                                        <li class="dropdown {{ request()->is('page/profil-batanghari*') ? 'dropdown current' : '' }}">
+                                            <a href="{{ url('page/profil-batanghari') }}">Profil Batanghari</a>
                                             <ul>
-                                            <li class="dropdown">
-                                                <a href="{{url('page/profil-batanghari')}}">Profil Batanghari</a>
-                                            <ul>
-                                            <li><a href="{{url('page/sejarah')}}">Sejarah Batanghari</a></li>
-                                            <li><a href="{{url('page/arti-lambang')}}">Arti Lambang</a></li>
-                                            <li><a href="{{url('page/kondisi-demografi')}}">Kondisi Demografi</a></li>
-                                            <li><a href="{{url('page/peta-batanghari')}}">Peta Batanghari</a></li>
-                                            <li><a href="{{url('page/visi-dan-misi')}}">Visi & Misi</a></li>
-                                             
-                                            </ul>
-                                            </li>
-                                                <li><a href="{{url('page/pemerintah-batanghari')}}">Pemerintahan Batanghari</a></li>
-                                                <li><a href="{{url('page/akuntabiltas-pemerintahan')}}">Akuntabiltas Pemerintahan</a></li>
-                                                <li><a href="{{url('page/akuntabiltas-pelaporan')}}">Akuntabiltas Pelaporan</a></li>
-                                                <li><a href="{{url('akuntabilitas-batanghari')}}">Transparansi Anggaran</a></li>
-                                                
+                                                <li><a href="{{ url('page/sejarah') }}" class="{{ request()->is('page/sejarah') ? 'dropdown current' : '' }}">Sejarah Batanghari</a></li>
+                                                <li><a href="{{ url('page/arti-lambang') }}" class="{{ request()->is('page/arti-lambang') ? 'dropdown current' : '' }}">Arti Lambang</a></li>
+                                                <li><a href="{{ url('page/kondisi-demografi') }}" class="{{ request()->is('page/kondisi-demografi') ? 'dropdown current' : '' }}">Kondisi Demografi</a></li>
+                                                <li><a href="{{ url('page/peta-batanghari') }}" class="{{ request()->is('page/peta-batanghari') ? 'dropdown current' : '' }}">Peta Batanghari</a></li>
+                                                <li><a href="{{ url('page/visi-dan-misi') }}" class="{{ request()->is('page/visi-dan-misi') ? 'dropdown current' : '' }}">Visi & Misi</a></li>
                                             </ul>
                                         </li>
+                                        <li><a href="{{ url('page/pemerintah-batanghari') }}" class="{{ request()->is('page/pemerintah-batanghari') ? 'dropdown current' : '' }}">Pemerintahan Batanghari</a></li>
+                                        <li><a href="{{ url('page/akuntabiltas-pemerintahan') }}" class="{{ request()->is('page/akuntabiltas-pemerintahan') ? 'dropdown current' : '' }}">Akuntabiltas Pemerintahan</a></li>
+                                        <li><a href="{{ url('page/akuntabiltas-pelaporan') }}" class="{{ request()->is('page/akuntabiltas-pelaporan') ? 'dropdown current' : '' }}">Akuntabiltas Pelaporan</a></li>
+                                        <li><a href="{{ url('akuntabilitas-batanghari') }}" class="{{ request()->is('akuntabilitas-batanghari') ? 'dropdown current' : '' }}">Transparansi Anggaran</a></li>
+                                    </ul>
+                                </li>
+
                                     
                                         
                                         <li class="dropdown">
@@ -156,15 +169,21 @@ $currentMonth = Carbon::now();
                                                 
                                             </ul>
                                         </li>
-                                        <li class="dropdown">
+                                        <li class="dropdown {{ request()->is('berita*') || request()->is('galeri-foto*') || request()->is('galeri-video*') ? 'active' : '' }}">
                                             <a href="#">Informasi Publik</a>
                                             <ul>
-                                            <li><a href="{{url('berita')}}">Berita</a></li>
-                                                <li><a href="{{url('galeri-foto')}}">Galeri Foto</a></li>
-                                                <li><a href="{{url('galeri-video')}}">Galeri Video</a></li>
-                                                    
+                                                <li>
+                                                    <a href="{{ url('berita') }}" class="{{ request()->is(['berita*','read*']) ? 'dropdown current' : '' }}">Berita</a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('galeri-foto') }}" class="{{ request()->is('galeri-foto*') ? 'dropdown current' : '' }}">Galeri Foto</a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('galeri-video') }}" class="{{ request()->is('galeri-video*') ? 'dropdown current' : '' }}">Galeri Video</a>
+                                                </li>
                                             </ul>
                                         </li>
+
                                         
                                         <li><a href="https://ppid.batangharikab.go.id">PPID</a></li>
                                       
@@ -409,7 +428,15 @@ $currentMonth = Carbon::now();
 
     <!-- template js -->
     <script src="{{ asset('frontend/assets/js/austry.js')}}"></script>
+
+
+    
 </body>
+
+<script>
+
+
+</script>    
 
 
 </html>

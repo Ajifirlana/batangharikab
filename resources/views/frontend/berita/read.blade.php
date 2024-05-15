@@ -23,6 +23,8 @@
 }
 </style>
         <!--News Details Start-->
+
+        
         <section class="news-details">
             <div class="container">
                 <div class="row">
@@ -43,6 +45,20 @@
                                 <p class="news-details__text-1">
                                 <?php echo $berita->isi;?>
                                 </p>
+
+                                <div class="news-details__bottom">
+                                    <p class="news-details__tags">
+                                        <span>Berbagi Berita</span>
+                                        
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-facebook"></i></a>
+                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                       
+                                    </p>
+                                    
+                                </div>
+
                 
                             </div>
                         </div>
@@ -82,4 +98,4 @@
         <!--News Details End-->
 
                   
-            @endsection
+  @endsection
