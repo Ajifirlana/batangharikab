@@ -15,6 +15,8 @@ use App\Http\Controllers\admin\InfografisController;
 use App\Http\Controllers\admin\BeritaBackandController;
 use App\Http\Controllers\admin\TransparasiAnggaranController;
 
+
+
 use App\Http\Controllers\FirebaseController;
 use App\Http\Controllers\admin\NewsController;
 use App\Http\Controllers\UserController;
@@ -27,6 +29,7 @@ use App\Http\Controllers\Frontend\AkuntabilitasBatanghariController;
 use App\Http\Controllers\Frontend\BeritaController;
 use App\Http\Controllers\Frontend\GaleriController;
 use App\Http\Controllers\Frontend\PageController;
+use App\Http\Controllers\admin\PageAdminController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Models\Permission;
@@ -151,6 +154,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
       'news' => NewsController::class, 
       'permission' => PermissionController::class, 
       'anggaran' => TransparasiAnggaranController::class, 
+      'front' => PageAdminController::class, 
       
       'youtube' => YoutubeController::class, 
       'infografis' => InfografisController::class,  
@@ -159,7 +163,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
       'slider' => SliderController::class,
       'menu' => MenuController::class,
    ]);
-   
+
+
 
    // Route::controller(PegawaiController::class)->group(function () {
    //    Route::get('pegawai', 'index')->middleware(['permission:read pegawai'])->name('pegawai.index');

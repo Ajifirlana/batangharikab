@@ -33,12 +33,12 @@
                             <div class="news-details__img">
                                 <img class="cropped2" src="{{asset('frontend/gambar-berita/'.$berita->gambar)}}" alt="">
                                 <div class="news-details__date">
-                                    <p>{{$berita->created_at}}</p>
+                                    <p>{{$berita->tanggal}}</p>
                                 </div>
                             </div>
                             <div class="news-details__content">
                                 <ul class="list-unstyled news-details__meta">
-                                    <li><a href="news-details.html"><i class="fas fa-user-circle"></i> by Admin</a>
+                                    <li><a href="news-details.html"><i class="fas fa-user-circle"></i> by Admin </a>
                                     </li>
                                 </ul>
                                 <h3 class="news-details__title">{{$berita->judul}}</h3>
@@ -50,10 +50,12 @@
                                     <p class="news-details__tags">
                                         <span>Berbagi Berita</span>
                                         
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fab fa-facebook"></i></a>
-                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                       
+
+                                       
+                                        <button id="facebook-share"><i class="fab fa-facebook"></i> Facebook</button>
+                                       
+                                        
                                        
                                     </p>
                                     
@@ -80,7 +82,7 @@
                                         <div class="sidebar__post-content">
                                             <h3>
                                                 <span class="sidebar__post-content-meta"><i
-                                                        class="fas fa-user-circle"></i>by Admin</span>
+                                                        class="fas fa-user-circle"></i>by Admin <bold>| </bold>{{$berita->tanggal}}</span>
                                                 <a href="{{route('read', ['id' =>$berita->id])}}">{{$berita->judul}}</a>
                                             </h3>
                                         </div>
@@ -99,3 +101,28 @@
 
                   
   @endsection
+
+  <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // The URL you want to share
+            var shareUrl = window.location.href;
+            var shareTitle = "Berita Kabupaten Batanghari"; // Title of the news
+
+            // Function to open a new window for sharing
+            function openShareWindow(shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            }
+
+            // Event listener for the share button
+
+            document.getElementById('facebook-share').addEventListener('click', function() {
+                var facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(shareTitle)}`;
+                    openShareWindow(facebookUrl);
+                });
+        
+        });
+
+
+
+  </script>

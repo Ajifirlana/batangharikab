@@ -1,5 +1,36 @@
 @extends('frontend.layouts.app')
 @section('content')
+<style>
+   .cropped1 {
+    width: 210px; /* width of container */
+    height: 203px; /* height of container */
+    object-fit: cover;
+    border: 0px solid black;
+}
+.cropped2 {
+    width: 210px; /* width of container */
+    height: 203px; /* height of container */
+    object-fit: cover;
+    object-position: 20% 10%; /* try 20px 10px */ 
+    border: 0px solid black;
+}  
+.galeri {
+    width: 270px; /* width of container */
+    height: 370px; /* height of container */
+    object-fit: cover;
+    border: 0px solid black;
+}
+
+.vidio {
+    width: 370px; /* width of container */
+    height: 450px; /* height of container */
+    object-fit: cover;
+    border: 0px solid black;
+}
+    
+     
+     
+</style>
 
         <!--Team One Start-->
         <section class="project-two">
@@ -8,7 +39,7 @@
             </div>
             <div class="container">
                 <div class="section-title text-center">
-                <a href="{{url('galeri-video')}}"><span class="section-title__tagline">Indeks Video </span></a>
+                <a  href="{{url('galeri-video')}}"><span class="section-title__tagline">Indeks Video </span></a>
                     <h2 class="section-title__title">Video Batanghari</h2>
                 </div>
                 <div class="project-two__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{
@@ -41,7 +72,7 @@
                     <div class="item">
                         <div class="project-two__single">
                             <div class="project-two__img">
-                                <img src="{{asset('frontend/video/'.$row->foto)}}" alt="">
+                                <img class="vidio" src="{{asset('frontend/video/'.$row->foto)}}" alt="">
                                 <div class="project-two__arrow">
                                 <a href="{{ $row->link }}" target="_blank"><br><span class="fa fa-solid fa-play"></span></a>
                                 </div>

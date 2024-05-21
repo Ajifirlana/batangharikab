@@ -112,7 +112,7 @@
                                         <a href="{{route('read', ['id' => $latestRecord->id])}}"><i class="fas fa-user-circle"></i>by Admin</a>
                                         </li>
                                         <li>
-                                        <a href="{{route('read', ['id' => $latestRecord->id])}}"><i class="fas fa-comments"></i>{{$latestRecord->tanggal}}</a>
+                                        <a href="{{route('read', ['id' => $latestRecord->id])}}"><i class="fas fa-calendar-week"></i></i>{{$latestRecord->tanggal}}</a>
                                         </li>
                                     </ul>
                                     <h3 class="news-two__left-title"><a href="{{route('read', ['id' => $latestRecord->id])}}">{{ substr($latestRecord->judul,0,50) }} ...!</a></h3>
@@ -139,7 +139,7 @@
                                                         Admin</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{route('read', ['id' => $row->id])}}"><i class="fas fa-comments"></i>{{$row->tanggal}}</a>
+                                                    <a href="{{route('read', ['id' => $row->id])}}"><i class="fas fa-calendar-week"></i>{{$row->tanggal}}</a>
                                                 </li>
                                             </ul>
                                             <h3 class="news-two__title">  <a href="{{route('read', ['id' => $row->id])}}">{{ substr($row->judul,0,50) }} ...</a></h3>

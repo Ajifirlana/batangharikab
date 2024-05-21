@@ -27,6 +27,11 @@ $json = json_decode(json_encode($years));
 
 
 <style>
+     .post-info {
+            font-size: 14px;
+            color: #555;
+            margin-top: 20px;
+        }
    .cropped1 {
     width: 70px; /* width of container */
     height: 73px; /* height of container */
@@ -46,6 +51,28 @@ $json = json_decode(json_encode($years));
     object-fit: cover;
     border: 0px solid black;
 }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
 </style>
         <!--News Details Start-->
         <section class="news-details">
@@ -53,13 +80,15 @@ $json = json_decode(json_encode($years));
                 <div class="row">
                     <div class="col-xl-8 col-lg-7">
                         <div class="news-details__left">
-                        <span class="section-title__tagline"> Diposting Oleh DISKOMINFO Kab. Batang Hari | 29 Maret 2023</span></a>
-                        <h3 class="news-details__title">ABPD KABUPATEN BATANG HARI</h3>
+                            <div class="sidebar__single sidebar__post">
+                      
+                       
+                                 <h3 class="news-details__title">APBD Kabupaten Batang Hari</h3>
+                       
                         
     
-                        
-                         <br>
-                                <x-select2 id="tahun" label="FILTER TAHUN" required="false"
+                
+                                <x-select2 id="tahun" label="Filter Tahun" required="false"
                                 placeholder="Tahun">
                                 <option value="all">All</option>
                                     @foreach ($json as $item)
@@ -69,13 +98,16 @@ $json = json_decode(json_encode($years));
 
                                
                                     <x-datatable id="data-table" class="table table-bordered data-table" style="width:100%" :th="[
-                                        'No',
-                                        'Mobil',
-                                       
+                                        '#',
+                                        'Nama',
                                         '#aksi',
                                     ]"></x-datatable>
-
+                            </div>
                         </div>
+
+                                <div class="post-info">
+                                    Diposting Oleh <strong>DISKOMINFO Kab. Batang Hari</strong>  <strong>|</strong> 14 Februari 2014
+                                </div>
                     </div>
                     <div class="col-xl-4 col-lg-5">
                         <div class="sidebar">
@@ -136,7 +168,13 @@ function load_data(tahun=''){
         },
        
         columns: [
-            {data: 'id', name: 'id',className: 'dt-center'},
+            {
+                        data: "DT_RowIndex",
+                        orderable: false,
+                        searchable: false,
+                        width: '1%'
+                    },
+          
             {data: 'judul', name: 'judul'},
             {data: "link_download",className: 'dt-center',
                     "render": function(data, type, row) {

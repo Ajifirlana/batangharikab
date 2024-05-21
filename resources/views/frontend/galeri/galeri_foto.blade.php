@@ -17,7 +17,39 @@
     height: 370px; /* height of container */
     object-fit: cover;
     border: 0px solid black;
+    
 }
+
+/* Add custom styles for pagination links */
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.pagination .page-item {
+    margin: 0 5px;
+}
+
+.pagination .page-item .page-link {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    color: #007bff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
 </style>
 @extends('frontend.layouts.app')
 @section('content')
@@ -50,25 +82,28 @@
                     </div>
                 </div>
                 <div class="row">
-                    @foreach($galeri_foto as $row)     
-                    <!--Services Two Single Start-->
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="services-two__single">
-                            <div class="services-two__img-box">
-                                
-                                <div class="services-two__img">
-                                    <img class="galeri"  src="{{asset('frontend/galeri/'.$row->foto)}}" alt="">
-                                </div>
-                               
-                            </div>
-                            <div class="services-two__content">
-                            <h3 class="project-two__sub-title"><a href="#">{{$row->judul}}</a></h3>
-                             
-                              
-                            </div>
-                        </div>
+                <div class="container">
+    <div class="row">
+        @foreach($galeri_foto as $row)
+        <!--Services Two Single Start-->
+        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+            <div class="services-two__single">
+                <div class="services-two__img-box">
+                    <div class="services-two__img">
+                        <img class="galeri" src="{{ asset('frontend/galeri/'.$row->foto) }}" alt="">
                     </div>
-                    @endforeach
+                </div>
+                <div class="services-two__content">
+                    <h3 class="project-two__sub-title"><a href="#">{{ $row->judul }}</a></h3>
+                </div>
+            </div>
+        </div>
+        @endforeach
+
+        <div class="col-12">
+        {{ $galeri_foto->links() }}
+    </div>
+    </div>
                 </div>
             </div>
         </section>
