@@ -46,6 +46,7 @@ Route::controller(PageController::class)->group(function() {
     Route::get('/page/{slug}', 'page')->name('page');
     Route::get('/downloadFile/{file}', 'downloadFile')->name('downloadFile');
     Route::get('/show/{file}', 'show')->name('show');
+    Route::get('/tampil/{slug}', 'tampil')->name('tampil');
     Route::get('infografis', 'index')->name('index');
 });
 //Galeri

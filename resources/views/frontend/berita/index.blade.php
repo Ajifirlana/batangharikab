@@ -24,6 +24,7 @@
         <section class="news-one">
             <div class="container">
             {{ Breadcrumbs::render('berita.index') }}
+            </ul>
                 <div class="section-title text-center">
                     <h2 class="section-title__title">Berita</h2>
                 </div>
