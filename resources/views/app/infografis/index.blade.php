@@ -53,6 +53,7 @@ $jns_kelamin = json_decode(json_encode(
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
+                
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1 class="m-0">{{$title}}</h1>
@@ -198,11 +199,18 @@ $jns_kelamin = json_decode(json_encode(
                 theme: 'bootstrap4',
             })
 
+          
+
+        
+
             const flatpicker = flatpickr("#tanggal", {
                 allowInput: true,
-                dateFormat: "d M Y",
+                dateFormat: "d-m-Y",
                 locale: "id",
             });
+
+
+            
             
             $('#summernote').summernote({
                 height: 200,
@@ -339,7 +347,7 @@ columns: [{
                 let id = $(this).attr("data-id");
                 let url = $(this).attr('data-url');
                 $.get(url, function(response) {
-                    $('#id').val(response.data.id)
+                    $('#id_info').val(response.data.id)
                     $('#judul').val(response.data.judul)
                     flatpicker.setDate(response.data.tanggal)
               

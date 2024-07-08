@@ -1,6 +1,15 @@
 @extends('frontend.layouts.app')
 @section('content')
 
+<style>
+    .infografis {
+    width: 270px; /* width of container */
+    height: 370px; /* height of container */
+    object-fit: cover;
+    border: 0px solid black;
+}
+</style>
+
         <!--Team One Start-->
         <section class="team-two">
             <div class="team-two__shape-2" style="background-image: url(frontend/assets/images/shapes/team-two-shape-2.png);">
@@ -16,7 +25,7 @@
                         <div class="team-two__single">
                             <div class="team-two__img-box">
                                 <div class="team-two__img">
-                                <img src="{{asset('frontend/infografis/foto/'.$row->gambar)}}"alt="">
+                                <img class="infografis" src="{{asset('frontend/infografis/foto/'.$row->gambar)}}"alt="">
                                 </div>
                                 <ul class="list-unstyled team-two__social">
                                     <li><a href="{{ route('downloadFile',$row->file) }}"><i class="fas fa-download"></i></a></li>

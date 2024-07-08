@@ -23,6 +23,7 @@
         <!--News One Start-->
         <section class="news-one">
             <div class="container">
+            Home >> Infomsi Publik >> Berita
                 <div class="section-title text-center">
                     <h2 class="section-title__title">Berita</h2>
                 </div>
@@ -42,7 +43,7 @@
                                 </div>
                                 <ul class="news-one__meta list-unstyled">
                                     <li>
-                                        <a href="news-details.html"><i class="fas fa-user-circle"></i>by Admin</a>
+                                        <a href="news-details.html"><i class="fas fa-user-circle"></i>by Admin <bold>| </bold>{{$row->tanggal}}</a>
                                     </li>
                                     
                                 </ul>

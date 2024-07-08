@@ -18,7 +18,7 @@
                     <x-filepond  name="foto" id="foto" label="Cover"  required="true" info="Format file (jpg dan png, Max 5 MB)" max="4mb"  /> 
                     <x-filepond  name="file" id="file" label="File"  required="true" info="Format file (jpg dan png, Max 5 MB)" max="4mb"  /> 
 
-                    <input hidden  id="id" name="id" value="" />
+                    <input hidden  id="id_info" name="id_info" value="" />
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn_submit btn btn-primary">Simpan</button>

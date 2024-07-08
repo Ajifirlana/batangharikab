@@ -57,7 +57,7 @@
                                         <div class="sidebar__post-content">
                                             <h3>
                                                 <span class="sidebar__post-content-meta"><i
-                                                        class="fas fa-user-circle"></i>by Admin</span>
+                                                        class="fas fa-user-circle"></i>by Admin <bold>| </bold>{{$berita->tanggal}} </span>
                                                 <a href="{{route('read', ['id' =>$berita->id])}}">{{$berita->judul}}</a>
                                             </h3>
                                         </div>

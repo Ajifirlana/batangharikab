@@ -181,6 +181,9 @@ $currentMonth = Carbon::now();
                                                 <li>
                                                     <a href="{{ url('galeri-video') }}" class="{{ request()->is('galeri-video*') ? 'dropdown current' : '' }}">Galeri Video</a>
                                                 </li>
+                                                <li>
+                                                    <a href="{{ url('infografis') }}" class="{{ request()->is('infografis*') ? 'dropdown current' : '' }}">Infografis</a>
+                                                </li>
                                             </ul>
                                         </li>
 

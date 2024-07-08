@@ -27,6 +27,22 @@
     object-fit: cover;
     border: 0px solid black;
 }
+
+.infografis {
+    width: 270px; /* width of container */
+    height: 370px; /* height of container */
+    object-fit: cover;
+    border: 0px solid black;
+}
+
+.skpd {
+    width: 100px; /* width of container */
+    height: 100px; /* height of container */
+    object-fit: cover;
+    border: 0px solid black;
+}
+   
+   
     
      
      
@@ -171,7 +187,7 @@
                         <div class="team-two__single">
                             <div class="team-two__img-box">
                                 <div class="team-two__img">
-                                <img src="{{asset('frontend/infografis/foto/'.$row->gambar)}}"alt="">
+                                <img class="infografis" src="{{asset('frontend/infografis/foto/'.$row->gambar)}}"alt="">
                                 </div>
                                 <ul class="list-unstyled team-two__social">
                                     <li><a href="{{ route('downloadFile',$row->file) }}"><i class="fas fa-download"></i></a></li>
@@ -258,7 +274,7 @@
                                         <div class="testimonial-one__single-inner">
                                             <div class="testimonial-one__client-info">
                                                 <div class="testimonial-one__client-img">
-                                                <a href="{{$row->link}}"><img src="{{asset('frontend/website-skpd/'.$row->foto)}}" alt="">
+                                                <a href="{{$row->link}}"><img class="skpd"  src="{{asset('frontend/website-skpd/'.$row->foto)}}" alt="">
                                                    </a>
                                                    
                                                 </div>

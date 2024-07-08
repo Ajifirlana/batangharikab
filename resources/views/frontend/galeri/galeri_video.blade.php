@@ -39,7 +39,7 @@
             </div>
             <div class="container">
                 <div class="section-title text-center">
-                <a  href="{{url('galeri-video')}}"><span class="section-title__tagline">Indeks Video </span></a>
+               
                     <h2 class="section-title__title">Video Batanghari</h2>
                 </div>
                 <div class="project-two__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{

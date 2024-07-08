@@ -98,9 +98,9 @@ $json = json_decode(json_encode($years));
 
                                
                                     <x-datatable id="data-table" class="table table-bordered data-table" style="width:100%" :th="[
-                                        '#',
+                                        'No',
                                         'Nama',
-                                        '#aksi',
+                                        'aksi',
                                     ]"></x-datatable>
                             </div>
                         </div>
@@ -126,7 +126,7 @@ $json = json_decode(json_encode($years));
                                         <div class="sidebar__post-content">
                                             <h3>
                                                 <span class="sidebar__post-content-meta"><i
-                                                        class="fas fa-user-circle"></i>by Admin</span>
+                                                        class="fas fa-user-circle"></i>by Admin <bold>| </bold>{{$berita->tanggal}}</span>
                                                 <a href="{{route('read', ['id' =>$berita->id])}}">{{$berita->judul}}</a>
                                             </h3>
                                         </div>
@@ -159,9 +159,17 @@ load_data(currentYear);
 function load_data(tahun=''){
 
     $('.data-table').DataTable({
-        processing: true,
         serverSide: true,
-        searching: true,
+                processing: true,
+                searching: true,
+                lengthChange: true,
+                responsive: true,
+                paging: true,
+                info: true,
+                ordering: true,
+                order: [
+                    [2, 'desc']
+                ],
         ajax: {
             url:'{{ route("akuntabilitas.index") }}',
             data:{tahun:tahun}

@@ -15,23 +15,20 @@ class Infografis extends Model
      protected $casts = [
         'created_at'     => 'date:d-m-Y H:m:s',
         'updated_at'     => 'date:d-m-Y H:m:s',
-        'tanggal' => 'date:d M Y',
+        'tanggal' => 'date:d-m-Y',
+       
        
         
     ];
 
-    public function setTanggalAttribute($value)
-    {
-       $this->attributes['tanggal'] =  Carbon::parse($value)->translatedFormat('Y-m-d');
-    }
- 
+    public function setTanggalLahirAttribute($value)
+   {
+      $this->attributes['tanggal_lahir'] =  Carbon::parse($value)->translatedFormat('Y-m-d');
+   }
  
    
  
   
  
-    public function getTanggalAttribute($value)
-     {
-         return Carbon::parse( $this->attributes['tanggal'])->format('d M Y');
-     }
+   
 }

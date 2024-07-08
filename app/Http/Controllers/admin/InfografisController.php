@@ -6,7 +6,7 @@ use App\Utils\ApiResponse;
 use App\Models\Infografis;
 use Illuminate\Http\Request;
 use Spatie\ResponseCache\Facades\ResponseCache;
-
+use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 
 
@@ -28,7 +28,7 @@ class InfografisController extends Controller
        // abort_if(Gate::denies('kelola mobil'), 403);
        $x['title']    = 'Data Infografis';
        $data = Infografis::all();
- 
+     //return $data;
        if (request()->ajax()) {
           return  datatables()->of($data)
              ->addIndexColumn()
@@ -49,12 +49,22 @@ class InfografisController extends Controller
 
             $fileName = time().'.'.$request->file->extension();  
 
+            $tanggal_new = $request->input('tanggal');
+
+         
+
+           // Parse the date using Carbon
+           $parsedDate = Carbon::parse($tanggal_new);
+   
+           // Format the date as needed
+           $formattedDate = $parsedDate->format('Y-m-d'); //
+
 
                         Infografis::updateOrCreate(
-                           ['id'           => $request->id],
-                           [
+                           ['id'           => $request->id_info],
+                           [ 
                               'judul'      => $request->judul,
-                              'tanggal'    =>  $request->tanggal,
+                              'tanggal'    => $formattedDate,
                               'gambar'       => $imageName,
                               'file'       => $fileName,
             
@@ -64,7 +74,7 @@ class InfografisController extends Controller
                   $request->foto->move(public_path('frontend/infografis/foto'), $imageName);
                   $request->file->move(public_path('frontend/infografis/file'), $fileName);
          
-                  if ($request->id) 
+                  if ($request->id_info) 
                   return $this->success('Berhasil Mengubah Data');
                   else 
                   return $this->success('Berhasil Menginput Data');
