@@ -125,13 +125,13 @@
                                 <div class="news-two__left-img-content">
                                     <ul class="news-two__left-meta list-unstyled">
                                         <li>
-                                        <a href="{{route('read', ['id' => $latestRecord->id])}}"><i class="fas fa-user-circle"></i>by Admin</a>
+                                        <a href="{{route('read', ['id' =>$latestRecord->id,'title'=>$latestRecord->judul])}}"><i class="fas fa-user-circle"></i>by Admin</a>
                                         </li>
                                         <li>
-                                        <a href="{{route('read', ['id' => $latestRecord->id])}}"><i class="fas fa-calendar-week"></i></i>{{$latestRecord->tanggal}}</a>
+                                        <a href="{{route('read', ['id' =>$latestRecord->id,'title'=>$latestRecord->judul])}}"><i class="fas fa-calendar-week"></i></i>{{$latestRecord->tanggal}}</a>
                                         </li>
                                     </ul>
-                                    <h3 class="news-two__left-title"><a href="{{route('read', ['id' => $latestRecord->id])}}">{{ substr($latestRecord->judul,0,50) }} ...!</a></h3>
+                                    <h3 class="news-two__left-title"><a href="{{route('read', ['id' =>$latestRecord->id,'title'=>$latestRecord->judul])}}">{{ substr($latestRecord->judul,0,50) }} ...!</a></h3>
                                 </div>
                             </div>
                            
@@ -151,14 +151,14 @@
                                         <div class="news-two__content">
                                             <ul class="news-two__meta list-unstyled">
                                                 <li>
-                                                    <a href="{{route('read', ['id' => $row->id])}}"><i class="fas fa-user-circle"></i>by
+                                                    <a href="{{route('read', ['id' =>$row->id,'title'=>$row->judul])}}"><i class="fas fa-user-circle"></i>by
                                                         Admin</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{route('read', ['id' => $row->id])}}"><i class="fas fa-calendar-week"></i>{{$row->tanggal}}</a>
+                                                    <a href="{{route('read', ['id' =>$row->id,'title'=>$row->judul])}}"><i class="fas fa-calendar-week"></i>{{$row->tanggal}}</a>
                                                 </li>
                                             </ul>
-                                            <h3 class="news-two__title">  <a href="{{route('read', ['id' => $row->id])}}">{{ substr($row->judul,0,50) }} ...</a></h3>
+                                            <h3 class="news-two__title">  <a href="{{route('read', ['id' =>$row->id,'title'=>$row->judul])}}">{{ substr($row->judul,0,50) }} ...</a></h3>
                                         </div>
                                     </div>
                                 </li>

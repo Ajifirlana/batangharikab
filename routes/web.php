@@ -59,7 +59,7 @@ Route::controller(GaleriController::class)->group(function() {
 //BERITA
 Route::controller(BeritaController::class)->group(function() {
     Route::get('baca/{id}/{title}/{tanggal}', 'baca')->name('baca');
-    Route::get('read/{id}', 'read')->name('read');
+    Route::get('read/{id}/{title}', 'read')->name('read');
     Route::get('berita', 'index')->name('index');
 });
 Route::get('/login', function () {
@@ -95,7 +95,7 @@ Auth::routes([
 
 
 Route::get('uploud', [PegawaiController::class, 'uploud'])->name('uploud');
-Route::middleware(['auth'])->get('/home', [DashboardController::class, 'index'])->name('home');
+//Route::middleware(['auth'])->get('/home', [DashboardController::class, 'index'])->name('home');
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
    Route::get('/', [DashboardController::class, 'index'])->name('admin');

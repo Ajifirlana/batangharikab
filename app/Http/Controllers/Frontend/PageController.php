@@ -12,7 +12,7 @@ use App\Models\StatistikPengunjung;
 
 class PageController extends Controller
 {
-    function home(){
+function home(){
       
 $today = Carbon::now()->format('d');
 $bulan_ini = Carbon::now()->format('m');
@@ -66,7 +66,7 @@ $statistik_pengunjung->update([
         'galeri'=>$galeri,
         'video'=>$video,
       ));
-     }
+}
      public function page($slug){
       
      
@@ -74,6 +74,7 @@ $statistik_pengunjung->update([
      // $berita_terbaru =  DB::table('beritas')->orderBy('id','desc')->offset(0)->limit(5)->get();
       $berita_terbaru =  Berita::orderBy('created_at','desc')->offset(0)->limit(5)->get();
       return view('frontend.home.page', array(
+        'slug' =>$slug,
         'judul'=>$page->judul,
         'isi'=>$page->isi,
       'created_at'=>$page->created_at,
@@ -103,6 +104,13 @@ $statistik_pengunjung->update([
       //$berita =  Berita::orderBy('created_at','desc')->paginate(8);
       $infografis =  DB::table('infografis')->orderBy('id','desc')->get();
       return view('frontend.infografis.index',array("infografis"=>$infografis));
+    }
+
+    private function getPageContent($slug)
+    {
+        // Fetch page content from the database or other sources
+        // This is just a placeholder function
+        return "Content for page {$slug}";
     }
 
 

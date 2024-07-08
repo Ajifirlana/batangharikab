@@ -23,7 +23,7 @@
         <!--News One Start-->
         <section class="news-one">
             <div class="container">
-            Home >> Infomsi Publik >> Berita
+            {{ Breadcrumbs::render('berita.index') }}
                 <div class="section-title text-center">
                     <h2 class="section-title__title">Berita</h2>
                 </div>
@@ -49,7 +49,7 @@
                                 </ul>
                             </div>
                             <div class="news-one__content">
-                            <h3 class="news-two__title"><a href="{{route('read', ['id' =>$row->id])}}">{{ substr($row->judul,0,50) }} ...</a></h3>
+                            <h3 class="news-two__title"><a href="{{route('read', ['id' =>$row->id,'title'=>$row->judul])}}">{{ substr($row->judul,0,50) }} ...</a></h3>
                                
                             </div>
                         </div>

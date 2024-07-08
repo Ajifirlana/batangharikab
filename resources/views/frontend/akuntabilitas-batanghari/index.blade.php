@@ -77,6 +77,7 @@ $json = json_decode(json_encode($years));
         <!--News Details Start-->
         <section class="news-details">
             <div class="container">
+            {{ Breadcrumbs::render('akuntabilitas-batanghari') }}
                 <div class="row">
                     <div class="col-xl-8 col-lg-7">
                         <div class="news-details__left">
@@ -127,7 +128,7 @@ $json = json_decode(json_encode($years));
                                             <h3>
                                                 <span class="sidebar__post-content-meta"><i
                                                         class="fas fa-user-circle"></i>by Admin <bold>| </bold>{{$berita->tanggal}}</span>
-                                                <a href="{{route('read', ['id' =>$berita->id])}}">{{$berita->judul}}</a>
+                                                <a href="{{route('read', ['id' =>$berita->id,'title'=>$berita->judul])}}">{{$berita->judul}}</a>
                                             </h3>
                                         </div>
                                     </li>

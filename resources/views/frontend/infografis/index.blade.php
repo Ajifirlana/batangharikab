@@ -16,6 +16,7 @@
             </div>
             <div class="container">
                 <div class="section-title text-center">
+                {{ Breadcrumbs::render('infografis') }}
                     <h2 class="section-title__title">Infografis Batanghari</h2>
                 </div>
                 <div class="row">

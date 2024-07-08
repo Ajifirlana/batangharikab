@@ -26,6 +26,7 @@
         <section  class="team-one">
             <div class="container">
                 <div class="section-title text-center">
+                {{ Breadcrumbs::render('website_skpd') }}
                     <h2   class="section-title__title">WEBSITE SKPD
                         </h2>
                 </div>

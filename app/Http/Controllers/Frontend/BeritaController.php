@@ -33,12 +33,12 @@ class BeritaController extends Controller
    }
     
         return view('frontend.berita.read',array("route"=>"berita", 
-        
+      'title'=>$title,  
       'berita_terbaru'=>$berita_terbaru,
         "berita"=>$berita));
     }
 
-    public function read($id){
+    public function read($id,$title){
       $berita_terbaru =  Berita::orderBy('created_at','desc')->offset(0)->limit(5)->get();
      
       $berita = Berita::where('id',Hashids::decode($id))->first();
@@ -54,7 +54,7 @@ class BeritaController extends Controller
    }
     
         return view('frontend.berita.read',array("route"=>"berita", 
-        
+        'title'=>$title,   
       'berita_terbaru'=>$berita_terbaru,
         "berita"=>$berita));
     }
