@@ -280,7 +280,10 @@ $currentMonth = Carbon::now();
                                     <a href="{{ $setting->facebook }}"><i class="fab fa-facebook"></i></a>
                                    
                                     <a href="{{ $setting->instagram }}"><i class="fab fa-instagram"></i></a>
-                                </div>
+                                   </div>
+                                   <br>
+                                   <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100068441723342" data-tabs="timeline" data-width="50" data-height="50" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/profile.php?id=100068441723342" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=100068441723342">Batanghari Jambi</a></blockquote></div>
+                                
                             </div>
                         </div>
                     </div>
@@ -357,9 +360,11 @@ $currentMonth = Carbon::now();
     <!-- /.search-popup -->
 
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
-
-
-
+  
+    <!--  plugin halaman fb -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v20.0&appId=970070473472661" nonce="5h4zXSdl"></script>
+    <!-- end plugin halaman fb -->
     <script src="{{ asset('frontend/assets/vendors/jquery/jquery-3.6.0.min.js')}}"></script>
     <script src="{{ asset('frontend/assets/vendors/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{ asset('frontend/assets/vendors/jarallax/jarallax.min.js')}}"></script>
