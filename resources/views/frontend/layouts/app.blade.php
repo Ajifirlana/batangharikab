@@ -138,7 +138,7 @@ $currentMonth = Carbon::now();
                                     <a href="{{ url('/') }}">Tentang Batanghari</a>
                                     <ul>
                                         <li class="dropdown {{ request()->is('page/profil-batanghari*') ? 'dropdown current' : '' }}">
-                                            <a href="{{ url('page/profil-batanghari') }}">Profil Batanghari</a>
+                                            <a href="#">Profil Batanghari</a>
                                             <ul>
                                                 <li><a href="{{ url('page/sejarah') }}" class="{{ request()->is('page/sejarah') ? 'dropdown current' : '' }}">Sejarah Batanghari</a></li>
                                                 <li><a href="{{ url('page/arti-lambang') }}" class="{{ request()->is('page/arti-lambang') ? 'dropdown current' : '' }}">Arti Lambang</a></li>

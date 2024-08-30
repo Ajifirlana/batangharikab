@@ -48,7 +48,7 @@
                                         </div>
                                         <div class="sidebar__post-content">
                                             <h3>
-                                            <a href="{{route('read', ['id' =>$berita->id])}}">{{$berita->judul}} <bold>| </bold>{{$berita->opd}}</a>
+                                            <a href="{{route('read', ['id' =>$berita->id,'title' =>$berita->judul])}}">{{$berita->judul}} <bold>| </bold>{{$berita->opd}}</a>
                                                 <span class="sidebar__post-content-meta">{{$berita->keterangan}}</span>
                                              
                                             </h3>

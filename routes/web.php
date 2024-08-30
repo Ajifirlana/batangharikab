@@ -96,7 +96,7 @@ Auth::routes([
 
 
 Route::get('uploud', [PegawaiController::class, 'uploud'])->name('uploud');
-//Route::middleware(['auth'])->get('/home', [DashboardController::class, 'index'])->name('home');
+Route::middleware(['auth'])->get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
    Route::get('/', [DashboardController::class, 'index'])->name('admin');
