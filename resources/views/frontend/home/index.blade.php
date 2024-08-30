@@ -408,7 +408,39 @@
         </section>
 
      
-
+ <!--Services Two Start-->
+ <section class="services-two">
+            <div class="services-two__shape-1 float-bob-x">
+                <img src="{{ asset('frontend/assets/images/shapes/services-two-shape-1.png')}}" alt="">
+            </div>
+            <div class="services-two__shape-2 float-bob-y">
+                <img src="{{ asset('frontend/assets/images/shapes/services-two-shape-2.png')}}" alt="">
+            </div>
+            <div class="container">
+                <div class="services-two__top">
+                
+                <div class="row">
+                        <div class="col-xl-7 col-lg-6">
+                            <div class="services-two__left">
+                                <div class="section-title text-left">
+                             <h2 class="section-title__title">Berita Kominfo</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-6">
+                            <div class="services-two__right">
+                         
+<div id="gpr" style="float:left;">
+	    <script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>
+    <div id="gpr-kominfo-widget-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </section>
+        <!--Services Two End-->
       
 
 
