@@ -281,8 +281,8 @@ $currentMonth = Carbon::now();
                                    
                                     <a href="{{ $setting->instagram }}"><i class="fab fa-instagram"></i></a>
                                    </div>
-                                   <br>
-                                   <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100068441723342" data-tabs="timeline" data-width="50" data-height="50" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/profile.php?id=100068441723342" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=100068441723342">Batanghari Jambi</a></blockquote></div>
+                                   <!-- <br>
+                                   <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100068441723342" data-tabs="timeline" data-width="50" data-height="50" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/profile.php?id=100068441723342" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=100068441723342">Batanghari Jambi</a></blockquote></div> -->
                                 
                             </div>
                         </div>

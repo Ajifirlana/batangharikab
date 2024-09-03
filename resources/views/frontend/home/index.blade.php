@@ -430,9 +430,9 @@
                         <div class="col-xl-5 col-lg-6">
                             <div class="services-two__right">
                          
-<div id="gpr" style="float:left;">
-	    <script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>
-    <div id="gpr-kominfo-widget-container"></div>
+                                    <div id="gpr" >
+                                        <script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>
+                                    <div id="gpr-kominfo-widget-container"></div>
                             </div>
                         </div>
                     </div>
