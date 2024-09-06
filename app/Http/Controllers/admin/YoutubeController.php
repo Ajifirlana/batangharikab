@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Utils\ApiResponse;
 use App\Models\VideoKegiatan;
 use Illuminate\Http\Request;
+use App\Services\FileUploadService;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
 use App\Http\Controllers\Controller;
@@ -12,14 +13,15 @@ use App\Http\Controllers\Controller;
 
 class YoutubeController extends Controller
 {
-
-    public function __construct()
+   protected $fileUploadService;
+    public function __construct(FileUploadService $fileUploadService)
     {
        $this->middleware('auth');
        $this->middleware('permission:read youtube|edit skpd|delete youtube', ['only' => ['index','show']]);
        $this->middleware('permission:create youtube', ['only' => ['create','store']]);
        $this->middleware('permission:edit youtube', ['only' => ['edit','update']]);
        $this->middleware('permission:delete youtube', ['only' => ['destroy']]);
+       $this->fileUploadService = $fileUploadService;
     }
 
     use ApiResponse;
@@ -49,18 +51,20 @@ class YoutubeController extends Controller
 
       try {
 
-         $imageName = time().'.'.$request->file->extension(); 
+        // $imageName = time().'.'.$request->file->extension(); 
+        $file = $request->file('file');
+        $foto = $this->fileUploadService->uploadFile($file);
          VideoKegiatan::updateOrCreate(
                       ['id'               => $request->id_youtube],
                       [
                          'judul'      => $request->judul,
                          'link'      => $request->link,
-                         'foto'            => $imageName,
+                         'foto'            => $foto,
                      
                       ]
                    );
 
-            $request->file->move(public_path('frontend/video'), $imageName);
+          //  $request->file->move(public_path('frontend/video'), $imageName);
 
             if ($request->id) 
             return $this->success('Berhasil Mengubah Data');

@@ -6,17 +6,20 @@ use App\Http\Controllers\Controller;
 use App\Utils\ApiResponse;
 use App\Models\WebsiteSkpd;
 use Illuminate\Http\Request;
+use App\Services\FileUploadService;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
 class SkpdController extends Controller
 {
-    public function __construct()
+   protected $fileUploadService;
+    public function __construct(FileUploadService $fileUploadService)
     {
        $this->middleware('auth');
        $this->middleware('permission:read skpd|edit skpd|delete skpd', ['only' => ['index','show']]);
        $this->middleware('permission:create skpd', ['only' => ['create','store']]);
        $this->middleware('permission:edit skpd', ['only' => ['edit','update']]);
        $this->middleware('permission:delete skpd', ['only' => ['destroy']]);
+       $this->fileUploadService = $fileUploadService;
     }
 
     use ApiResponse;
@@ -44,7 +47,9 @@ public function store (Request $request){
 
       try {
 
-         $imageName = time().'.'.$request->file->extension(); 
+       //  $imageName = time().'.'.$request->file->extension(); 
+       $file = $request->file('file');
+       $foto = $this->fileUploadService->uploadFile($file);
          WebsiteSkpd::updateOrCreate(
                          ['id'              => $request->id_skpd],
                          [
@@ -52,11 +57,11 @@ public function store (Request $request){
                             'link'          => $request->link,
                             'opd'           => $request->opd,
                             'keterangan'    => $request->ket,
-                            'foto'    => $imageName,
+                            'foto'    => $foto,
           
                          ]
                       );
-            $request->file->move(public_path('frontend/website-skpd'), $imageName);
+           // $request->file->move(public_path('frontend/website-skpd'), $imageName);
 
             if ($request->id_skpd) 
             return $this->success('Berhasil Mengubah Data');

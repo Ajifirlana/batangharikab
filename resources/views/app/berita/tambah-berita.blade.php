@@ -202,7 +202,7 @@
                                 allowOutsideClick: false,
                             }).then((result) => {
                                 _clearInput()
-                              
+                                foto.removeFile();
                                 swal.hideLoading()
                                 datatable.ajax.reload(null, false)
                             })

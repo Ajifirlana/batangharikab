@@ -113,8 +113,10 @@ $jns_kelamin = json_decode(json_encode(
     <script src="{{ asset('plugins/filepond/filepond-plugin-file-encode.js') }}"></script>
     <script src="{{ asset('plugins/filepond/filepond-plugin-file-validate-type.js') }}"></script>
     <script src="{{ asset('plugins/filepond/filepond-plugin-file-validate-size.js') }} "></script>
+    <script src="{{ asset('plugins/filepond/filepond-plugin-image-validate-size.js')}}"></script>
     <script src="{{ asset('plugins/filepond/filepond-plugin-image-preview.js') }}"></script>
-
+    <script src="{{ asset('plugins/filepond/filepond-plugin-file-rename.js') }}"></script>
+    <script src="{{ asset('plugins/filepond/filepond-plugin-image-crop.js') }}"></script>
     <script src="{{ asset('plugins/filepond/filepond-get-files.js') }}"></script>
     <script src="{{ asset('plugins/magnific/jquery.magnific-popup.min.js') }}"></script>
 
@@ -138,29 +140,31 @@ $jns_kelamin = json_decode(json_encode(
 
 
             
-            FilePond.registerPlugin(
-                //  FilePondPluginGetFile,
-                FilePondPluginFileEncode,
-                FilePondPluginImagePreview,
-                FilePondPluginFilePoster,
-          
-                FilePondPluginFileValidateType,
-                FilePondPluginFileValidateSize)
+                FilePond.registerPlugin(
+                    FilePondPluginFileEncode,
+                    FilePondPluginImagePreview,
+                    FilePondPluginFilePoster,
+                    FilePondPluginFileValidateType,
+                    FilePondPluginFileValidateSize,
+                    FilePondPluginImageValidateSize // Add this plugin for dimension validation
+                );
 
                 const inputElement = document.querySelector('input[type="file"]');
-                 const pond = FilePond.create(inputElement,{
+                const pond = FilePond.create(inputElement, {
                     storeAsFile: true,
                     acceptedFileTypes: ['image/*'],
                     fileValidateTypeDetectType: true,
-
-                    maxFileSize: 5000000, //10 mbs max size
+                    imageValidateSizeMinWidth: 370,  // Minimum width in pixels
+                    imageValidateSizeMinHeight: 450, // Minimum height in pixels
+                    imageValidateSizeMaxWidth: 370,  // Maximum width in pixels
+                    imageValidateSizeMaxHeight: 450, // Maximum height in pixels
+                    maxFileSize: '5MB',              // Max file size (5MB)
                     allowFileSizeValidation: true,
                 });
 
-            pond.setOptions({
-                allowImagePreview: true,
-               
-            })
+                pond.setOptions({
+                    allowImagePreview: true,
+                });
 
 
 
@@ -229,7 +233,7 @@ $jns_kelamin = json_decode(json_encode(
                     { 
                         "data": "foto",
                         "render": function(data, type, row) {
-                            return '<img src="' + '{{ asset("frontend/video/") }}' + '/' + data + '" height="50" width="50"/>';
+                            return '<img src="'+ data + '" height="50" width="50"/>';
                         }
                    },
                    {
@@ -310,22 +314,39 @@ $jns_kelamin = json_decode(json_encode(
               //  const file_cover = FilePond.create(document.querySelector('#file'));
                 $.get(url, function(response) {
                     $('#link').val(response.data.link)
-                    $('#id_youtube').val(response.data.id)
-                 
-                 
+                    $('#id_youtube').val(response.data.id)     
                     $('#judul').val(response.data.judul)
+                    const externalImageUrl_cover = response.data.foto;
 
-                    const externalImageUrl_cover = "{{ asset('frontend/video/') }}"+"/"+response.data.foto;
+                    // pond.addFile(externalImageUrl_cover).then((file) => {
+                    // // File added successfully
+                    //     console.log('File added:', file);
+                    // }).catch((error) => {
+                    //     // Error adding file
+                    //     console.error('Error adding file:', error);
+                    // });
 
 
-                    pond.addFile(externalImageUrl_cover).then((file) => {
-                    // File added successfully
-                        console.log('File added:', file);
-                    }).catch((error) => {
-                        // Error adding file
-                        console.error('Error adding file:', error);
+                 
+                    pond.setOptions({
+                        allowImagePreview: true,
+                        allowFileMetadata: true,
+                        files: [
+                            {
+                                source: externalImageUrl_cover,
+                                options: {
+                                    type: 'local',
+                                    file: {
+                                    
+                                        type: 'image/jpeg'
+                                    },
+                                    metadata: {
+                                        poster: externalImageUrl_cover
+                                    }
+                                }
+                            }
+                        ]
                     });
-
 
                    
                 })

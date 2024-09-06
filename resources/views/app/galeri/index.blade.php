@@ -138,39 +138,41 @@ $jns_kelamin = json_decode(json_encode(
         }
         $(document).ready(function() {
 
-            FilePond.registerPlugin(
-                //  FilePondPluginGetFile,
-                FilePondPluginFileEncode,
-                FilePondPluginImagePreview,
-                FilePondPluginFilePoster,
-                FilePondPluginImageValidateSize,
-                FilePondPluginImageCrop,
-             
-          
-                FilePondPluginFileValidateType,
-                FilePondPluginFileValidateSize)
+
+                FilePond.registerPlugin(
+                    FilePondPluginFileEncode,
+                    FilePondPluginImagePreview,
+                    FilePondPluginFilePoster,
+                    FilePondPluginImageValidateSize,
+                    FilePondPluginImageCrop,
+                    FilePondPluginFileValidateType,
+                    FilePondPluginFileValidateSize
+                );
+
+                // FilePond.registerPlugin(FilePondPluginFilePoster);
 
                 const inputElement = document.querySelector('input[type="file"]');
-                 const pond = FilePond.create(inputElement,{
+                const pond = FilePond.create(inputElement, {
                     storeAsFile: true,
                     acceptedFileTypes: ['image/*'],
                     fileValidateTypeDetectType: true,
-                    imageValidateSizeMinWidth: 270,
-                    imageValidateSizeMinHeight: 370,
-                    imageCropAspectRatio: '1.307',
-                    allowImageCrop:true,
-                    maxFileSize: 5000000, //10 mbs max size
+                    imageValidateSizeMinWidth: 270,  // Minimum width in pixels
+                    imageValidateSizeMinHeight: 370, // Minimum height in pixels
+                    imageValidateSizeMaxWidth: 270, // Maximum width in pixels (optional)
+                    imageValidateSizeMaxHeight: 370, // Maximum height in pixels (optional)
+                    imageCropAspectRatio: '1.307', // Aspect ratio for cropping
+                    allowImageCrop: true,
+                    maxFileSize: '5MB', // Max file size (5MB in this case)
                     allowFileSizeValidation: true,
-                 
                 });
 
-            pond.setOptions({
-                allowImagePreview: true,
-                allowFileMetadata: true
-               
-            })
+                pond.setOptions({
+                    allowImagePreview: true,
+                    allowFileMetadata: true
+                });
 
 
+           
 
 
 
@@ -235,7 +237,7 @@ $jns_kelamin = json_decode(json_encode(
                     { 
                         "data": "foto",
                         "render": function(data, type, row) {
-                            return '<img src="' + '{{ asset("frontend/galeri/") }}' + '/' + data + '" height="50" width="50"/>';
+                            return '<img src="'+ data +'" height="50" width="50"/>';
                         }
                    },
                     {
@@ -318,16 +320,34 @@ $jns_kelamin = json_decode(json_encode(
                     $('#id').val(response.data.id)
                     $('#keterangan').val(response.data.judul)    
                     
-                    const externalImageUrl_cover = "{{ asset('frontend/galeri/') }}"+"/"+response.data.foto;
-
-
-                    pond.addFile(externalImageUrl_cover).then((file) => {
-                    // File added successfully
-                        console.log('File added:', file);
-                    }).catch((error) => {
-                        // Error adding file
-                        console.error('Error adding file:', error);
+                    const externalImageUrl_cover = response.data.foto;
+                    pond.setOptions({
+                        allowImagePreview: true,
+                        allowFileMetadata: true,
+                        files: [
+                            {
+                                source: externalImageUrl_cover,
+                                options: {
+                                    type: 'local',
+                                    file: {
+                                    
+                                        type: 'image/jpeg'
+                                    },
+                                    metadata: {
+                                        poster: externalImageUrl_cover
+                                    }
+                                }
+                            }
+                        ]
                     });
+
+                    // pond.addFile(externalImageUrl_cover).then((file) => {
+                    // // File added successfully
+                    //     console.log('File added:', file);
+                    // }).catch((error) => {
+                    //     // Error adding file
+                    //     console.error('Error adding file:', error);
+                    // });
 
                 })
             });

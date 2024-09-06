@@ -11,16 +11,19 @@ use Illuminate\Http\Request;
 use Spatie\ResponseCache\Facades\ResponseCache;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Auth;
+use App\Services\FileUploadService;
 use Vinkla\Hashids\Facades\Hashids;
 class NewsController extends Controller
 {
-    public function __construct()
+   protected $fileUploadService;
+    public function __construct(FileUploadService $fileUploadService)
     {
        $this->middleware('auth');
        $this->middleware('permission:read news|update news|delete news', ['only' => ['index','show']]);
        $this->middleware('permission:create news', ['only' => ['create','store']]);
        $this->middleware('permission:update news', ['only' => ['edit','update']]);
        $this->middleware('permission:delete news', ['only' => ['destroy']]);
+       $this->fileUploadService = $fileUploadService;
        
     }
 
@@ -103,8 +106,9 @@ class NewsController extends Controller
              $id_news=$request->id;
 
 
-          $imageName = time().'.'.$request->foto->extension();   
-
+         // $imageName = time().'.'.$request->foto->extension();   
+         $file = $request->file('foto');
+         $foto = $this->fileUploadService->uploadFile($file);
 
              Berita::updateOrCreate(
                             ['id'                => $id_news],
@@ -112,14 +116,14 @@ class NewsController extends Controller
                                'judul'           => $request->judul,
                                'isi'             => $content,
                                'tanggal'         => $request->tanggal,
-                               'gambar'            => $imageName,
+                               'gambar'            => $foto,
                                'tittle_gambar'   => $request->judul_foto,
                                
              
                             ]
                          );
 
-             $request->foto->move(public_path('frontend/gambar-berita'), $imageName);            
+            // $request->foto->move(public_path('frontend/gambar-berita'), $imageName);            
                 
              if ($id_news)  
                return $this->success('Berhasil Mengubah Data');

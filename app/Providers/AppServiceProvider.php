@@ -7,6 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Menu;
+use App\Services\FileUploadService;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -14,7 +15,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(FileUploadService::class, function ($app) {
+            return new FileUploadService();
+        });
     }
 
     /**

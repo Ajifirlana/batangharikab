@@ -162,10 +162,6 @@ $jns_kelamin = json_decode(json_encode(
             })
 
 
-
-
-            
-
             $('.select2bs4').select2({
                 theme: 'bootstrap4',
             })
@@ -201,7 +197,7 @@ $jns_kelamin = json_decode(json_encode(
                     { 
                         "data": "foto",
                         "render": function(data, type, row) {
-                            return '<img src="' + '{{ asset("frontend/website-skpd/") }}' + '/' + data + '" height="50" width="50"/>';
+                            return '<img src="'  + data + '" height="50" width="50"/>';
                         }
                    },
                     {
@@ -289,16 +285,35 @@ $jns_kelamin = json_decode(json_encode(
                     $('#opd').val(response.data.opd)
                     $('#judul').val(response.data.judul)
 
-                    const externalImageUrl_cover = "{{ asset('frontend/website-skpd/') }}"+"/"+response.data.foto;
-
-
-                    pond.addFile(externalImageUrl_cover).then((file) => {
-                    // File added successfully
-                        console.log('File added:', file);
-                    }).catch((error) => {
-                        // Error adding file
-                        console.error('Error adding file:', error);
+                    //const externalImageUrl_cover = "{{ asset('frontend/website-skpd/') }}"+"/"+response.data.foto;
+                    const externalImageUrl_cover = response.data.foto;
+                    pond.setOptions({
+                        allowImagePreview: true,
+                        allowFileMetadata: true,
+                        files: [
+                            {
+                                source: externalImageUrl_cover,
+                                options: {
+                                    type: 'local',
+                                    file: {
+                                    
+                                        type: 'image/jpeg'
+                                    },
+                                    metadata: {
+                                        poster: externalImageUrl_cover
+                                    }
+                                }
+                            }
+                        ]
                     });
+
+                    // pond.addFile(externalImageUrl_cover).then((file) => {
+                    // // File added successfully
+                    //     console.log('File added:', file);
+                    // }).catch((error) => {
+                    //     // Error adding file
+                    //     console.error('Error adding file:', error);
+                    // });
 
 
 

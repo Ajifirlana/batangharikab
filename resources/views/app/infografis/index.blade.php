@@ -123,9 +123,11 @@ $jns_kelamin = json_decode(json_encode(
     <script src="{{ asset('template/admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
     <script src="{{ asset('template/admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
 
-    <script src="https://unpkg.com/filepond-plugin-pdf-preview/dist/filepond-plugin-pdf-preview.min.js"></script>
-    <link href="https://unpkg.com/filepond@4.30.6/dist/filepond.css" rel="stylesheet">
-    <script src="https://unpkg.com/filepond@4.30.6/dist/filepond.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-pdf-preview/dist/filepond-plugin-pdf-preview.js"></script>
+
+    <!-- FilePond Plugin for File Encode (if needed) -->
+    <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+    <script src="{{ asset('plugins/filepond/filepond-plugin-media-preview.js')}}"></script>
     {{-- password toggle show/hide --}}
     <script src="{{ asset('plugins/toggle-password.js') }}"></script>
 
@@ -148,8 +150,9 @@ $jns_kelamin = json_decode(json_encode(
                 FilePondPluginImagePreview,
                 FilePondPluginFilePoster,
                 FilePondPluginPdfPreview,
+                FilePondPluginMediaPreview,
                 FilePondPluginFileValidateType,
-                FilePondPluginFileValidateSize)
+                FilePondPluginFileValidateSize);
 
 
 
@@ -178,14 +181,18 @@ $jns_kelamin = json_decode(json_encode(
                     acceptedFileTypes:['application/pdf'],
                     maxFileSize: 5000000, //10 mbs max size
                     allowFileSizeValidation: true,
+                    allowFileSizeValidation: true,
+                    allowPdfPreview: true,
+                    pdfPreviewHeight: 320,
+                    pdfComponentExtraParams: 'toolbar=0&view=fit&page=1'
                 });
                
-                file_pdf.setOptions({
+                // file_pdf.setOptions({
                
-                allowPdfPreview: true,
-                pdfPreviewHeight: 320,
-                pdfComponentExtraParams: 'toolbar=0&view=fit&page=1'  
-                 })
+                // allowPdfPreview: true,
+                // pdfPreviewHeight: 320,
+                // pdfComponentExtraParams: 'toolbar=0&view=fit&page=1'  
+                //  })
 
     
 
@@ -237,52 +244,52 @@ $jns_kelamin = json_decode(json_encode(
         
 
 
-            let datatable = $("#datatable").DataTable({
-                serverSide: true,
-                processing: true,
-                searching: true,
-                lengthChange: true,
-                responsive: true,
-                paging: true,
-                info: true,
-                ordering: true,
-                order: [
-                    [2, 'desc']
-                ],
-                ajax: @json(route('infografis.index')),
+                        let datatable = $("#datatable").DataTable({
+                            serverSide: true,
+                            processing: true,
+                            searching: true,
+                            lengthChange: true,
+                            responsive: true,
+                            paging: true,
+                            info: true,
+                            ordering: true,
+                            order: [
+                                [2, 'desc']
+                            ],
+                            ajax: @json(route('infografis.index')),
 
-columns: [{
-        data: "DT_RowIndex",
-        orderable: false,
-        searchable: false,
-        width: '1%'
-    },
-    {
-        data: 'judul',
-    },
-    {
-        data: 'tanggal',
-    },
-    { 
-      "data": "gambar",
-             "render": function(data, type, row) {
-            return '<img src="' + '{{ asset("frontend/infografis/foto/") }}' + '/' + data + '" height="50" width="50"/>';
-            }
-   },
-   { 
-        "data": "file",
-                "render": function(data, type, row) {
-                 return '<a target="_blank" href="/view/' + data + '"><i class="fab far fa-eye"></i></a>';
-             }
-   },
-   
-   
-    {
-        data: "action",
-        orderable: false,
-        searchable: false,
-    },
-]
+            columns: [{
+                    data: "DT_RowIndex",
+                    orderable: false,
+                    searchable: false,
+                    width: '1%'
+                },
+                {
+                    data: 'judul',
+                },
+                {
+                    data: 'tanggal',
+                },
+                { 
+                "data": "gambar",
+                        "render": function(data, type, row) {
+                        return '<img src="'  + data + '" height="50" width="50"/>';
+                                }
+                },
+                { 
+                            "data": "file",
+                                    "render": function(data, type, row) {
+                                    return '<a target="_blank" href="' + data + '"><i class="fab far fa-eye"></i></a>';
+                                }
+                },
+                    
+                    
+                {
+                            data: "action",
+                            orderable: false,
+                            searchable: false,
+                },
+            ]
             });
 
             $("#btn_tambah").click(function() {
@@ -351,27 +358,74 @@ columns: [{
                     $('#judul').val(response.data.judul)
                     flatpicker.setDate(response.data.tanggal)
               
-                    const externalImageUrl = "{{ asset('frontend/infografis/foto/') }}"+"/"+response.data.gambar;
+                    //const externalImageUrl = "{{ asset('frontend/infografis/foto/') }}"+"/"+response.data.gambar;
 
                     // Add the external image to FilePond
-                    foto.addFile(externalImageUrl).then((file) => {
-                        // File added successfully
-                        console.log('File added:', file);
-                    }).catch((error) => {
-                        // Error adding file
-                        console.error('Error adding file:', error);
+                    // foto.addFile(externalImageUrl).then((file) => {
+                    //     // File added successfully
+                    //     console.log('File added:', file);
+                    // }).catch((error) => {
+                    //     // Error adding file
+                    //     console.error('Error adding file:', error);
+                    // });
+
+                    const externalImageUrl_cover = response.data.gambar;
+                    foto.setOptions({
+                        allowImagePreview: true,
+                        allowFileMetadata: true,
+                        files: [
+                            {
+                                source: externalImageUrl_cover,
+                                options: {
+                                    type: 'local',
+                                    file: {
+                                    
+                                        type: 'image/jpeg'
+                                    },
+                                    metadata: {
+                                        poster: externalImageUrl_cover
+                                    }
+                                }
+                            }
+                        ]
                     });
 
 
+                    // const data_file = "{{ asset('frontend/infografis/file/') }}"+"/"+response.data.file;
+                    const data_file ='https://repository.bsi.ac.id/index.php/unduh/item/271361/Modul-SistemBasisData-1.pdf';
 
-                    const data_file = "{{ asset('frontend/infografis/file/') }}"+"/"+response.data.file;
-                    file_pdf.addFile(data_file).then((file) => {
-                        // File added successfully
-                        console.log('File added:', file);
-                    }).catch((error) => {
-                        // Error adding file
-                        console.error('Error adding file:', error);
+                    file_pdf.setOptions({
+                        allowPdfPreview: true,
+                        pdfPreviewHeight: 320,
+                        pdfComponentExtraParams: 'toolbar=0&view=fit&page=1',  
+                        files: [
+                            {
+                                source: data_file,
+                                options: {
+                                    type: 'local',
+                                    file: {
+                                        name: 'FilePDF', // Nama file yang akan ditampilkan
+                                        size: 0, // Ukuran file dapat diatur jika diketahui
+                                        type: 'application/pdf'
+                                    },
+                                    metadata: {
+                                        poster: data_file
+                                    }
+                                }
+                            }
+                        ]
                     });
+                    // file_pdf.addFile(data_file).then((file) => {
+                    //     // File added successfully
+                    //     console.log('File added:', file);
+                    // }).catch((error) => {
+                    //     // Error adding file
+                    //     console.error('Error adding file:', error);
+                    // });
+
+              
+
+                  
 
                 })
             });

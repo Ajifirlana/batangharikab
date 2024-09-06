@@ -180,16 +180,35 @@
                     $("#summernote").summernote('code', response.isi);
                     flatpicker.setDate(response.tanggal)
 
-                    const externalImageUrl_cover = "{{ asset('frontend/gambar-berita/') }}"+"/"+response.gambar;
+                  //  const externalImageUrl_cover = "{{ asset('frontend/gambar-berita/') }}"+"/"+response.gambar;
 
-
-                    foto.addFile(externalImageUrl_cover).then((file) => {
-                    // File added successfully
-                        console.log('File added:', file);
-                    }).catch((error) => {
-                        // Error adding file
-                        console.error('Error adding file:', error);
+                    const externalImageUrl_cover = response.gambar;
+                    foto.setOptions({
+                        allowImagePreview: true,
+                        allowFileMetadata: true,
+                        files: [
+                            {
+                                source: externalImageUrl_cover,
+                                options: {
+                                    type: 'local',
+                                    file: {
+                                    
+                                        type: 'image/jpeg'
+                                    },
+                                    metadata: {
+                                        poster: externalImageUrl_cover
+                                    }
+                                }
+                            }
+                        ]
                     });
+                    // foto.addFile(externalImageUrl_cover).then((file) => {
+                    // // File added successfully
+                    //     console.log('File added:', file);
+                    // }).catch((error) => {
+                    //     // Error adding file
+                    //     console.error('Error adding file:', error);
+                    // });
                   
                   
                 })

@@ -7,18 +7,22 @@ use App\Models\Infografis;
 use Illuminate\Http\Request;
 use Spatie\ResponseCache\Facades\ResponseCache;
 use Carbon\Carbon;
+use App\Services\FileUploadService;
 use App\Http\Controllers\Controller;
 
 
 class InfografisController extends Controller
 {
-    public function __construct()
+
+   protected $fileUploadService;
+    public function __construct(FileUploadService $fileUploadService)
     {
        $this->middleware('auth');
        $this->middleware('permission:read youtube|edit skpd|delete youtube', ['only' => ['index','show']]);
        $this->middleware('permission:create youtube', ['only' => ['create','store']]);
        $this->middleware('permission:edit youtube', ['only' => ['edit','update']]);
        $this->middleware('permission:delete youtube', ['only' => ['destroy']]);
+       $this->fileUploadService = $fileUploadService;
     }
 
     use ApiResponse;
@@ -45,9 +49,9 @@ class InfografisController extends Controller
 
        try {
 
-            $imageName = time().'.'.$request->foto->extension();  
+          //  $imageName = time().'.'.$request->foto->extension();  
 
-            $fileName = time().'.'.$request->file->extension();  
+          //  $fileName = time().'.'.$request->file->extension();  
 
             $tanggal_new = $request->input('tanggal');
 
@@ -57,22 +61,26 @@ class InfografisController extends Controller
            $parsedDate = Carbon::parse($tanggal_new);
    
            // Format the date as needed
+           $foto = $request->file('foto');
+           $file_pdf = $request->file('file');
            $formattedDate = $parsedDate->format('Y-m-d'); //
-
+           $foto = $this->fileUploadService->uploadFile($foto);
+           $file_pdf = $this->fileUploadService->uploadFile($file_pdf);
+    
 
                         Infografis::updateOrCreate(
                            ['id'           => $request->id_info],
                            [ 
                               'judul'      => $request->judul,
                               'tanggal'    => $formattedDate,
-                              'gambar'       => $imageName,
-                              'file'       => $fileName,
+                              'gambar'       => $foto,
+                              'file'       => $file_pdf,
             
                            ]
                         );
 
-                  $request->foto->move(public_path('frontend/infografis/foto'), $imageName);
-                  $request->file->move(public_path('frontend/infografis/file'), $fileName);
+                  // $request->foto->move(public_path('frontend/infografis/foto'), $imageName);
+                  // $request->file->move(public_path('frontend/infografis/file'), $fileName);
          
                   if ($request->id_info) 
                   return $this->success('Berhasil Mengubah Data');

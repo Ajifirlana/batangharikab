@@ -10,15 +10,20 @@ use App\Models\Galeri;
 use Illuminate\Http\Request;
 use Spatie\ResponseCache\Facades\ResponseCache;
 use Illuminate\Support\Facades\Auth;
+use App\Services\FileUploadService;
 class GaleriBackandController extends Controller
 {
-    public function __construct()
+
+   protected $fileUploadService;
+
+    public function __construct(FileUploadService $fileUploadService)
     {
        $this->middleware('auth');
        $this->middleware('permission:read galeri|edit galeri|delete galeri', ['only' => ['index','show']]);
        $this->middleware('permission:create galeri', ['only' => ['create','store']]);
        $this->middleware('permission:update galeri', ['only' => ['edit','update']]);
        $this->middleware('permission:delete galeri', ['only' => ['destroy']]);
+       $this->fileUploadService = $fileUploadService;
     }
 
     use ApiResponse;
@@ -68,9 +73,9 @@ class GaleriBackandController extends Controller
         ]);
     
         $imageName = time().'.'.$request->file->extension();  
-        $request->file->move(public_path('frontend/galeri'), $imageName);
+       // $request->file->move(public_path('frontend/galeri'), $imageName);
 
-
+       $file = $request->file('file');
           if($request->file('file')==null){
              Galeri::updateOrCreate(
                 ['id'           => $request->id],
@@ -85,34 +90,14 @@ class GaleriBackandController extends Controller
              else return $this->success('Berhasil Menginput Data');
  
           }
-          //simpan foto ke firebase api
-         //  $image_path = $request->file('file')->getPathname();
-         //  $nama_gambar = time() . '_' . $request->file('file')->getClientOriginalName();
-         //  $image_mime = $request->file('file')->getmimeType();
-         //  $image_org  = $request->file('file')->getClientOriginalName();
-         //  $url ="https://api-storage.batangharikab.go.id/submit-upload";
-         //  $publicKey="eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTg5Njg1OTcsImlzcyI6IiouYmF0YW5naGFyaWthYi5nby5pZCIsImp0aSI6IjA4Y2YzMWNmLTdmZWUtNGE3ZS1hN2NjLWMxNDAyYWQ2NjNkOCIsInN1YiI6ImIwMTAwZGU3LTkwYmUtNGM2NC05ZmM3LWFjZjZlOTdiOTUxYyJ9.U7QiUQXHGqKnBG3aKRd1tmrhvKoTMJZO9-63KTMNEs8QDOMPVCiGNu7r4GCqHq-EJRo6vsvOtryisXI52HfckA";
-         //  $client = new \GuzzleHttp\Client();
-         //  $response = $client->request("POST",$url,[
-         //    "headers"   => ["Authorization" => "Bearer {$publicKey}"],
-         //    "multipart" => [
-         //           [
-         //           'name'     => 'file',
-         //           'filename' => $nama_gambar,
-         //           'Mime-Type'=> $image_mime,
-         //           'contents' => fopen( $image_path, 'r' ),
-         //           ],
-         //      ]
- 
-         //  ]);
-         //  $response=   $response->getBody();
-         //  $responsdata = json_decode($response,true);
-         //  $url=$responsdata['data']['url'];
+   
+         $url = $this->fileUploadService->uploadFile($file);
+    
         Galeri::updateOrCreate(
              ['id'           => $request->id],
              [
                'judul'      => $request->keterangan,
-                'foto'       => $imageName,
+                'foto'       => $url,
             
              ]
           );
