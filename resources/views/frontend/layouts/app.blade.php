@@ -34,7 +34,7 @@ $currentMonth = Carbon::now();
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('frontend/logo/logo.gif')}}" />
    
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="austry HTML 5 Template " />
+    <meta name="description" content="Situs Pemerintah Kabupaten Batanghari" />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
