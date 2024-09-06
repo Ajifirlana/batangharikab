@@ -135,7 +135,7 @@ $currentMonth = Carbon::now();
                                 <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                 <ul class="main-menu__list">
                                 <li class="dropdown {{ request()->is('/') ? 'dropdown current' : '' }}">
-                                    <a href="{{ url('/') }}">Tentang Batanghari</a>
+                                    <a href="{{ url('/') }}">Tentang Batang Hari</a>
                                     <ul>
                                         <li class="dropdown {{ request()->is('page/profil-batanghari*') ? 'dropdown current' : '' }}">
                                             <a href="#">Profil Batang Hari</a>
@@ -234,7 +234,7 @@ $currentMonth = Carbon::now();
                                     <a href=""><img src="{{asset('frontend/logo/logo-menu.png')}}" height="50px" alt=""></a>
                                 </div>
                                 <div class="footer-widget__about-text-box">
-                                    <p class="footer-widget__about-text">Batanghari adalah kabupaten yang terletak di bagian tengah provinsi Jambi, Indonesia.</p>
+                                    <p class="footer-widget__about-text">Batang Hari adalah kabupaten yang terletak di bagian tengah provinsi Jambi, Indonesia.</p>
                                 </div>
                             </div>
                         </div>
