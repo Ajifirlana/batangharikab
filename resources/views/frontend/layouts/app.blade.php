@@ -169,7 +169,7 @@ $currentMonth = Carbon::now();
                                             <li class="dropdown">
                                                 <a>Pendidikan</a>
                                             <ul>
-                                            <li><a href="https://ppdb.batangharikab.go.id/">PPDB</a></li>
+                                            <li><a href="https://ppdb.batangharikab.go.id/" target="_blank">PPDB</a></li>
                                 
                                             </ul>
                                             </li>
@@ -195,7 +195,7 @@ $currentMonth = Carbon::now();
                                         </li>
 
                                         
-                                        <li><a href="https://ppid.batangharikab.go.id">PPID</a></li>
+                                        <li><a href="https://ppid.batangharikab.go.id" target="_blank">PPID</a></li>
                                       
                                 </ul>
                             </div>
