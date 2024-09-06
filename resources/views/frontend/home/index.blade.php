@@ -42,12 +42,79 @@
     border: 0px solid black;
 }
    
-   
-    
+/* Styling untuk pop-up */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popup-content {
+    position: relative;
+    margin: 5% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.popup-content img {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    max-height: 80vh; /* Maksimum tinggi gambar relatif terhadap viewport */
+    border-radius: 8px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+/* Penyesuaian untuk perangkat kecil */
+@media (max-width: 600px) {
+    .popup-content {
+        padding: 10px;
+        width: 95%;
+    }
+
+    .close-btn {
+        font-size: 20px;
+        top: 5px;
+        right: 10px;
+    }
+}
+
      
      
 </style>
         <!--Main Slider Start-->
+
+          <!-- Pop-Up Container -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+       
+      
+        <p class="about-two__text-1">{{$popup->ket}}</p>
+            <span class="close-btn" id="closePopup">&times;</span>
+            <img src="{{$popup->foto}}" alt="Popup Image">
+        </div>
+    </div>
         <section class="main-slider">
             <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
                             "effect": "fade",
@@ -190,9 +257,9 @@
                                 <img class="infografis" src="{{asset('frontend/infografis/foto/'.$row->gambar)}}"alt="">
                                 </div>
                                 <ul class="list-unstyled team-two__social">
-                                    <li><a href="{{ route('downloadFile',$row->file) }}"><i class="fas fa-download"></i></a></li>
+                                    <li><a href="{{$row->file}}"><i class="fas fa-download"></i></a></li>
                                   
-                                    <li><a  target="_blank" href="{{ route('show',$row->file) }}"><i class="fab far fa-eye"></i></a></li>
+                                    <li><a  target="_blank" href="{{$row->file}}"><i class="fab far fa-eye"></i></a></li>
                                   
                                 </ul>
                             </div>
@@ -409,7 +476,7 @@
 
      
  <!--Services Two Start-->
- <section class="services-two">
+ <!-- <section class="services-two">
             <div class="services-two__shape-1 float-bob-x">
                 <img src="{{ asset('frontend/assets/images/shapes/services-two-shape-1.png')}}" alt="">
             </div>
@@ -439,9 +506,97 @@
                 </div>
                
             </div>
-        </section>
+ </section> -->
         <!--Services Two End-->
-      
+        <section class="about-two">
+            <div class="about-two__shape-1 float-bob-x">
+                <img src="{{asset('frontend/assets/images/shapes/about-two-shape-1.png')}}" alt="">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7">
+                        <div class="about-two__left">
+                            <div class="about-two__img-box wow slideInLeft" data-wow-delay="100ms"
+                                data-wow-duration="2500ms">
+                                <div class="about-two__img">
+                                <script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>
+                                <div id="gpr-kominfo-widget-container"></div>
+                                </div>
+                                <div class="about-two__small-img">
+                                    <img src="assets/images/resources/about-two-small-img.jpg" alt="">
+                                </div>
+                             
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5">
+                    <div class="about-one__right">
+                            <div class="section-title text-left">
+                                <span class="section-title__tagline"></span>
+                                <h2 class="section-title__title">Berita Terkait</h2>
+                            </div>
+                            <p class="about-two__text-1">Batanghari Tangguh, Batanghari Maju</p>
+                            <p class="about-one__text">Informasi berita terkait yang saling berhubungan dengan Pemerintah Kabupaten Batanghari</p>
+                            <ul class="about-one__points-box list-unstyled">
+                                <li>
+                                    <div class="about-one__points-title">
+                                        <p>Penyuluh Tangguh</p>
+                                    </div>
+                                    <div class="about-one__points-content">
+                                        <div class="about-one__points-icon">
+                                            <span class="icon-planet-earth"></span>
+                                        </div>
+                                        <div class="about-one__points-text">
+                                            <p>Duis dolor in simply free text available voluptate dolore reprehenderit
+                                                in velit esse.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="about-one__points-title">
+                                        <p>Dokter Tangguh</p>
+                                    </div>
+                                    <div class="about-one__points-content">
+                                        <div class="about-one__points-icon">
+                                            <span class="icon-quality"></span>
+                                        </div>
+                                        <div class="about-one__points-text">
+                                            <p>Duis dolor in simply free text available voluptate dolore reprehenderit
+                                                in velit esse.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="about-one__btn-box">
+                                <a href="about.html" class="about-one__btn thm-btn">Discover more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>     
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    // Menampilkan pop-up saat halaman selesai dimuat
+    const popup = document.getElementById("popup");
+    const closePopup = document.getElementById("closePopup");
 
+    popup.style.display = "block";
+
+    // Menutup pop-up saat tombol 'x' diklik
+    closePopup.addEventListener("click", function () {
+        popup.style.display = "none";
+    });
+
+    // Menutup pop-up saat area di luar konten diklik
+    window.addEventListener("click", function (event) {
+        if (event.target === popup) {
+            popup.style.display = "none";
+        }
+    });
+});
+
+</script>
 @endsection

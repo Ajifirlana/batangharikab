@@ -53,11 +53,14 @@ $statistik_pengunjung->update([
       $latestRecord = Berita::latest('created_at')->first();
       $berita_terbaru_new = Berita::latest()->skip(1)->take(2)->get();
       $infografis =  DB::table('infografis')->orderBy('id','desc')->offset(0)->limit(4)->get();
+      $popup =  DB::table('popup')->orderBy('id','desc')->first();
+    //  dd($popup);
         
      // return $latestRecord;
      
        return view('frontend.home.index', array(
       'berita'=>$berita_terbaru,
+      'popup'=>$popup,
       'berita_terbaru_new'=>$berita_terbaru_new,
       'latestRecord'=>$latestRecord,
       'website_skpd'=>$website_skpds,
