@@ -120,7 +120,7 @@
    
                             <div class="news-two__left-img">
                             
-                            <img   style="width: 570px; height: 436px; object-fit: none;"  src="{{asset('frontend/gambar-berita/'.$latestRecord->gambar)}}"alt="">
+                            <img   style="width: 570px; height: 436px; object-fit: none;"  src="{{$latestRecord->gambar}}"alt="">
                           
                                 <div class="news-two__left-img-content">
                                     <ul class="news-two__left-meta list-unstyled">
@@ -146,7 +146,7 @@
                                 <li>
                                     <div class="news-two__single">
                                         <div class="news-two__img">
-                                            <img class="cropped1"   src="{{asset('frontend/gambar-berita/'.$row->gambar)}}"alt="">
+                                            <img class="cropped1"   src="{{ $row->gambar }}"alt="">
                                         </div>
                                         <div class="news-two__content">
                                             <ul class="news-two__meta list-unstyled">
@@ -274,7 +274,7 @@
                                         <div class="testimonial-one__single-inner">
                                             <div class="testimonial-one__client-info">
                                                 <div class="testimonial-one__client-img">
-                                                <a href="{{$row->link}}"><img class="skpd"  src="{{asset('frontend/website-skpd/'.$row->foto)}}" alt="">
+                                                <a href="{{$row->link}}"><img class="skpd"  src="{{ $row->foto}}" alt="">
                                                    </a>
                                                    
                                                 </div>
@@ -333,7 +333,7 @@
                             <div class="services-two__img-box">
                                 
                                 <div class="services-two__img">
-                                    <img class="galeri"  src="{{asset('frontend/galeri/'.$row->foto)}}" alt="">
+                                    <img class="galeri"  src="{{ $row->foto }}" alt="">
                                 </div>
                                
                             </div>

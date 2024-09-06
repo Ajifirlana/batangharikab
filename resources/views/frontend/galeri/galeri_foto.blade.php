@@ -92,7 +92,7 @@
             <div class="services-two__single">
                 <div class="services-two__img-box">
                     <div class="services-two__img">
-                        <img class="galeri" src="{{ asset('frontend/galeri/'.$row->foto) }}" alt="">
+                        <img class="galeri" src="{{ $row->foto }}" alt="">
                     </div>
                 </div>
                 <div class="services-two__content">

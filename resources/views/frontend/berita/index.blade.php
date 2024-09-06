@@ -37,7 +37,7 @@
                         <div class="news-one__single">
                             <div class="news-one__img-box">
                                 <div class="news-one__img">
-                                <img class="cropped1"    src="{{asset('frontend/gambar-berita/'.$row->gambar)}}"alt="">
+                                <img class="cropped1"    src="{{$row->gambar}}"alt="">
                                 </div>
                                 <div class="news-one__date">
                                     <p>{{$row->tanggal}}</p>
