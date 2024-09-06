@@ -140,10 +140,10 @@ $currentMonth = Carbon::now();
                                         <li class="dropdown {{ request()->is('page/profil-batanghari*') ? 'dropdown current' : '' }}">
                                             <a href="#">Profil Batang Hari</a>
                                             <ul>
-                                                <li><a href="{{ url('page/sejarah') }}" class="{{ request()->is('page/sejarah') ? 'dropdown current' : '' }}">Sejarah Batanghari</a></li>
+                                                <li><a href="{{ url('page/sejarah') }}" class="{{ request()->is('page/sejarah') ? 'dropdown current' : '' }}">Sejarah Batang Hari</a></li>
                                                 <li><a href="{{ url('page/arti-lambang') }}" class="{{ request()->is('page/arti-lambang') ? 'dropdown current' : '' }}">Arti Lambang</a></li>
                                                 <li><a href="{{ url('page/kondisi-demografi') }}" class="{{ request()->is('page/kondisi-demografi') ? 'dropdown current' : '' }}">Kondisi Demografi</a></li>
-                                                <li><a href="{{ url('page/peta-batanghari') }}" class="{{ request()->is('page/peta-batanghari') ? 'dropdown current' : '' }}">Peta Batanghari</a></li>
+                                                <li><a href="{{ url('page/peta-batanghari') }}" class="{{ request()->is('page/peta-batanghari') ? 'dropdown current' : '' }}">Peta Batang Hari</a></li>
                                                 <li><a href="{{ url('page/visi-dan-misi') }}" class="{{ request()->is('page/visi-dan-misi') ? 'dropdown current' : '' }}">Visi & Misi</a></li>
                                             </ul>
                                         </li>
