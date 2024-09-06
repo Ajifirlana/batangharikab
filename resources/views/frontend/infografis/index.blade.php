@@ -29,9 +29,9 @@
                                 <img class="infografis" src="{{$row->gambar}}"alt="">
                                 </div>
                                 <ul class="list-unstyled team-two__social">
-                                    <li><a href="{{ route('downloadFile',$row->file) }}"><i class="fas fa-download"></i></a></li>
+                                    <li><a href="{{$row->file}}"><i class="fas fa-download"></i></a></li>
                                   
-                                    <li><a  target="_blank" href="{{ route('show',$row->file) }}"><i class="fab far fa-eye"></i></a></li>
+                                    <li><a  target="_blank" href="{{$row->file }}"><i class="fab far fa-eye"></i></a></li>
                                   
                                 </ul>
                             </div>

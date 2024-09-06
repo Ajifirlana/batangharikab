@@ -254,7 +254,7 @@
                         <div class="team-two__single">
                             <div class="team-two__img-box">
                                 <div class="team-two__img">
-                                <img class="infografis" src="{{asset('frontend/infografis/foto/'.$row->gambar)}}"alt="">
+                                <img class="infografis" src="{{$row->gambar}}"alt="">
                                 </div>
                                 <ul class="list-unstyled team-two__social">
                                     <li><a href="{{$row->file}}"><i class="fas fa-download"></i></a></li>
