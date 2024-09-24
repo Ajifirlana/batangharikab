@@ -122,7 +122,7 @@ $json = json_decode(json_encode($years));
                                         ?>  
                                 <li>
                                         <div class="sidebar__post-image">
-                                            <img   class="cropped1" src="{{asset('frontend/gambar-berita/'.$berita->gambar)}}" alt="">
+                                            <img   class="cropped1" src="{{$berita->gambar}}" alt="">
                                         </div>
                                         <div class="sidebar__post-content">
                                             <h3>
