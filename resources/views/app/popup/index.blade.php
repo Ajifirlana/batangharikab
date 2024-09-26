@@ -338,13 +338,13 @@ $jns_kelamin = json_decode(json_encode(
                         ]
                     });
 
-                    pond.addFile(externalImageUrl_cover).then((file) => {
-                    // File added successfully
-                        console.log('File added:', file);
-                    }).catch((error) => {
-                        // Error adding file
-                        console.error('Error adding file:', error);
-                    });
+                //     pond.addFile(externalImageUrl_cover).then((file) => {
+                //     // File added successfully
+                //         console.log('File added:', file);
+                //     }).catch((error) => {
+                //         // Error adding file
+                //         console.error('Error adding file:', error);
+                //     });
 
                 })
             });
