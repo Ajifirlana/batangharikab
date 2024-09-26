@@ -44,11 +44,11 @@
                                         ?>  
                                 <li>
                                         <div class="sidebar__post-image">
-                                        <a  href="{{$berita->link}}"><img   class="skpd" src="{{asset('frontend/website-skpd/'.$berita->foto)}}" alt="">
+                                        <a   target="_blank" href="{{$berita->link}}"><img   class="skpd" src="{{$berita->foto}}" alt="">
                                         </div>
                                         <div class="sidebar__post-content">
                                             <h3>
-                                            <a href="{{route('read', ['id' =>$berita->id,'title' =>$berita->judul])}}">{{$berita->judul}} <bold>| </bold>{{$berita->opd}}</a>
+                                            <a  target="_blank" href="{{$berita->link}}">{{$berita->judul}} <bold>| </bold>{{$berita->opd}}</a>
                                                 <span class="sidebar__post-content-meta">{{$berita->keterangan}}</span>
                                              
                                             </h3>

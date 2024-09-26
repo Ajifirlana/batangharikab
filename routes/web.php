@@ -14,6 +14,7 @@ use App\Http\Controllers\admin\YoutubeController;
 use App\Http\Controllers\admin\InfografisController;
 use App\Http\Controllers\admin\BeritaBackandController;
 use App\Http\Controllers\admin\TransparasiAnggaranController;
+use App\Http\Controllers\admin\PopupController;
 
 
 
@@ -21,7 +22,11 @@ use App\Http\Controllers\FirebaseController;
 use App\Http\Controllers\admin\NewsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\HomeController;
+
 use App\Http\Controllers\SliderController;
+
+
 
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\Auth\LoginController;
@@ -66,6 +71,8 @@ Route::controller(BeritaController::class)->group(function() {
 Route::get('/login', function () {
    return redirect()->route('login');
 })->name('index');
+
+//Route::get('/home', 'HomeController@index')->middleware('auth');
 
 Route::get('/view/{file}', function ($file) {
    $myFile = public_path("frontend/infografis/file/".$file);
@@ -156,6 +163,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
       'permission' => PermissionController::class, 
       'anggaran' => TransparasiAnggaranController::class, 
       'front' => PageAdminController::class, 
+      'popup' => PopupController::class, 
+
+      
       
       'youtube' => YoutubeController::class, 
       'infografis' => InfografisController::class,  

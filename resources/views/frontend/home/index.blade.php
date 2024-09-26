@@ -99,13 +99,38 @@
         right: 10px;
     }
 }
+.main-slider .swiper-slide .image-layer {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Ensure full height on mobile */
+}
+
+@media (max-width: 767px) {
+    .main-slider .swiper-slide .image-layer {
+        height: 60vh; /* Adjust the height for mobile */
+    }
+}
+
+.main-slider__content {
+    position: relative;
+    z-index: 2;
+}
+
+.main-slider .swiper-slide {
+    position: relative;
+}
+
+
+
 
      
      
 </style>
         <!--Main Slider Start-->
 
-          <!-- Pop-Up Container -->
+        
+    @if($popup->status=='YA')    
     <div id="popup" class="popup">
         <div class="popup-content">
        
@@ -115,6 +140,7 @@
             <img src="{{$popup->foto}}" alt="Popup Image">
         </div>
     </div>
+    @endif
         <section class="main-slider">
             <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
                             "effect": "fade",
@@ -131,7 +157,7 @@
                             "delay": 5000
                             }}'>
                 <div class="swiper-wrapper">
-                    @foreach($image_slider as $row)
+                    @foreach($imageSlider as $row)
                     <div class="swiper-slide">
                         <div class="image-layer"
                             style="background-image: url(frontend/slider-image/{{$row->foto}});"></div>
@@ -208,7 +234,7 @@
                     <div class="col-xl-6 wow fadeInUp" data-wow-delay="200ms">
                         <div class="news-two__right">
                             <ul class="list-unstyled news-two__list">
-                            @foreach($berita_terbaru_new as $row)  
+                            @foreach($beritaTerbaruNew  as $row)  
                                       
                                 <li>
                                     <div class="news-two__single">
@@ -333,7 +359,7 @@
 
                             }'>
                                 <!--Testimonial One Single Start-->
-                               @foreach($website_skpd as $row) 
+                               @foreach($websiteSkpds as $row) 
                                <div class="item">
                                    
 
@@ -341,8 +367,10 @@
                                         <div class="testimonial-one__single-inner">
                                             <div class="testimonial-one__client-info">
                                                 <div class="testimonial-one__client-img">
-                                                <a href="{{$row->link}}"><img class="skpd"  src="{{ $row->foto}}" alt="">
-                                                   </a>
+                                                <a href="{{ $row->link }}" target="_blank">
+                                                    <img class="skpd" src="{{ $row->foto }}" alt="">
+                                                </a>
+
                                                    
                                                 </div>
                                                 <div class="testimonial-one__content">
@@ -475,39 +503,7 @@
         </section>
 
      
- <!--Services Two Start-->
- <!-- <section class="services-two">
-            <div class="services-two__shape-1 float-bob-x">
-                <img src="{{ asset('frontend/assets/images/shapes/services-two-shape-1.png')}}" alt="">
-            </div>
-            <div class="services-two__shape-2 float-bob-y">
-                <img src="{{ asset('frontend/assets/images/shapes/services-two-shape-2.png')}}" alt="">
-            </div>
-            <div class="container">
-                <div class="services-two__top">
-                
-                <div class="row">
-                        <div class="col-xl-7 col-lg-6">
-                            <div class="services-two__left">
-                                <div class="section-title text-left">
-                             <h2 class="section-title__title">Berita Kominfo</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-5 col-lg-6">
-                            <div class="services-two__right">
-                         
-                                    <div id="gpr" >
-                                        <script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>
-                                    <div id="gpr-kominfo-widget-container"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               
-            </div>
- </section> -->
-        <!--Services Two End-->
+ 
         <section class="about-two">
             <div class="about-two__shape-1 float-bob-x">
                 <img src="{{asset('frontend/assets/images/shapes/about-two-shape-1.png')}}" alt="">

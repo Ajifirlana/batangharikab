@@ -39,7 +39,7 @@
                             </div>
                             <div class="news-details__content">
                                 <ul class="list-unstyled news-details__meta">
-                                    <li><a href="news-details.html"><i class="fas fa-user-circle"></i> by Admin </a>
+                                    <li><a href=""><i class="fas fa-user-circle"></i> by Admin </a>
                                     </li>
                                 </ul>
                                 <h3 class="news-details__title">{{$berita->judul}}</h3>
