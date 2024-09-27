@@ -16,8 +16,8 @@
                     <x-input id='judul' label='Judul' required=true  />
                     <x-datepicker id='tanggal' label='Tanggal' required="true" />
                     <x-filepond  name="foto" id="foto" label="Cover"  required="true" info="Format file (jpg dan png, Max 5 MB)" max="4mb"  /> 
-                    <x-filepond  name="file" id="file" label="File"  required="true" info="Format file (jpg dan png, Max 5 MB)" max="4mb"  /> 
-
+                    <x-filepond  name="file" id="file" label="File"  required="false" info="Format file (pdf, Max 5 MB)" max="4mb"  /> 
+                    <iframe  name="pdf"   id="pdf"  title="PDF Viewer"></iframe>
                     <input hidden  id="id_info" name="id_info" value="" />
                 </div>
                 <div class="modal-footer">
