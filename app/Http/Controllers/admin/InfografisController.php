@@ -15,15 +15,17 @@ class InfografisController extends Controller
 {
 
    protected $fileUploadService;
-    public function __construct(FileUploadService $fileUploadService)
-    {
-       $this->middleware('auth');
-       $this->middleware('permission:read infografis|edit skpd|delete infografis', ['only' => ['index','show']]);
-       $this->middleware('permission:create infografis', ['only' => ['create','store']]);
-       $this->middleware('permission:edit infografis', ['only' => ['edit','update']]);
-       $this->middleware('permission:delete infografis', ['only' => ['destroy']]);
-       $this->fileUploadService = $fileUploadService;
-    }
+   public function __construct(FileUploadService $fileUploadService)
+   {
+      $this->middleware('auth');
+      $this->middleware('permission:read infografis|edit infografis|delete infografis', ['only' => ['index','show']]);
+      $this->middleware('permission:create infografis', ['only' => ['create','store']]);
+      $this->middleware('permission:update infografis', ['only' => ['edit','update']]);
+      $this->middleware('permission:delete infografis', ['only' => ['destroy']]);
+      $this->fileUploadService = $fileUploadService;
+   }
+
+   use ApiResponse;
 
     use ApiResponse;
 
@@ -105,7 +107,7 @@ class InfografisController extends Controller
    //    //   ]);
     
    //    //   $imageName = time().'.'.$request->image->extension();  
-   //    //   $request->image->move(public_path('frontend\galeri'), $imageName);
+   //    //   $request->image->move(public_path('frontend\infografis'), $imageName);
 
 
    //        if($request->file('foto')==null){
