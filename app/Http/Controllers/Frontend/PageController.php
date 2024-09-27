@@ -37,8 +37,9 @@ class PageController extends Controller
         $imageSlider = DB::table('sliders')->latest('id')->limit(5)->get();
         $galeri = DB::table('galeris')->latest('id')->limit(4)->get();
         $video = DB::table('video_kegiatans')->latest('id')->limit(8)->get();
-        $latestRecord = Berita::latest('created_at')->first();
-        $beritaTerbaruNew = Berita::latest()->skip(1)->take(2)->get();
+        $latestRecord = Berita::latest('tanggal')->first();
+        $beritaTerbaruNew = Berita::latest('tanggal')->skip(1)->take(2)->get();
+
         $infografis = DB::table('infografis')->latest('id')->limit(4)->get();
         $popup = DB::table('popup')->latest('id')->first();
 

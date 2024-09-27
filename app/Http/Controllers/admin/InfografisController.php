@@ -18,10 +18,10 @@ class InfografisController extends Controller
     public function __construct(FileUploadService $fileUploadService)
     {
        $this->middleware('auth');
-       $this->middleware('permission:read youtube|edit skpd|delete youtube', ['only' => ['index','show']]);
-       $this->middleware('permission:create youtube', ['only' => ['create','store']]);
-       $this->middleware('permission:edit youtube', ['only' => ['edit','update']]);
-       $this->middleware('permission:delete youtube', ['only' => ['destroy']]);
+       $this->middleware('permission:read infografis|edit skpd|delete infografis', ['only' => ['index','show']]);
+       $this->middleware('permission:create infografis', ['only' => ['create','store']]);
+       $this->middleware('permission:edit infografis', ['only' => ['edit','update']]);
+       $this->middleware('permission:delete infografis', ['only' => ['destroy']]);
        $this->fileUploadService = $fileUploadService;
     }
 
@@ -49,9 +49,7 @@ class InfografisController extends Controller
 
        try {
 
-          //  $imageName = time().'.'.$request->foto->extension();  
-
-          //  $fileName = time().'.'.$request->file->extension();  
+       
 
             $tanggal_new = $request->input('tanggal');
 
@@ -63,29 +61,33 @@ class InfografisController extends Controller
            // Format the date as needed
            $foto = $request->file('foto');
            $file_pdf = $request->file('file');
-           $formattedDate = $parsedDate->format('Y-m-d'); //
-           $foto = $this->fileUploadService->uploadFile($foto);
-           $file_pdf = $this->fileUploadService->uploadFile($file_pdf);
-    
-
-                        Infografis::updateOrCreate(
-                           ['id'           => $request->id_info],
-                           [ 
-                              'judul'      => $request->judul,
-                              'tanggal'    => $formattedDate,
-                              'gambar'       => $foto,
-                              'file'       => $file_pdf,
-            
-                           ]
-                        );
-
-                  // $request->foto->move(public_path('frontend/infografis/foto'), $imageName);
-                  // $request->file->move(public_path('frontend/infografis/file'), $fileName);
-         
-                  if ($request->id_info) 
-                  return $this->success('Berhasil Mengubah Data');
-                  else 
-                  return $this->success('Berhasil Menginput Data');
+           $formattedDate = $parsedDate->format('Y-m-d');
+           
+           // Handle file uploads
+           $uploadedFoto = $foto ? $this->fileUploadService->uploadFile($foto) : null;
+           $uploadedFilePdf = $file_pdf ? $this->fileUploadService->uploadFile($file_pdf) : null;
+           
+           // Prepare data for update or create
+           $data = [
+               'judul'   => $request->judul,
+               'tanggal' => $formattedDate,
+           ];
+           
+           if ($uploadedFoto) {
+               $data['gambar'] = $uploadedFoto;
+           }
+           
+           if ($uploadedFilePdf) {
+               $data['file'] = $uploadedFilePdf;
+           }
+           
+           // Update or create the infografis entry
+           Infografis::updateOrCreate(['id' => $request->id_info], $data);
+           
+           // Return success message
+           $message = $request->id_info ? 'Berhasil Mengubah Data' : 'Berhasil Menginput Data';
+           return $this->success($message);
+           
 
       } catch (\Throwable $th) {
                   return $this->error('Gagal, Terjadi Kesalahan' . $th->getMessage(), 400);

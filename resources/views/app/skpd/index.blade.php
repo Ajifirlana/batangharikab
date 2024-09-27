@@ -78,6 +78,7 @@ $jns_kelamin = json_decode(json_encode(
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
+                                                    <th>Nama Opd</th> 
                                                     <th>Foto</th> 
                                                     <th>Link</th> 
                                                     <th>created_at</th>
@@ -193,6 +194,9 @@ $jns_kelamin = json_decode(json_encode(
                         orderable: false,
                         searchable: false,
                         width: '1%'
+                    },
+                    {
+                        data: 'opd',
                     },
                     { 
                         "data": "foto",
