@@ -290,7 +290,7 @@
                                 </ul>
                             </div>
                             <div class="team-two__content">
-                                <h3 class="team-two__name"><a href="team.html">{{$row->judul}}</a></h3>
+                                <!-- <h3 class="team-two__name"><a href="team.html">{{$row->judul}}</a></h3> -->
                                 <p class="team-two__sub-title"></p>
                                 <ul class="list-unstyled team-two__social-two">
                                     <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
@@ -379,7 +379,8 @@
                                                     <p class="testimonial-one__client-sub-title">{{$row->opd}}</p>
                                                 </div>
                                             </div>
-                                            <p class="testimonial-one__text">{{$row->keterangan}}</p>
+                                            <p class="testimonial-one__text">{{ \Illuminate\Support\Str::limit($row->keterangan, 200) }}</p>
+
                                         </div>
                                     </div>
                                 </div>
