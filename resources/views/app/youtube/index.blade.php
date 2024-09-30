@@ -146,10 +146,12 @@ $jns_kelamin = json_decode(json_encode(
                     FilePondPluginFileEncode,
                     FilePondPluginImagePreview,
                     FilePondPluginFilePoster,
-                    FilePondPluginFileValidateType,
-                    FilePondPluginFileValidateSize,
+                    FilePondPluginImageValidateSize,
                     FilePondPluginImageTransform,
-                    FilePondPluginImageValidateSize // Add this plugin for dimension validation
+                    FilePondPluginImageCrop,
+                    FilePondPluginFileValidateType,
+                    FilePondPluginFileValidateSize
+             // Add this plugin for dimension validation
                 );
 
                 const inputElement = document.querySelector('input[type="file"]');
