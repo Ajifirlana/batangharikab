@@ -100,7 +100,7 @@ $currentMonth = Carbon::now();
                                         <i class="icon-email"></i>
                                     </div>
                                     <div class="text">
-                                        <p><a href="{{$setting->email}}">{{$setting->email}}</a></p>
+                                        <p><a href="mailto:{{$setting->email}}">{{$setting->email}}</a>                                        </p>
                                     </div>
                                 </li>
                                 <li>
@@ -115,9 +115,16 @@ $currentMonth = Carbon::now();
                         </div>
                         <div class="main-header-two__top-right">
                             <div class="main-header-two__social">
-                                <a href="{{ $setting->tiktok }}"><i class="fab fa-brands fa-tiktok"></i></a>
-                                <a target="blank" href="{{$setting->facebook}}"><i class="fab fa-facebook"></i></a>
-                                <a href="{{ $setting->instagram }}"><i class="fab fa-instagram"></i></a>
+                            <a href="{{ $setting->tiktok }}" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-brands fa-tiktok"></i>
+</a>
+<a target="_blank" href="{{ $setting->facebook }}" rel="noopener noreferrer">
+    <i class="fab fa-facebook"></i>
+</a>
+<a href="{{ $setting->instagram }}" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-instagram"></i>
+</a>
+
                             </div>
                         </div>
                     </div>
@@ -135,15 +142,15 @@ $currentMonth = Carbon::now();
                                 <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                 <ul class="main-menu__list">
                                 <li class="dropdown {{ request()->is('/') ? 'dropdown current' : '' }}">
-                                    <a href="{{ url('/') }}">Tentang Batang Hari</a>
+                                    <a href="{{ url('/') }}">Tentang Batanghari</a>
                                     <ul>
                                         <li class="dropdown {{ request()->is('page/profil-batanghari*') ? 'dropdown current' : '' }}">
-                                            <a href="#">Profil Batang Hari</a>
+                                            <a href="#">Profil Batanghari</a>
                                             <ul>
-                                                <li><a href="{{ url('page/sejarah') }}" class="{{ request()->is('page/sejarah') ? 'dropdown current' : '' }}">Sejarah Batang Hari</a></li>
+                                                <li><a href="{{ url('page/sejarah') }}" class="{{ request()->is('page/sejarah') ? 'dropdown current' : '' }}">Sejarah Batanghari</a></li>
                                                 <li><a href="{{ url('page/arti-lambang') }}" class="{{ request()->is('page/arti-lambang') ? 'dropdown current' : '' }}">Arti Lambang</a></li>
                                                 <li><a href="{{ url('page/kondisi-demografi') }}" class="{{ request()->is('page/kondisi-demografi') ? 'dropdown current' : '' }}">Kondisi Demografi</a></li>
-                                                <li><a href="{{ url('page/peta-batanghari') }}" class="{{ request()->is('page/peta-batanghari') ? 'dropdown current' : '' }}">Peta Batang Hari</a></li>
+                                                <li><a href="{{ url('page/peta-batanghari') }}" class="{{ request()->is('page/peta-batanghari') ? 'dropdown current' : '' }}">Peta Batanghari</a></li>
                                                 <li><a href="{{ url('page/visi-dan-misi') }}" class="{{ request()->is('page/visi-dan-misi') ? 'dropdown current' : '' }}">Visi & Misi</a></li>
                                             </ul>
                                         </li>
@@ -263,7 +270,7 @@ $currentMonth = Carbon::now();
                                             <span class="icon-email"></span>
                                         </div>
                                         <div class="text">
-                                            <p><a href="{{$setting->email}}">{{$setting->email}}</a></p>
+                                            <p><a href="mailto:{{$setting->email}}">{{$setting->email}}</a></p>
                                         </div>
                                     </li>
                                     <li>
@@ -335,10 +342,10 @@ $currentMonth = Carbon::now();
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">
                
-                                    <a href="{{ $setting->tiktok }}"><i class="fab fa-brands fa-tiktok"></i></a>
-                                    <a href="{{ $setting->facebook }}"><i class="fab fa-facebook"></i></a>
+                                    <a href="{{ $setting->tiktok }}" target="_blank"><i class="fab fa-brands fa-tiktok"></i></a>
+                                    <a href="{{ $setting->facebook }}"target="_blank"><i class="fab fa-facebook"></i></a>
                                    
-                                    <a href="{{ $setting->instagram }}"><i class="fab fa-instagram"></i></a>
+                                    <a href="{{ $setting->instagram }}"target="_blank"><i class="fab fa-instagram"></i></a>
                                 
                 </div><!-- /.mobile-nav__social -->
             </div><!-- /.mobile-nav__top -->
