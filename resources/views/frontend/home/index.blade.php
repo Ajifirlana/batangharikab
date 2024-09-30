@@ -484,7 +484,7 @@
                     <div class="item">
                         <div class="project-two__single">
                             <div class="project-two__img">
-                                <img class="vidio" src="{{asset('frontend/video/'.$row->foto)}}" alt="">
+                                <img class="vidio" src="{{$row->foto}}" alt="">
                                 <div class="project-two__arrow">
                                 <a href="{{ $row->link }}" target="_blank"><br><span class="fa fa-solid fa-play"></span></a>
                                 </div>

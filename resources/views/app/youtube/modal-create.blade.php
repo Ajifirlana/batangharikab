@@ -18,7 +18,7 @@
                 <x-input id='link' label='Link' required=true  />
             
                 <!-- <x-filepond id="file" label="uploud Foto"  onchange="preview()"  required="true" info="Format file (jpg dan png, Max 5 MB)" max="4mb"  />   -->
-                <x-filepond id="file" label='Foto' info='( Format File JPG/PNG , Maks 5 MB)'
+                <x-filepond required=true  id="file" label='Foto' info='( Format File JPG/PNG , Maks 5 MB,Ukuran 370x450)'
                         accept="image/jpeg, image/png" />
                 <!-- <x-viewfoto name="foto" id="foto" src="" ></x-viewfoto> -->
               

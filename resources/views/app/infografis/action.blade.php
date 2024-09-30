@@ -8,12 +8,12 @@
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
         </button>
         <ul class="dropdown-menu">
-           @canany('update galeri')
+          
             <li><a data-url='{{ route('infografis.edit', $data->id) }}'  href="#" class="btn_edit dropdown-item" >Ubah Data</a> </li>
-           @endcan
+        
         
             <div class="dropdown-divider"></div>
-            @canany('delete galeri') 
+            @canany('delete infografis') 
              <li><a data-hapus="{{ $data->id }}"  data-url="{{ route('infografis.destroy', $data->id) }}" class="btn_hapus dropdown-item" href="#">Hapus
                <form hidden id="form-delete" action="{{ route('infografis.destroy', $data->id) }}" method="POST"> @csrf
                <input hidden  id="id" name="id" value="{{ $data->id }}" />

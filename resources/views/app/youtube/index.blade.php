@@ -119,7 +119,9 @@ $jns_kelamin = json_decode(json_encode(
     <script src="{{ asset('plugins/filepond/filepond-plugin-image-crop.js') }}"></script>
     <script src="{{ asset('plugins/filepond/filepond-get-files.js') }}"></script>
     <script src="{{ asset('plugins/magnific/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('plugins/filepond/filepond-plugin-image-crop.js') }}"></script>
 
+    <script src="{{ asset('plugins/filepond/filepond-plugin-image-transform.js') }}"></script>></script>
     <script src="{{ asset('template/admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
     <script src="{{ asset('template/admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
 
@@ -146,19 +148,25 @@ $jns_kelamin = json_decode(json_encode(
                     FilePondPluginFilePoster,
                     FilePondPluginFileValidateType,
                     FilePondPluginFileValidateSize,
+                    FilePondPluginImageTransform,
                     FilePondPluginImageValidateSize // Add this plugin for dimension validation
                 );
 
                 const inputElement = document.querySelector('input[type="file"]');
                 const pond = FilePond.create(inputElement, {
                     storeAsFile: true,
-                    acceptedFileTypes: ['image/*'],
                     fileValidateTypeDetectType: true,
-                    imageValidateSizeMinWidth: 370,  // Minimum width in pixels
-                    imageValidateSizeMinHeight: 450, // Minimum height in pixels
-                    imageValidateSizeMaxWidth: 370,  // Maximum width in pixels
-                    imageValidateSizeMaxHeight: 450, // Maximum height in pixels
-                    maxFileSize: '5MB',              // Max file size (5MB)
+                    acceptedFileTypes: ['image/*'],
+                    imageCropAspectRatio: '37:45',    // Atur rasio aspek menjadi 1:1 (270x270)
+                    allowImageCrop: true,           // Izinkan cropping
+                    stylePanelAspectRatio: 1,       // Panel juga mengikuti rasio 1:1
+                    imageResizeTargetWidth: 370,    // Lebar target resize
+                    imageResizeTargetHeight: 450,   // Tinggi target resize
+                    allowImageResize: true,         // Aktifkan fitur resize
+                    imageTransformOutputQuality: 90,  // Kualitas output gambar
+                    imageTransformOutputMimeType: 'image/jpeg',  // Format output
+                    allowImageTransform: true,   
+                    maxFileSize: '5MB', //10 mbs max size
                     allowFileSizeValidation: true,
                 });
 

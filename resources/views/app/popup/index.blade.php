@@ -117,9 +117,13 @@ $jns_kelamin = json_decode(json_encode(
     <script src="{{ asset('plugins/filepond/filepond-plugin-image-preview.js') }}"></script>
     <script src="{{ asset('plugins/filepond/filepond-plugin-file-rename.js') }}"></script>
     <script src="{{ asset('plugins/filepond/filepond-plugin-image-crop.js') }}"></script>
+    <script src="{{ asset('plugins/filepond/filepond-plugin-image-transform.js') }}"></script>></script>
+
     <script src="{{ asset('plugins/filepond/filepond-get-files.js') }}"></script>
     <script src="{{ asset('plugins/magnific/jquery.magnific-popup.min.js') }}"></script>
 
+
+   
     <script src="{{ asset('template/admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
     <script src="{{ asset('template/admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
 
@@ -144,8 +148,10 @@ $jns_kelamin = json_decode(json_encode(
                     FilePondPluginImagePreview,
                     FilePondPluginFilePoster,
                     FilePondPluginImageValidateSize,
+                  
                     FilePondPluginImageCrop,
                     FilePondPluginFileValidateType,
+                    FilePondPluginImageTransform,
                     FilePondPluginFileValidateSize
                 );
 
@@ -156,9 +162,13 @@ $jns_kelamin = json_decode(json_encode(
                     storeAsFile: true,
                     acceptedFileTypes: ['image/*'],
                     fileValidateTypeDetectType: true,
-                  // Maximum height in pixels (optional)
-                    imageCropAspectRatio: '1.307', // Aspect ratio for cropping
-                    allowImageCrop: true,
+                    imageCropAspectRatio: '4:3',  // Atur rasio aspek yang diinginkan
+                    allowImageCrop: true  , 
+                    imageTransformOutputQuality: 90,  // Kualitas gambar hasil crop
+                    imageTransformOutputMimeType: 'image/jpeg',  // Format output
+                    allowImageTransform: true  , 
+                
+                  
                     maxFileSize: '5MB', // Max file size (5MB in this case)
                     allowFileSizeValidation: true,
                 });

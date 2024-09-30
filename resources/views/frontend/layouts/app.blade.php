@@ -370,7 +370,7 @@ $currentMonth = Carbon::now();
   
     <!--  plugin halaman fb -->
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v20.0&appId=970070473472661" nonce="5h4zXSdl"></script>
+    <!-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v20.0&appId=970070473472661" nonce="5h4zXSdl"></script> -->
     <!-- end plugin halaman fb -->
     <script src="{{ asset('frontend/assets/vendors/jquery/jquery-3.6.0.min.js')}}"></script>
     <script src="{{ asset('frontend/assets/vendors/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

@@ -36,7 +36,7 @@ class PageController extends Controller
         $websiteSkpds = DB::table('website_skpds')->latest('id')->limit(5)->get();
         $imageSlider = DB::table('sliders')->latest('id')->limit(5)->get();
         $galeri = DB::table('galeris')->latest('id')->limit(4)->get();
-        $video = DB::table('video_kegiatans')->latest('id')->limit(8)->get();
+        $video = DB::table('video_kegiatans')->latest('created_at')->limit(12)->get();
         $latestRecord = Berita::latest('tanggal')->first();
         $beritaTerbaruNew = Berita::latest('tanggal')->skip(1)->take(2)->get();
 

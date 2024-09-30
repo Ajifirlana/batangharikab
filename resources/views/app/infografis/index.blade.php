@@ -44,6 +44,11 @@ $jns_kelamin = json_decode(json_encode(
             cursor: pointer;
             text-decoration: underline;
         }
+        iframe {
+            width: 100%;
+            height: 50vh; /* Adjust the height as needed */
+            border: none;
+        }
     </style>
     @endpush
 @section('content')
@@ -119,6 +124,9 @@ $jns_kelamin = json_decode(json_encode(
 
     <script src="{{ asset('plugins/filepond/filepond-get-files.js') }}"></script>
     <script src="{{ asset('plugins/magnific/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('plugins/filepond/filepond-plugin-image-crop.js') }}"></script>
+
+    <script src="{{ asset('plugins/filepond/filepond-plugin-image-transform.js') }}"></script>></script>
 
     <script src="{{ asset('template/admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
     <script src="{{ asset('template/admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
@@ -150,7 +158,8 @@ $jns_kelamin = json_decode(json_encode(
                 FilePondPluginImagePreview,
                 FilePondPluginFilePoster,
                 FilePondPluginPdfPreview,
-                FilePondPluginMediaPreview,
+                FilePondPluginImageCrop,
+                FilePondPluginImageTransform,
                 FilePondPluginFileValidateType,
                 FilePondPluginFileValidateSize);
 
@@ -160,7 +169,16 @@ $jns_kelamin = json_decode(json_encode(
                     storeAsFile: true,
                     fileValidateTypeDetectType: true,
                     acceptedFileTypes: ['image/*'],
-                    maxFileSize: 2000000, //10 mbs max size
+                    imageCropAspectRatio: '27:37',    // Atur rasio aspek menjadi 1:1 (270x270)
+                    allowImageCrop: true,           // Izinkan cropping
+                    stylePanelAspectRatio: 1,       // Panel juga mengikuti rasio 1:1
+                    imageResizeTargetWidth: 270,    // Lebar target resize
+                    imageResizeTargetHeight: 370,   // Tinggi target resize
+                    allowImageResize: true,         // Aktifkan fitur resize
+                    imageTransformOutputQuality: 90,  // Kualitas output gambar
+                    imageTransformOutputMimeType: 'image/jpeg',  // Format output
+                    allowImageTransform: true,   
+                    maxFileSize: '5MB', //10 mbs max size
                     allowFileSizeValidation: true,
                 });
                
@@ -187,12 +205,12 @@ $jns_kelamin = json_decode(json_encode(
                     pdfComponentExtraParams: 'toolbar=0&view=fit&page=1'
                 });
                
-                // file_pdf.setOptions({
+                file_pdf.setOptions({
                
-                // allowPdfPreview: true,
-                // pdfPreviewHeight: 320,
-                // pdfComponentExtraParams: 'toolbar=0&view=fit&page=1'  
-                //  })
+                allowPdfPreview: true,
+                pdfPreviewHeight: 320,
+                pdfComponentExtraParams: 'toolbar=0&view=fit&page=1'  
+                 })
 
     
 
@@ -244,7 +262,7 @@ $jns_kelamin = json_decode(json_encode(
         
 
 
-                        let datatable = $("#datatable").DataTable({
+         let datatable = $("#datatable").DataTable({
                             serverSide: true,
                             processing: true,
                             searching: true,
@@ -274,13 +292,13 @@ $jns_kelamin = json_decode(json_encode(
                 "data": "gambar",
                         "render": function(data, type, row) {
                         return '<img src="'  + data + '" height="50" width="50"/>';
-                                }
+                }
                 },
                 { 
-                            "data": "file",
-                                    "render": function(data, type, row) {
-                                    return '<a target="_blank" href="' + data + '"><i class="fab far fa-eye"></i></a>';
-                                }
+                "data": "file",
+                "render": function(data, type, row) {
+                         return '<a target="_blank" href="' + data + '"><i class="fab far fa-eye"></i></a>';
+                 }
                 },
                     
                     
@@ -295,7 +313,8 @@ $jns_kelamin = json_decode(json_encode(
             $("#btn_tambah").click(function() {
                 file_pdf.removeFile();
                 foto.removeFile();
-              
+                $('#pdf').removeAttr('src');
+                $('#pdf').hide()
                 // const img = document.getElementById('foto');
                 // img.setAttribute('src', '');
                 clearInput()
@@ -357,7 +376,8 @@ $jns_kelamin = json_decode(json_encode(
                     $('#id_info').val(response.data.id)
                     $('#judul').val(response.data.judul)
                     flatpicker.setDate(response.data.tanggal)
-              
+                    $('#pdf').show()
+                    $('#pdf').attr('src', response.data.file);
                     //const externalImageUrl = "{{ asset('frontend/infografis/foto/') }}"+"/"+response.data.gambar;
 
                     // Add the external image to FilePond
@@ -389,40 +409,33 @@ $jns_kelamin = json_decode(json_encode(
                             }
                         ]
                     });
-
-
-                    // const data_file = "{{ asset('frontend/infografis/file/') }}"+"/"+response.data.file;
-                    const data_file ='https://repository.bsi.ac.id/index.php/unduh/item/271361/Modul-SistemBasisData-1.pdf';
-
+                    const pdf = response.data.file;
                     file_pdf.setOptions({
                         allowPdfPreview: true,
                         pdfPreviewHeight: 320,
-                        pdfComponentExtraParams: 'toolbar=0&view=fit&page=1',  
+                        pdfComponentExtraParams: 'toolbar=0&view=fit&page=1',
                         files: [
                             {
-                                source: data_file,
+                                source: pdf,
                                 options: {
-                                    type: 'local',
+                                    type: 'remote',
                                     file: {
-                                        name: 'FilePDF', // Nama file yang akan ditampilkan
-                                        size: 0, // Ukuran file dapat diatur jika diketahui
+                                        name: pdf,
+                                        size: 0, // size in bytes
                                         type: 'application/pdf'
                                     },
                                     metadata: {
-                                        poster: data_file
+                                        poster: pdf
                                     }
                                 }
                             }
                         ]
                     });
-                    // file_pdf.addFile(data_file).then((file) => {
-                    //     // File added successfully
-                    //     console.log('File added:', file);
-                    // }).catch((error) => {
-                    //     // Error adding file
-                    //     console.error('Error adding file:', error);
-                    // });
 
+
+
+
+          
               
 
                   

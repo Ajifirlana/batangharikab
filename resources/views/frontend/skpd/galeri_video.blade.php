@@ -15,7 +15,7 @@
                         <div class="news-one__single">
                             <div class="news-one__img-box">
                                 <div class="news-one__img">
-                                    <img src="{{asset('frontend/galeri/'.$row->foto)}}" alt="" height="200px">
+                                    <img src="{{$row->foto}}" alt="" height="200px">
                                 </div>
                                 <div class="news-one__date">
                                     <p>{{$row->created_at}}</p>
@@ -27,7 +27,7 @@
                             </div>
                         </div>
                     </div>
-                    <!--Team One Single Start-->
+                    <!--Team One Single Startade-->
                     
                     @endforeach
                     {{ $galeri_video->links() }}
