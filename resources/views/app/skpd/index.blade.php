@@ -115,14 +115,16 @@ $jns_kelamin = json_decode(json_encode(
     <script src="{{ asset('plugins/filepond/filepond-plugin-file-validate-type.js') }}"></script>
     <script src="{{ asset('plugins/filepond/filepond-plugin-file-validate-size.js') }} "></script>
     <script src="{{ asset('plugins/filepond/filepond-plugin-image-preview.js') }}"></script>
-
+    <script src="{{ asset('plugins/filepond/filepond-plugin-image-validate-size.js')}}"></script>
     <script src="{{ asset('plugins/filepond/filepond-get-files.js') }}"></script>
     <script src="{{ asset('plugins/magnific/jquery.magnific-popup.min.js') }}"></script>
 
     <script src="{{ asset('template/admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
     <script src="{{ asset('template/admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
 
+    <script src="{{ asset('plugins/filepond/filepond-plugin-image-crop.js') }}"></script>
 
+<script src="{{ asset('plugins/filepond/filepond-plugin-image-transform.js') }}"></script>></script>
 
     
     {{-- password toggle show/hide --}}
@@ -141,19 +143,29 @@ $jns_kelamin = json_decode(json_encode(
             FilePond.registerPlugin(
                 //  FilePondPluginGetFile,
                 FilePondPluginFileEncode,
-                FilePondPluginImagePreview,
-                FilePondPluginFilePoster,
-          
-                FilePondPluginFileValidateType,
-                FilePondPluginFileValidateSize)
+                    FilePondPluginImagePreview,
+                    FilePondPluginFilePoster,
+                    FilePondPluginImageValidateSize,
+                    FilePondPluginImageTransform,
+                    FilePondPluginImageCrop,
+                    FilePondPluginFileValidateType,
+                    FilePondPluginFileValidateSize)
 
                 const inputElement = document.querySelector('input[type="file"]');
                  const pond = FilePond.create(inputElement,{
                     storeAsFile: true,
-                    acceptedFileTypes: ['image/*'],
                     fileValidateTypeDetectType: true,
-
-                    maxFileSize: 200000, //10 mbs max size
+                    acceptedFileTypes: ['image/*'],
+                    imageCropAspectRatio: '1:1',    // Atur rasio aspek menjadi 1:1 (270x270)
+                    allowImageCrop: true,           // Izinkan cropping
+                    stylePanelAspectRatio: 1,       // Panel juga mengikuti rasio 1:1
+                    imageResizeTargetWidth: 100,    // Lebar target resize
+                    imageResizeTargetHeight: 100,   // Tinggi target resize
+                    allowImageResize: true,         // Aktifkan fitur resize
+                    imageTransformOutputQuality: 90,  // Kualitas output gambar
+                    imageTransformOutputMimeType: 'image/jpeg',  // Format output
+                    allowImageTransform: true,   
+                    maxFileSize: '5MB', //10 mbs max size
                     allowFileSizeValidation: true,
                 });
 
