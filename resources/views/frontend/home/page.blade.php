@@ -68,7 +68,7 @@
                                 <h3 class="sidebar__title">Latest posts</h3>
                                 <ul class="sidebar__post-list list-unstyled">
                                 
-                                @foreach($berita_terbaru as $berita)  
+                                @foreach($beritaTerbaru as $berita)  
                                
                                 <li>
                                         <div class="sidebar__post-image">

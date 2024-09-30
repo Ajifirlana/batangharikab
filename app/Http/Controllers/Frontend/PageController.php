@@ -32,7 +32,7 @@ class PageController extends Controller
             'created_at' => Carbon::now(),
         ]);
 
-        $beritaTerbaru = Berita::latest('id')->paginate(8);
+        $beritaTerbaru = Berita::latest('tanggal')->paginate(8);
         $websiteSkpds = DB::table('website_skpds')->latest('id')->limit(5)->get();
         $imageSlider = DB::table('sliders')->latest('id')->limit(5)->get();
         $galeri = DB::table('galeris')->latest('id')->limit(4)->get();
