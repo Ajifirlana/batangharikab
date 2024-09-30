@@ -41,7 +41,7 @@ class PageController extends Controller
         $beritaTerbaruNew = Berita::latest('tanggal')->skip(1)->take(2)->get();
 
         $infografis = DB::table('infografis')->latest('id')->limit(4)->get();
-        $popup = DB::table('popup')->latest('id')->first();
+        $popup = DB::table('popup')->latest('created_at')->first();
 
         return view('frontend.home.index', compact(
             'beritaTerbaru', 'popup', 'beritaTerbaruNew', 'latestRecord', 'websiteSkpds', 'infografis', 'imageSlider', 'galeri', 'video'

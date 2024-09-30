@@ -16,11 +16,10 @@ class PopupController extends Controller
        $this->middleware('auth');
        $this->middleware('permission:read popup|edit popup|delete popup', ['only' => ['index','show']]);
        $this->middleware('permission:create popup', ['only' => ['create','store']]);
-       $this->middleware('permission:edit popup', ['only' => ['edit','update']]);
+       $this->middleware('permission:update popup', ['only' => ['edit','update']]);
        $this->middleware('permission:delete popup', ['only' => ['destroy']]);
        $this->fileUploadService = $fileUploadService;
     }
-
     use ApiResponse;
 
     public function index()
