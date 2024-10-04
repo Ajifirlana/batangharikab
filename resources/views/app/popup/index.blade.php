@@ -162,8 +162,7 @@ $jns_kelamin = json_decode(json_encode(
                     storeAsFile: true,
                     acceptedFileTypes: ['image/*'],
                     fileValidateTypeDetectType: true,
-                    imageCropAspectRatio: '4:3',  // Atur rasio aspek yang diinginkan
-                    allowImageCrop: true  , 
+                  
                     imageTransformOutputQuality: 90,  // Kualitas gambar hasil crop
                     imageTransformOutputMimeType: 'image/jpeg',  // Format output
                     allowImageTransform: true  , 
