@@ -42,6 +42,7 @@ Breadcrumbs::for('page.tampil', function (BreadcrumbTrail $trail, $slug) {
         'pemerintah-batanghari' => 'Pemerintahan Batanghari',
         'akuntabiltas-pemerintahan' => 'Akuntabilitas Pemerintahan',
         'akuntabiltas-pelaporan' => 'Akuntabilitas Pelaporan',
+        'lakip' => 'LAKIP',
         'akuntabilitas-batanghari' => 'Transparansi Anggaran',
     ];
 
@@ -95,4 +96,9 @@ Breadcrumbs::for('website_skpd', function (BreadcrumbTrail $trail) {
 Breadcrumbs::for('akuntabilitas-batanghari', function (BreadcrumbTrail $trail) {
     $trail->parent('home');
     $trail->push('Akuntabilitas Batanghari', route('index'));
+});
+
+Breadcrumbs::for('lakip', function (BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('LAKIP', route('index'));
 });

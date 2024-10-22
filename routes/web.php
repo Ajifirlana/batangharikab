@@ -87,6 +87,7 @@ Route::get('/view/{file}', function ($file) {
 //    Route::get('akuntabilitas-batanghari', 'index')->name('akuntabilitas.index');
 // });
 Route::get('akuntabilitas-batanghari', [AkuntabilitasBatanghariController::class, 'index'])->name('akuntabilitas.index');
+Route::get('lakip', [AkuntabilitasBatanghariController::class, 'lakip'])->name('lakip.lakip');
 // Route::get('/', function () {
 //    return view('frontend.dashbord.home', ['name' => 'James']);
 // });

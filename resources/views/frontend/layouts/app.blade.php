@@ -157,6 +157,7 @@ $currentMonth = Carbon::now();
                                         <li><a href="{{ url('page/pemerintah-batanghari') }}" class="{{ request()->is('page/pemerintah-batanghari') ? 'dropdown current' : '' }}">Pemerintahan Batanghari</a></li>
                                         <li><a href="{{ url('page/akuntabiltas-pemerintahan') }}" class="{{ request()->is('page/akuntabiltas-pemerintahan') ? 'dropdown current' : '' }}">Akuntabiltas Pemerintahan</a></li>
                                         <li><a href="{{ url('page/akuntabiltas-pelaporan') }}" class="{{ request()->is('page/akuntabiltas-pelaporan') ? 'dropdown current' : '' }}">Akuntabiltas Pelaporan</a></li>
+                                        <li><a href="{{ url('lakip') }}" class="{{ request()->is('lakip') ? 'dropdown current' : '' }}">Lakip</a></li>
                                         <li><a href="{{ url('akuntabilitas-batanghari') }}" class="{{ request()->is('akuntabilitas-batanghari') ? 'dropdown current' : '' }}">Transparansi Anggaran</a></li>
                                     </ul>
                                 </li>
