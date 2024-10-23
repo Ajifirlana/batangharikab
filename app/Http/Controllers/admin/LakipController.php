@@ -57,6 +57,7 @@ class LakipController extends Controller
                    [
                       'judul'            => $request->nama,
                       'tahun'          => $request->tahun,
+                      'jenis'          => $request->jenis,
                       'link_download'         => $request->url,            
                    ]
                 );

@@ -95,6 +95,7 @@ $json = json_decode(json_encode($years));
                                                     <th>No</th>
                                                     <th>Nama</th> 
                                                     <th>Tahun</th> 
+                                                    <th>Jenis</th> 
                                                     <th>Url</th> 
                                                     
                                                     <th>created_at</th>
@@ -198,13 +199,17 @@ $json = json_decode(json_encode($years));
                     {
                         data: 'tahun',
                     },
+
+                    {
+                        data: 'jenis',
+                    },
+                    
                     {data: "link_download",className: 'dt-center',
                     "render": function(data, type, row) {
                             return '<a target="_blank" href="'+ data + '"><i class="fab far fa-eye"></i></i></a>';
                       }
                    },
-
-                    
+                
                   
                     {
                         data: 'created_at',
@@ -290,6 +295,7 @@ $json = json_decode(json_encode($years));
                     $('#nama').val(response.data.judul)
                     $('#url').val(response.data.link_download)
                     $('#tahun').val(response.data.tahun).trigger("change")
+                    $('#jenis').val(response.data.jenis).trigger("change")
                  
                    
 

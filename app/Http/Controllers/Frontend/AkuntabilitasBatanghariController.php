@@ -39,12 +39,16 @@ class AkuntabilitasBatanghariController extends Controller
 
     public function lakip(Request $request){
         // $anggaran =  Anggaran::orderBy('created_at','desc')->paginate(8);
+        $x['judul']   = "LAKIP KABUPATEN BATANGHARI";
         $tahun = $request->input('tahun');
         $x['berita_terbaru']     = Berita::orderBy('created_at','desc')->offset(0)->limit(5)->get();
         if($tahun=="all"){
-            $data    = Lakip::get();
+            $data    = Lakip::where('jenis','batanghari')->get();
         }else{
-            $data    = Lakip::where('tahun',$tahun)->get();   
+            $data = Lakip::where([
+                ['tahun', '=', $tahun],
+                ['jenis', '=', 'batanghari']
+            ])->get();
         }
        
             //return $data;
@@ -60,6 +64,39 @@ class AkuntabilitasBatanghariController extends Controller
                   ->make(true);
             }
             return view('frontend.lakip.index', $x);
+
+    }
+
+    public function lakip_skpd(Request $request){
+        // $anggaran =  Anggaran::orderBy('created_at','desc')->paginate(8);
+        $tahun = $request->input('tahun');
+        $x['judul']   = "LAKIP SKPD";
+        $x['berita_terbaru']     = Berita::orderBy('created_at','desc')->offset(0)->limit(5)->get();
+        if($tahun=="all"){
+            $data    = Lakip::where('jenis','skpd')->get();
+        }else{
+            $data = Lakip::where([
+                ['tahun', '=', $tahun],
+                ['jenis', '=', 'skpd']
+            ])->get();
+            
+        }
+
+        
+       
+           // return $data;
+      
+            if (request()->ajax()) {
+               return  datatables()->of($data)
+                  ->addIndexColumn()
+                  ->addColumn('action', function ($data) {
+                     return view('app.anggaran.action', compact('data'));
+                  })
+                  
+                  ->rawColumns(['action'])
+                  ->make(true);
+            }
+            return view('frontend.lakip.index-skpd', $x);
 
     }
 }

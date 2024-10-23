@@ -15,11 +15,17 @@
                 <div class="modal-body">
                     <x-input id='nama' label='Nama Dokumen' required=true  />
                     <x-input id='url' label='URL' required=true hint="URL" />
-                    <x-select2 id="tahun" label="Tahun" required="false"
+                    <x-select2 id="tahun" label="Tahun" required="true"
                       placeholder="Tahun">
                         @foreach ($json as $item)
                           <option value="{{ $item->value }}">{{ $item->text }}</option>
                         @endforeach
+                   
+                    </x-select2>
+                    <x-select2 id="jenis"  label="Jenis" required="true"
+                        placeholder="Jenis">
+                        <option value="batanghari">Batanghari</option>
+                        <option value="skpd">skpd</option>
                     </x-select2>
                     <input hidden  id="id" name="id" value="" />
                 </div>

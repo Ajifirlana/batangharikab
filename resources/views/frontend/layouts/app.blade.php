@@ -157,7 +157,14 @@ $currentMonth = Carbon::now();
                                         <li><a href="{{ url('page/pemerintah-batanghari') }}" class="{{ request()->is('page/pemerintah-batanghari') ? 'dropdown current' : '' }}">Pemerintahan Batanghari</a></li>
                                         <li><a href="{{ url('page/akuntabiltas-pemerintahan') }}" class="{{ request()->is('page/akuntabiltas-pemerintahan') ? 'dropdown current' : '' }}">Akuntabiltas Pemerintahan</a></li>
                                         <li><a href="{{ url('page/akuntabiltas-pelaporan') }}" class="{{ request()->is('page/akuntabiltas-pelaporan') ? 'dropdown current' : '' }}">Akuntabiltas Pelaporan</a></li>
-                                        <li><a href="{{ url('lakip') }}" class="{{ request()->is('lakip') ? 'dropdown current' : '' }}">Lakip</a></li>
+                                        <li class="dropdown {{ request()->is('lakip*') ? 'dropdown current' : '' }}">
+                                        <a href="#">LAKIP</a>
+                                             <ul>
+                                                <li><a href="{{ url('lakip') }}" class="{{ request()->is('lakip') ? 'dropdown current' : '' }}">Lakip Batanghari</a></li>
+                                                <li><a href="{{ url('lakip_skpd') }}" class="{{ request()->is('lakip_skpd') ? 'dropdown current' : '' }}">Lakip SKPD</a></li>
+                                               
+                                            </ul>
+                                        </li>
                                         <li><a href="{{ url('akuntabilitas-batanghari') }}" class="{{ request()->is('akuntabilitas-batanghari') ? 'dropdown current' : '' }}">Transparansi Anggaran</a></li>
                                     </ul>
                                 </li>

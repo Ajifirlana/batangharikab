@@ -84,7 +84,7 @@ $json = json_decode(json_encode($years));
                             <div class="sidebar__single sidebar__post">
                       
                        
-                                 <h3 class="news-details__title">LAKIP Kabupaten Batang Hari</h3>
+                                 <h3 class="news-details__title">{{$judul}}</h3>
                        
                         
     
