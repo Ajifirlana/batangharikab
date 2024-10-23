@@ -15,7 +15,7 @@ use App\Http\Controllers\admin\InfografisController;
 use App\Http\Controllers\admin\BeritaBackandController;
 use App\Http\Controllers\admin\TransparasiAnggaranController;
 use App\Http\Controllers\admin\PopupController;
-
+use App\Http\Controllers\admin\LakipController;
 
 
 use App\Http\Controllers\FirebaseController;
@@ -165,6 +165,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
       'anggaran' => TransparasiAnggaranController::class, 
       'front' => PageAdminController::class, 
       'popup' => PopupController::class, 
+      'lakip' => LakipController::class, 
+      
 
       
       
