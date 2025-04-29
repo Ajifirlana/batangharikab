@@ -280,7 +280,7 @@
                         <div class="team-two__single">
                             <div class="team-two__img-box">
                                 <div class="team-two__img">
-                                <img class="infografis" src="{{$row->gambar}}"alt="">
+                                <img class="infografis" src="{{$row->gambar}}"alt="" >
                                 </div>
                                 <ul class="list-unstyled team-two__social">
                                     <li><a href="{{$row->file}}"><i class="fas fa-download"></i></a></li>
@@ -292,9 +292,20 @@
                             <div class="team-two__content">
                                 <!-- <h3 class="team-two__name"><a href="team.html">{{$row->judul}}</a></h3> -->
                                 <p class="team-two__sub-title"></p>
-                                <ul class="list-unstyled team-two__social-two">
-                                    <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
-                                </ul>
+                                {{-- <ul class="list-unstyled team-two__social-two">
+                                    <li><a id="facebook-share" href="javascript:void(0);">
+                                        <i class="fas fa-share-alt"></i>
+                                    </a>
+                                    
+                                    <script>
+                                        document.getElementById('facebook-share').addEventListener('click', function () {
+                                            const pageUrl = encodeURIComponent(window.location.href);
+                                            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+                                            window.open(facebookUrl, '_blank', 'width=600,height=400');
+                                        });
+                                    </script>
+                                    </li>
+                                </ul> --}}
                             </div>
                         </div>
                     </div>
@@ -429,7 +440,8 @@
                             <div class="services-two__img-box">
                                 
                                 <div class="services-two__img">
-                                    <img class="galeri"  src="{{ $row->foto }}" alt="">
+                                    <img class="galeri" src="{{ $row->foto }}" alt="Galeri" data-bs-toggle="modal" data-bs-target="#galeriModal" style="cursor:pointer;">
+
                                 </div>
                                
                             </div>
@@ -445,7 +457,23 @@
             </div>
         </section>
         <!--Services Two End-->
-
+      <!-- Modal Galeri -->
+<div class="modal fade" id="galeriModal" tabindex="-1" aria-labelledby="galeriModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="galeriModalLabel">Detail Gambar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="modalImage" src="" class="img-fluid">
+          <h5 id="modalCaption" class="mt-3 text-muted"></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+          
         <section class="project-two">
             <div class="project-two__shape-1 float-bob-x">
                 <img src="{{ asset('frontend/assets/images/shapes/project-two-shape-1.png')}}" alt="">
@@ -594,6 +622,12 @@
         }
     });
 });
-
+document.querySelectorAll('.galeri').forEach(img => {
+        img.addEventListener('click', function () {
+            document.getElementById('modalImage').src = this.src;
+            const caption = this.closest('.services-two__single').querySelector('h3 a').textContent;
+            document.getElementById('modalCaption').textContent = caption;
+        });
+    });
 </script>
 @endsection

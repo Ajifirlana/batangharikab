@@ -73,6 +73,16 @@ $currentMonth = Carbon::now();
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/austry-responsive.css')}}" />
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/color-2.css')}}" />
 
+
+<!-- CDN -->
+    
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 
 
@@ -172,17 +182,19 @@ $currentMonth = Carbon::now();
                                     
                                         
                                         <li class="dropdown">
-                                            <a href="{{url('/')}}">Layanan</a>
+                                            <a href="{{url('#')}}">Layanan</a>
                                             <ul>
                                             <li class="dropdown">
-                                                <a>Layanan Publik</a>
+                                                <a href="{{ url('page/layanan-publik') }}" >Layanan Publik</a>
                                            
                                             </li><li class="dropdown">
-                                                <a>Layanan Pemerintahan</a>
+                                          
+                                                <a href="{{ url('page/layanan-pemerintahan') }}" >Layanan Pemerintahan</a>
                                            
                                             </li>
                                             <li class="dropdown">
-                                                <a>Pendidikan</a>
+                                                
+                                                <a href="{{ url('page/layanan-pendidikan') }}" >Pendidikan</a>
                                             <ul>
                                             <li><a href="https://ppdb.batangharikab.go.id/" target="_blank">PPDB</a></li>
                                 
@@ -387,7 +399,7 @@ $currentMonth = Carbon::now();
     <div id="fb-root"></div>
     <!-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v20.0&appId=970070473472661" nonce="5h4zXSdl"></script> -->
     <!-- end plugin halaman fb -->
-    <script src="{{ asset('frontend/assets/vendors/jquery/jquery-3.6.0.min.js')}}"></script>
+    {{-- <script src="{{ asset('frontend/assets/vendors/jquery/jquery-3.6.0.min.js')}}"></script> --}}
     <script src="{{ asset('frontend/assets/vendors/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{ asset('frontend/assets/vendors/jarallax/jarallax.min.js')}}"></script>
     <script src="{{ asset('frontend/assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js')}}"></script>
