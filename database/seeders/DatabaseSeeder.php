@@ -28,7 +28,8 @@ class DatabaseSeeder extends Seeder
             WebsiteSkpdSeeder::class,
             InfografiSeeder::class,
             StatistikPengunjungSeeder::class,
-            AnggaranSeeder::class
+            AnggaranSeeder::class,
+            PopupSeeder::class
         ]);
     }
 }
