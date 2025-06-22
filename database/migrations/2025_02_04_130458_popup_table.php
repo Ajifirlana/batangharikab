@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('popup', function (Blueprint $table) {
             $table->id();
-            $table->string('created_at')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
